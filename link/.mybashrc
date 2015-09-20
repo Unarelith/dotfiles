@@ -1,4 +1,4 @@
-export PATH="$PATH:~/.local/bin"
+export PATH="$PATH:~/.local/bin:~/.dotfiles/bin"
 # export PS1="[\u@\h \#] "
 export PS1='[\[\e[1;36m\]\u\[\e[m\] \[\e[0;34m\]\w\[\e[m\]] \[\e[1;32m\]\$\[\e[m\] '
 
