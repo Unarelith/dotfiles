@@ -1,0 +1,12 @@
+# Top secret stuff!
+/link/.ssh/authorized_keys
+/link/.ssh/id_*
+/link/.ssh/*.pem
+/link/.ssh/known_hosts
+
+# Don't commit Vim plugins, vim-plug will install them.
+/link/.vim/bundle
+/link/.vim/tmp
+
+# Ignore any file with LOCAL in the name (good for per-machine vars/functions)
+*LOCAL*

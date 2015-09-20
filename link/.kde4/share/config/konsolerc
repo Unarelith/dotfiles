@@ -1,0 +1,37 @@
+[$Version]
+update_info=konsole.upd:2.9.0-global-options
+
+[Colors]
+CurrentPalette=* Custom Colors *
+
+[Desktop Entry]
+DefaultProfile=Shell.profile
+
+[Favorite Profiles]
+Favorites=Shell.profile
+
+[KFileDialog Settings]
+Height 768=420
+Recent Files[$e]=cool-dark-background-9.jpeg,$HOME/Images/Backgrounds/cool-dark-background-9.jpeg
+Recent URLs[$e]=$HOME/Images/Backgrounds/
+Width 1366=683
+
+[KonsoleWindow]
+ShowMenuBarByDefault=false
+
+[MainWindow]
+Height 1024=985
+Height 480=481
+Height 768=729
+Height 900=861
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAABVIAAALZAAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+Width 1280=636
+Width 1366=1362
+Width 1440=1436
+Width 640=641
+
+[TabBar]
+TabBarPosition=Top
+TabBarVisibility=ShowTabBarWhenNeeded

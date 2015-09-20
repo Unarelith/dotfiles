@@ -1,0 +1,6 @@
+#!/bin/sh
+
+pulseaudio --start
+setxkbmap -layout fr -variant oss
+xcompmgr
+

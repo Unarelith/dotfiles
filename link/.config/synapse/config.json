@@ -1,0 +1,19 @@
+{
+  "ui" : {
+    "global" : {
+      "ui-type" : "essential",
+      "show-indicator" : false
+    }
+  },
+  "data-sink" : {
+    "global" : {
+      "disabled-plugins" : [
+        "SynapseChromiumPlugin",
+        "SynapseGnomeBookmarksPlugin",
+        "SynapseZeitgeistRelated",
+        "SynapseZeitgeistPlugin",
+        "SynapseImgUrPlugin"
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+$
+$ =============================================================
+$ ========== USER MACROS ======================================
+$ =============================================================
+$
+|AUTHOR|    = Quentin Bazin
+|AUTHORREF| = 
+|EMAIL|     = <gnidmoo@gmail.com>
+|COMPANY|   = 
+|COPYRIGHT| = Copyright (c) |YEAR|, |AUTHOR|
+|STYLE|     = default
+$
+$ =============================================================
+$ ========== FILE INCLUDES ====================================
+$ =============================================================
+$
+|includefile| = c.comments.template
+|includefile| = c.cpp.template
+|includefile| = c.idioms.template
+|includefile| = c.preprocessor.template
+|includefile| = c.statements.template
+$
