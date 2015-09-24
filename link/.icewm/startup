@@ -2,5 +2,5 @@
 
 pulseaudio --start
 setxkbmap -layout fr -variant oss
-xcompmgr
+# xcompmgr
 

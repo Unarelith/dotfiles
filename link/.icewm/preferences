@@ -1299,9 +1299,9 @@ DesktopBackgroundCenter=1 # 0/1
 # DesktopBackgroundColor="rgb:00/20/40"
 
 #  Desktop background image
-# DesktopBackgroundImage="/usr/share/wallpapers/default-1600x1200.jpg"
+DesktopBackgroundImage="/usr/share/wallpapers/default-1600x1200.jpg"
 # DesktopBackgroundImage="/usr/share/wallpapers/xfce/xfce-blue.jpg"
-DesktopBackgroundImage="/home/bazin_q/Images/Backgrounds/cool-dark-background-9.jpeg"
+# DesktopBackgroundImage="/home/bazin_q/Images/Backgrounds/cool-dark-background-9.jpeg"
 
 #  Color to announce for semi-transparent windows
 # DesktopTransparencyColor=""

@@ -33,8 +33,8 @@ key "XF86Standby"           killall -QUIT icewm
 key "XF86AudioLowerVolume"    python /home/bazin_q/.local/bin/volumeHandler.py down
 key "XF86AudioRaiseVolume"    python /home/bazin_q/.local/bin/volumeHandler.py up
 key "XF86AudioMute"           python /home/bazin_q/.local/bin/volumeHandler.py toggle-mute
-# key "XF86MonBrightnessUp"   
-# key "XF86MonBrightnessDown"   
+key "XF86MonBrightnessUp"     xbacklight -inc 5
+key "XF86MonBrightnessDown"   xbacklight -dec 5
 # key "XF86AudioPlay"            cdplay play 1
 # key "XF86AudioStop"            cdplay stop
 # key "XF86HomePage"            netscape -noraise -remote openHomepage

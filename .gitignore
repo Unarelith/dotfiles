@@ -2,13 +2,26 @@
 /caches/
 /backups/
 
+# Don't commit uninteresting stuff
+/link/.config/chromium
+/link/.config/gtk-2.0
+/link/.config/menus
+/link/.config/pulse
+/link/.config/xfce4/xfconf
+/link/.config/Trolltech.conf
+/link/.local/share/applications
+/link/.local/share/desktop-directories
+/link/.local/share/icons
+/link/.local/share/keyrings
+/link/.local/share/recently-used.xbel
+
 # Top secret stuff!
 /link/.ssh/authorized_keys
 /link/.ssh/id_*
 /link/.ssh/*.pem
 /link/.ssh/known_hosts
 
-# Don't commit Vim plugins, vim-plug will install them.
+# Don't commit Vim plugins, Vundle will install them.
 /link/.vim/bundle
 /link/.vim/tmp
 
