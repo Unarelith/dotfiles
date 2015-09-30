@@ -9,3 +9,4 @@
 (load "std_comment.el")
 (if (file-exists-p "~/.myemacs") 
     (load-file "~/.myemacs"))
+(global-font-lock-mode -1)

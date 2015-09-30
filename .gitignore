@@ -4,16 +4,22 @@
 
 # Don't commit uninteresting stuff
 /link/.config/chromium
+/link/.config/dconf
 /link/.config/gtk-2.0
 /link/.config/menus
 /link/.config/pulse
+/link/.config/totem
+/link/.config/vlc
 /link/.config/xfce4/xfconf
 /link/.config/Trolltech.conf
 /link/.local/share/applications
 /link/.local/share/desktop-directories
+/link/.local/share/gvfs-metadata
 /link/.local/share/icons
 /link/.local/share/keyrings
 /link/.local/share/recently-used.xbel
+/link/.local/share/vlc
+/link/.local/share/xorg
 
 # Top secret stuff!
 /link/.ssh/authorized_keys
@@ -24,6 +30,10 @@
 # Don't commit Vim plugins, Vundle will install them.
 /link/.vim/bundle
 /link/.vim/tmp
+
+# Ignore emacs temporary files
+*~
+\#*\#
 
 # Ignore any file with LOCAL in the name (good for per-machine vars/functions)
 *LOCAL*

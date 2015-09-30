@@ -4,6 +4,16 @@ export PS1='[\[\e[1;36m\]\u\[\e[m\] \[\e[0;34m\]\w\[\e[m\]] \[\e[1;32m\]\$\[\e[m
 
 alias ls="ls --color --group-directories-first -h"
 
+alias setxkbmap="echo 'Et ben non :D' && xscreensaver-command -lock # "
+alias loadkeys="echo 'Et ben non :D' && xscreensaver-command -lock # "
+
+alias eman="man -Hchromium"
+
 # Remove Ctrl-S terminal handling
 stty -ixon
+
+# alias vim="emacs"
+
+# echo "============================ TODO LIST ============================="
+# echo "===================================================================="
 
