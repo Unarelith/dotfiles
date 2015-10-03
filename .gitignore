@@ -6,8 +6,10 @@
 /link/.config/chromium
 /link/.config/dconf
 /link/.config/gtk-2.0
+/link/.config/libreoffice
 /link/.config/menus
 /link/.config/pulse
+/link/.config/Thunar
 /link/.config/totem
 /link/.config/vlc
 /link/.config/xfce4/xfconf

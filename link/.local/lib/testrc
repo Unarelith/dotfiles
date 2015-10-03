@@ -1,0 +1,48 @@
+#!/bin/sh
+
+my_ex_test() {
+    log_filename="/home/bazin_q/rendu/logs/log-`timedatectl | grep Universal | cut -d: -f 2- | awk '{print $2 "-" $3}'`"
+
+    my_test > "$log_filename"
+    if [ "`cat $log_filename`" == "Note: 0" ]; then
+	    echo "OK."
+	    rm $log_filename
+    else
+	    echo "ERRORS: `cat $log_filename | tail -1 | awk '{print $2}'`"
+    fi
+}
+
+echo "Testing exercises..." `[ -n "$1" ] && my_ex_test`
+
+test_ex() {
+	if [ -z "$4" ]; then
+		out=`run_test $1 $2`
+	else
+		out=`run_test $1 $2 | $4`
+	fi
+
+	if [ "$out" == "$3" ]; then
+		echo "=> Exercise $1: OK for $2."
+	elif [ "$out" == "compilation failed" ]; then
+		echo "=> Exercise $1: ERROR for $2."
+		echo "* Compilation failed"
+		exit
+	else
+		echo "=> Exercise $1: ERROR for $2."
+		echo "* Program output:   $out"
+		echo "* Waited output:    $3"
+		exit
+	fi
+}
+
+run_test() {
+	cc ../my_putchar.c $2.c tests/tests-$2.c -o test_ex$1 && \
+		./test_ex$1
+
+	if [ -e test_ex$1 ]; then
+		rm test_ex$1
+	else
+		echo "compilation failed"
+	fi
+}
+

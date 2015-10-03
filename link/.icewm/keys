@@ -15,6 +15,7 @@ key "Alt+Ctrl+e"           nedit
 key "Alt+Ctrl+g"           gimp
 
 key "Super+l"              xscreensaver-command -lock
+key "Super+x"              xscreensaver-command -lock
 
 # key "Alt+Ctrl+n"           netscape -noraise -remote openBrowser
 # key "Alt+Ctrl+b"           netscape -noraise -remote openBookmarks
