@@ -15,12 +15,12 @@ my_ex_test() {
 echo "Testing exercises..." `[ -n "$1" ] && my_ex_test`
 
 test_ex() {
-	if [ -z "$4" ]; then
-		out=`run_test $1 $2`
+	if [ -z "$5" ]; then
+		out=`run_test $1 $2 $4`
 	else
-		out=`run_test $1 $2 | $4`
+		out=`run_test $1 $2 $4 | $5`
 	fi
-
+	
 	if [ "$out" == "$3" ]; then
 		echo "=> Exercise $1: OK for $2."
 	elif [ "$out" == "compilation failed" ]; then
@@ -36,7 +36,7 @@ test_ex() {
 }
 
 run_test() {
-	cc ../my_putchar.c $2.c tests/tests-$2.c -o test_ex$1 && \
+	cc ../my_putchar.c $2.c $3 tests/tests-$2.c -o test_ex$1 && \
 		./test_ex$1
 
 	if [ -e test_ex$1 ]; then
