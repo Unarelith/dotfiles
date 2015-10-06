@@ -1,5 +1,6 @@
 /* xconsole  */
-xconsole*font:                  7x13bold
+! xconsole*font:                  7x13bold
+xconsole*faceName:              Monospace:style=Regular:size=12
 xconsole*background:            black
 xconsole*foreground:            white
 xconsole*geometry:              +0-0

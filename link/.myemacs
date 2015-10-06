@@ -1,5 +1,7 @@
 (column-number-mode)
 (global-linum-mode)
+(xterm-mouse-mode)
+(setq backup-directory-alist '(("" . "~/.emacs.d/tmp")))
 
 (require 'package)
 (push '("marmalade" . "http://marmalade-repo.org/packages/")
@@ -8,5 +10,18 @@
       package-archives)
 (package-initialize)
 
+(setq evil-normal-state-cursor '(box "white") 
+      evil-insert-state-cursor '(bar "white"))
+
 (require 'evil)
 (evil-mode 1)
+
+(define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
+(define-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
+(define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
+(define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
+
+(define-key evil-normal-state-map (kbd "<C-left>")  'evil-window-left)
+(define-key evil-normal-state-map (kbd "<C-down>")  'evil-window-down)
+(define-key evil-normal-state-map (kbd "<C-up>")    'evil-window-up)
+(define-key evil-normal-state-map (kbd "<C-right>") 'evil-window-right)

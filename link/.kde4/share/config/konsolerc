@@ -17,19 +17,23 @@ Recent URLs[$e]=$HOME/Images/Backgrounds/
 Width 1366=683
 
 [KonsoleWindow]
+SaveGeometryOnExit=false
+ShowAppNameOnTitleBar=false
 ShowMenuBarByDefault=false
 
 [MainWindow]
 Height 1024=985
+Height 1080=454
 Height 480=481
 Height 768=729
 Height 900=861
 MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAAAABVIAAALZAAAABAAAAAQAAAAIAAAACPwAAAAA
+State=AAAA/wAAAAD9AAAAAAAAAtkAAAHGAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
 Width 1280=636
 Width 1366=1362
 Width 1440=1436
+Width 1920=729
 Width 640=641
 
 [TabBar]

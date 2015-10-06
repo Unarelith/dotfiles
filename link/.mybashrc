@@ -7,6 +7,7 @@ alias ls="ls --color --group-directories-first -h"
 alias setxkbmap="echo 'Et ben non :D' && xscreensaver-command -lock # "
 alias loadkeys="echo 'Et ben non :D' && xscreensaver-command -lock # "
 
+alias man="man -P less"
 alias eman="man -Hchromium"
 
 # Remove Ctrl-S terminal handling
@@ -15,4 +16,5 @@ stty -ixon
 # alias vim="emacs"
 
 # echo "============================ TODO LIST ============================="
+# echo "- Tester le sapin"
 # echo "===================================================================="

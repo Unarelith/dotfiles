@@ -2,6 +2,7 @@
 
 pulseaudio --start
 setxkbmap -layout fr -variant oss
+# wpa_gui -t &
 # xcompmgr
 xscreensaver &
 

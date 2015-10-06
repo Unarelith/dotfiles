@@ -1,3 +1,0 @@
-#!/bin/sh
-
-gistfile1.py *.c tests/*.c

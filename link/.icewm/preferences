@@ -714,31 +714,31 @@ NetworkStatusDevice="enp0s25 wlo1"
 # KeySysWorkspaceLastTakeWin="Alt+Ctrl+Shift+Down"
 
 #  
-# KeySysWorkspace1="Alt+Ctrl+1"
+KeySysWorkspace1="Alt+Ctrl+ampersand"
 
 #  
-# KeySysWorkspace2="Alt+Ctrl+2"
+KeySysWorkspace2="Alt+Ctrl+eacute"
 
 #  
-# KeySysWorkspace3="Alt+Ctrl+3"
+KeySysWorkspace3="Alt+Ctrl+quotedbl"
 
 #  
-# KeySysWorkspace4="Alt+Ctrl+4"
+KeySysWorkspace4="Alt+Ctrl+apostrophe"
 
 #  
-# KeySysWorkspace5="Alt+Ctrl+5"
+KeySysWorkspace5="Alt+Ctrl+parenleft"
 
 #  
-# KeySysWorkspace6="Alt+Ctrl+6"
+KeySysWorkspace6="Alt+Ctrl+minus"
 
 #  
-# KeySysWorkspace7="Alt+Ctrl+7"
+KeySysWorkspace7="Alt+Ctrl+egrave"
 
 #  
-# KeySysWorkspace8="Alt+Ctrl+8"
+KeySysWorkspace8="Alt+Ctrl+underscore"
 
 #  
-# KeySysWorkspace9="Alt+Ctrl+9"
+# KeySysWorkspace9="Alt+Ctrl+ccedilla"
 
 #  
 # KeySysWorkspace10="Alt+Ctrl+0"
@@ -787,9 +787,11 @@ NetworkStatusDevice="enp0s25 wlo1"
 
 #  
 # KeySysTileVertical="Alt+Shift+F2"
+KeySysTileVertical="Super+v"
 
 #  
 # KeySysTileHorizontal="Alt+Shift+F3"
+KeySysTileHorizontal="Super+f"
 
 #  
 # KeySysCascade="Alt+Shift+F4"
@@ -1277,7 +1279,7 @@ NetworkStatusDevice="enp0s25 wlo1"
 
 #  
 
-WorkspaceNames=" 1 ", " 2 ", " 3 ", " 4 "
+WorkspaceNames=" 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 "
 
 #
 # icewmbg preferences
@@ -1299,9 +1301,9 @@ DesktopBackgroundCenter=1 # 0/1
 # DesktopBackgroundColor="rgb:00/20/40"
 
 #  Desktop background image
-DesktopBackgroundImage="/usr/share/wallpapers/default-1600x1200.jpg"
+# DesktopBackgroundImage="/usr/share/wallpapers/default-1600x1200.jpg"
 # DesktopBackgroundImage="/usr/share/wallpapers/xfce/xfce-blue.jpg"
-# DesktopBackgroundImage="/home/bazin_q/Images/Backgrounds/cool-dark-background-9.jpeg"
+DesktopBackgroundImage="/home/bazin_q/Images/Backgrounds/cool-dark-background-9.jpeg"
 
 #  Color to announce for semi-transparent windows
 # DesktopTransparencyColor=""

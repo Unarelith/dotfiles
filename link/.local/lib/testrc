@@ -3,12 +3,21 @@
 my_ex_test() {
     log_filename="/home/bazin_q/rendu/logs/log-`timedatectl | grep Universal | cut -d: -f 2- | awk '{print $2 "-" $3}'`"
 
-    my_test > "$log_filename"
+    gistfile1.py `find . -name '*.c'` > "$log_filename"
+    kakarot --no-colors > "$log_filename-kakarot"
+    
     if [ "`cat $log_filename`" == "Note: 0" ]; then
-	    echo "OK."
-	    rm $log_filename
+        echo "OK."
+        rm $log_filename
     else
-	    echo "ERRORS: `cat $log_filename | tail -1 | awk '{print $2}'`"
+        echo "ERRORS: `cat $log_filename | tail -1 | awk '{print $2}'`"
+    fi
+    
+    if [ "`cat $log_filename-kakarot | tail -2 | awk '{print $4}'`" == "0" ]; then
+        echo "OK."
+        rm $log_filename-kakarot
+    else
+        echo "ERRORS: `cat $log_filename-kakarot | tail -2 | awk '{print $4}'`"
     fi
 }
 
@@ -16,9 +25,9 @@ echo "Testing exercises..." `[ -n "$1" ] && my_ex_test`
 
 test_ex() {
 	if [ -z "$5" ]; then
-		out=`run_test $1 $2 $4`
+		out=`run_test $1 $2 "$4"`
 	else
-		out=`run_test $1 $2 $4 | $5`
+		out=`run_test $1 $2 "$4" | $5`
 	fi
 	
 	if [ "$out" == "$3" ]; then
@@ -36,7 +45,15 @@ test_ex() {
 }
 
 run_test() {
-	cc ../my_putchar.c $2.c $3 tests/tests-$2.c -o test_ex$1 && \
+	ccflags="-Wall -Wextra -Werror -Wfatal-errors"
+	
+	if [ -z "$3" ]; then
+		cfiles="$3"
+	else
+		cfiles="$2.c"
+	fi
+
+	cc ../my_putchar.c $3 tests/tests-$2.c -o test_ex$1 && \
 		./test_ex$1
 
 	if [ -e test_ex$1 ]; then
@@ -45,4 +62,3 @@ run_test() {
 		echo "compilation failed"
 	fi
 }
-
