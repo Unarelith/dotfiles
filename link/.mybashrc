@@ -1,6 +1,20 @@
-export PATH="$PATH:~/.local/bin:~/.dotfiles/bin"
-# export PS1="[\u \w] $ "
-export PS1='[\[\e[1;36m\]\u\[\e[m\] \[\e[0;34m\]\w\[\e[m\]] \[\e[1;32m\]\$\[\e[m\] '
+export EDITOR='vim'
+
+export PATH="$PATH:~/.local/bin:~/.dotfiles/bin:~/.gem/ruby/2.1.0/bin"
+
+source ~/.local/lib/colorsrc
+
+fortune | lolcat.ruby2.1
+#echo ""
+#todolist | lolcat.ruby2.1
+
+user="$BCYAN\u$WHITE"
+time="$BBLUE\t$WHITE"
+path="$BLUE\w$WHITE"
+
+infos="$user | $time | $path"
+
+export PS1="\n[$infos]\n $BGREEN\$ $WHITE"
 
 alias ls="ls --color --group-directories-first -h"
 
@@ -12,9 +26,3 @@ alias eman="man -Hchromium"
 
 # Remove Ctrl-S terminal handling
 stty -ixon
-
-# alias vim="emacs"
-
-# echo "============================ TODO LIST ============================="
-# echo "- Tester le sapin"
-# echo "===================================================================="

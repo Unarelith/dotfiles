@@ -13,7 +13,7 @@ xterm*foreground:               white
 xterm*scrollBar:                false
 
 xterm*VT100.geometry:     80x25
-xterm*faceName:           Monospace:style=Regular:size=12
+xterm*faceName:           Monospace:style=Regular:size=11
 ! xterm*dynamicColors:      true
 ! xterm*utf8:               2
 ! xterm*eightBitInput:      true
@@ -74,5 +74,4 @@ rxvt*color14:			#71bebe
 rxvt*color15:			#ffffff
 
 /* emacs */
-emacs*font:			7x13bold
 emacs*ReverseVideo:		on

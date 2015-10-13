@@ -16,13 +16,8 @@ key "Alt+Ctrl+g"           gimp
 
 key "Super+l"              xscreensaver-command -lock
 key "Super+x"              xscreensaver-command -lock
-
-# key "Alt+Ctrl+n"           netscape -noraise -remote openBrowser
-# key "Alt+Ctrl+b"           netscape -noraise -remote openBookmarks
-# key "Alt+Ctrl+m"           netscape -noraise -remote openURL(mailto:,new-window) 
-
-# key "Alt+Ctrl+KP_Divide"    aumix -v -5        # lower volume
-# key "Alt+Ctrl+KP_Multiply"  aumix -v +5        # raise volume
+key "Super+d"		   synapse
+key "Super+Enter"          xterm
 
 key "Print"                xfce4-screenshooter -fs /home/bazin_q/Images/Screenshots
 
@@ -31,18 +26,9 @@ key "Print"                xfce4-screenshooter -fs /home/bazin_q/Images/Screensh
 # pressing those keys and map those symbols by using xmodmap.
 
 key "XF86Standby"           killall -QUIT icewm
-# key "XF86AudioLowerVolume"  amixer -c 0 set Master 1%-
-# key "XF86AudioRaiseVolume"  amixer -c 0 set Master 1%+
-# key "XF86AudioMute"         amixer -c 0 set Master toggle
 key "XF86AudioLowerVolume"    python /home/bazin_q/.local/bin/volumeHandler.py down
 key "XF86AudioRaiseVolume"    python /home/bazin_q/.local/bin/volumeHandler.py up
 key "XF86AudioMute"           python /home/bazin_q/.local/bin/volumeHandler.py toggle-mute
 key "XF86MonBrightnessUp"     xbacklight -inc 5
 key "XF86MonBrightnessDown"   xbacklight -dec 5
-# key "XF86AudioPlay"            cdplay play 1
-# key "XF86AudioStop"            cdplay stop
-# key "XF86HomePage"            netscape -noraise -remote openHomepage
-# key "XF86Mail"                netscape -noraise -remote openURL(mailto:,new-window) 
-# key "XF86Search"                netscape -noraise -remote openURL(http://www.google.com/)
-# key "XF86Eject"                eject
 

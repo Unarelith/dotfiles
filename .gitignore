@@ -3,8 +3,10 @@
 /backups/
 
 # Don't commit uninteresting stuff
+/link/.config/autostart
 /link/.config/chromium
 /link/.config/dconf
+/link/.config/htop
 /link/.config/hotkeys
 /link/.config/gtk-2.0
 /link/.config/kakarot
@@ -15,6 +17,7 @@
 /link/.config/totem
 /link/.config/vlc
 /link/.config/xfce4/xfconf
+/link/.config/pavucontrol.ini
 /link/.config/Trolltech.conf
 /link/.kde4
 /link/.local/bin/kakarot
