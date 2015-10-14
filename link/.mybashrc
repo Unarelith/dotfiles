@@ -2,6 +2,12 @@ export EDITOR='vim'
 
 export PATH="$PATH:~/.local/bin:~/.dotfiles/bin:~/.gem/ruby/2.1.0/bin"
 
+export GOPATH="/home/bazin_q/.go"
+
+export LD_LIBRARY_PATH="/home/bazin_q/.froot/lib/"
+export C_INCLUDE_PATH="/home/bazin_q/.froot/include/"
+export CPLUS_INCLUDE_PATH="/home/bazin_q/.froot/include/"
+
 source ~/.local/lib/colorsrc
 
 fortune | lolcat.ruby2.1
@@ -9,10 +15,11 @@ fortune | lolcat.ruby2.1
 #todolist | lolcat.ruby2.1
 
 user="$BCYAN\u$WHITE"
+date="\[\033[38;5;38m\]\D{%a %d %b %Y}$WHITE"
 time="$BBLUE\t$WHITE"
 path="$BLUE\w$WHITE"
 
-infos="$user | $time | $path"
+infos="$user | $date | $time | $path"
 
 export PS1="\n[$infos]\n $BGREEN\$ $WHITE"
 

@@ -111,6 +111,7 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'basepi/vim-conque'
 Plugin 'lekv/vim-clewn'
+Plugin 'LeBarbu/vim-epitech'
 
 " Plugin 'Valloric/YouCompleteMe' <= Won't work without a dot file
 " Plugin 'jeaye/color_coded'      <= Too slow to refresh + same thing as above
@@ -182,7 +183,8 @@ let g:syntastic_c_check_header = 1
 let g:syntastic_c_no_include_search = 1
 let g:syntastic_c_no_default_include_dirs = 1
 let g:syntastic_c_auto_refresh_includes = 1
-let g:syntastic_c_compiler_options = '-std=gnu11'
+let g:syntastic_c_include_dirs = ['.', 'include', 'external', '/home/bazin_q/.froot/include']
+"let g:syntastic_c_compiler_options = '-std=gnu11'
 
 "------------------------------------------------------------------------------
 " syntastic C++ config
@@ -229,6 +231,13 @@ set wildignore+=*/tmp/*,*/doxygen/*,*.so,*.swp,*.zip,*.o,*.d,*.o32,*.exe
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 map <C-H> :ClearAllCtrlPCaches<CR>
+
+"------------------------------------------------------------------------------
+" vim-epitech config
+"------------------------------------------------------------------------------
+let g:epi_login = 'bazin_q'
+let g:epi_name = 'Quentin Bazin'
+let g:epi_mode_emacs = 1
 
 "------------------------------------------------------------------------------
 " vim-session config

@@ -40,6 +40,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec xterm
+# bindsym $mod+Return exec urxvt-256color
 
 # kill focused window
 bindsym $mod+Shift+A kill
