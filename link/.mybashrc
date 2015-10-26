@@ -1,6 +1,6 @@
 export EDITOR='vim'
 
-export PATH="$PATH:~/.local/bin:~/.dotfiles/bin:~/.gem/ruby/2.1.0/bin"
+export PATH="$PATH:~/.local/bin:~/.dotfiles/bin:~/.gem/ruby/2.2.0/bin"
 
 export GOPATH="/home/bazin_q/.go"
 
@@ -10,9 +10,9 @@ export CPLUS_INCLUDE_PATH="/home/bazin_q/.froot/include/"
 
 source ~/.local/lib/colorsrc
 
-fortune | lolcat.ruby2.1
+fortune | lolcat
 #echo ""
-#todolist | lolcat.ruby2.1
+#todolist | lolcat
 
 user="$BCYAN\u$WHITE"
 date="\[\033[38;5;38m\]\D{%a %d %b %Y}$WHITE"

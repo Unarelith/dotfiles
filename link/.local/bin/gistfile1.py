@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python2
 #
 # Made by duponc_j@epitech.net
 # Version: 1.2.1

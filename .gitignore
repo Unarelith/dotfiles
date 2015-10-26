@@ -6,10 +6,12 @@
 /link/.config/autostart
 /link/.config/chromium
 /link/.config/dconf
+/link/.config/gtk-2.0
+/link/.config/ImageMagick
 /link/.config/htop
 /link/.config/hotkeys
-/link/.config/gtk-2.0
 /link/.config/kakarot
+/link/.config/konsolerc
 /link/.config/libreoffice
 /link/.config/mapeditor.org
 /link/.config/menus
@@ -23,10 +25,12 @@
 /link/.kde4
 /link/.local/bin/kakarot
 /link/.local/bin/pcre-8.34
+/link/.local/share/.converted-launchers
 /link/.local/share/applications
 /link/.local/share/desktop-directories
 /link/.local/share/gvfs-metadata
 /link/.local/share/icons
+/link/.local/share/mime
 /link/.local/share/keyrings
 /link/.local/share/recently-used.xbel
 /link/.local/share/vlc
