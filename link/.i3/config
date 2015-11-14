@@ -33,6 +33,8 @@ exec volnoti
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec sh ~/.fehbg
 exec xinput set-button-map 13 1 1 3
+exec nm-applet
+exec volumeicon
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

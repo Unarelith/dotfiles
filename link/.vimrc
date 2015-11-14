@@ -112,6 +112,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'basepi/vim-conque'
 Plugin 'lekv/vim-clewn'
 Plugin 'LeBarbu/vim-epitech'
+Plugin 'vim-utils/vim-man'
 
 " Plugin 'Valloric/YouCompleteMe' <= Won't work without a dot file
 " Plugin 'jeaye/color_coded'      <= Too slow to refresh + same thing as above
@@ -162,6 +163,7 @@ call altr#define('include/%.h', 'source/%.c')
 call altr#define('%.v.glsl', '%.f.glsl')
 call altr#define('%.hpp', '%.cpp')
 call altr#define('%.h', '%.cpp')
+call altr#define('%/%.h', '%/%.c');
 call altr#define('%.h', '%.c')
 
 "------------------------------------------------------------------------------
@@ -193,7 +195,7 @@ let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_no_include_search = 1
 let g:syntastic_cpp_no_default_include_dirs = 1
 let g:syntastic_cpp_auto_refresh_includes = 1
-let g:syntastic_cpp_include_dirs = ['.', 'include', 'external', '/usr/include/qt']
+let g:syntastic_cpp_include_dirs = ['.', 'include', 'external', 'external/include', '/usr/include/qt']
 let g:syntastic_cpp_compiler_options = '-std=c++11 -fPIE `find include/* -type d | sed "s/^/-I/"`'
 "`find /usr/include/qt/* -type d | sed "s/^/-I/"`'
 

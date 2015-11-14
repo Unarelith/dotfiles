@@ -3,39 +3,25 @@
 /backups/
 
 # Don't commit uninteresting stuff
-/link/.config/autostart
-/link/.config/chromium
-/link/.config/dconf
-/link/.config/gtk-2.0
-/link/.config/ImageMagick
-/link/.config/htop
-/link/.config/hotkeys
-/link/.config/kakarot
-/link/.config/konsolerc
-/link/.config/libreoffice
-/link/.config/mapeditor.org
-/link/.config/menus
-/link/.config/pulse
-/link/.config/Thunar
-/link/.config/totem
-/link/.config/vlc
-/link/.config/xfce4/xfconf
-/link/.config/pavucontrol.ini
-/link/.config/Trolltech.conf
+/link/.config/*
 /link/.kde4
 /link/.local/bin/kakarot
 /link/.local/bin/pcre-8.34
-/link/.local/share/.converted-launchers
-/link/.local/share/applications
-/link/.local/share/desktop-directories
-/link/.local/share/gvfs-metadata
-/link/.local/share/icons
-/link/.local/share/mime
-/link/.local/share/keyrings
-/link/.local/share/recently-used.xbel
-/link/.local/share/vlc
-/link/.local/share/xorg
-/link/.local/share/zeitgeist
+/link/.local/share/*
+/link/.vim/sessions
+
+# Keep interesting stuff
+!/link/.config/dunst/dunstrc
+!/link/.config/gtk-3.0/gtk.css
+!/link/.config/gtk-3.0/settings.ini
+!/link/.config/redshift.conf
+!/link/.config/synapse/config.json
+!/link/.config/xfce4/xfce4-screenshooter
+!/link/.local/share/konsole/Linux.colorscheme
+!/link/.local/share/konsole/Shell.profile
+!/link/.local/share/konsole/Terminal.profile
+!/link/.local/share/konsole/WhiteOnBlack.colorscheme
+!/link/.local/share/systemd/user
 
 # Top secret stuff!
 /link/.ssh/authorized_keys

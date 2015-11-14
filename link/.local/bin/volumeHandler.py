@@ -28,10 +28,10 @@ elif sys.argv[1] == "toggle-mute":
 currentVolume = max(min(currentVolume, 100), 0)
 
 if isMuted:
-    # os.system("volnoti-show -m")
+    os.system("volnoti-show -m")
     os.system("pactl set-sink-mute @DEFAULT_SINK@ 1")
 else:
-    # os.system("volnoti-show " + str(currentVolume))
+    os.system("volnoti-show " + str(currentVolume))
     os.system("pactl set-sink-mute @DEFAULT_SINK@ 0")
     os.system("pactl set-sink-volume @DEFAULT_SINK@ " + str(currentVolume) + "%")
 

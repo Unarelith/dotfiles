@@ -97,9 +97,19 @@ URxvt*scrollWithBuffer:   true
 URxvt*scrollTtyKeypress:  true
 
 ! Setup font
-!URxvt*faceName:           Droid Sans Mono:style=Regular:size=11
 URxvt.font:               xft:monospace:size=11
+!URxvt*faceName:           Droid Sans Mono:style=Regular:size=11
 !URxvt.letterSpace:        0.5
+
+! Send Ctrl+arrows and Meta+arrows xterm-like keycodes to make vim recognize them
+URxvt.keysym.Control-Up:		\033[1;5A
+URxvt.keysym.Control-Down:		\033[1;5B
+URxvt.keysym.Control-Left:		\033[1;5D
+URxvt.keysym.Control-Right:		\033[1;5C
+URxvt.keysym.Meta-Down:			\033[1;3B
+URxvt.keysym.Meta-Up:			\033[1;3A
+URxvt.keysym.Meta-Left:			\033[1;3D
+URxvt.keysym.Meta-Right:		\033[1;3C
 
 ! Disable scrollback buffer for secondary screen
 URxvt*secondaryScreen: 1

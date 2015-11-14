@@ -1,4 +1,10 @@
 #!/bin/sh
 
 echo " ==================================== TODO ==================================== "
+echo "  - Finir my_printf (flags, modifiers, et les derniers specifiers)"
+echo "  - Finir push_swap"
+echo "  - Faire les TP d'infographie"
+echo "  - Commencer le projet Fil de Fer 1"
+echo "  - Améliorer la libmy_bunny"
+echo "  - Améliorer la libmy"
 echo " ============================================================================== "

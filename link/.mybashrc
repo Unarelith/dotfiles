@@ -1,6 +1,7 @@
 export EDITOR='vim'
 
 export PATH="$PATH:~/.local/bin:~/.dotfiles/bin:~/.gem/ruby/2.2.0/bin"
+export PATH="$PATH:~/.steam/steam/steamapps/common/oO"
 
 export GOPATH="/home/bazin_q/.go"
 
@@ -11,8 +12,8 @@ export CPLUS_INCLUDE_PATH="/home/bazin_q/.froot/include/"
 source ~/.local/lib/colorsrc
 
 fortune | lolcat
-#echo ""
-#todolist | lolcat
+echo ""
+todolist | lolcat
 
 user="$BCYAN\u$WHITE"
 date="\[\033[38;5;38m\]\D{%a %d %b %Y}$WHITE"
@@ -24,6 +25,7 @@ infos="$user | $date | $time | $path"
 export PS1="\n[$infos]\n $BGREEN\$ $WHITE"
 
 alias ls="ls --color --group-directories-first -h"
+alias tree="tree -C"
 
 alias setxkbmap="echo 'Et ben non :D' && xscreensaver-command -lock # "
 alias loadkeys="echo 'Et ben non :D' && xscreensaver-command -lock # "
