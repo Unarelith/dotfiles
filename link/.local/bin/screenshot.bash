@@ -1,4 +1,6 @@
 #!/bin/bash
 # Depends on ImageMagick being installed.
-import -window root ${HOME}/Images/screenshot-`date +%Y%m%d%H%M%S`.png
-notify-send "Screenshot taken"
+mkdir -p ${HOME}/Images/Screenshots
+import -window root ${HOME}/Images/Screenshots/screenshot-`date +%Y%m%d%H%M%S`.png \
+&& notify-send "Screenshot taken" \
+|| notify-send --urgency=critical "Failed to take screenshot"

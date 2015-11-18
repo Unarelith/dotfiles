@@ -1,3 +1,5 @@
+#!/bin/bash
+
 export EDITOR='vim'
 
 export PATH="$PATH:~/.local/bin:~/.dotfiles/bin:~/.gem/ruby/2.2.0/bin"
@@ -24,8 +26,12 @@ infos="$user | $date | $time | $path"
 
 export PS1="\n[$infos]\n $BGREEN\$ $WHITE"
 
+alias vim="vim --servername 'vim-server-$$'"
+
 alias ls="ls --color --group-directories-first -h"
 alias tree="tree -C"
+
+alias add_to_gogs='git remote add gogs $(echo "gogs@git.gnidmoo.tk:gnidmoo/$(basename $(pwd)).git" | tr "[:upper:]" "[:lower:]") ; git push gogs master'
 
 alias setxkbmap="echo 'Et ben non :D' && xscreensaver-command -lock # "
 alias loadkeys="echo 'Et ben non :D' && xscreensaver-command -lock # "

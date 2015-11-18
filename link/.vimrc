@@ -163,7 +163,7 @@ call altr#define('include/%.h', 'source/%.c')
 call altr#define('%.v.glsl', '%.f.glsl')
 call altr#define('%.hpp', '%.cpp')
 call altr#define('%.h', '%.cpp')
-call altr#define('%/%.h', '%/%.c');
+call altr#define('%/%.h', '%/%.c')
 call altr#define('%.h', '%.c')
 
 "------------------------------------------------------------------------------
@@ -185,7 +185,8 @@ let g:syntastic_c_check_header = 1
 let g:syntastic_c_no_include_search = 1
 let g:syntastic_c_no_default_include_dirs = 1
 let g:syntastic_c_auto_refresh_includes = 1
-let g:syntastic_c_include_dirs = ['.', 'include', 'external', '/home/bazin_q/.froot/include']
+let g:syntastic_c_include_dirs = ['.', 'include', 'external', '/home/bazin_q/.froot/include', '../libmy/include']
+let g:syntastic_c_compiler_options = '`find lib -name "include" -type d | sed "s/^/-I/"`'
 "let g:syntastic_c_compiler_options = '-std=gnu11'
 
 "------------------------------------------------------------------------------
@@ -336,12 +337,14 @@ imap <A-F5> <Esc>:cclose<CR>a
 "------------------------------------------------------------------------------
 map ,y "+y
 map ,yy "+yy
+map ,dd "+dd
 map ,p "+gP
-map ,c "+x
-map ,cl "+dd
 map ,sa ggVG
 map ,d yygP
 map ; a;<Esc>
+map ,b hT_
+map ,w t_2l
+map ,c ct_
 
 "------------------------------------------------------------------------------
 " Window navigation
