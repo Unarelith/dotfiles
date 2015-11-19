@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ -f /usr/share/doc/pkgfile/command-not-found.bash ]
+then
+	. /usr/share/doc/pkgfile/command-not-found.bash
+fi
+
 export EDITOR='vim'
 
 export PATH="$PATH:~/.local/bin:~/.dotfiles/bin:~/.gem/ruby/2.2.0/bin"

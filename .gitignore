@@ -9,6 +9,8 @@
 /link/.local/bin/pcre-8.34
 /link/.local/share/*
 /link/.vim/sessions
+/link/.xchat2/scrollback
+/link/.xchat2/xchatlogs
 
 # Keep interesting stuff
 !/link/.config/dunst/dunstrc
