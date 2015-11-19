@@ -26,6 +26,7 @@ font pango:Monospace 10
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
+exec dunst
 exec pulseaudio --start
 exec setxkbmap -layout fr -variant oss
 exec xcompmgr
@@ -196,8 +197,12 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# Floating windows rules
+# Rules for Hangouts
 for_window [window_role="pop-up"] floating enable
+for_window [title="Hangouts"] move container to workspace 5
+for_window [title="Hangouts"] floating disable
+for_window [title="Actions Communication"] move container to workspace 5
+for_window [title="Actions Communication"] floating disable
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
