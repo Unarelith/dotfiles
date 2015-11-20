@@ -2,6 +2,8 @@
 
 GOGS_USER=gnidmoo
 
+source ~/.local/lib/colorsrc
+
 # Add gogs to repositories
 for i in $(find . -maxdepth 1 -type d -print | sed 's/^\.\///')
 do
@@ -10,32 +12,32 @@ do
 		cd "$(pwd)/$i"
 		if [ -d .git ] && [ -n "$(git remote -v | grep epitech)" ]
 		then
-			echo "Trying to add 'gogs' remote in $(basename $(pwd))..."
+			echo -e "$BCYAN=> Trying to add 'gogs' remote in $(basename $(pwd))..." $WHITE
 			git remote remove origin
 			git remote add origin git@git.epitech.eu:/${USER}/$(basename $(pwd))
-
+			
 			# Add 'gogs' remote to gogs repos
 			gogs_repo="$(basename $(pwd) | tr '[:upper:]' '[:lower:]').git"
 			push="$(git push gogs@git.gnidmoo.tk:$GOGS_USER/$gogs_repo master 2>&1)"
 			if [ -z "$(echo "$push" "=>" "$?" | grep Gogs)" ]
 			then
-				echo "Gogs repo found in" $(pwd)
+				echo -e $BBLUE "[*] Gogs repo found in" $(pwd) $WHITE
 				git remote set-url --add --push origin git@git.epitech.eu:/${USER}/$(basename $(pwd))
 				git remote set-url --add --push origin gogs@git.gnidmoo.tk:$GOGS_USER/$(echo $(basename $(pwd)) | tr '[:upper:]' '[:lower:]').git
 
-				echo -n "Trying to push to 'origin'... "
+				echo -e $BBLUE "[*] Trying to push to 'origin'..." $WHITE
 				push_code="$(git push -u origin master > /dev/null 2>&1 && echo $?)"
 				if [ "$push_code" == "0" ]
 				then
-					echo "OK."
+					echo -e $BGREEN "[*] OK." $wHITE
 				else
-					echo "Failed with code $push_code."
+					echo -e $BRED "[*] Failed with code $push_code." $WHITE
 				fi
 			else
-				echo "$(pwd) is not a Gogs repo"
+				echo -e $BBLUE "[*] $(pwd) is not a Gogs repo" $WHITE
 			fi
 		else
-			echo "$(pwd) is not an Epitech repo"
+			echo -e "$BBLUE$(pwd) is not an Epitech repo" $WHITE
 		fi
 		echo
 		cd ..

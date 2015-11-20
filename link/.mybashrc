@@ -5,6 +5,11 @@ then
 	. /usr/share/doc/pkgfile/command-not-found.bash
 fi
 
+if [ "$PS1" ]
+then
+	complete -cf sudo
+fi
+
 export EDITOR='vim'
 
 export PATH="$PATH:~/.local/bin:~/.dotfiles/bin:~/.gem/ruby/2.2.0/bin"
@@ -22,14 +27,14 @@ fortune | lolcat
 echo ""
 todolist | lolcat
 
-user="$BCYAN\u$WHITE"
-date="\[\033[38;5;38m\]\D{%a %d %b %Y}$WHITE"
-time="$BBLUE\t$WHITE"
-path="$BLUE\w$WHITE"
+user="$EBCYAN\u$EWHITE"
+date="\[\033[38;5;38m\]\D{%a %d %b %Y}$EWHITE"
+time="$EBBLUE\t$EWHITE"
+path="$EBLUE\w$EWHITE"
 
 infos="$user | $date | $time | $path"
 
-export PS1="\n[$infos]\n $BGREEN\$ $WHITE"
+export PS1="\n[$infos]\n $EBGREEN\$ $EWHITE"
 
 alias vim="vim --servername 'vim-server-$$'"
 
