@@ -7,6 +7,12 @@
 /link/.kde4
 /link/.local/bin/kakarot
 /link/.local/bin/pcre-8.34
+/link/.local/bin/cm2*
+/link/.local/bin/cmark.py
+/link/.local/bin/livereload
+/link/.local/bin/sphinx-*
+/link/.local/bin/watchmedo
+/link/.local/lib/python*
 /link/.local/share/*
 /link/.vim/sessions
 /link/.xchat2/scrollback

@@ -51,3 +51,6 @@ alias eman="man -Hchromium"
 
 # Remove Ctrl-S terminal handling
 stty -ixon
+
+export GOGS_USER=gnidmoo
+
