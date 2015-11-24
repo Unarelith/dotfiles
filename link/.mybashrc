@@ -5,6 +5,10 @@ then
 	. /usr/share/doc/pkgfile/command-not-found.bash
 fi
 
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+
 if [ "$PS1" ]
 then
 	complete -cf sudo

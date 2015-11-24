@@ -41,26 +41,26 @@ do
 		cd "$(pwd)/$i"
 		if [ -d .git ] && [ -n "$(git remote -v | grep epitech)" ]
 		then
-			echo -e "$BCYAN=> Trying to add 'gogs' remote in $(basename \"$(pwd)\")..." $WHITE
+			echo -e "$BCYAN=> Trying to add 'gogs' remote in $(basename "$(pwd)")..." $WHITE
 			git remote remove origin
-			git remote add origin git@git.epitech.eu:/${USER}/$(basename \"$(pwd)\")
+			git remote add origin git@git.epitech.eu:/${USER}/$(basename "$(pwd)")
+			git remote set-url --add --push origin git@git.epitech.eu:/${USER}/$(basename "$(pwd)")
 			
 			# Add 'gogs' remote to gogs repos
-			gogs_repo="$(basename \"$(pwd)\" | tr '[:upper:]' '[:lower:]').git"
+			gogs_repo="$(basename "$(pwd)" | tr '[:upper:]' '[:lower:]').git"
 			push="$(git push gogs@git.gnidmoo.tk:$GOGS_USER/$gogs_repo master 2>&1)"
 			if [ -z "$(echo "$push" "=>" "$?" | grep Gogs)" ]
 			then
 				echo -e $BBLUE "[*] Gogs repo found in" "$(pwd)" $WHITE
-				git remote set-url --add --push origin git@git.epitech.eu:/${USER}/$(basename \"$(pwd)\")
-				git remote set-url --add --push origin gogs@git.gnidmoo.tk:$GOGS_USER/$(echo $(basename \"$(pwd)\") | tr '[:upper:]' '[:lower:]').git
-
+				git remote set-url --add --push origin gogs@git.gnidmoo.tk:$GOGS_USER/$(echo $(basename "$(pwd)") | tr '[:upper:]' '[:lower:]').git
+				
 				echo -e $BBLUE "[*] Trying to push to 'origin'..." $WHITE
-				push_code="$(git push -u origin master > /dev/null 2>&1 && echo $?)"
+				push_code="$(git push -u origin master > /dev/null 2>&1 ; echo $?)"
 				if [ "$push_code" == "0" ]
 				then
-					echo -e $BGREEN "[*] OK." $wHITE
+					echo -e $BGREEN "[*] OK." $WHITE
 				else
-					echo -e $BRED "[*] Failed with code $push_code." $WHITE
+					echo -e $BRED "[*] Failed. Code: $push_code" $WHITE
 				fi
 			else
 				echo -e $BBLUE "[*] $(pwd) is not a Gogs repo" $WHITE

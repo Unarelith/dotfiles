@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+
+import pexpect
+import sys
+
+child = pexpect.spawnu('blih', sys.argv[1:])
+
+index = child.expect(['Password:', "Usage:"])
+if index == 0:
+    child.sendline(sys.stdin.read())
+else:
+    child.expect(pexpect.EOF)
+    print("Usage:", child.before, sep='')
+    sys.exit(1);
+
+index = child.expect([pexpect.EOF, 'HTTP Error'])
+if index == 0:
+    print(child.before.lstrip(), end='')
+    sys.exit(0);
+else:
+    child.expect(pexpect.EOF)
+    print("HTTP Error", child.before, sep='', end='')
+    sys.exit(1);

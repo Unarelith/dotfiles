@@ -1,8 +1,7 @@
 #!/bin/sh
 
 echo " ==================================== TODO ==================================== "
-echo "  - Finir le projet Fil de Fer 1 (ne pas oublier de rajouter -ansi et -pedantic)"
-echo "  - Finir push_swap (ne pas oublier les FIXME et les TODO)"
+echo "  - Push .dotfiles pour l'update sur update-gogs-repos"
 echo "  - Faire le my_ls"
 echo "  - Faire les TP d'infographie"
 echo "  - Améliorer la libmy_bunny"

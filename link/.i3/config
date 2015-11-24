@@ -199,8 +199,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Rules for Hangouts
 for_window [window_role="pop-up"] floating enable
-for_window [title="Hangouts"] move container to workspace 5
-for_window [title="Hangouts"] floating disable
+# for_window [title="Hangouts"] move container to workspace 5
+# for_window [title="Hangouts"] floating disable
 for_window [title="Actions Communication"] move container to workspace 5
 for_window [title="Actions Communication"] floating disable
 
