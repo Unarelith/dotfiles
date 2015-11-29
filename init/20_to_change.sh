@@ -21,11 +21,16 @@ do
 		echo -n " * Need change? [y/N] "
 		read answer
 		
+		echo $i
+		
 		if [ "$answer" == "y" ]
 		then
 			echo -n "$to_change_what: "
 			read new_value
-			sed -i -e "s/\(^.*$to_change_var_name.*=[ \t]*\)\(.*\)$/\1$new_value/" $i
+			new_file="/home/${USER}/$(echo $i | sed 's/^.*dotfiles\/link\/\(.*\)$/\1/')"
+			rm -f $new_file
+			cp $i $new_file
+			sed -i -e "s/\(^.*$to_change_var_name.*=[ \t]*\)\(.*\)$/\1$new_value/" $new_file
 		fi
 		echo
 	done
