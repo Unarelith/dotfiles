@@ -203,6 +203,7 @@ for_window [window_role="pop-up"] floating enable
 # for_window [title="Hangouts"] floating disable
 for_window [title="Actions Communication"] move container to workspace 5
 for_window [title="Actions Communication"] floating disable
+for_window [title="Anodyne"] floating enable
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

@@ -1,9 +1,10 @@
 #!/bin/sh
 
 echo " ==================================== TODO ==================================== "
-echo "  - Push .dotfiles pour l'update sur update-gogs-repos"
-echo "  - Faire le my_ls"
-echo "  - Faire les TP d'infographie"
-echo "  - Améliorer la libmy_bunny"
-echo "  - Améliorer la libmy"
+echo "  - Améliorer update-gogs-repos pour le rendre plus rapide (vérifier si Gogs"
+echo "    est déjà dans les remote par ex)"
+echo "  - Améliorer prepare_my_repo.sh en lui permettant d'ajouter automatiquement la"
+echo "    remote Gogs si le dépot existe"
 echo " ============================================================================== "
+echo
+

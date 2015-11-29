@@ -41,6 +41,13 @@ do
 		cd "$(pwd)/$i"
 		if [ -d .git ] && [ -n "$(git remote -v | grep epitech)" ]
 		then
+			if [ -n "$(git remote -v | grep gogs)" ]
+			then
+				echo -e "$BBLUE$(pwd) already has a rule for Gogs" $WHITE "\n"
+				cd ..
+				continue
+			fi
+			
 			echo -e "$BCYAN=> Trying to add 'gogs' remote in $(basename "$(pwd)")..." $WHITE
 			git remote remove origin
 			git remote add origin git@git.epitech.eu:/${USER}/$(basename "$(pwd)")
