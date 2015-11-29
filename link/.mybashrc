@@ -20,16 +20,14 @@ export EDITOR='vim'
 export PATH="$PATH:~/.local/bin:~/.dotfiles/bin:~/.gem/ruby/2.2.0/bin"
 export PATH="$PATH:~/.steam/steam/steamapps/common/oO"
 
-export GOPATH="/home/bazin_q/.go"
-
-export LD_LIBRARY_PATH="/home/bazin_q/.froot/lib/"
-export C_INCLUDE_PATH="/home/bazin_q/.froot/include/"
-export CPLUS_INCLUDE_PATH="/home/bazin_q/.froot/include/"
+export GOPATH="/home/${USER}/.go"
 
 source ~/.local/lib/colorsrc
 
-# fortune | lolcat
-todolist | lolcat
+if [ -f ~/TODO ] && [ -n "$(cat TODO)" ]
+then
+	echo "You have pending tasks, type 'cat ~/TODO' to see them."
+fi
 
 user="$EBCYAN\u$EWHITE"
 date="\[\033[38;5;38m\]\D{%a %d %b %Y}$EWHITE"
@@ -42,17 +40,17 @@ export PS1="\n[$infos]\n $EBGREEN\$ $EWHITE"
 
 alias vim="vim --servername 'vim-server-$$'"
 
-# alias ls="ls --color --group-directories-first -h"
-alias ls="ls --color --group-directories-first"
+alias ls="ls --color --group-directories-first -h"
 alias tree="tree -C"
 
-alias add_to_gogs='git remote add gogs $(echo "gogs@git.gnidmoo.tk:gnidmoo/$(basename $(pwd)).git" | tr "[:upper:]" "[:lower:]") ; git push gogs master'
+# TO_CHANGE: Gogs username
+export GOGS_USER=gnidmoo
+
+alias add_to_gogs='git remote add gogs $(echo "gogs@git.gnidmoo.tk:${GOGS_USER}/$(basename $(pwd)).git" | tr "[:upper:]" "[:lower:]") ; git push gogs master'
 
 alias man="man -P less"
 alias eman="man -Hchromium"
 
 # Remove Ctrl-S terminal handling
 stty -ixon
-
-export GOGS_USER=gnidmoo
 

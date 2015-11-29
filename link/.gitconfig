@@ -1,5 +1,7 @@
 [user]
+	# TO_CHANGE: Email
 	email = quent42340@gmail.com
+	# TO_CHANGE: Full name
 	name = Quentin Bazin
 [push]
 	default = simple
