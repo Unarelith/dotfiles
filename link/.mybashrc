@@ -24,7 +24,7 @@ export GOPATH="/home/${USER}/.go"
 
 source ~/.local/lib/colorsrc
 
-if [ -f ~/TODO ] && [ -n "$(cat TODO)" ]
+if [ -f ~/TODO ] && [ -n "$(cat ~/TODO)" ]
 then
 	echo "You have pending tasks, type 'cat ~/TODO' to see them."
 fi
@@ -38,18 +38,21 @@ infos="$user | $date | $time | $path"
 
 export PS1="\n[$infos]\n $EBGREEN\$ $EWHITE"
 
+# TO_CHANGE: Gogs username
+export GOGS_USER=gnidmoo
+
 alias vim="vim --servername 'vim-server-$$'"
 
 alias ls="ls --color --group-directories-first -h"
 alias tree="tree -C"
 
-# TO_CHANGE: Gogs username
-export GOGS_USER=gnidmoo
-
-alias add_to_gogs='git remote add gogs $(echo "gogs@git.gnidmoo.tk:${GOGS_USER}/$(basename $(pwd)).git" | tr "[:upper:]" "[:lower:]") ; git push gogs master'
-
 alias man="man -P less"
 alias eman="man -Hchromium"
+
+alias netre="sudo systemctl restart NetworkManager"
+
+alias opensession='vim -c "OpenSession $(basename $(pwd))"'
+alias opensessionf='vim -c "OpenSession! $(basename $(pwd))"'
 
 # Remove Ctrl-S terminal handling
 stty -ixon

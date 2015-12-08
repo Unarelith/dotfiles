@@ -1,0 +1,55 @@
+!-----------------------------------------------------------------------------
+! urxvt configuration
+!-----------------------------------------------------------------------------
+! Setup transparency
+URxvt*depth:              32
+URxvt*background:         [70]#000000
+URxvt*foreground:         white
+
+! Disable scroll bar
+URxvt*scrollBar:          false
+
+! Do not scroll with output
+URxvt*scrollTtyOutput:    false
+
+! Scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer:   true
+
+! Scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress:  true
+
+! Setup font
+URxvt.font:               xft:monospace:size=11
+
+! Send Ctrl+arrows and Meta+arrows xterm-like keycodes to make vim recognize them
+URxvt.keysym.Control-Up:		\033[1;5A
+URxvt.keysym.Control-Down:		\033[1;5B
+URxvt.keysym.Control-Left:		\033[1;5D
+URxvt.keysym.Control-Right:		\033[1;5C
+URxvt.keysym.Meta-Down:			\033[1;3B
+URxvt.keysym.Meta-Up:			\033[1;3A
+URxvt.keysym.Meta-Left:			\033[1;3D
+URxvt.keysym.Meta-Right:		\033[1;3C
+
+! Disable scrollback buffer for secondary screen
+URxvt*secondaryScreen: 1
+URxvt*secondaryScroll: 0
+
+! Tango color scheme
+URxvt*color0:  #1e1e1e
+URxvt*color1:  #cc0000
+URxvt*color2:  #4e9a06
+URxvt*color3:  #c4a000
+URxvt*color4:  #3465a4
+URxvt*color5:  #75507b
+URxvt*color6:  #0b939b
+URxvt*color7:  #d3d7cf
+URxvt*color8:  #555753
+URxvt*color9:  #ef2929
+URxvt*color10: #8ae234
+URxvt*color11: #fce94f
+URxvt*color12: #729fcf
+URxvt*color13: #ad7fa8
+URxvt*color14: #00f5e9
+URxvt*color15: #eeeeec
+
