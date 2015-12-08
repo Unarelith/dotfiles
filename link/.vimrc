@@ -15,7 +15,7 @@ au! Syntax eplith source .vim/syntax/eplith.vim
 "------------------------------------------------------------------------------
 " Add splitted .Xdefaults/.Xresources support
 "------------------------------------------------------------------------------
-au BufRead,BufNewFile .Xresources.d/* set filetype=xdefaults
+au BufRead,BufNewFile *.Xresources.d/* set filetype=xdefaults
 
 "------------------------------------------------------------------------------
 " Editor configuration
