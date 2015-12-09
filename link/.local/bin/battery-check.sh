@@ -2,6 +2,11 @@
 
 # Battery level warning script
 
+if [ -z "$(acpi -b | grep Discharging)" ]
+then
+	exit 0
+fi
+
 battery_level=`acpi -b | grep -oP '[0-9]+(?=%)'`
 
 flags_low="-u normal -t 5000"

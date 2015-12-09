@@ -103,63 +103,59 @@ bindsym $mod+q focus parent
 bindsym $mod+c focus child
 
 # switch to workspace
-bindsym $mod+twosuperior workspace 0
-bindsym $mod+ampersand workspace 1
-bindsym $mod+eacute workspace 2
-bindsym $mod+quotedbl workspace 3
-bindsym $mod+apostrophe workspace 4
-bindsym $mod+parenleft workspace 5
-bindsym $mod+minus workspace 6
-bindsym $mod+egrave workspace 7
-bindsym $mod+underscore workspace 8
-bindsym $mod+ccedilla workspace 9
-bindsym $mod+agrave workspace 10
+bindsym $mod+ampersand   workspace "1:1"
+bindsym $mod+eacute      workspace "2:2"
+bindsym $mod+quotedbl    workspace "3:3"
+bindsym $mod+apostrophe  workspace "4:4"
+bindsym $mod+parenleft   workspace "5:5"
+bindsym $mod+minus       workspace "6:6"
+bindsym $mod+egrave      workspace "7:7"
+bindsym $mod+underscore  workspace "8:8"
+bindsym $mod+ccedilla    workspace "9:9"
+bindsym $mod+agrave      workspace "10:10"
 
-bindsym $mod+KP_1 workspace 1
-bindsym $mod+KP_2 workspace 2
-bindsym $mod+KP_3 workspace 3
-bindsym $mod+KP_4 workspace 4
-bindsym $mod+KP_5 workspace 5
-bindsym $mod+KP_6 workspace 6
-bindsym $mod+KP_7 workspace 7
-bindsym $mod+KP_8 workspace 8
-bindsym $mod+KP_9 workspace 9
-bindsym $mod+KP_0 workspace 10
+bindsym $mod+KP_1 workspace "1:1"
+bindsym $mod+KP_2 workspace "2:2"
+bindsym $mod+KP_3 workspace "3:3"
+bindsym $mod+KP_4 workspace "4:4"
+bindsym $mod+KP_5 workspace "5:5"
+bindsym $mod+KP_6 workspace "6:6"
+bindsym $mod+KP_7 workspace "7:7"
+bindsym $mod+KP_8 workspace "8:8"
+bindsym $mod+KP_9 workspace "9:9"
+bindsym $mod+KP_0 workspace "10:10"
 
-# custom workspaces
-bindsym $mod+u workspace U
-bindsym $mod+i workspace I
-bindsym $mod+o workspace O
-bindsym $mod+p workspace P
+bindsym $mod+u workspace "11:U"
+bindsym $mod+i workspace "12:I"
+bindsym $mod+o workspace "13:O"
+bindsym $mod+p workspace "14:P"
 
-bindsym $mod+j workspace J
-bindsym $mod+k workspace K
-
-bindsym $mod+l exec slimlock
-
-# bindsym $mod+m move workspace to output left
-
-bindsym $mod+Shift+u move container to workspace U
-bindsym $mod+Shift+i move container to workspace I
-bindsym $mod+Shift+o move container to workspace O
-bindsym $mod+Shift+p move container to workspace P
-
-bindsym $mod+Shift+j move container to workspace J
-bindsym $mod+Shift+k move container to workspace K
-bindsym $mod+Shift+l move container to workspace L
-bindsym $mod+Shift+m move container to workspace M
+bindsym $mod+j workspace "15:J"
+bindsym $mod+k workspace "16:K"
+bindsym $mod+l workspace "17:L"
+bindsym $mod+m workspace "18:M"
 
 # move focused container to workspace
-bindsym $mod+Shift+ampersand   move container to workspace 1
-bindsym $mod+Shift+eacute      move container to workspace 2
-bindsym $mod+Shift+quotedbl    move container to workspace 3
-bindsym $mod+Shift+apostrophe  move container to workspace 4
-bindsym $mod+Shift+parenleft   move container to workspace 5
-bindsym $mod+Shift+minus       move container to workspace 6
-bindsym $mod+Shift+egrave      move container to workspace 7
-bindsym $mod+Shift+underscore  move container to workspace 8
-bindsym $mod+Shift+ccedilla    move container to workspace 9
-bindsym $mod+Shift+agrave      move container to workspace 10
+bindsym $mod+Shift+ampersand   move container to workspace "1:1"
+bindsym $mod+Shift+eacute      move container to workspace "2:2"
+bindsym $mod+Shift+quotedbl    move container to workspace "3:3"
+bindsym $mod+Shift+apostrophe  move container to workspace "4:4"
+bindsym $mod+Shift+parenleft   move container to workspace "5:5"
+bindsym $mod+Shift+minus       move container to workspace "6:6"
+bindsym $mod+Shift+egrave      move container to workspace "7:7"
+bindsym $mod+Shift+underscore  move container to workspace "8:8"
+bindsym $mod+Shift+ccedilla    move container to workspace "9:9"
+bindsym $mod+Shift+agrave      move container to workspace "10:10"
+
+bindsym $mod+Shift+u move container to workspace "11:U"
+bindsym $mod+Shift+i move container to workspace "12:I"
+bindsym $mod+Shift+o move container to workspace "13:O"
+bindsym $mod+Shift+p move container to workspace "14:P"
+
+bindsym $mod+Shift+j move container to workspace "15:J"
+bindsym $mod+Shift+k move container to workspace "16:K"
+bindsym $mod+Shift+l move container to workspace "17:L"
+bindsym $mod+Shift+m move container to workspace "18:M"
 
 bindsym $mod+Ctrl+Left workspace prev
 bindsym $mod+Ctrl+Right workspace next
@@ -234,7 +230,9 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    status_command	i3status
+    status_command i3status
+	
+	strip_workspace_numbers yes
 	
 	colors {
 		#background #222222

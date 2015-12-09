@@ -8,8 +8,16 @@ else
 	BASHRC_PATH=~/.bashrc
 fi
 
+# Check if internet is available
+internet_available=0
+ping_test="$(ping -c 1 8.8.8.8)"
+if [ -z "$(echo $ping_test | grep unreachable)" ] && [ -z "$(echo $ping_test | grep "100% packet loss")" ]
+then
+	internet_available=1
+fi
+
 # Trying to download 'colorsrc'
-if [ ! -e ~/.local/lib/colorsrc ]
+if [ ! -e ~/.local/lib/colorsrc ] && [ $internet_available -eq 1 ]
 then
 	curl -O http://git.gnidmoo.tk/gnidmoo/dotfiles/raw/master/link/.local/lib/colorsrc > /dev/null 2>&1 && \
 	mkdir -p ~/.local/lib && \
@@ -33,6 +41,40 @@ fi
 
 echo -e "${BGREEN}\\o/ Welcome" $GOGS_USER "\\o/\n"
 
+# Auto update this script
+if [ -e ~/.local/bin/update-gogs-repos ] && [ $internet_available -eq 1 ]
+then
+	rm -f /tmp/update-gogs-repos
+	
+	if curl -o /tmp/update-gogs-repos -O http://git.gnidmoo.tk/gnidmoo/dotfiles/raw/master/link/.local/bin/update-gogs-repos > /dev/null 2>&1
+	then
+		if [ -n "$(diff ~/.local/bin/update-gogs-repos /tmp/update-gogs-repos)" ]
+		then
+			echo -ne "${BCYAN}A new version was downloaded. Show diff? [y/N] " $WHITE
+			read answer
+
+			if [ "$answer" == "y" ]
+			then
+				diff ~/.local/bin/update-gogs-repos /tmp/update-gogs-repos
+			fi
+
+			echo -ne "${BCYAN}Install the new version? [y/N] " $WHITE
+			read answer
+
+			if [ "$answer" == "y" ]
+			then
+				mkdir -p ~/.local/bin
+				mv /tmp/update-gogs-repos ~/.local/bin/
+				chmod +x ~/.local/bin/update-gogs-repos
+			fi
+		else
+			echo -e "${BCYAN}The script is up-to-date" $WHITE
+		fi
+		
+		echo
+	fi
+fi
+
 # Add gogs to repositories
 for i in $(find . -maxdepth 1 -type d -print | sed 's/^\.\///')
 do
@@ -55,8 +97,8 @@ do
 			
 			# Add 'gogs' remote to gogs repos
 			gogs_repo="$(basename "$(pwd)" | tr '[:upper:]' '[:lower:]').git"
-			push="$(git push gogs@git.gnidmoo.tk:$GOGS_USER/$gogs_repo master 2>&1)"
-			if [ -z "$(echo "$push" "=>" "$?" | grep Gogs)" ]
+			push_code="$(git push gogs@git.gnidmoo.tk:$GOGS_USER/$gogs_repo master > /dev/null 2>&1 ; echo $?)"
+			if [ $push_code -eq 0 ]
 			then
 				echo -e $BBLUE "[*] Gogs repo found in" "$(pwd)" $WHITE
 				git remote set-url --add --push origin gogs@git.gnidmoo.tk:$GOGS_USER/$(echo $(basename "$(pwd)") | tr '[:upper:]' '[:lower:]').git

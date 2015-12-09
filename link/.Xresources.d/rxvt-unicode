@@ -21,6 +21,10 @@ URxvt*scrollTtyKeypress:  true
 ! Setup font
 URxvt.font:               xft:monospace:size=11
 
+! Disable Keycap Picture insert mode
+URxvt.iso14755:			false
+URxvt.iso14755_52:		false
+
 ! Send Ctrl+arrows and Meta+arrows xterm-like keycodes to make vim recognize them
 URxvt.keysym.Control-Up:		\033[1;5A
 URxvt.keysym.Control-Down:		\033[1;5B
@@ -31,8 +35,8 @@ URxvt.keysym.Meta-Up:			\033[1;3A
 URxvt.keysym.Meta-Left:			\033[1;3D
 URxvt.keysym.Meta-Right:		\033[1;3C
 
-! Open a new instance of urxvt with Ctrl+n
-URxvt.keysym.Control-n:			urxvt &\n
+! Open a new instance of urxvt with Ctrl+Shift+N
+URxvt.keysym.Control-Shift-N:	urxvt &\n
 
 ! Disable scrollback buffer for secondary screen
 URxvt*secondaryScreen: 1

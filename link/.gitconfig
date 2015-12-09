@@ -8,6 +8,7 @@
 [alias]
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	ls = ls-tree --name-only HEAD
 [color]
 	branch = auto
 	diff = auto

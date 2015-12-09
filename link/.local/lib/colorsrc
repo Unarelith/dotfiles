@@ -1,4 +1,6 @@
 #!/bin/sh
+# by gnidmoo
+# Put it in ~/.local/lib/colorsrc
 
 export WHITE="\033[0m"
 export RED="\033[0;31m"
