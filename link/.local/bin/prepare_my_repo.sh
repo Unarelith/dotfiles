@@ -1,4 +1,11 @@
 #/bin/bash
+
+if [ -z "$1" ]
+then
+	echo "Usage: $(basename $0) repository_name"
+	exit 1
+fi
+
 if [ ! -e "$1" ]
 then
 	tries_left=3

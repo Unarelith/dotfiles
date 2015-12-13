@@ -26,8 +26,8 @@ font pango:Monospace 10
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-exec dunst
 exec pulseaudio --start
+exec dunst
 exec setxkbmap -layout fr -variant oss
 exec xcompmgr
 exec volnoti
