@@ -118,6 +118,7 @@ Plugin 'basepi/vim-conque'
 Plugin 'lekv/vim-clewn'
 Plugin 'LeBarbu/vim-epitech'
 Plugin 'vim-utils/vim-man'
+Plugin 'dag/vim-fish'
 
 " Plugin 'Valloric/YouCompleteMe' <= Won't work without a dot file
 " Plugin 'jeaye/color_coded'      <= Too slow to refresh + same thing as above
@@ -244,6 +245,7 @@ map <C-H> :ClearAllCtrlPCaches<CR>
 " vim-epitech config
 "------------------------------------------------------------------------------
 let g:epi_mode_emacs = 1
+let g:header_update = 0
 
 "------------------------------------------------------------------------------
 " vim-session config
@@ -348,6 +350,8 @@ map ; a;<Esc>
 map ,b hT_
 map ,w t_2l
 map ,c ct_
+
+imap jj <Esc>
 
 "------------------------------------------------------------------------------
 " Window navigation

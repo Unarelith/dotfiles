@@ -38,7 +38,7 @@ infos="$user | $date | $time | $path"
 
 export PS1="\n[$infos]\n $EBGREEN\$ $EWHITE"
 
-# TO_CHANGE: Gogs username
+# TO_CHANGE: Gogs username for bash
 export GOGS_USER=gnidmoo
 
 alias vim="vim --servername 'vim-server-$$'"

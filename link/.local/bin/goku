@@ -1,1 +1,3 @@
-gistfile1.py `find . -name '*.c' -or -name '*.h' -or -name 'Makefile'`
+#!/bin/sh
+
+gistfile1.py $(find . -name '*.c' -or -name '*.h' -or -name 'Makefile')

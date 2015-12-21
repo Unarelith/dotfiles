@@ -20,6 +20,7 @@
 
 # Keep interesting stuff
 !/link/.config/dunst/dunstrc
+!/link/.config/fish/config.fish
 !/link/.config/gtk-3.0/gtk.css
 !/link/.config/gtk-3.0/settings.ini
 !/link/.config/redshift.conf

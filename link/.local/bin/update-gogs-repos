@@ -1,4 +1,11 @@
 #!/bin/bash
+#-------------------------------------------------------------------------------
+# update-gogs-repos
+#  by gnidmoo
+#-------------------------------------------------------------------------------
+# Known issues:
+#  - The script may check the same folder several times
+#-------------------------------------------------------------------------------
 
 # Get .bashrc path
 if [ -e ~/.mybashrc ]
@@ -72,15 +79,28 @@ then
 		fi
 		
 		echo
+	else
+		echo -e "${BRED}Can't check for updates. Curl download failed." $WHITE
 	fi
+else
+	echo -e "${BRED}Can't check for updates. Check your internet connection and check if your script is installed in ~/.local/bin/" $WHITE
 fi
 
 # Add gogs to repositories
-for i in $(find . -maxdepth 1 -type d -print | sed 's/^\.\///')
+for i in $(find . -maxdepth 1 -type d -printf "*%f*\n" | sort)
 do
+	i=$(echo $i | tr '*' '\0')
+	
 	if [ "$i" != "." ]
 	then
+		if [ ! -d "$(pwd)/$i" ]
+		then
+			echo -e "${BRED}This folder doesn't exist: $(pwd)/$i" $WHITE "\n"
+			continue
+		fi
+		
 		cd "$(pwd)/$i"
+		
 		if [ -d .git ] && [ -n "$(git remote -v | grep epitech)" ]
 		then
 			if [ -n "$(git remote -v | grep gogs)" ]
@@ -117,7 +137,9 @@ do
 		else
 			echo -e "$BBLUE$(pwd) is not an Epitech repo" $WHITE
 		fi
+		
 		echo
+		
 		cd ..
 	fi
 done
