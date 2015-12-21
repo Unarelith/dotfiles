@@ -3,9 +3,6 @@
 # update-gogs-repos
 #  by gnidmoo
 #-------------------------------------------------------------------------------
-# Known issues:
-#  - The script may check the same folder several times
-#-------------------------------------------------------------------------------
 
 # Get .bashrc path
 if [ -e ~/.mybashrc ]
@@ -73,6 +70,8 @@ then
 				mkdir -p ~/.local/bin
 				mv /tmp/update-gogs-repos ~/.local/bin/
 				chmod +x ~/.local/bin/update-gogs-repos
+				echo -e "\n${BCYAN}Please restart the script" $WHITE
+				exit 0
 			fi
 		else
 			echo -e "${BCYAN}The script is up-to-date" $WHITE
@@ -87,9 +86,9 @@ else
 fi
 
 # Add gogs to repositories
-for i in $(find . -maxdepth 1 -type d -printf "*%f*\n" | sort)
+for i in $(find . -maxdepth 1 -type d -print | sort | tr ' ' '§')
 do
-	i=$(echo $i | tr '*' '\0')
+	i="$(echo $i | tr '§' ' ')"
 	
 	if [ "$i" != "." ]
 	then
