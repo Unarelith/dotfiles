@@ -38,6 +38,7 @@ if [ -z "$GOGS_USER" ]
 then
 	echo -ne "${BCYAN}Please enter your Gogs username:" $WHITE
 	read gogs_username
+	gogs_username=$(echo -n $gogs_username | tr '[:upper:]' '[:lower:]')
 	echo -e "\nexport GOGS_USER=$gogs_username\n" >> $BASHRC_PATH
 	export GOGS_USER=$gogs_username
 	echo
