@@ -55,7 +55,7 @@ then
 	then
 		if [ -n "$(diff ~/.local/bin/update-gogs-repos /tmp/update-gogs-repos)" ]
 		then
-			echo -ne "${BCYAN}A new version was downloaded. Show diff? [y/N] " $WHITE
+			echo -ne "${BCYAN}A new version was downloaded. Show diff? [y/N]" $WHITE
 			read answer
 
 			if [ "$answer" == "y" ]
@@ -63,7 +63,7 @@ then
 				diff ~/.local/bin/update-gogs-repos /tmp/update-gogs-repos
 			fi
 
-			echo -ne "${BCYAN}Install the new version? [y/N] " $WHITE
+			echo -ne "${BCYAN}Install the new version? [y/N]" $WHITE
 			read answer
 
 			if [ "$answer" == "y" ]
@@ -87,7 +87,8 @@ else
 fi
 
 # Add gogs to repositories
-for i in $(find . -maxdepth 1 -type d -print | sort | tr ' ' '§')
+base_folder="$(pwd)"
+for i in $(find . -type d -print | sort | tr ' ' '§')
 do
 	i="$(echo $i | tr '§' ' ')"
 	
@@ -99,14 +100,19 @@ do
 			continue
 		fi
 		
+		if [ ! -d "$(pwd)/$i/.git" ]
+		then
+			continue
+		fi
+		
 		cd "$(pwd)/$i"
 		
-		if [ -d .git ] && [ -n "$(git remote -v | grep epitech)" ]
+		if [ -n "$(git remote -v | grep epitech)" ]
 		then
 			if [ -n "$(git remote -v | grep gogs)" ]
 			then
 				echo -e "$BBLUE$(pwd) already has a rule for Gogs" $WHITE "\n"
-				cd ..
+				cd "$base_folder"
 				continue
 			fi
 			
@@ -140,6 +146,6 @@ do
 		
 		echo
 		
-		cd ..
+		cd "$base_folder"
 	fi
 done
