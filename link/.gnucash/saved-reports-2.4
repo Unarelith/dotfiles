@@ -1,0 +1,785 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Options for saved report "Rapport 2015/09", based on template "8758ba23984c40dea5527f5f0ca2779e"
+(let ()
+ (define (options-gen)
+  (let ((options (gnc:report-template-new-options/report-guid "8758ba23984c40dea5527f5f0ca2779e" "Profit & Loss")))
+
+; Section: General
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report Title")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Rapport Septembre 2015"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Stylesheet")))
+  ((lambda (option) (if option ((gnc:option-setter option) 'Technicolor))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report name")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Rapport Septembre 2015"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "End Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(absolute 1443564000 . 0)))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Start Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(absolute 1441058400 . 0)))) option))
+
+
+; Section: Accounts
+
+(let ((option (gnc:lookup-option options
+                                 "Accounts"
+                                 "Flatten list to depth limit")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+
+; Section: Display
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Display as a two column report")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Include accounts with zero total balances")))
+  ((lambda (option) (if option ((gnc:option-setter option) #f))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Omit zero balance figures")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Show accounting-style rules")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+
+; Section: Entries
+
+
+; Section: Commodities
+
+  options))
+ (gnc:define-report 
+  'version 1
+  'name "Rapport 2015/09"
+  'report-guid "e25928789659d49e39ef70bc2f751b0a"
+  'parent-type "8758ba23984c40dea5527f5f0ca2779e"
+  'options-generator options-gen
+  'menu-path (list gnc:menuname-custom)
+  'renderer (gnc:report-template-renderer/report-guid "8758ba23984c40dea5527f5f0ca2779e" "Profit & Loss")))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Options for saved report "Rapport 2015/11", based on template "8758ba23984c40dea5527f5f0ca2779e"
+(let ()
+ (define (options-gen)
+  (let ((options (gnc:report-template-new-options/report-guid "8758ba23984c40dea5527f5f0ca2779e" "Profit & Loss")))
+
+; Section: General
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report Title")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Rapport Novembre 2015"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Stylesheet")))
+  ((lambda (option) (if option ((gnc:option-setter option) 'Technicolor))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report name")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Rapport Novembre 2015"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "End Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(absolute 1448838000 . 0)))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Start Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(absolute 1446332400 . 0)))) option))
+
+
+; Section: Accounts
+
+(let ((option (gnc:lookup-option options
+                                 "Accounts"
+                                 "Flatten list to depth limit")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+
+; Section: Display
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Display as a two column report")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Include accounts with zero total balances")))
+  ((lambda (option) (if option ((gnc:option-setter option) #f))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Omit zero balance figures")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Show accounting-style rules")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+
+; Section: Entries
+
+
+; Section: Commodities
+
+  options))
+ (gnc:define-report 
+  'version 1
+  'name "Rapport 2015/11"
+  'report-guid "60943b333acc80d7daae33526002a9e8"
+  'parent-type "8758ba23984c40dea5527f5f0ca2779e"
+  'options-generator options-gen
+  'menu-path (list gnc:menuname-custom)
+  'renderer (gnc:report-template-renderer/report-guid "8758ba23984c40dea5527f5f0ca2779e" "Profit & Loss")))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Options for saved report "Rapport 2016/01", based on template "8758ba23984c40dea5527f5f0ca2779e"
+(let ()
+ (define (options-gen)
+  (let ((options (gnc:report-template-new-options/report-guid "8758ba23984c40dea5527f5f0ca2779e" "Profit & Loss")))
+
+; Section: General
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report Title")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Rapport Janvier 2016"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Stylesheet")))
+  ((lambda (option) (if option ((gnc:option-setter option) 'Technicolor))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report name")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Rapport Janvier 2016"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "End Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(absolute 1454194800 . 0)))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Start Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(absolute 1451602800 . 0)))) option))
+
+
+; Section: Accounts
+
+(let ((option (gnc:lookup-option options
+                                 "Accounts"
+                                 "Flatten list to depth limit")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+
+; Section: Display
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Display as a two column report")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Include accounts with zero total balances")))
+  ((lambda (option) (if option ((gnc:option-setter option) #f))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Omit zero balance figures")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Show accounting-style rules")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+
+; Section: Entries
+
+
+; Section: Commodities
+
+  options))
+ (gnc:define-report 
+  'version 1
+  'name "Rapport 2016/01"
+  'report-guid "b4cdb0227487817aa749abf322e6b0fe"
+  'parent-type "8758ba23984c40dea5527f5f0ca2779e"
+  'options-generator options-gen
+  'menu-path (list gnc:menuname-custom)
+  'renderer (gnc:report-template-renderer/report-guid "8758ba23984c40dea5527f5f0ca2779e" "Profit & Loss")))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Options for saved report "Rapport 2015/06", based on template "8758ba23984c40dea5527f5f0ca2779e"
+(let ()
+ (define (options-gen)
+  (let ((options (gnc:report-template-new-options/report-guid "8758ba23984c40dea5527f5f0ca2779e" "Profit & Loss")))
+
+; Section: General
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report Title")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Rapport Juin 2015"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Stylesheet")))
+  ((lambda (option) (if option ((gnc:option-setter option) 'Technicolor))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report name")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Rapport Juin 2015"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "End Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(absolute 1435701600 . 0)))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Start Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(absolute 1433109600 . 0)))) option))
+
+
+; Section: Accounts
+
+(let ((option (gnc:lookup-option options
+                                 "Accounts"
+                                 "Flatten list to depth limit")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+
+; Section: Display
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Display as a two column report")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Include accounts with zero total balances")))
+  ((lambda (option) (if option ((gnc:option-setter option) #f))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Omit zero balance figures")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Show accounting-style rules")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+
+; Section: Entries
+
+
+; Section: Commodities
+
+  options))
+ (gnc:define-report 
+  'version 1
+  'name "Rapport 2015/06"
+  'report-guid "cc3b83fa852214e55605720dabb5e794"
+  'parent-type "8758ba23984c40dea5527f5f0ca2779e"
+  'options-generator options-gen
+  'menu-path (list gnc:menuname-custom)
+  'renderer (gnc:report-template-renderer/report-guid "8758ba23984c40dea5527f5f0ca2779e" "Profit & Loss")))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Options for saved report "Rapport 2015/10", based on template "8758ba23984c40dea5527f5f0ca2779e"
+(let ()
+ (define (options-gen)
+  (let ((options (gnc:report-template-new-options/report-guid "8758ba23984c40dea5527f5f0ca2779e" "Profit & Loss")))
+
+; Section: General
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report Title")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Rapport Octobre 2015"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Stylesheet")))
+  ((lambda (option) (if option ((gnc:option-setter option) 'Technicolor))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report name")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Rapport Octobre 2015"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "End Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(absolute 1446246000 . 0)))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Start Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(absolute 1443650400 . 0)))) option))
+
+
+; Section: Accounts
+
+(let ((option (gnc:lookup-option options
+                                 "Accounts"
+                                 "Flatten list to depth limit")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+
+; Section: Display
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Display as a two column report")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Include accounts with zero total balances")))
+  ((lambda (option) (if option ((gnc:option-setter option) #f))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Omit zero balance figures")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Show accounting-style rules")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+
+; Section: Entries
+
+
+; Section: Commodities
+
+  options))
+ (gnc:define-report 
+  'version 1
+  'name "Rapport 2015/10"
+  'report-guid "47fef5c4aed5920055869cf4a080ae09"
+  'parent-type "8758ba23984c40dea5527f5f0ca2779e"
+  'options-generator options-gen
+  'menu-path (list gnc:menuname-custom)
+  'renderer (gnc:report-template-renderer/report-guid "8758ba23984c40dea5527f5f0ca2779e" "Profit & Loss")))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Options for saved report "Rapport 2015/08", based on template "8758ba23984c40dea5527f5f0ca2779e"
+(let ()
+ (define (options-gen)
+  (let ((options (gnc:report-template-new-options/report-guid "8758ba23984c40dea5527f5f0ca2779e" "Profit & Loss")))
+
+; Section: General
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report Title")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Rapport Juin 2015"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Stylesheet")))
+  ((lambda (option) (if option ((gnc:option-setter option) 'Technicolor))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report name")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Rapport Juin 2015"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "End Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(absolute 1435615200 . 0)))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Start Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(absolute 1433109600 . 0)))) option))
+
+
+; Section: Accounts
+
+(let ((option (gnc:lookup-option options
+                                 "Accounts"
+                                 "Flatten list to depth limit")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+
+; Section: Display
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Display as a two column report")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Include accounts with zero total balances")))
+  ((lambda (option) (if option ((gnc:option-setter option) #f))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Omit zero balance figures")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Show accounting-style rules")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+
+; Section: Entries
+
+
+; Section: Commodities
+
+  options))
+ (gnc:define-report 
+  'version 1
+  'name "Rapport 2015/08"
+  'report-guid "d7b592a2ff62ecb9c532f8dccbe4749b"
+  'parent-type "8758ba23984c40dea5527f5f0ca2779e"
+  'options-generator options-gen
+  'menu-path (list gnc:menuname-custom)
+  'renderer (gnc:report-template-renderer/report-guid "8758ba23984c40dea5527f5f0ca2779e" "Profit & Loss")))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Options for saved report "Rapport 2015/12", based on template "8758ba23984c40dea5527f5f0ca2779e"
+(let ()
+ (define (options-gen)
+  (let ((options (gnc:report-template-new-options/report-guid "8758ba23984c40dea5527f5f0ca2779e" "Profit & Loss")))
+
+; Section: General
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report Title")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Rapport Décembre 2015"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Stylesheet")))
+  ((lambda (option) (if option ((gnc:option-setter option) 'Technicolor))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report name")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Rapport Decembre 2015"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "End Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(absolute 1451516400 . 0)))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Start Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(absolute 1448924400 . 0)))) option))
+
+
+; Section: Accounts
+
+(let ((option (gnc:lookup-option options
+                                 "Accounts"
+                                 "Flatten list to depth limit")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+
+; Section: Display
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Display as a two column report")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Include accounts with zero total balances")))
+  ((lambda (option) (if option ((gnc:option-setter option) #f))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Omit zero balance figures")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Show accounting-style rules")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+
+; Section: Entries
+
+
+; Section: Commodities
+
+  options))
+ (gnc:define-report 
+  'version 1
+  'name "Rapport 2015/12"
+  'report-guid "890f52b2375af8c315544f3505215792"
+  'parent-type "8758ba23984c40dea5527f5f0ca2779e"
+  'options-generator options-gen
+  'menu-path (list gnc:menuname-custom)
+  'renderer (gnc:report-template-renderer/report-guid "8758ba23984c40dea5527f5f0ca2779e" "Profit & Loss")))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Options for saved report "Rapport 2015/05", based on template "8758ba23984c40dea5527f5f0ca2779e"
+(let ()
+ (define (options-gen)
+  (let ((options (gnc:report-template-new-options/report-guid "8758ba23984c40dea5527f5f0ca2779e" "Profit & Loss")))
+
+; Section: General
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report Title")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Rapport Mai 2015"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Stylesheet")))
+  ((lambda (option) (if option ((gnc:option-setter option) 'Technicolor))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report name")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Rapport Mai 2015"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "End Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(absolute 1433023200 . 0)))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Start Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(absolute 1430431200 . 0)))) option))
+
+
+; Section: Accounts
+
+(let ((option (gnc:lookup-option options
+                                 "Accounts"
+                                 "Flatten list to depth limit")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+
+; Section: Display
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Display as a two column report")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Include accounts with zero total balances")))
+  ((lambda (option) (if option ((gnc:option-setter option) #f))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Omit zero balance figures")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Show accounting-style rules")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+
+; Section: Entries
+
+
+; Section: Commodities
+
+  options))
+ (gnc:define-report 
+  'version 1
+  'name "Rapport 2015/05"
+  'report-guid "5ec1075fc13cc35a717c22a113e2adc3"
+  'parent-type "8758ba23984c40dea5527f5f0ca2779e"
+  'options-generator options-gen
+  'menu-path (list gnc:menuname-custom)
+  'renderer (gnc:report-template-renderer/report-guid "8758ba23984c40dea5527f5f0ca2779e" "Profit & Loss")))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Options for saved report "Rapport 2015/07", based on template "8758ba23984c40dea5527f5f0ca2779e"
+(let ()
+ (define (options-gen)
+  (let ((options (gnc:report-template-new-options/report-guid "8758ba23984c40dea5527f5f0ca2779e" "Profit & Loss")))
+
+; Section: General
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report Title")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Rapport Juillet 2015"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Stylesheet")))
+  ((lambda (option) (if option ((gnc:option-setter option) 'Technicolor))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report name")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Rapport Juillet 2015"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "End Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(absolute 1438293600 . 0)))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Start Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(absolute 1435701600 . 0)))) option))
+
+
+; Section: Accounts
+
+(let ((option (gnc:lookup-option options
+                                 "Accounts"
+                                 "Flatten list to depth limit")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+
+; Section: Display
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Display as a two column report")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Include accounts with zero total balances")))
+  ((lambda (option) (if option ((gnc:option-setter option) #f))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Omit zero balance figures")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Show accounting-style rules")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+
+; Section: Entries
+
+
+; Section: Commodities
+
+  options))
+ (gnc:define-report 
+  'version 1
+  'name "Rapport 2015/07"
+  'report-guid "2eea5373d7353f40f6b18f079f310cf5"
+  'parent-type "8758ba23984c40dea5527f5f0ca2779e"
+  'options-generator options-gen
+  'menu-path (list gnc:menuname-custom)
+  'renderer (gnc:report-template-renderer/report-guid "8758ba23984c40dea5527f5f0ca2779e" "Profit & Loss")))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Options for saved report "Rapport 2015/04", based on template "8758ba23984c40dea5527f5f0ca2779e"
+(let ()
+ (define (options-gen)
+  (let ((options (gnc:report-template-new-options/report-guid "8758ba23984c40dea5527f5f0ca2779e" "Profit & Loss")))
+
+; Section: General
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report Title")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Rapport Avril 2015"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Stylesheet")))
+  ((lambda (option) (if option ((gnc:option-setter option) 'Technicolor))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report name")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Rapport Avril 2015"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "End Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(absolute 1430344800 . 0)))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Start Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(absolute 1427839200 . 0)))) option))
+
+
+; Section: Accounts
+
+
+; Section: Display
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Display as a two column report")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Omit zero balance figures")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+
+; Section: Entries
+
+
+; Section: Commodities
+
+  options))
+ (gnc:define-report 
+  'version 1
+  'name "Rapport 2015/04"
+  'report-guid "8ced80fa59b5352db6aa4e3961c39317"
+  'parent-type "8758ba23984c40dea5527f5f0ca2779e"
+  'options-generator options-gen
+  'menu-path (list gnc:menuname-custom)
+  'renderer (gnc:report-template-renderer/report-guid "8758ba23984c40dea5527f5f0ca2779e" "Profit & Loss")))
+

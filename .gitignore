@@ -1,45 +1,47 @@
 # Lots of junk goes in here.
-/caches/
-/backups/
+caches/
+backups/
 
 # Don't commit uninteresting stuff
-/link/.config/*
-/link/.kde4
-/link/.local/bin/kakarot
-/link/.local/bin/pcre-8.34
-/link/.local/bin/cm2*
-/link/.local/bin/cmark.py
-/link/.local/bin/livereload
-/link/.local/bin/sphinx-*
-/link/.local/bin/watchmedo
-/link/.local/lib/python*
-/link/.local/share/*
-/link/.vim/sessions
-/link/.xchat2/scrollback
-/link/.xchat2/xchatlogs
+link/.config/*
+link/.gnucash/*
+link/.kde4
+link/.local/bin/kakarot
+link/.local/bin/pcre-8.34
+link/.local/bin/cm2*
+link/.local/bin/cmark.py
+link/.local/bin/livereload
+link/.local/bin/sphinx-*
+link/.local/bin/watchmedo
+link/.local/lib/python*
+link/.local/share/*
+link/.vim/sessions
+link/.xchat2/scrollback
+link/.xchat2/xchatlogs
 
 # Keep interesting stuff
-!/link/.config/dunst/dunstrc
-!/link/.config/fish/config.fish
-!/link/.config/gtk-3.0/gtk.css
-!/link/.config/gtk-3.0/settings.ini
-!/link/.config/redshift.conf
-!/link/.config/synapse/config.json
-!/link/.local/share/konsole/Linux.colorscheme
-!/link/.local/share/konsole/Shell.profile
-!/link/.local/share/konsole/Terminal.profile
-!/link/.local/share/konsole/WhiteOnBlack.colorscheme
-!/link/.local/share/systemd/user
+!link/.config/dunst/dunstrc
+!link/.config/fish/config.fish
+!link/.config/gtk-3.0/gtk.css
+!link/.config/gtk-3.0/settings.ini
+!link/.config/redshift.conf
+!link/.config/synapse/config.json
+!link/.gnucash/saved-reports-2.4
+!link/.local/share/konsole/Linux.colorscheme
+!link/.local/share/konsole/Shell.profile
+!link/.local/share/konsole/Terminal.profile
+!link/.local/share/konsole/WhiteOnBlack.colorscheme
+!link/.local/share/systemd/user
 
 # Top secret stuff!
-/link/.ssh/authorized_keys
-/link/.ssh/id_*
-/link/.ssh/*.pem
-/link/.ssh/known_hosts
+link/.ssh/authorized_keys
+link/.ssh/id_*
+link/.ssh/*.pem
+link/.ssh/known_hosts
 
 # Don't commit Vim plugins, Vundle will install them.
-/link/.vim/bundle
-/link/.vim/tmp
+link/.vim/bundle
+link/.vim/tmp
 
 # Ignore emacs temporary files
 *~
