@@ -38,7 +38,7 @@ if [ -z "$GOGS_USER" ]
 then
 	echo -ne "${BCYAN}Please enter your Gogs username:" $WHITE
 	read gogs_username
-	gogs_username=$(echo -n $gogs_username | tr '[:upper:]' '[:lower:]')
+	gogs_username=$(echo -n $gogs_username)
 	echo -e "\nexport GOGS_USER=$gogs_username\n" >> $BASHRC_PATH
 	export GOGS_USER=$gogs_username
 	echo
@@ -122,12 +122,12 @@ do
 			git remote set-url --add --push origin git@git.epitech.eu:/${USER}/$(basename "$(pwd)")
 			
 			# Add 'gogs' remote to gogs repos
-			gogs_repo="$(basename "$(pwd)" | tr '[:upper:]' '[:lower:]').git"
+			gogs_repo="$(basename "$(pwd)").git"
 			push_code="$(git push gogs@git.gnidmoo.tk:$GOGS_USER/$gogs_repo master > /dev/null 2>&1 ; echo $?)"
 			if [ $push_code -eq 0 ]
 			then
 				echo -e $BBLUE "[*] Gogs repo found in" "$(pwd)" $WHITE
-				git remote set-url --add --push origin gogs@git.gnidmoo.tk:$GOGS_USER/$(echo $(basename "$(pwd)") | tr '[:upper:]' '[:lower:]').git
+				git remote set-url --add --push origin gogs@git.gnidmoo.tk:$GOGS_USER/$(basename "$(pwd)").git
 				
 				echo -e $BBLUE "[*] Trying to push to 'origin'..." $WHITE
 				push_code="$(git push -u origin master > /dev/null 2>&1 ; echo $?)"
@@ -138,7 +138,7 @@ do
 					echo -e $BRED "[*] Failed. Code: $push_code" $WHITE
 				fi
 			else
-				echo -e $BBLUE "[*] $(pwd) is not a Gogs repo" $WHITE
+				echo -e $BBLUE "[*] $(pwd) is not a Gogs repo or doesn't have any commit" $WHITE
 			fi
 		else
 			echo -e "$BBLUE$(pwd) is not an Epitech repo" $WHITE

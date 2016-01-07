@@ -203,7 +203,7 @@ let g:syntastic_cpp_no_include_search = 1
 let g:syntastic_cpp_no_default_include_dirs = 1
 let g:syntastic_cpp_auto_refresh_includes = 1
 let g:syntastic_cpp_include_dirs = ['.', 'include', 'external', 'external/include', '/usr/include/qt']
-let g:syntastic_cpp_compiler_options = '-std=c++11 -fPIE `find include/* -type d | sed "s/^/-I/"`'
+let g:syntastic_cpp_compiler_options = '-std=c++11 -fPIE `find include/* -type d | sed "s/^/-I/"` `find external/*/{include,external} -type d | sed "s/^/-I/"`'
 "`find /usr/include/qt/* -type d | sed "s/^/-I/"`'
 
 "------------------------------------------------------------------------------
