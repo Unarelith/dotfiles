@@ -23,7 +23,7 @@ fi
 # Trying to download 'colorsrc'
 if [ ! -e ~/.local/lib/colorsrc ] && [ $internet_available -eq 1 ]
 then
-	curl -O http://git.gnidmoo.tk/gnidmoo/dotfiles/raw/master/link/.local/lib/colorsrc > /dev/null 2>&1 && \
+	curl -O https://raw.githubusercontent.com/Quent42340/dotfiles/master/link/.local/lib/colorsrc > /dev/null 2>&1 && \
 	mkdir -p ~/.local/lib && \
 	mv colorsrc ~/.local/lib/
 fi
@@ -51,7 +51,7 @@ if [ -e ~/.local/bin/update-gogs-repos ] && [ $internet_available -eq 1 ]
 then
 	rm -f /tmp/update-gogs-repos
 	
-	if curl -o /tmp/update-gogs-repos -O http://git.gnidmoo.tk/gnidmoo/dotfiles/raw/master/link/.local/bin/update-gogs-repos > /dev/null 2>&1
+	if curl -o /tmp/update-gogs-repos -O https://raw.githubusercontent.com/Quent42340/dotfiles/master/link/.local/bin/update-gogs-repos > /dev/null 2>&1
 	then
 		if [ -n "$(diff ~/.local/bin/update-gogs-repos /tmp/update-gogs-repos)" ]
 		then
