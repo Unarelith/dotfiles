@@ -4,6 +4,9 @@ backups/
 
 # Don't commit uninteresting stuff
 link/.config/*
+link/.config/fish/fish_history
+link/.config/fish/fishd*
+link/.config/gtk-3.0/servers
 link/.gnucash/*
 link/.kde4
 link/.local/bin/kakarot

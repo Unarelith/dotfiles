@@ -246,6 +246,7 @@ map <C-H> :ClearAllCtrlPCaches<CR>
 "------------------------------------------------------------------------------
 let g:epi_mode_emacs = 1
 let g:header_update = 0
+let g:epi_checker_bin = 'goku'
 
 "------------------------------------------------------------------------------
 " vim-session config

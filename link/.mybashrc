@@ -41,8 +41,6 @@ export PS1="\n[$infos]\n $EBGREEN\$ $EWHITE"
 # TO_CHANGE: Gogs username for bash
 export GOGS_USER=gnidmoo
 
-alias vim="vim --servername 'vim-server-$$'"
-
 alias ls="ls --color --group-directories-first -h"
 alias tree="tree -C"
 
