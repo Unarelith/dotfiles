@@ -1,0 +1,66 @@
+#!/bin/bash
+
+HOME="${HOME}"
+
+EXS="/home_blinux/bazin_q/Downloads/Exams/Exercices"
+
+cd ${HOME}
+
+cp $EXS/auteur rendu/
+
+ex_names=($(cat sujet/subject.txt | grep Exercice | awk '{print $4}'))
+ex_first_lines=($(cat sujet/subject.txt | grep '\*\*\*\*\*\*\*\*' -n | cut -d: -f1))
+
+mkdir -p tmp
+
+sed "1,$((${ex_first_lines[0]}-1))$(echo -e "\041")d" sujet/subject.txt > tmp/header.txt
+
+i=0
+while [ $i -le $((${#ex_names} - 1)) ]
+do
+	begin=${ex_first_lines[$i]}
+	
+	if [ $i -eq $((${#ex_names} - 1)) ]
+	then
+		end='$'
+	else
+		end=$((${ex_first_lines[$i+1]}-1))
+	fi
+	
+	sed "$begin,$end$(echo -e "\041")d" sujet/subject.txt > tmp/ex_$(($i+1)).txt
+	sed -i -e 's/\(Exercice \|Exercise \|ex_\)[0-9]*/\1/g' tmp/ex_$(($i+1)).txt
+	
+	ex_found=""
+	if [ -e "$EXS/Working/${ex_names[$i]}" ]
+	then
+		echo "Found working exercise $(($i+1)):" ${ex_names[$i]}
+		ex_found="$EXS/Working/${ex_names[$i]}"
+	elif [ -e "$EXS/Untested/${ex_names[$i]}" ]
+	then
+		echo "Found untested exercise $(($i+1)):" ${ex_names[$i]}
+		ex_found="$EXS/Untested/${ex_names[$i]}"
+	elif [ -e "$EXS/Not working/${ex_names[$i]}" ]
+	then
+		echo "Found not working exercise $(($i+1)):" ${ex_names[$i]}
+		ex_found="$EXS/Not working/${ex_names[$i]}"
+	fi
+	
+	if [ -n "$ex_found" ]
+	then
+		ex_name="ex_$(($i+1))"
+		cp -r "$ex_found" "rendu/$ex_name"
+		
+		subj_diff=$(diff "rendu/$ex_name/subject.txt" "tmp/${ex_name}.txt")
+		if [ -n "$subj_diff" ]
+		then
+			echo "=> Subject differs:"
+			echo "$subj_diff"
+		else
+			echo "=> Same subject."
+		fi
+		
+		echo
+	fi
+	
+	let i++
+done
