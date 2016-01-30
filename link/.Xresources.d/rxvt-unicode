@@ -40,7 +40,7 @@ URxvt.keysym.Meta-Left:			\033[1;3D
 URxvt.keysym.Meta-Right:		\033[1;3C
 
 ! Open a new instance of urxvt with Ctrl+Shift+N
-URxvt.keysym.Control-Shift-N:	urxvt &\n
+URxvt.keysym.Control-Shift-N:	urxvt -e fish &\n
 
 ! Disable scrollback buffer for secondary screen
 URxvt*secondaryScreen: 1

@@ -1,9 +1,10 @@
-defaultpackages='i3-wm i3lock i3status pulseaudio networkmanager git gvim python2 python3 redshift pavucontrol nautilus kdegraphics-kolourpaint chromium rxvt-unicode'
+defaultpackages='i3-wm i3lock i3status pulseaudio networkmanager git gvim python2 python3 redshift pavucontrol nautilus nautilus-open-terminal kdegraphics-kolourpaint chromium rxvt-unicode python-pexpect'
+
 defaultaurpackages='volnoti dropbox nautilus-dropbox'
 
 systemdservices='NetworkManager'
 
-echo -n "Do you want to install yaourt? [y/N] "
+echo -ne "$BOLD:: Do you want to install yaourt? [y/N]" $WHITE
 
 read answer
 
@@ -24,9 +25,9 @@ fi
 
 echo
 
-echo -e "Default packages: $defaultpackages\n"
-echo -e "Default AUR packages: $defaultaurpackages\n"
-echo -n "Do you want to install them? [y/N] "
+echo -e "${BOLD}Default packages: $WHITE$defaultpackages\n"
+echo -e "${BOLD}Default AUR packages: $WHITE$defaultaurpackages\n"
+echo -ne "${BOLD}:: Do you want to install them? [y/N]" $WHITE
 
 read answer
 
@@ -37,8 +38,8 @@ fi
 
 echo
 
-echo -e "Systemd services: $systemdservices\n"
-echo -n "Do you want to enable them? [y/N] "
+echo -e "${BOLD}Systemd services: $WHITE$systemdservices\n"
+echo -ne "${BOLD}:: Do you want to enable them? [y/N]" $WHITE
 
 read answer
 

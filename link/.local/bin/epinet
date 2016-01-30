@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ping -w 2 8.8.8.8 || systemctl restart NetworkManager
