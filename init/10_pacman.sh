@@ -1,8 +1,8 @@
-defaultpackages='i3-wm i3lock i3status pulseaudio networkmanager git gvim python2 python3 redshift pavucontrol nautilus nautilus-open-terminal kdegraphics-kolourpaint chromium rxvt-unicode python-pexpect'
+defaultpackages='i3-wm i3lock i3status pulseaudio pulseaudio-alsa pavucontrol networkmanager git gvim python2 python3 redshift pavucontrol nautilus nautilus-open-terminal kdegraphics-kolourpaint chromium rxvt-unicode python-pexpect cronie volumeicon'
 
 defaultaurpackages='volnoti dropbox nautilus-dropbox'
 
-systemdservices='NetworkManager'
+systemdservices='NetworkManager cronie'
 
 echo -ne "$BOLD:: Do you want to install yaourt? [y/N]" $WHITE
 
