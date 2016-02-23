@@ -87,9 +87,18 @@ fish_vi_mode
 
 sh ~/.local/lib/colorsrc
 
-begin; set -l IFS; set cat_todo (cat ~/TODO); end;
+begin
+	set -l IFS
+	set cat_todo (cat ~/TODO)
+	set cat_deadlines (cat ~/rendu/deadlines)
+end
+
 if [ -f ~/TODO ]; and [ -n $cat_todo ]
 	echo "You have pending tasks, type 'cat ~/TODO' to see them."
+end
+
+if [ -f ~/rendu/deadlines ]; and [ -n $cat_deadlines ]
+	echo "You have projects to do, type 'cat ~/rendu/deadlines' to see them."
 end
 
 # Remove Ctrl-S terminal handling
@@ -185,3 +194,4 @@ function fish_prompt
 	echo -n ' $ '
 	set_color normal
 end
+

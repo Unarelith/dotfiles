@@ -119,8 +119,6 @@ Plugin 'lekv/vim-clewn'
 Plugin 'LeBarbu/vim-epitech'
 Plugin 'vim-utils/vim-man'
 Plugin 'dag/vim-fish'
-Plugin 'kana/vim-operator-user'
-Plugin 'haya14busa/vim-operator-flashy'
 
 " Plugin 'Valloric/YouCompleteMe' <= Won't work without a dot file
 " Plugin 'jeaye/color_coded'      <= Too slow to refresh + same thing as above
@@ -159,12 +157,6 @@ let g:clang_auto = 0
 let g:clang_c_options   = '-std=gnu11'
 let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
 let g:clang_load_if_clang_dotfile = 1
-
-"------------------------------------------------------------------------------
-" vim-operator-flashy config
-"------------------------------------------------------------------------------
-map y <Plug>(operator-flashy)
-nmap Y <Plug>(operator-flashy)$
 
 "------------------------------------------------------------------------------
 " vim-altr config

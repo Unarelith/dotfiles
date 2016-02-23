@@ -116,10 +116,12 @@ do
 				continue
 			fi
 			
+			old_origin="$(git remote -v | grep epitech | grep push | awk '{print $2}')"
+			
 			echo -e "$BCYAN=> Trying to add 'gogs' remote in $(basename "$(pwd)")..." $WHITE
 			git remote remove origin
-			git remote add origin git@git.epitech.eu:/${USER}/$(basename "$(pwd)")
-			git remote set-url --add --push origin git@git.epitech.eu:/${USER}/$(basename "$(pwd)")
+			git remote add origin "$old_origin"
+			git remote set-url --add --push origin "$old_origin"
 			
 			# Add 'gogs' remote to gogs repos
 			gogs_repo="$(basename "$(pwd)").git"
