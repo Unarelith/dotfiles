@@ -2,7 +2,10 @@
 
 base_dir="/home/${USER}/rendu"
 
-[ "$1" == "-nocheat" ] && notify-send -u normal -t 5000 "check-current-projects.sh" "Mode -nocheat enabled for goku."
+if [ "$1" == "-nocheat" ]
+then
+	notify-send -u normal -t 5000 "check-current-projects.sh" "Mode -nocheat enabled for goku."
+fi
 
 for project in $(cat "$base_dir/current")
 do

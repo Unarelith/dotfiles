@@ -42,3 +42,4 @@ xterm*color15: #eeeeec
 emacs*ReverseVideo:		on
 
 #include ".Xresources.d/rxvt-unicode"
+#include ".Xresources.d/rxvt-unicode-colors"
