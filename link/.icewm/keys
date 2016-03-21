@@ -17,7 +17,7 @@ key "Alt+Ctrl+g"           gimp
 key "Super+l"              xscreensaver-command -lock
 key "Super+x"              xscreensaver-command -lock
 key "Super+d"		   synapse
-key "Super+Enter"          xterm
+key "Super+Enter"          urxvt -e fish
 
 key "Print"                xfce4-screenshooter -fs /home/bazin_q/Images/Screenshots
 

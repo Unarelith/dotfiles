@@ -6,7 +6,7 @@
 #------------------------------------------------------------------------------
 set -x EDITOR vim
 
-set -x PATH $PATH /usr/local/bin /opt/bin
+set -x PATH $PATH /usr/local/bin /opt/bin /opt/android-sdk/tools /opt/android-sdk/build-tools/23.0.2
 set -x PATH $PATH /home/$USER/.local/bin /home/$USER/.dotfiles/bin /home/$USER/.gem/ruby/2.2.0/bin
 set -x PATH $PATH /home/$USER/.steam/steam/steamapps/common/oO
 
@@ -16,6 +16,16 @@ set -x GOPATH /home/$USER/.go
 set -x GOGS_USER gnidmoo
 
 set -x LD_LIBRARY_PATH /home/$USER/.froot/lib
+
+# Colored man pages
+set -x LESS -r
+set -xU LESS_TERMCAP_mb (printf "\e[01;31m")       # begin blinking
+set -xU LESS_TERMCAP_md (printf "\e[01;38;5;74m")  # begin bold
+set -xU LESS_TERMCAP_me (printf "\e[0m")           # end mode
+set -xU LESS_TERMCAP_se (printf "\e[0m")           # end standout-mode
+set -xU LESS_TERMCAP_so (printf "\e[38;5;246m")    # begin standout-mode - info box
+set -xU LESS_TERMCAP_ue (printf "\e[0m")           # end underline
+set -xU LESS_TERMCAP_us (printf "\e[04;38;5;146m") # begin underline
 
 #------------------------------------------------------------------------------
 # Aliases

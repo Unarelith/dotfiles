@@ -18,7 +18,7 @@ link/.local/bin/sphinx-*
 link/.local/bin/watchmedo
 link/.local/lib/python*
 link/.local/share/*
-link/.vim/sessions
+link/.vim/.netrwhist
 link/.xchat2/scrollback
 link/.xchat2/xchatlogs
 link/Images/Screenshots

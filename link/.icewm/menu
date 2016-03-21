@@ -4,7 +4,7 @@
 # since modifications to this file will be discarded when you
 # (re)install icewm.
 #
-prog xterm xterm xterm
+prog xterm xterm urxvt -e fish
 prog rxvt xterm rxvt -bg black -cr green -fg white -C -fn 9x15 -sl 500
 prog fte fte fte
 prog NEdit nedit nedit

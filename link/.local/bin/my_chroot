@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [ -z $1 ] || [ -z $2 ]
+then
+	echo "Usage: $0 partition mount_point [home_partition]"
+	exit
+fi
+
+mount $1 $2 && \
+mount --bind /dev $2/dev && \
+mount --bind /proc $2/proc && \
+mount --bind /sys $2/sys
+
+if [ -n $3 ]
+then
+	mount $3 $2/home
+fi
+
+chroot $2
+
+umount -R $2

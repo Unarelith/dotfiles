@@ -33,10 +33,10 @@ $-------------------------------------------------------------------------
 #endif
 $-------------------------------------------------------------------------
 == preprocessor.ifndef-def-endif ==
-#ifndef |?BASENAME:L|_HPP_
-#define |BASENAME|_HPP_
+#ifndef |?BASENAME:L|_H_
+# define |BASENAME|_H_
 <CURSOR><SPLIT>
-#endif // |BASENAME|_HPP_
+#endif /* !|BASENAME|_H_ */
 $-------------------------------------------------------------------------
 == preprocessor.error ==
 #error "<CURSOR>"

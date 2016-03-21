@@ -13,21 +13,29 @@ ex_first_lines=($(cat sujet/subject.txt | grep '\*\*\*\*\*\*\*\*' -n | cut -d: -
 
 mkdir -p tmp
 
+# echo "sed 1,$((${ex_first_lines[0]}-1))$(echo -e "\041")d sujet/subject.txt > tmp/header.txt"
 sed "1,$((${ex_first_lines[0]}-1))$(echo -e "\041")d" sujet/subject.txt > tmp/header.txt
 
 i=0
-while [ $i -le $((${#ex_names} - 1)) ]
+while [ $i -le $((${#ex_first_lines})) ]
 do
+	# echo "Size: " ${#ex_names}
+	# echo "Size: " ${#ex_first_lines}
+	
 	begin=${ex_first_lines[$i]}
 	
-	if [ $i -eq $((${#ex_names} - 1)) ]
+	if [ $i -eq $((${#ex_first_lines})) ]
 	then
 		end='$'
 	else
 		end=$((${ex_first_lines[$i+1]}-1))
 	fi
 	
+	[ "$end" == "-1" ] && end='$'
+	
+	# echo "sed '$begin,$end$(echo -e "\041")d' sujet/subject.txt > tmp/ex_$(($i+1)).txt"
 	sed "$begin,$end$(echo -e "\041")d" sujet/subject.txt > tmp/ex_$(($i+1)).txt
+	# echo "sed -i -e 's/\(Exercice \|Exercise \|ex_\)[0-9]*/\1/g' tmp/ex_$(($i+1)).txt"
 	sed -i -e 's/\(Exercice \|Exercise \|ex_\)[0-9]*/\1/g' tmp/ex_$(($i+1)).txt
 	
 	ex_found=""
@@ -43,6 +51,8 @@ do
 	then
 		echo "Found not working exercise $(($i+1)):" ${ex_names[$i]}
 		ex_found="$EXS/Not working/${ex_names[$i]}"
+	else
+		echo "Exercice $(($i+1)) not found."
 	fi
 	
 	if [ -n "$ex_found" ]
