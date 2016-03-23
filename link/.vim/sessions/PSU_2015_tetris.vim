@@ -1,6 +1,6 @@
-" /blinux_home/bazin_q/.dotfiles/link/.vim/sessions/PSU_2015_tetris.vim:
+" ~/.dotfiles/link/.vim/sessions/PSU_2015_tetris.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 20 mars 2016 at 23:26:10.
+" Created by session.vim 2.13.1 on 21 mars 2016 at 12:01:12.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT

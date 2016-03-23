@@ -1,6 +1,6 @@
-" /home/bazin_q/.dotfiles/link/.vim/sessions/libmy_printf.vim:
+" ~/.dotfiles/link/.vim/sessions/libmy_printf.vim:
 " Vim session script.
-" Created by session.vim 2.13 on 29 novembre 2015 at 21:50:02.
+" Created by session.vim 2.13.1 on 23 mars 2016 at 12:03:11.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -19,7 +19,7 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /home/bazin_q/rendu/libmy_printf
+cd ~/rendu/MyLibs/libmy_printf
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -29,10 +29,10 @@ badd +60 source/my_printf.c
 badd +117 ~/.vimrc
 badd +14 include/my.h
 badd +14 lib/my_strlen.c
-badd +17 include/my_printf.h
+badd +30 include/my_printf.h
 badd +1 lib/my_strstr.c
 badd +19 lib/my_char_in_str.c
-badd +37 source/my_printf_print_funcs.c
+badd +26 source/my_printf_print_funcs.c
 badd +14 lib/my_putnbr_base.c
 badd +1 bash\ -\ 1
 badd +1 tests/tests-my_printf.c
@@ -45,13 +45,13 @@ badd +14 lib/my_int_len.c
 badd +1 lib/my_abs.c
 badd +1 /usr/include/stdint.h
 badd +1 lib/my_putchar.c
-badd +1 /home/bazin_q/rendu/PSU_2015_printf_bootstrap/sum_stdarg.c
+badd +1 ~/rendu/PSU_2015_printf_bootstrap/sum_stdarg.c
 badd +2 Notes
 badd +14 lib/my_putstr.c
 badd +6 lib/my.h
 badd +1 source/my_printf_putunbr.c
 badd +14 source/my_printf_putnbr.c
-badd +0 source/my_printf_print_wrappers.c
+badd +1 source/my_printf_print_wrappers.c
 argglobal
 silent! argdel *
 argadd source/my_printf.c
@@ -78,8 +78,8 @@ exe s:l
 normal! zt
 2
 normal! 0
-lcd /home/bazin_q/rendu/libmy_printf
-tabedit /home/bazin_q/rendu/libmy_printf/Makefile
+lcd ~/rendu/MyLibs/libmy_printf
+tabedit ~/rendu/MyLibs/libmy_printf/Makefile
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -100,9 +100,9 @@ if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 54
-normal! 012|
-lcd /home/bazin_q/rendu/libmy_printf
-tabedit /home/bazin_q/rendu/libmy_printf/include/my_printf.h
+normal! 0
+lcd ~/rendu/MyLibs/libmy_printf
+tabedit ~/rendu/MyLibs/libmy_printf/include/my_printf.h
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -124,16 +124,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 17 - ((16 * winheight(0) + 27) / 54)
+let s:l = 42 - ((41 * winheight(0) + 27) / 54)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-17
-normal! 0
-lcd /home/bazin_q/rendu/libmy_printf
+42
+normal! 071|
+lcd ~/rendu/MyLibs/libmy_printf
 wincmd w
 argglobal
-edit /home/bazin_q/rendu/libmy_printf/source/my_printf.c
+edit ~/rendu/MyLibs/libmy_printf/source/my_printf.c
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -143,17 +143,17 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 54 - ((53 * winheight(0) + 27) / 54)
+let s:l = 50 - ((34 * winheight(0) + 27) / 54)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-54
-normal! 020|
-lcd /home/bazin_q/rendu/libmy_printf
+50
+normal! 035|
+lcd ~/rendu/MyLibs/libmy_printf
 wincmd w
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
 exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit /home/bazin_q/rendu/libmy_printf/source/my_printf_print_funcs.c
+tabedit ~/rendu/MyLibs/libmy_printf/source/my_printf_print_funcs.c
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -175,16 +175,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 39 - ((0 * winheight(0) + 27) / 54)
+let s:l = 21 - ((12 * winheight(0) + 27) / 54)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-39
-normal! 069|
-lcd /home/bazin_q/rendu/libmy_printf
+21
+normal! 057|
+lcd ~/rendu/MyLibs/libmy_printf
 wincmd w
 argglobal
-edit /home/bazin_q/rendu/libmy_printf/source/my_printf_print_wrappers.c
+edit ~/rendu/MyLibs/libmy_printf/source/my_printf_print_wrappers.c
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -194,18 +194,17 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 49 - ((0 * winheight(0) + 27) / 54)
+let s:l = 59 - ((40 * winheight(0) + 27) / 54)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-49
-normal! 0
-lcd /home/bazin_q/rendu/libmy_printf
+59
+normal! 017|
+lcd ~/rendu/MyLibs/libmy_printf
 wincmd w
-2wincmd w
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
 exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit /home/bazin_q/rendu/libmy_printf/tests/tests-my_printf.c
+tabedit ~/rendu/MyLibs/libmy_printf/tests/tests-my_printf.c
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -233,10 +232,10 @@ exe s:l
 normal! zt
 26
 normal! 021|
-lcd /home/bazin_q/rendu/libmy_printf
+lcd ~/rendu/MyLibs/libmy_printf
 wincmd w
 argglobal
-edit /home/bazin_q/rendu/libmy_printf/tests/tests-printf.c
+edit ~/rendu/MyLibs/libmy_printf/tests/tests-printf.c
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -252,7 +251,7 @@ exe s:l
 normal! zt
 28
 normal! 0
-lcd /home/bazin_q/rendu/libmy_printf
+lcd ~/rendu/MyLibs/libmy_printf
 wincmd w
 exe 'vert 1resize ' . ((&columns * 103 + 106) / 212)
 exe 'vert 2resize ' . ((&columns * 108 + 106) / 212)
@@ -273,7 +272,7 @@ let &so = s:so_save | let &siso = s:siso_save
 " Everything down here is generated by vim-session (not supported
 " by :mksession out of the box).
 
-2wincmd w
+1wincmd w
 tabnext 4
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))

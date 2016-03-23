@@ -405,7 +405,7 @@ class norme:
         
     def print_error(self, msg, val = -1):
         self.note = self.note + val
-        print("Erreur dans %s a la ligne %s:%s => %s"% (self.the_dir + self.file, self.nb_line, msg, val))
+        print("Erreur dans %s a la ligne %s: %s => %s"% (self.the_dir + self.file, self.nb_line, msg, val))
         if self.printline:
             print(self.line)
 
@@ -545,7 +545,7 @@ def main():
     except NameError:
         print("Usage: norme.py <dir_to_scan>")
     if moulin.score:
-        print(moulin.get_score(), file=sys.stderr)
+        print(moulin.get_score())
 
 if __name__ == "__main__":
     main()
