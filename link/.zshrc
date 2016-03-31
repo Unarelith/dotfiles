@@ -124,7 +124,6 @@ clocate() { locate --regex "$1" | grep --color=auto "$1"; }
 # Transparent xterm
 #[ -n "$XTERM_VERSION" ] && transset-df -a >/dev/null
 
-
-export LD_LIBRARY_PATH="/home/bazin_q/.froot/lib/"
-export C_INCLUDE_PATH="/home/bazin_q/.froot/include/"
-export CPLUS_INCLUDE_PATH="/home/bazin_q/.froot/include/"
+export LD_LIBRARY_PATH="/home/$USER/.froot/lib/"
+export C_INCLUDE_PATH="/home/$USER/.froot/include/"
+export CPLUS_INCLUDE_PATH="/home/$USER/.froot/include/"

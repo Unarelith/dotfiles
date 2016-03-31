@@ -1,0 +1,21 @@
+#!/bin/bash
+
+i=1
+
+[ "$1" == "-mv" ] && echo "Moving files..."
+
+for file in *
+do
+	ext="${file##*.}"
+	
+	if [ $i -le 9 ]
+	then
+		[ "$1" == "-mv" ] && mv "$file" "0$i.$ext"
+		echo "'$file' => '0$i.$ext'"
+	else
+		[ "$1" == "-mv" ] && mv "$file" "$i.$ext"
+		echo "'$file' => '$i.$ext'"
+	fi
+	
+	let i++
+done

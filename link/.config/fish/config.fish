@@ -88,6 +88,10 @@ function viewserver
 	vinagre --vnc-scale --fullscreen 192.168.0.20:5900
 end
 
+function weather
+	curl wttr.in/lyon
+end
+
 #------------------------------------------------------------------------------
 # Misc
 #------------------------------------------------------------------------------
@@ -99,15 +103,15 @@ sh ~/.local/lib/colorsrc
 
 begin
 	set -l IFS
-	set cat_todo (cat ~/TODO)
-	set cat_deadlines (cat ~/rendu/deadlines)
+	[ -f ~/TODO ]; and set cat_todo (cat ~/TODO)
+	[ -f ~/rendu/deadlines ]; and set cat_deadlines (cat ~/rendu/deadlines)
 end
 
-if [ -f ~/TODO ]; and [ -n $cat_todo ]
+if [ -n $cat_todo ]
 	echo "You have pending tasks, type 'cat ~/TODO' to see them."
 end
 
-if [ -f ~/rendu/deadlines ]; and [ -n $cat_deadlines ]
+if [ -n $cat_deadlines ]
 	echo "You have projects to do, type 'cat ~/rendu/deadlines' to see them."
 end
 

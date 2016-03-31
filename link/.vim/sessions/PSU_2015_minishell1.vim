@@ -1,6 +1,6 @@
-" /blinux_home/bazin_q/.dotfiles/link/.vim/sessions/PSU_2015_minishell1.vim:
+" ~/.dotfiles/link/.vim/sessions/PSU_2015_minishell1.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 17 mars 2016 at 14:38:50.
+" Created by session.vim 2.13.1 on 26 mars 2016 at 15:24:21.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -168,12 +168,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 35 - ((33 * winheight(0) + 27) / 54)
+let s:l = 28 - ((26 * winheight(0) + 27) / 54)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-35
-normal! 059|
+28
+normal! 0
 lcd ~/rendu/PSU/PSU_2015_minishell1
 wincmd w
 argglobal
@@ -187,12 +187,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 105 - ((35 * winheight(0) + 27) / 54)
+let s:l = 57 - ((53 * winheight(0) + 27) / 54)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-105
-normal! 016|
+57
+normal! 0
 lcd ~/rendu/PSU/PSU_2015_minishell1
 wincmd w
 exe 'vert 1resize ' . ((&columns * 103 + 106) / 212)
@@ -238,11 +238,11 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 20 - ((17 * winheight(0) + 27) / 54)
+let s:l = 11 - ((8 * winheight(0) + 27) / 54)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-20
+11
 normal! 0
 lcd ~/rendu/PSU/PSU_2015_minishell1
 wincmd w
@@ -270,12 +270,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 14 - ((13 * winheight(0) + 27) / 54)
+let s:l = 1 - ((0 * winheight(0) + 27) / 54)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-14
-normal! 034|
+1
+normal! 0
 lcd ~/rendu/PSU/PSU_2015_minishell1
 wincmd w
 argglobal
@@ -289,62 +289,11 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 49 - ((32 * winheight(0) + 27) / 54)
+let s:l = 1 - ((0 * winheight(0) + 27) / 54)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-49
-normal! 033|
-lcd ~/rendu/PSU/PSU_2015_minishell1
-wincmd w
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit ~/rendu/PSU/PSU_2015_minishell1/include/env.h
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 25 - ((24 * winheight(0) + 27) / 54)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-25
-normal! 043|
-lcd ~/rendu/PSU/PSU_2015_minishell1
-wincmd w
-argglobal
-edit ~/rendu/PSU/PSU_2015_minishell1/source/env.c
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 54 - ((23 * winheight(0) + 27) / 54)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-54
+1
 normal! 0
 lcd ~/rendu/PSU/PSU_2015_minishell1
 wincmd w
@@ -372,12 +321,63 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 31 - ((30 * winheight(0) + 27) / 54)
+let s:l = 12 - ((11 * winheight(0) + 27) / 54)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-31
-normal! 032|
+12
+normal! 0
+lcd ~/rendu/PSU/PSU_2015_minishell1
+wincmd w
+argglobal
+edit ~/rendu/PSU/PSU_2015_minishell1/source/env.c
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 11 - ((10 * winheight(0) + 27) / 54)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+11
+normal! 0
+lcd ~/rendu/PSU/PSU_2015_minishell1
+wincmd w
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+tabedit ~/rendu/PSU/PSU_2015_minishell1/include/env.h
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 23 - ((22 * winheight(0) + 27) / 54)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+23
+normal! 0
 lcd ~/rendu/PSU/PSU_2015_minishell1
 wincmd w
 argglobal
@@ -391,12 +391,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 60 - ((18 * winheight(0) + 27) / 54)
+let s:l = 16 - ((0 * winheight(0) + 27) / 54)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-60
-normal! 047|
+16
+normal! 0
 lcd ~/rendu/PSU/PSU_2015_minishell1
 wincmd w
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
@@ -423,12 +423,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 23 - ((21 * winheight(0) + 27) / 54)
+let s:l = 12 - ((10 * winheight(0) + 27) / 54)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-23
-normal! 028|
+12
+normal! 0
 lcd ~/rendu/PSU/PSU_2015_minishell1
 wincmd w
 argglobal
@@ -442,12 +442,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 76 - ((42 * winheight(0) + 27) / 54)
+let s:l = 1 - ((0 * winheight(0) + 27) / 54)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-76
-normal! 020|
+1
+normal! 0
 lcd ~/rendu/PSU/PSU_2015_minishell1
 wincmd w
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
@@ -474,11 +474,11 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 19 - ((18 * winheight(0) + 27) / 54)
+let s:l = 46 - ((42 * winheight(0) + 27) / 54)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-19
+46
 normal! 05|
 lcd ~/rendu/PSU/PSU_2015_minishell1
 wincmd w
@@ -493,17 +493,17 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 49 - ((24 * winheight(0) + 27) / 54)
+let s:l = 61 - ((48 * winheight(0) + 27) / 54)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-49
-normal! 039|
+61
+normal! 0
 lcd ~/rendu/PSU/PSU_2015_minishell1
 wincmd w
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
 exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabnext 7
+tabnext 4
 set stal=1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -521,7 +521,7 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 1wincmd w
-tabnext 7
+tabnext 4
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

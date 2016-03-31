@@ -13,12 +13,14 @@ link/.local/bin/kakarot
 link/.local/bin/pcre-8.34
 link/.local/bin/cm2*
 link/.local/bin/cmark.py
+link/.local/bin/ld.gold
 link/.local/bin/livereload
 link/.local/bin/sphinx-*
 link/.local/bin/watchmedo
 link/.local/lib/python*
 link/.local/share/*
 link/.vim/.netrwhist
+link/.vim/sessions/*.lock
 link/.xchat2/scrollback
 link/.xchat2/xchatlogs
 link/Images/Screenshots

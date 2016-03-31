@@ -6,6 +6,10 @@
 [push]
 	default = simple
 [alias]
+	cd = "!d=\"$(LANG=\"C\" date -d \"$1\")\" && shift && \
+		git diff-index --cached --quiet HEAD --ignore-submodules -- && \
+		GIT_COMMITTER_DATE=\"$d\" git commit --amend -C HEAD --date \"$d\"" \
+		|| echo >&2 "error: date change failed: index not clean!"
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	ls = ls-tree --name-only HEAD
