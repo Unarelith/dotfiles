@@ -119,6 +119,7 @@ Plugin 'lekv/vim-clewn'
 Plugin 'LeBarbu/vim-epitech'
 Plugin 'vim-utils/vim-man'
 Plugin 'dag/vim-fish'
+Plugin 'wakatime/vim-wakatime'
 
 " Plugin 'Valloric/YouCompleteMe' <= Won't work without a dot file
 " Plugin 'jeaye/color_coded'      <= Too slow to refresh + same thing as above
@@ -219,7 +220,7 @@ nmap <S-Down> :call altr#forward()<CR>zz
 "------------------------------------------------------------------------------
 " Shell mapping
 "------------------------------------------------------------------------------
-nmap <C-T> :ConqueTerm bash<CR>
+" nmap <C-T> :ConqueTerm bash<CR>
 
 "------------------------------------------------------------------------------
 " Shell mapping
@@ -353,6 +354,17 @@ map ,c ct_
 map ,sf mu[[Vi}
 
 imap jj <Esc>
+
+nmap <C-m> :noh<CR>
+imap <C-m> <Esc>:noh<CR>a
+
+"" Vmap for maintain Visual Mode after shifting > and <
+vmap < <gv
+vmap > >gv
+
+"" Move visual block
+vnoremap <C-J> :m '>+1<CR>gv=gv
+vnoremap <C-K> :m '<-2<CR>gv=gv
 
 "------------------------------------------------------------------------------
 " Window navigation

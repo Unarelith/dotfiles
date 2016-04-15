@@ -92,28 +92,35 @@ function weather
 	curl wttr.in/lyon
 end
 
+function deadlines
+	cal -3
+	cat ~/rendu/deadlines
+end
+
 #------------------------------------------------------------------------------
 # Misc
 #------------------------------------------------------------------------------
 set fish_greeting
 
-fish_vi_mode
+# fish_vi_mode
 
 sh ~/.local/lib/colorsrc
 
-begin
-	set -l IFS
-	[ -f ~/TODO ]; and set cat_todo (cat ~/TODO)
-	[ -f ~/rendu/deadlines ]; and set cat_deadlines (cat ~/rendu/deadlines)
-end
+# begin
+# 	set -l IFS
+# 	[ -f ~/TODO ]; and set cat_todo (cat ~/TODO)
+# 	[ -f ~/rendu/deadlines ]; and set cat_deadlines (cat ~/rendu/deadlines)
+# end
+#
+# if [ -n $cat_todo ]
+# 	echo "You have pending tasks, type 'cat ~/TODO' to see them."
+# end
+#
+# if [ -n $cat_deadlines ]
+# 	echo "You have projects to do, type 'cat ~/rendu/deadlines' to see them."
+# end
 
-if [ -n $cat_todo ]
-	echo "You have pending tasks, type 'cat ~/TODO' to see them."
-end
-
-if [ -n $cat_deadlines ]
-	echo "You have projects to do, type 'cat ~/rendu/deadlines' to see them."
-end
+[ -f ~/TODO ]; and echo "You have pending tasks, type 'cat ~/TODO' to see them."
 
 # Remove Ctrl-S terminal handling
 stty -ixon

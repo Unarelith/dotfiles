@@ -9,6 +9,7 @@ CPE/CPE_2015_BSQ | git@git.epitech.eu:/bazin_q/CPE_2015_BSQ
 CPE/CPE_2015_BSQ_bootstrap | git@git.epitech.eu:/bazin_q/CPE_2015_BSQ_bootstrap
 CPE/CPE_2015_corewar | git@git.epitech.eu:/grange_c/CPE_2015_corewar
 CPE/CPE_2015_getnextline | git@git.epitech.eu:/bazin_q/CPE_2015_getnextline
+CPE/CPE_2015_lemin | git@git.epitech.eu:/audet_b/CPE_2015_lemin
 CPE/CPE_2015_Pushswap | git@git.epitech.eu:/bazin_q/CPE_2015_Pushswap
 
 # B1 - Expression Écrite
@@ -27,6 +28,9 @@ Infographie/gfx_fdf2 | git@git.epitech.eu:/bazin_q/gfx_fdf2
 Infographie/gfx_incendie | git@git.epitech.eu:/bazin_q/gfx_incendie
 Infographie/gfx_tekdoom | git@git.epitech.eu:/grange_c/gfx_tekdoom
 Infographie/gfx_wolf3d | git@git.epitech.eu:/bazin_q/gfx_wolf3d
+
+# B2 - Initiation IA
+IA/dante | git@git.epitech.eu:/bazin_q/dante
 
 # B1 - Mathématiques
 Maths/101pong | git@git.epitech.eu:/bazin_q/101pong

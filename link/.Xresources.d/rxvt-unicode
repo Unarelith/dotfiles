@@ -2,23 +2,27 @@
 ! urxvt configuration
 !-----------------------------------------------------------------------------
 ! Disable scroll bar
-URxvt*scrollBar:          false
+URxvt*scrollBar:				false
 
 ! Do not scroll with output
-URxvt*scrollTtyOutput:    false
+URxvt*scrollTtyOutput:			false
 
 ! Scroll in relation to buffer (with mouse scroll or Shift+Page Up)
-URxvt*scrollWithBuffer:   true
+URxvt*scrollWithBuffer:			true
 
 ! Scroll back to the bottom on keypress
-URxvt*scrollTtyKeypress:  true
+URxvt*scrollTtyKeypress:		true
 
 ! Setup font
-URxvt.font:               xft:monospace:size=11
+URxvt*font:						xft:monospace:size=11
+
+! Change transparency
+URxvt.keysym.Control-t:			command:\033]11;[70]#000\007
+URxvt.keysym.Control-M-t:		command:\033]11;#000\007
 
 ! Disable Keycap Picture insert mode
-URxvt.iso14755:			false
-URxvt.iso14755_52:		false
+URxvt.iso14755:					false
+URxvt.iso14755_52:				false
 
 ! Send Ctrl+arrows and Meta+arrows xterm-like keycodes to make vim recognize them
 URxvt.keysym.Control-Up:		\033[1;5A
