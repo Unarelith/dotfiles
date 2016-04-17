@@ -2,6 +2,10 @@
 
 while [ 1 ]
 do
-	ping -w 5 8.8.8.8 || systemctl restart NetworkManager
 	sleep 2
+	
+	if [ -n "$(ifconfig | grep inet | grep broadcast | grep netmask)" ]
+	then
+		ping -w 10 8.8.8.8 || systemctl restart NetworkManager
+	fi
 done
