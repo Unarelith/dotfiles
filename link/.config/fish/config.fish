@@ -2,12 +2,24 @@
 # fish shell configuration
 #  by gnidmoo
 #------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+# Setup server screen
+#------------------------------------------------------------------------------
+if [ (hostname) = "quentin-laptop" ]
+	xrandr --output LVDS1 --off
+	xrandr --output HDMI1 --auto
+end
+
+#------------------------------------------------------------------------------
 # Environment variables
 #------------------------------------------------------------------------------
 set -x EDITOR vim
 
-set -x PATH $PATH /usr/local/bin /opt/bin /opt/android-sdk/tools /opt/android-sdk/build-tools/23.0.2
-set -x PATH $PATH /home/$USER/.local/bin /home/$USER/.dotfiles/bin /home/$USER/.gem/ruby/2.2.0/bin
+set -x PATH $PATH /usr/local/bin /opt/bin
+set -x PATH $PATH /opt/android-sdk/tools /opt/android-sdk/build-tools/23.0.2
+set -x PATH $PATH /home/$USER/.local/bin /home/$USER/.dotfiles/bin
+set -x PATH $PATH /home/$USER/.gem/ruby/2.2.0/bin
 set -x PATH $PATH /home/$USER/.steam/steam/steamapps/common/oO
 
 set -x GOPATH /home/$USER/.go

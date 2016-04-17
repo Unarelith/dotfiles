@@ -8,6 +8,7 @@ link/.config/fish/fish_history
 link/.config/fish/fishd*
 link/.config/gtk-3.0/servers
 link/.gnucash/*
+link/.i3/logs
 link/.kde4
 link/.local/bin/kakarot
 link/.local/bin/pcre-8.34
@@ -25,6 +26,7 @@ link/.xchat2/scrollback
 link/.xchat2/xchatlogs
 link/Images/Screenshots
 link/Images/Web
+link/rendu/.cache.gws
 
 # Keep interesting stuff
 !link/.config/dunst/dunstrc
