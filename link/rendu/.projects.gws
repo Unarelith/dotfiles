@@ -9,7 +9,7 @@ CPE/CPE_2015_BSQ | git@git.epitech.eu:/bazin_q/CPE_2015_BSQ
 CPE/CPE_2015_BSQ_bootstrap | git@git.epitech.eu:/bazin_q/CPE_2015_BSQ_bootstrap
 CPE/CPE_2015_corewar | git@git.epitech.eu:/grange_c/CPE_2015_corewar
 CPE/CPE_2015_getnextline | git@git.epitech.eu:/bazin_q/CPE_2015_getnextline
-CPE/CPE_2015_lemin | git@git.epitech.eu:/audet_b/CPE_2015_lemin
+CPE/CPE_2015_Lemin | git@git.epitech.eu:/audet_b/CPE_2015_Lemin
 CPE/CPE_2015_Pushswap | git@git.epitech.eu:/bazin_q/CPE_2015_Pushswap
 
 # B1 - Expression Écrite
@@ -66,6 +66,7 @@ Piscine/Piscine_C_match-nmatch | git@git.epitech.eu:/bazin_q/Piscine_C_match-nma
 Piscine/Piscine_C_workshoplib | git@git.epitech.eu:/bazin_q/Piscine_C_workshoplib
 
 # B1 - Système Unix
+PSU/PSU_2015_42sh | git@git.epitech.eu:/bazin_q/PSU_2015_42sh
 PSU/PSU_2015_minishell1 | git@git.epitech.eu:/bazin_q/PSU_2015_minishell1
 PSU/PSU_2015_minishell2 | git@git.epitech.eu:/bazin_q/PSU_2015_minishell2
 PSU/PSU_2015_minitalk | git@git.epitech.eu:/bazin_q/PSU_2015_minitalk

@@ -132,7 +132,7 @@ sh ~/.local/lib/colorsrc
 # 	echo "You have projects to do, type 'cat ~/rendu/deadlines' to see them."
 # end
 
-[ -f ~/TODO ]; and echo "You have pending tasks, type 'cat ~/TODO' to see them."
+# [ -f ~/TODO ]; and echo "You have pending tasks, type 'cat ~/TODO' to see them."
 
 # Remove Ctrl-S terminal handling
 stty -ixon
