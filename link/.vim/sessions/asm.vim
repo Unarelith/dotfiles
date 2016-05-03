@@ -1,6 +1,6 @@
-" ~/.dotfiles/link/.vim/sessions/default.vim:
+" ~/.dotfiles/link/.vim/sessions/asm.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 03 mai 2016 at 16:33:19.
+" Created by session.vim 2.13.1 on 27 avril 2016 at 11:32:50.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -19,73 +19,25 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/rendu/CPE/CPE_colle_semaine2
+cd ~/rendu/CPE/CPE_2015_corewar/asm
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 Makefile
-badd +1 source/application.c
-badd +0 include/application.h
-badd +1 include/error.h
-badd +0 source/error.c
-badd +1 include/my.h
-badd +0 source/my_fputstr.c
-badd +1 source/my_memset.c
-badd +0 source/my_strcatm.c
-badd +2 source/my_strcmp.c
-badd +0 source/my_strspl.c
-badd +0 source/main.c
+badd +1 source/lexer/lexer.c
+badd +0 source/lexer/token.c
+badd +1 source/lexer/lex_token.c
+badd +0 source/lexer/lex_integer.c
+badd +34 include/lexer.h
+badd +0 include/token.h
+badd +1 include/position.h
+badd +1 include/file.h
+badd +0 include/file_reader.h
 argglobal
 silent! argdel *
-argadd Makefile
+argadd source/lexer/lexer.c
 set stal=2
-edit Makefile
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 7 - ((6 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-7
-normal! 015|
-tabedit source/main.c
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-lcd ~/rendu/CPE/CPE_colle_semaine2
-tabedit ~/rendu/CPE/CPE_colle_semaine2/include/application.h
+edit source/lexer/lexer.c
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -107,16 +59,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 7 - ((6 * winheight(0) + 27) / 55)
+let s:l = 1 - ((0 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-7
-normal! 015|
-lcd ~/rendu/CPE/CPE_colle_semaine2
+1
+normal! 02|
+lcd ~/rendu/CPE/CPE_2015_corewar/asm
 wincmd w
 argglobal
-edit ~/rendu/CPE/CPE_colle_semaine2/source/application.c
+edit ~/rendu/CPE/CPE_2015_corewar/asm/source/lexer/token.c
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -126,28 +78,135 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 19 - ((18 * winheight(0) + 27) / 55)
+let s:l = 49 - ((20 * winheight(0) + 27) / 55)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+49
+normal! 022|
+lcd ~/rendu/CPE/CPE_2015_corewar/asm
+wincmd w
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+tabedit ~/rendu/CPE/CPE_2015_corewar/asm/source/lexer/lex_token.c
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 27) / 55)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+lcd ~/rendu/CPE/CPE_2015_corewar/asm
+wincmd w
+argglobal
+edit ~/rendu/CPE/CPE_2015_corewar/asm/source/lexer/lex_integer.c
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 25 - ((24 * winheight(0) + 27) / 55)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+25
+normal! 0
+lcd ~/rendu/CPE/CPE_2015_corewar/asm
+wincmd w
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+tabedit ~/rendu/CPE/CPE_2015_corewar/asm/include/lexer.h
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 34 - ((27 * winheight(0) + 27) / 55)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+34
+normal! 0
+lcd ~/rendu/CPE/CPE_2015_corewar/asm
+wincmd w
+argglobal
+edit ~/rendu/CPE/CPE_2015_corewar/asm/include/token.h
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 19 - ((3 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 19
-normal! 012|
-lcd ~/rendu/CPE/CPE_colle_semaine2
+normal! 0
+lcd ~/rendu/CPE/CPE_2015_corewar/asm
 wincmd w
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
 exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit ~/rendu/CPE/CPE_colle_semaine2/include/my.h
+tabedit ~/rendu/CPE/CPE_2015_corewar/asm/include/position.h
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
-1wincmd h
+wincmd _ | wincmd |
+vsplit
+2wincmd h
+wincmd w
 wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 70 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 70 + 106) / 212)
+exe 'vert 3resize ' . ((&columns * 70 + 106) / 212)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -164,10 +223,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd ~/rendu/CPE/CPE_colle_semaine2
+lcd ~/rendu/CPE/CPE_2015_corewar/asm
 wincmd w
 argglobal
-edit ~/rendu/CPE/CPE_colle_semaine2/source/my_fputstr.c
+edit ~/rendu/CPE/CPE_2015_corewar/asm/include/file.h
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -183,23 +242,10 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd ~/rendu/CPE/CPE_colle_semaine2
+lcd ~/rendu/CPE/CPE_2015_corewar/asm
 wincmd w
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit ~/rendu/CPE/CPE_colle_semaine2/source/my_memset.c
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
 argglobal
+edit ~/rendu/CPE/CPE_2015_corewar/asm/include/file_reader.h
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -215,131 +261,11 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd ~/rendu/CPE/CPE_colle_semaine2
+lcd ~/rendu/CPE/CPE_2015_corewar/asm
 wincmd w
-argglobal
-edit ~/rendu/CPE/CPE_colle_semaine2/source/my_strcatm.c
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-lcd ~/rendu/CPE/CPE_colle_semaine2
-wincmd w
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit ~/rendu/CPE/CPE_colle_semaine2/source/my_strcmp.c
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-lcd ~/rendu/CPE/CPE_colle_semaine2
-wincmd w
-argglobal
-edit ~/rendu/CPE/CPE_colle_semaine2/source/my_strspl.c
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 55 - ((54 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-55
-normal! 0
-lcd ~/rendu/CPE/CPE_colle_semaine2
-wincmd w
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit ~/rendu/CPE/CPE_colle_semaine2/include/error.h
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-lcd ~/rendu/CPE/CPE_colle_semaine2
-wincmd w
-argglobal
-edit ~/rendu/CPE/CPE_colle_semaine2/source/error.c
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-lcd ~/rendu/CPE/CPE_colle_semaine2
-wincmd w
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 70 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 70 + 106) / 212)
+exe 'vert 3resize ' . ((&columns * 70 + 106) / 212)
 tabnext 2
 set stal=1
 if exists('s:wipebuf')
@@ -357,7 +283,7 @@ let &so = s:so_save | let &siso = s:siso_save
 " Everything down here is generated by vim-session (not supported
 " by :mksession out of the box).
 
-1wincmd w
+2wincmd w
 tabnext 2
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))

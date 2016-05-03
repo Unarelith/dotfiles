@@ -25,7 +25,7 @@
 
 # alignment middle_right
 alignment top_left
-background no
+background yes
 border_width 1
 cpu_avg_samples 2
 default_color white

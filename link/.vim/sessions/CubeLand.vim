@@ -1,6 +1,6 @@
-" /home/bazin_q/.dotfiles/link/.vim/sessions/CubeLand.vim:
+" ~/.dotfiles/link/.vim/sessions/CubeLand.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 03 janvier 2016 at 17:33:36.
+" Created by session.vim 2.13.1 on 03 mai 2016 at 13:13:26.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -19,33 +19,32 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /home/bazin_q/rendu/Perso/CubeLand
+cd ~/rendu/Perso/CubeLand
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
 badd +1 source/main.cpp
 badd +1 CMakeLists.txt
-badd +36 include/core/Application.hpp
+badd +34 include/core/Application.hpp
 badd +1 source/core/Application.cpp
 badd +41 external/libegdt/src/libegdt/include/resources/ResourceHandler.hpp
 badd +1 external/libegdt/src/libegdt/source/resources/ResourceHandler.cpp
 badd +1 Notes
-badd +0 Makefile
-badd +2 external/libegdt/include/display/Map.hpp
+badd +116 Makefile
+badd +1 external/libegdt/include/display/Map.hpp
 badd +1 external/libegdt/include/display/MapRenderer.hpp
 badd +25 external/libegdt/include/display/Tileset.hpp
-badd +0 external/libegdt/include/display/Map.hpp
-badd +0 external/libegdt/source/scene/systems/DrawingSystem.cpp
+badd +1 external/libegdt/source/scene/systems/DrawingSystem.cpp
 badd +1 source/states/LevelEndState.cpp
 badd +38 source/states/LevelState.cpp
-badd +0 include/states/LevelState.hpp
-badd +0 source/states/LevelListState.cpp
-badd +0 source/resource/LevelLoader.cpp
-badd +0 source/scene/factories/PlayerFactory.cpp
-badd +0 external/libegdt/source/display/Map.cpp
-badd +0 external/libegdt/source/display/MapRenderer.cpp
-badd +0 external/libegdt/source/scene/movements/GamePadMovement.cpp
+badd +1 include/states/LevelState.hpp
+badd +1 source/states/LevelListState.cpp
+badd +1 source/resource/LevelLoader.cpp
+badd +1 source/scene/factories/PlayerFactory.cpp
+badd +1 external/libegdt/source/display/Map.cpp
+badd +1 external/libegdt/source/display/MapRenderer.cpp
+badd +1 external/libegdt/source/scene/movements/GamePadMovement.cpp
 argglobal
 silent! argdel *
 argadd source/main.cpp
@@ -66,14 +65,14 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 9 - ((8 * winheight(0) + 27) / 54)
+let s:l = 4 - ((3 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-9
-normal! 0123|
-lcd /home/bazin_q/rendu/Perso/CubeLand
-tabedit /home/bazin_q/rendu/Perso/CubeLand/Makefile
+4
+normal! 050|
+lcd ~/rendu/Perso/CubeLand
+tabedit ~/rendu/Perso/CubeLand/CMakeLists.txt
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -89,14 +88,14 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 116 - ((24 * winheight(0) + 27) / 54)
+let s:l = 1 - ((0 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-116
+1
 normal! 0
-lcd /home/bazin_q/rendu/Perso/CubeLand
-tabedit /home/bazin_q/rendu/Perso/CubeLand/include/core/Application.hpp
+lcd ~/rendu/Perso/CubeLand
+tabedit ~/rendu/Perso/CubeLand/include/core/Application.hpp
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -118,15 +117,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 37 - ((36 * winheight(0) + 27) / 54)
+let s:l = 34 - ((33 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-37
-normal! 043|
+34
+normal! 047|
+lcd ~/rendu/Perso/CubeLand
 wincmd w
 argglobal
-edit /home/bazin_q/rendu/Perso/CubeLand/source/core/Application.cpp
+edit ~/rendu/Perso/CubeLand/source/core/Application.cpp
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -136,16 +136,17 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 79 - ((32 * winheight(0) + 27) / 54)
+let s:l = 31 - ((6 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-79
-normal! 013|
+31
+normal! 092|
+lcd ~/rendu/Perso/CubeLand
 wincmd w
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
 exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit /home/bazin_q/rendu/Perso/CubeLand/include/states/LevelState.hpp
+tabedit ~/rendu/Perso/CubeLand/include/states/LevelState.hpp
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -167,16 +168,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 27) / 54)
+let s:l = 1 - ((0 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
 normal! 02|
-lcd /home/bazin_q/rendu/Perso/CubeLand
+lcd ~/rendu/Perso/CubeLand
 wincmd w
 argglobal
-edit /home/bazin_q/rendu/Perso/CubeLand/source/states/LevelState.cpp
+edit ~/rendu/Perso/CubeLand/source/states/LevelState.cpp
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -186,17 +187,17 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 35 - ((19 * winheight(0) + 27) / 54)
+let s:l = 29 - ((13 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-35
-normal! 0
-lcd /home/bazin_q/rendu/Perso/CubeLand
+29
+normal! 034|
+lcd ~/rendu/Perso/CubeLand
 wincmd w
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
 exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit /home/bazin_q/rendu/Perso/CubeLand/external/libegdt/source/scene/movements/GamePadMovement.cpp
+tabedit ~/rendu/Perso/CubeLand/source/scene/factories/PlayerFactory.cpp
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -212,13 +213,36 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 44 - ((43 * winheight(0) + 27) / 54)
+let s:l = 125 - ((52 * winheight(0) + 27) / 55)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+125
+normal! 05|
+lcd ~/rendu/Perso/CubeLand
+tabedit ~/rendu/Perso/CubeLand/external/libegdt/source/scene/movements/GamePadMovement.cpp
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 44 - ((43 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 44
 normal! 024|
-lcd /home/bazin_q/rendu/Perso/CubeLand
+lcd ~/rendu/Perso/CubeLand
 tabnext 5
 set stal=1
 if exists('s:wipebuf')

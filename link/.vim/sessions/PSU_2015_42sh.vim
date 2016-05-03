@@ -1,6 +1,6 @@
 " ~/.dotfiles/link/.vim/sessions/PSU_2015_42sh.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 26 avril 2016 at 18:10:59.
+" Created by session.vim 2.13.1 on 03 mai 2016 at 14:18:21.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -25,32 +25,34 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +1 source/main.c
-badd +18 Makefile
+badd +29 Makefile
 badd +13 include/application.h
 badd +1 source/application.c
-badd +1 include/error.h
+badd +16 include/error.h
 badd +1 source/error.c
 badd +1 Makefile.common
-badd +1 include/signals.h
+badd +9 include/signals.h
 badd +1 source/signals.c
-badd +1 include/parser.h
-badd +0 source/parser.c
+badd +21 include/parser.h
+badd +1 source/parser.c
 badd +1 include/command.h
-badd +0 source/command.c
-badd +0 source/command_run.c
+badd +1 source/command.c
+badd +1 source/command_run.c
 badd +1 include/redirection.h
-badd +0 source/redirection.c
+badd +1 source/redirection.c
 badd +1 include/ev
 badd +1 include/env.h
-badd +0 source/env.c
-badd +0 source/env_utils.c
-badd +1 include/utils.h
-badd +0 source/utils.c
+badd +1 source/env.c
+badd +1 source/env_utils.c
+badd +13 include/utils.h
+badd +1 source/utils.c
 badd +1 include/builtins.h
-badd +0 source/builtins.c
+badd +1 source/builtins.c
 badd +1 source/builtin_cd.c
-badd +0 source/builtin_env.c
-badd +0 TODO
+badd +1 source/builtin_env.c
+badd +1 TODO
+badd +31 include/lexer.h
+badd +1 source/lexer.c
 argglobal
 silent! argdel *
 argadd source/main.c
@@ -174,7 +176,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 13 - ((12 * winheight(0) + 27) / 55)
+let s:l = 13 - ((3 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -193,15 +195,14 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 25 - ((6 * winheight(0) + 27) / 55)
+let s:l = 70 - ((39 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-25
+70
 normal! 0
 lcd ~/rendu/PSU/PSU_2015_42sh
 wincmd w
-2wincmd w
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
 exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
 tabedit ~/rendu/PSU/PSU_2015_42sh/include/parser.h
@@ -226,12 +227,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 27) / 55)
+let s:l = 24 - ((23 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+24
+normal! 039|
 lcd ~/rendu/PSU/PSU_2015_42sh
 wincmd w
 argglobal
@@ -245,16 +246,68 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 54 - ((27 * winheight(0) + 27) / 55)
+let s:l = 15 - ((14 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-54
-normal! 026|
+15
+normal! 0
 lcd ~/rendu/PSU/PSU_2015_42sh
 wincmd w
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
 exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+tabedit ~/rendu/PSU/PSU_2015_42sh/include/lexer.h
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 104 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 107 + 106) / 212)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 50 - ((46 * winheight(0) + 27) / 55)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+50
+normal! 0
+lcd ~/rendu/PSU/PSU_2015_42sh
+wincmd w
+argglobal
+edit ~/rendu/PSU/PSU_2015_42sh/source/lexer.c
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 11 - ((10 * winheight(0) + 27) / 55)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+11
+normal! 018|
+lcd ~/rendu/PSU/PSU_2015_42sh
+wincmd w
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 104 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 107 + 106) / 212)
 tabedit ~/rendu/PSU/PSU_2015_42sh/include/command.h
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -765,7 +818,7 @@ lcd ~/rendu/PSU/PSU_2015_42sh
 wincmd w
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
 exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabnext 4
+tabnext 6
 set stal=1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -783,7 +836,7 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 2wincmd w
-tabnext 4
+tabnext 6
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

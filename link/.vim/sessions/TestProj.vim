@@ -1,6 +1,6 @@
 " ~/.dotfiles/link/.vim/sessions/TestProj.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 25 avril 2016 at 15:48:56.
+" Created by session.vim 2.13.1 on 27 avril 2016 at 11:34:05.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -27,7 +27,9 @@ set shortmess=aoO
 badd +1 Makefile.common
 badd +4 Makefile
 badd +66 ~/rendu/Perso/CubeLand/Makefile
-badd +0 source/main.cpp
+badd +1 source/main.cpp
+badd +0 include/Application.hpp
+badd +0 include/core/Application.hpp
 argglobal
 silent! argdel *
 argadd Makefile.common
@@ -70,14 +72,37 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 17 - ((16 * winheight(0) + 27) / 55)
+let s:l = 16 - ((15 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-17
+16
 normal! 0
 lcd ~/rendu/Perso/TestProj
-tabnext 2
+tabedit ~/rendu/Perso/TestProj/include/core/Application.hpp
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 13 - ((12 * winheight(0) + 27) / 55)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+13
+normal! 02|
+lcd ~/rendu/Perso/TestProj
+tabnext 3
 set stal=1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -95,7 +120,7 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 1wincmd w
-tabnext 2
+tabnext 3
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

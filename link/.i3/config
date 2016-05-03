@@ -38,6 +38,7 @@ exec redshift-gtk
 exec dropbox
 exec dunst
 exec pulseaudio --start
+exec conky
 
 for_window [class="URxvt"] border 1pixel
 
