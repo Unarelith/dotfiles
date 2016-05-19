@@ -1,0 +1,11 @@
+#!/bin/bash
+
+name="exam-CPE-$(date +%Y%m%d)"
+
+mkdir -p ~/archives
+
+cd ~ && \
+mkdir $name && \
+cp -r rendu sujet tmp token $name && \
+tar cvf archives/$name.tar $name && \
+rm -r $name

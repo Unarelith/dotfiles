@@ -1,6 +1,6 @@
 # Commun
-Commun/liblapin | git@gitlab.com:EpitechDivers/liblapin.git
-Commun/liblapin-tutorial | git@github.com:motet_a/liblapin-tutorial.git
+Commun/epitech-tutos | git@git.gnidmoo.tk:gnidmoo/epitech-tutos.git
+Commun/fish-wakatime | git@github.com:Quent42340/fish-wakatime.git
 
 # B1 - C Prog Elem
 CPE/Rush1 | git@git.epitech.eu:/lacroi_m/CPE_2015_BSQ
@@ -40,6 +40,9 @@ MyLibs/libmy | git@git.epitech.eu:/bazin_q/libmy
 MyLibs/libmy_bunny | git@git.epitech.eu:/bazin_q/libmy_bunny
 MyLibs/libmy_printf | git@git.epitech.eu:/bazin_q/libmy_printf
 MyLibs/make-tools | git@git.epitech.eu:/bazin_q/make-tools
+
+# Perso
+Perso/TestProj | git@github.com:Quent42340/TestProj.git
 
 # B1 - Piscine
 Piscine/Piscine_C_J01 | git@git.epitech.eu:/bazin_q/Piscine_C_J01

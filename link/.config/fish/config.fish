@@ -137,6 +137,9 @@ sh ~/.local/lib/colorsrc
 # Remove Ctrl-S terminal handling
 stty -ixon
 
+# Wakatime plugin
+# source ~/rendu/Commun/fish-wakatime/fish-wakatime.fish
+
 #------------------------------------------------------------------------------
 # Git status on prompt
 #------------------------------------------------------------------------------

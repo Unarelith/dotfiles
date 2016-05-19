@@ -1,4 +1,4 @@
-defaultpackages='i3-wm i3lock i3status openssh pkgfile pulseaudio pulseaudio-alsa pavucontrol networkmanager network-manager-applet gvim python2 python3 redshift pavucontrol nautilus nautilus-open-terminal kdegraphics-kolourpaint chromium rxvt-unicode python-pexpect cronie volumeicon'
+defaultpackages='fish feh synapse xcompmgr lxappearance i3-wm i3lock i3status openssh pkgfile pulseaudio pulseaudio-alsa pavucontrol networkmanager network-manager-applet gvim python2 python3 redshift pavucontrol nautilus nautilus-open-terminal kdegraphics-kolourpaint chromium rxvt-unicode python-pexpect cronie volumeicon'
 
 defaultaurpackages='volnoti dropbox nautilus-dropbox'
 
