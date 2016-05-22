@@ -1,6 +1,12 @@
 #!/bin/bash
 
-name="exam-CPE-$(date +%Y%m%d)"
+if [ -z "$1" ]
+then
+	echo "Usage: $0 type"
+	exit 1
+fi
+
+name="exam-$1-$(date +%Y%m%d)"
 
 mkdir -p ~/archives
 

@@ -2,7 +2,7 @@
 
 # Get the n-th line of a file
 getline() {
-	cat $1 | head -$2 | tail -1
+	cat $1 | head -$2 | tail -1 | tr -d '\r'
 }
 
 # Get question line number
@@ -15,7 +15,7 @@ getq_lineno() {
 getq() {
 	IFS=$'\n'
 	lines=($(egrep -n "^[0-9]+)" $1 | cut -d')' -f2))
-	echo ${lines[$(($2-1))]}
+	echo ${lines[$(($2-1))]} | tr -d '\r'
 	IFS=$' \t\n'
 }
 
