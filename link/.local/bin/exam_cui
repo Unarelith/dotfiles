@@ -1,0 +1,205 @@
+#!/bin/bash
+
+# Get the n-th line of a file
+getline() {
+	cat $1 | head -$2 | tail -1
+}
+
+# Get question line number
+getq_lineno() {
+	line_nos=($(egrep -n "^[0-9]+)" $1 | cut -d: -f1))
+	echo ${line_nos[$(($2-1))]}
+}
+
+# Get question
+getq() {
+	IFS=$'\n'
+	lines=($(egrep -n "^[0-9]+)" $1 | cut -d')' -f2))
+	echo ${lines[$(($2-1))]}
+	IFS=$' \t\n'
+}
+
+# List answers to a question
+list_ans() {
+	let line_n="$(getq_lineno $1 $2)"+1
+	line="$(getline $1 $line_n)"
+	
+	total_count=$(cat $1 | wc -l)
+	
+	while [ $line_n -le $total_count -a "$(echo $line | wc -c)" -gt 2 ]
+	do
+		echo $line | cut -d'-' -f3
+		let line_n++
+		line=$(getline $1 $line_n)
+	done
+}
+
+# Get answers to a question
+getq_ans() {
+	IFS=$'\n'
+	answers=($(list_ans $1 $2))
+	echo ${answers[$(($3-1))]}
+	IFS=$' \t\n'
+}
+
+# Get wrong questions
+wrong_question() {
+	questions=($(getline $1 20 | sed -e 's/,//g'))
+	
+	if [ $2 -lt ${#questions[@]} ]
+	then
+		echo ${questions[$2]}
+	else
+		echo "0"
+	fi
+}
+
+# Get my answers
+my_ans() {
+	answers=($(cat $1))
+	echo ${answers[$(($2-1))]} | cut -d: -f2
+}
+
+# Get answers
+print_all_answers() {
+	i=1
+	j=0
+	while [ $i -le 40 ]
+	do
+		if [ $i -eq $(wrong_question $3 $j) ]
+		then
+			let j++
+			let i++
+			continue
+		fi
+		
+		echo -n "Question:"
+		getq $1 $i
+		
+		for ans in $(my_ans $2 $i | sed -e 's/,/ /g')
+		do
+			echo -n "-"
+			
+			if [ $ans -eq 0 ]
+			then
+				echo "NO ANSWER"
+			else
+				getq_ans $1 $i $ans
+			fi
+		done
+
+		echo
+		
+		let i++
+	done
+}
+
+test
+
+# Analyse folder
+analyse_folder() {
+	if [ -z "$1" ]
+	then
+		echo "Usage: ./exam_cui --analyse folder"
+		exit 1
+	fi
+	
+	if [ -e "$1" -a -e "$1/rendu" -a -e "$1/sujet/subject.txt" -a -e "$1/rendu/reponses.txt" -a -e "$1/trace.txt" ]
+	then
+		print_all_answers "$1/sujet/subject.txt" "$1/rendu/reponses.txt" "$1/trace.txt"
+	else
+		echo "Error: Bad folder"
+		exit 1
+	fi
+}
+
+# Print the right answers to a question
+print_right_answers() {
+	line_n="$(cat "$1" | grep -n "$2" | cut -d: -f1 | head -1 | tail -1)"
+	line="$(getline "$1" $line_n)"
+	
+	total_count="$(cat "$1" | wc -l)"
+	
+	[ -z $line_n ] && return
+	
+	while [ "$line_n" -le "$total_count" -a "$(echo $line | wc -c)" -gt 2 ]
+	do
+		echo $line
+		let line_n++
+		line="$(getline "$1" $line_n)"
+	done
+}
+
+# Create "auteur" file
+create_auteur() {
+	echo -n "Please enter your login: "
+	read login
+	echo $login > /home/exam/rendu/auteur
+	echo "Author file created."
+	echo -n "Contents: "
+	cat -e /home/exam/rendu/auteur
+}
+
+# Find current exam answers
+find_exam_answers() {
+	i=1
+	
+	IFS=$'\n'
+	while [ $i -le 40 ]
+	do
+		question="$(getq /home/exam/sujet/subject.txt $i)"
+		
+		right_answers="$(print_right_answers "$1" "$question" | sed -e '1d;s/^-//g')"
+		subject_answers="$(list_ans "/home/exam/sujet/subject.txt" $i)"
+		
+		echo -n "$i:" >> $2
+		
+		j=1
+		first=true
+		for ans in ${subject_answers[@]}
+		do
+			for right_ans in ${right_answers[@]}
+			do
+				if [ "$ans" == "$right_ans" ]
+				then
+					[ ! $first ] && echo -n "," >> $2
+					echo -n $j >> $2
+					
+					first=false
+				fi
+			done
+			
+			let j++
+		done
+		
+		echo >> $2
+		
+		let i++
+	done
+	IFS=$' \t\n'
+}
+
+if [ "$1" == "--analyse" ]
+then
+	analyse_folder "$2"
+else
+	if [ -z "$1" ]
+	then
+		echo "Usage: ./exam_cui answers_file"
+		exit 1
+	fi
+	
+	if [ -e /home/exam/rendu/reponses.txt ]
+	then
+		echo "Error: 'reponses.txt' already exists!"
+		exit 1
+	fi
+	
+	create_auteur
+	echo
+	
+	echo "Searching for answers..."
+	find_exam_answers $1 /home/exam/rendu/reponses.txt
+	echo "Done. 'reponses.txt' file created."
+fi
+

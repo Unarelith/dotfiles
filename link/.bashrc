@@ -30,3 +30,7 @@ export CPLUS_INCLUDE_PATH="/home/bazin_q/.froot/include/"
 export LD_LIBRARY_PATH="/home/bazin_q/.froot/lib/"
 export C_INCLUDE_PATH="/home/bazin_q/.froot/include/"
 export CPLUS_INCLUDE_PATH="/home/bazin_q/.froot/include/"
+
+export LD_LIBRARY_PATH="/home/bazin_q/.froot/lib/"
+export C_INCLUDE_PATH="/home/bazin_q/.froot/include/"
+export CPLUS_INCLUDE_PATH="/home/bazin_q/.froot/include/"

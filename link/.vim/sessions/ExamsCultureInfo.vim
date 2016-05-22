@@ -1,6 +1,6 @@
-" ~/.dotfiles/link/.vim/sessions/common.vim:
+" ~/.dotfiles/link/.vim/sessions/ExamsCultureInfo.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 20 mai 2016 at 19:01:53.
+" Created by session.vim 2.13.1 on 19 mai 2016 at 16:55:00.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -19,30 +19,30 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/rendu/IA/dante/common
+cd ~/Documents/ExamsCultureInfo
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +12 source/main.c
-badd +25 include/maze.h
-badd +1 source/maze.c
-badd +1 include/error.h
-badd +1 source/error.c
-badd +21 include/generator.h
-badd +1 source/generator.c
-badd +26 include/vertex_stack.h
-badd +1 include/stack.
-badd +1 include/stack.h
-badd +1 source/stack.c
-badd +17 Makefile
-badd +13 include/depth_solver.h
-badd +0 source/depth_solver.c
+badd +97 test_script.sh
+badd +20 QCM1/trace.txt
+badd +1 QCM1/rendu/reponses.txt
+badd +0 QCM1/rendu/subject.txt
+badd +1 QCM3/trace.txt
+badd +29 QCM4/trace.txt
+badd +1 QCM5/trace.txt
+badd +1 QCM6/trace.txt
+badd +0 ~/.local/bin/analyse_cui
+badd +1 QCM3/rendu/reponses.txt
+badd +0 QCM3/sujet/subject.txt
+badd +28 QCM4/rendu/reponses.txt
+badd +1 QCM5/rendu/reponses.txt
+badd +0 QCM6/rendu/reponses.txt
 argglobal
 silent! argdel *
-argadd source/main.c
+argadd test_script.sh
 set stal=2
-edit include/maze.h
+edit ~/.local/bin/analyse_cui
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -52,8 +52,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 126 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 85 + 106) / 212)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -64,151 +64,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 23 - ((22 * winheight(0) + 27) / 55)
+let s:l = 29 - ((12 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-23
-normal! 03|
-lcd ~/rendu/IA/dante/common
+29
+normal! 039|
 wincmd w
 argglobal
-edit ~/rendu/IA/dante/common/source/maze.c
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 30 - ((7 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-30
-normal! 05|
-lcd ~/rendu/IA/dante/common
-wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit ~/rendu/IA/dante/common/include/depth_solver.h
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 13 - ((12 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-13
-normal! 018|
-lcd ~/rendu/IA/dante/common
-wincmd w
-argglobal
-edit ~/rendu/IA/dante/common/source/depth_solver.c
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 27 - ((26 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-27
-normal! 058|
-lcd ~/rendu/IA/dante/common
-wincmd w
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit ~/rendu/IA/dante/common/include/stack.h
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 104 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 107 + 106) / 212)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 19 - ((16 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-19
-normal! 026|
-lcd ~/rendu/IA/dante/common
-wincmd w
-argglobal
-edit ~/rendu/IA/dante/common/source/stack.c
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 33 - ((27 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-33
-normal! 09|
-lcd ~/rendu/IA/dante/common
-wincmd w
-exe 'vert 1resize ' . ((&columns * 104 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 107 + 106) / 212)
-tabedit ~/rendu/IA/dante/common/include/error.h
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-argglobal
+edit QCM1/trace.txt
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -223,11 +87,23 @@ if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 20
-normal! 0
-lcd ~/rendu/IA/dante/common
+normal! 04|
 wincmd w
+exe 'vert 1resize ' . ((&columns * 126 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 85 + 106) / 212)
+tabedit QCM1/rendu/subject.txt
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
 argglobal
-edit ~/rendu/IA/dante/common/source/error.c
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -237,17 +113,132 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 29 - ((28 * winheight(0) + 27) / 55)
+let s:l = 338 - ((54 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-29
-normal! 031|
-lcd ~/rendu/IA/dante/common
+338
+normal! 0
+wincmd w
+argglobal
+edit QCM1/rendu/reponses.txt
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 27) / 55)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
 exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabnext 1
+tabedit QCM3/rendu/reponses.txt
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 35 - ((34 * winheight(0) + 27) / 55)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+35
+normal! 04|
+wincmd w
+argglobal
+edit QCM3/sujet/subject.txt
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 27) / 55)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+wincmd w
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+tabedit QCM6/rendu/reponses.txt
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 35 - ((34 * winheight(0) + 27) / 55)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+35
+normal! 04|
+wincmd w
+argglobal
+edit QCM6/trace.txt
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 27) / 55)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+wincmd w
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+tabnext 4
 set stal=1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -264,8 +255,8 @@ let &so = s:so_save | let &siso = s:siso_save
 " Everything down here is generated by vim-session (not supported
 " by :mksession out of the box).
 
-2wincmd w
-tabnext 1
+1wincmd w
+tabnext 4
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')
