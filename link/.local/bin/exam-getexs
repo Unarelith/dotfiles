@@ -2,7 +2,7 @@
 
 HOME="${HOME}"
 
-EXS="/home_blinux/bazin_q/Downloads/Exams/Exercices"
+EXS="/etc/my/blinux/bazin_q/Downloads/Exams/Exercices"
 
 cd ${HOME}
 
@@ -68,6 +68,8 @@ do
 		else
 			echo "=> Same subject."
 		fi
+		
+		rm "rendu/$ex_name/subject.txt"
 		
 		echo
 	fi

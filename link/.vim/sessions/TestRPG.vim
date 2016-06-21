@@ -1,6 +1,6 @@
-" ~/.dotfiles/link/.vim/sessions/default.vim:
+" ~/.dotfiles/link/.vim/sessions/TestRPG.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 20 juin 2016 at 23:42:47.
+" Created by session.vim 2.13.1 on 30 mai 2016 at 19:35:38.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -19,17 +19,15 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/rendu/Perso/MyPong
+cd ~/rendu/Perso/TestRPG
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 Classes/AppDelegate.cpp
-badd +0 Classes/AppDelegate.hpp
+badd +2 Classes/AppDelegate.cpp
+badd +17 Classes/AppDelegate.hpp
 badd +1 Classes/HelloWorldScene.hpp
-badd +0 Classes/HelloWorldScene.cpp
-badd +16 Classes/Paddle.hpp
-badd +0 Classes/Paddle.cpp
+badd +1 Classes/HelloWorldScene.cpp
 argglobal
 silent! argdel *
 argadd Classes/AppDelegate.cpp
@@ -44,8 +42,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 104 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 107 + 106) / 212)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -56,16 +54,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 47 - ((46 * winheight(0) + 27) / 55)
+let s:l = 17 - ((16 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-47
-normal! 08|
-lcd ~/rendu/Perso/MyPong
+17
+normal! 038|
+lcd ~/rendu/Perso/TestRPG
 wincmd w
 argglobal
-edit ~/rendu/Perso/MyPong/Classes/AppDelegate.cpp
+edit ~/rendu/Perso/TestRPG/Classes/AppDelegate.cpp
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -75,17 +73,17 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 79 - ((0 * winheight(0) + 27) / 55)
+let s:l = 2 - ((1 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-79
-normal! 013|
-lcd ~/rendu/Perso/MyPong
+2
+normal! 029|
+lcd ~/rendu/Perso/TestRPG
 wincmd w
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit ~/rendu/Perso/MyPong/Classes/HelloWorldScene.hpp
+exe 'vert 1resize ' . ((&columns * 104 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 107 + 106) / 212)
+tabedit ~/rendu/Perso/TestRPG/Classes/HelloWorldScene.hpp
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -107,16 +105,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 20 - ((19 * winheight(0) + 27) / 55)
+let s:l = 1 - ((0 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-20
-normal! 08|
-lcd ~/rendu/Perso/MyPong
+1
+normal! 0
+lcd ~/rendu/Perso/TestRPG
 wincmd w
 argglobal
-edit ~/rendu/Perso/MyPong/Classes/HelloWorldScene.cpp
+edit ~/rendu/Perso/TestRPG/Classes/HelloWorldScene.cpp
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -126,69 +124,18 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 70 - ((27 * winheight(0) + 27) / 55)
+let s:l = 22 - ((21 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-70
-normal! 04|
-lcd ~/rendu/Perso/MyPong
-wincmd w
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit ~/rendu/Perso/MyPong/Classes/Paddle.hpp
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 20 - ((19 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-20
-normal! 016|
-lcd ~/rendu/Perso/MyPong
-wincmd w
-argglobal
-edit ~/rendu/Perso/MyPong/Classes/Paddle.cpp
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 21 - ((20 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-21
-normal! 016|
-lcd ~/rendu/Perso/MyPong
+22
+normal! 023|
+lcd ~/rendu/Perso/TestRPG
 wincmd w
 2wincmd w
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
 exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabnext 3
+tabnext 2
 set stal=1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -206,7 +153,7 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 2wincmd w
-tabnext 3
+tabnext 2
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

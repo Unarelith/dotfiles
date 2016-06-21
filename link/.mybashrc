@@ -24,10 +24,10 @@ export GOPATH="/home/${USER}/.go"
 
 source ~/.local/lib/colorsrc
 
-if [ -f ~/TODO ] && [ -n "$(cat ~/TODO)" ]
-then
-	echo "You have pending tasks, type 'cat ~/TODO' to see them."
-fi
+# if [ -f ~/TODO ] && [ -n "$(cat ~/TODO)" ]
+# then
+# 	echo "You have pending tasks, type 'cat ~/TODO' to see them."
+# fi
 
 user="$EBCYAN\u$EWHITE"
 date="\[\033[38;5;38m\]\D{%a %d %b %Y}$EWHITE"

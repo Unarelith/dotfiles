@@ -14,13 +14,18 @@ end
 #------------------------------------------------------------------------------
 # Environment variables
 #------------------------------------------------------------------------------
-set -x EDITOR vim
+set -x EDITOR nvim
 
-set -x PATH $PATH /usr/local/bin /opt/bin
+set -x PATH $PATH /usr/local/bin
 set -x PATH $PATH /opt/android-sdk/tools /opt/android-sdk/build-tools/23.0.2
+set -x PATH $PATH /opt/cocos2d-x/tools/cocos2d-console/bin
+set -x PATH $PATH /opt/cocos2d-x/tools/cocos2d-console/plugins/plugin_package
 set -x PATH $PATH /home/$USER/.local/bin /home/$USER/.dotfiles/bin
 set -x PATH $PATH /home/$USER/.gem/ruby/2.2.0/bin
-set -x PATH $PATH /home/$USER/.steam/steam/steamapps/common/oO
+
+set -x NDK_ROOT /opt/android-ndk
+set -x ANDROID_SDK_ROOT /opt/android-sdk
+set -x ANT_ROOT /usr/bin
 
 set -x GOPATH /home/$USER/.go
 
@@ -31,13 +36,13 @@ set -x LD_LIBRARY_PATH /home/$USER/.froot/lib
 
 # Colored man pages
 set -x LESS -r
-set -xU LESS_TERMCAP_mb (printf "\e[01;31m")       # begin blinking
-set -xU LESS_TERMCAP_md (printf "\e[01;38;5;74m")  # begin bold
-set -xU LESS_TERMCAP_me (printf "\e[0m")           # end mode
-set -xU LESS_TERMCAP_se (printf "\e[0m")           # end standout-mode
-set -xU LESS_TERMCAP_so (printf "\e[38;5;246m")    # begin standout-mode - info box
-set -xU LESS_TERMCAP_ue (printf "\e[0m")           # end underline
-set -xU LESS_TERMCAP_us (printf "\e[04;38;5;146m") # begin underline
+set -x LESS_TERMCAP_mb (printf "\e[01;31m")       # begin blinking
+set -x LESS_TERMCAP_md (printf "\e[01;38;5;74m")  # begin bold
+set -x LESS_TERMCAP_me (printf "\e[0m")           # end mode
+set -x LESS_TERMCAP_se (printf "\e[0m")           # end standout-mode
+set -x LESS_TERMCAP_so (printf "\e[38;5;246m")    # begin standout-mode - info box
+set -x LESS_TERMCAP_ue (printf "\e[0m")           # end underline
+set -x LESS_TERMCAP_us (printf "\e[04;38;5;146m") # begin underline
 
 #------------------------------------------------------------------------------
 # Aliases
@@ -59,7 +64,7 @@ function emacs
 end
 
 function vim
-	command vim $argv
+	command nvim $argv
 	# command vim --servername "vim-server-"(echo %self) $argv
 	# command vim --servername "vim-server-"(ps -A | grep vim | grep (ps -A | grep %self | awk '{print $2}') | awk '{print $1}') $argv
 end

@@ -7,14 +7,14 @@ getline() {
 
 # Get question line number
 getq_lineno() {
-	line_nos=($(egrep -n "^[0-9]+)" $1 | cut -d: -f1))
+	line_nos=($(egrep -n "^[0-9]+\)" $1 | cut -d: -f1))
 	echo ${line_nos[$(($2-1))]}
 }
 
 # Get question
 getq() {
 	IFS=$'\n'
-	lines=($(egrep -n "^[0-9]+)" $1 | cut -d')' -f2))
+	lines=($(egrep -n "^[0-9]+\)" $1 | cut -d')' -f2))
 	echo ${lines[$(($2-1))]} | tr -d '\r'
 	IFS=$' \t\n'
 }

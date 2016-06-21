@@ -1,6 +1,6 @@
 " ~/.dotfiles/link/.vim/sessions/TestProj.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 13 mai 2016 at 22:55:51.
+" Created by session.vim 2.13.1 on 30 mai 2016 at 16:26:19.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -24,13 +24,13 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +77 Makefile
+badd +1 Makefile
 badd +39 source/core/Application.cpp
-badd +35 include/core/Application.hpp
+badd +1 include/core/Application.hpp
 badd +62 external/libegdt/include/resources/ResourceHandler.hpp
 badd +1 external/libegdt/source/resources/ResourceHandler.cpp
 badd +1 source/main.cpp
-badd +38 external/libegdt/include/states/ApplicationStateStack.hpp
+badd +1 external/libegdt/include/states/ApplicationStateStack.hpp
 badd +28 include/states/LevelState.hpp
 badd +1 source/states/LevelEndState.cpp
 badd +28 source/states/LevelState.cpp
@@ -40,18 +40,18 @@ badd +1 include/scene/factories/PlayerFactory.hpp
 badd +30 source/scene/factories/PlayerFactory.cpp
 badd +1 external/libegdt/include/scene/Scene.hpp
 badd +34 external/libegdt/source/scene/Scene.cpp
-badd +30 include/states/BattleState.hpp
-badd +69 source/states/BattleState.cpp
+badd +1 include/states/BattleState.hpp
+badd +61 source/states/BattleState.cpp
 badd +1 external/libegdt/source/states/ApplicationStateStack.cpp
 badd +24 include/scene/factories/BattlerFactory.hpp
 badd +1 source/scene/factories/BattlerFactory.cpp
 badd +1 external/libegdt/include/display/Sprite.hpp
-badd +22 external/libegdt/source/display/Sprite.cpp
+badd +20 external/libegdt/source/display/Sprite.cpp
 badd +1 external/libegdt/include/scene/systems/DrawingSystem.hpp
 badd +28 external/libegdt/source/scene/systems/DrawingSystem.cpp
 badd +61 external/libegdt/include/scene/SceneObject.hpp
 badd +32 external/libegdt/include/display/Image.hpp
-badd +26 external/libegdt/source/display/Image.cpp
+badd +55 external/libegdt/source/display/Image.cpp
 badd +22 include/states/WindowTestState.hpp
 badd +23 source/states/WindowTestState.cpp
 badd +28 include/Window.hpp
@@ -63,7 +63,7 @@ badd +35 external/libegdt/source/display/MapRenderer.cpp
 badd +1 external/libegdt/include/display/MapRenderer.hpp
 badd +27 include/window/Cursor.hpp
 badd +29 source/window/Cursor.cpp
-badd +43 include/window/SelectableWindow.hpp
+badd +41 include/window/SelectableWindow.hpp
 badd +1 source/window/SelectableWindow.cpp
 badd +1 external/libegdt/include/core/input/GamePad.hpp
 badd +1 external/libegdt/include/system/GameClock.hpp
@@ -86,31 +86,39 @@ badd +1 source/resource/MonsterLoader.cpp
 badd +18 include/resource/TextureLoader.hpp
 badd +31 source/resource/TextureLoader.cpp
 badd +26 include/scene/components/MonsterStatsComponent.hpp
-badd +1 include/window/MonsterStatsWindow.hpp
+badd +36 include/window/MonsterStatsWindow.hpp
 badd +1 source/window/MonsterStatsWindow.cpp
 badd +1 external/libegdt/include/resources/ResourceLoader.hpp
-badd +1 include/interface/ProgressBar.hpp
+badd +29 include/interface/ProgressBar.hpp
 badd +22 source/interface/ProgressBar.cpp
-badd +29 include/scene/components/BattlerComponent.hpp
+badd +1 include/scene/components/BattlerComponent.hpp
 badd +29 include/interface/BattlerState.hpp
 badd +22 source/interface/BattlerState.cpp
-badd +1 include/interface/BattlerStateWindow.hpp
+badd +24 include/interface/BattlerStateWindow.hpp
 badd +1 source/interface/BattlerStateWindow.cpp
 badd +53 external/libegdt/include/core/Debug.hpp
 badd +1 external/libegdt/include/system/Exception.hpp
 badd +1 external/libegdt/include/system/Utils.hpp
 badd +1 external/libegdt/include/core/Utils.hpp
-badd +38 include/data/MonsterInfos.hpp
+badd +1 include/data/MonsterInfos.hpp
 badd +18 include/resource/MonsterInfosLoader.hpp
-badd +23 source/resource/MonsterInfosLoader.cpp
+badd +1 source/resource/MonsterInfosLoader.cpp
 badd +17 include/resource/InventoryLoader.hpp
-badd +0 source/resource/InventoryLoader.cpp
+badd +1 source/resource/InventoryLoader.cpp
 badd +1 TestProj
-badd +0 source/data/MonsterInfos.cpp
-badd +24 include/states/MapState.hpp
-badd +0 source/states/MapState.cpp
-badd +17 include/states/MenuState.hpp
-badd +0 source/states/MenuState.cpp
+badd +1 source/data/MonsterInfos.cpp
+badd +1 include/states/MapState.hpp
+badd +1 source/states/MapState.cpp
+badd +1 include/states/MenuState.hpp
+badd +1 source/states/MenuState.cpp
+badd +1 include/scene/components/SkillComponent.hpp
+badd +1 include/states/BattleMenuState.hpp
+badd +1 source/states/BattleMenuState.cpp
+badd +1 external/libegdt/include/states/ApplicationState.hpp
+badd +35 external/libegdt/include/scene/SceneObjectList.hpp
+badd +1 include/window/SkillListWindow.hpp
+badd +1 source/window/SkillListWindow.cpp
+badd +58 include/scene/components/StatusEffectComponent.hpp
 argglobal
 silent! argdel *
 argadd Makefile
@@ -155,12 +163,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 18 - ((17 * winheight(0) + 27) / 55)
+let s:l = 22 - ((21 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-18
-normal! 09|
+22
+normal! 040|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
 exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
@@ -209,12 +217,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 32 - ((25 * winheight(0) + 27) / 55)
+let s:l = 31 - ((24 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-32
-normal! 015|
+31
+normal! 08|
 lcd ~/rendu/Perso/TestProj
 wincmd w
 argglobal
@@ -228,12 +236,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 62 - ((34 * winheight(0) + 27) / 55)
+let s:l = 35 - ((25 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-62
-normal! 013|
+35
+normal! 05|
 lcd ~/rendu/Perso/TestProj
 wincmd w
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
@@ -311,12 +319,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 24 - ((23 * winheight(0) + 27) / 55)
+let s:l = 6 - ((5 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-24
-normal! 021|
+6
+normal! 020|
 lcd ~/rendu/Perso/TestProj
 wincmd w
 argglobal
@@ -362,12 +370,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 30 - ((26 * winheight(0) + 27) / 55)
+let s:l = 4 - ((0 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-30
-normal! 037|
+4
+normal! 033|
 lcd ~/rendu/Perso/TestProj
 wincmd w
 argglobal
@@ -389,7 +397,6 @@ normal! zt
 normal! 031|
 lcd ~/rendu/Perso/TestProj
 wincmd w
-2wincmd w
 exe 'vert 1resize ' . ((&columns * 104 + 106) / 212)
 exe 'vert 2resize ' . ((&columns * 107 + 106) / 212)
 tabedit ~/rendu/Perso/TestProj/include/states/BattleState.hpp
@@ -414,12 +421,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 38 - ((34 * winheight(0) + 27) / 55)
+let s:l = 25 - ((21 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-38
-normal! 045|
+25
+normal! 022|
 lcd ~/rendu/Perso/TestProj
 wincmd w
 argglobal
@@ -433,22 +440,28 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 70 - ((48 * winheight(0) + 27) / 55)
+let s:l = 49 - ((20 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-70
-normal! 055|
+49
+normal! 023|
 lcd ~/rendu/Perso/TestProj
 wincmd w
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
 exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit ~/rendu/Perso/TestProj/include/window/SelectableWindow.hpp
+tabedit ~/rendu/Perso/TestProj/include/states/BattleMenuState.hpp
 set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -459,13 +472,86 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 47 - ((35 * winheight(0) + 27) / 55)
+let s:l = 45 - ((43 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-47
-normal! 09|
+45
+normal! 0
 lcd ~/rendu/Perso/TestProj
+wincmd w
+argglobal
+edit ~/rendu/Perso/TestProj/source/states/BattleMenuState.cpp
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 30 - ((14 * winheight(0) + 27) / 55)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+30
+normal! 077|
+lcd ~/rendu/Perso/TestProj
+wincmd w
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+tabedit ~/rendu/Perso/TestProj/include/window/SkillListWindow.hpp
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 31 - ((30 * winheight(0) + 27) / 55)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+31
+normal! 026|
+lcd ~/rendu/Perso/TestProj
+wincmd w
+argglobal
+edit ~/rendu/Perso/TestProj/source/window/SkillListWindow.cpp
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 16 - ((15 * winheight(0) + 27) / 55)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+16
+normal! 056|
+lcd ~/rendu/Perso/TestProj
+wincmd w
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
 tabedit ~/rendu/Perso/TestProj/include/interface/BattlerStateWindow.hpp
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -488,12 +574,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 26 - ((21 * winheight(0) + 27) / 55)
+let s:l = 27 - ((26 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-26
-normal! 019|
+27
+normal! 041|
 lcd ~/rendu/Perso/TestProj
 wincmd w
 argglobal
@@ -507,17 +593,17 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 16 - ((11 * winheight(0) + 27) / 55)
+let s:l = 48 - ((23 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-16
-normal! 0
+48
+normal! 016|
 lcd ~/rendu/Perso/TestProj
 wincmd w
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
 exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit ~/rendu/Perso/TestProj/include/interface/ProgressBar.hpp
+tabedit ~/rendu/Perso/TestProj/include/scene/components/SkillComponent.hpp
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -539,16 +625,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 29 - ((28 * winheight(0) + 27) / 55)
+let s:l = 67 - ((24 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-29
-normal! 08|
+67
+normal! 013|
 lcd ~/rendu/Perso/TestProj
 wincmd w
 argglobal
-edit ~/rendu/Perso/TestProj/source/interface/ProgressBar.cpp
+edit ~/rendu/Perso/TestProj/source/scene/factories/MonsterFactory.cpp
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -558,11 +644,114 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 16 - ((15 * winheight(0) + 27) / 55)
+let s:l = 30 - ((29 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-16
+30
+normal! 034|
+lcd ~/rendu/Perso/TestProj
+wincmd w
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+tabedit ~/rendu/Perso/TestProj/include/scene/components/StatusEffectComponent.hpp
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 67 - ((31 * winheight(0) + 27) / 55)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+67
+normal! 038|
+lcd ~/rendu/Perso/TestProj
+wincmd w
+argglobal
+edit ~/rendu/Perso/TestProj/source/scene/factories/MonsterFactory.cpp
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 32 - ((28 * winheight(0) + 27) / 55)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+32
+normal! 0
+lcd ~/rendu/Perso/TestProj
+wincmd w
+exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+tabedit ~/rendu/Perso/TestProj/external/libegdt/include/display/Text.hpp
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 26 - ((25 * winheight(0) + 27) / 55)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+26
+normal! 023|
+lcd ~/rendu/Perso/TestProj
+wincmd w
+argglobal
+edit ~/rendu/Perso/TestProj/external/libegdt/source/display/Text.cpp
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 30 - ((29 * winheight(0) + 27) / 55)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+30
 normal! 0
 lcd ~/rendu/Perso/TestProj
 wincmd w
@@ -590,12 +779,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 47 - ((32 * winheight(0) + 27) / 55)
+let s:l = 44 - ((35 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-47
-normal! 027|
+44
+normal! 077|
 lcd ~/rendu/Perso/TestProj
 wincmd w
 argglobal
@@ -609,114 +798,86 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 41 - ((39 * winheight(0) + 27) / 55)
+let s:l = 1 - ((0 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-41
-normal! 044|
-lcd ~/rendu/Perso/TestProj
-wincmd w
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit ~/rendu/Perso/TestProj/include/window/MonsterStatsWindow.hpp
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 36 - ((32 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-36
-normal! 019|
-lcd ~/rendu/Perso/TestProj
-wincmd w
-argglobal
-edit ~/rendu/Perso/TestProj/source/window/MonsterStatsWindow.cpp
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 53 - ((33 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-53
-normal! 029|
-lcd ~/rendu/Perso/TestProj
-wincmd w
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit ~/rendu/Perso/TestProj/external/libegdt/include/display/Text.hpp
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 27 - ((26 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-27
-normal! 02|
-lcd ~/rendu/Perso/TestProj
-wincmd w
-argglobal
-edit ~/rendu/Perso/TestProj/external/libegdt/source/display/Text.cpp
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 26 - ((25 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-26
+1
 normal! 0
+lcd ~/rendu/Perso/TestProj
+wincmd w
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+tabedit ~/rendu/Perso/TestProj/external/libegdt/include/scene/SceneObjectList.hpp
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 24 - ((14 * winheight(0) + 27) / 55)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+24
+normal! 0
+lcd ~/rendu/Perso/TestProj
+tabedit ~/rendu/Perso/TestProj/include/scene/components/BattlerComponent.hpp
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 43 - ((29 * winheight(0) + 27) / 55)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+43
+normal! 014|
+lcd ~/rendu/Perso/TestProj
+wincmd w
+argglobal
+edit ~/rendu/Perso/TestProj/source/interface/BattlerStateWindow.cpp
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 27) / 55)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 02|
 lcd ~/rendu/Perso/TestProj
 wincmd w
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
@@ -743,12 +904,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 40 - ((36 * winheight(0) + 27) / 55)
+let s:l = 52 - ((27 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-40
-normal! 09|
+52
+normal! 028|
 lcd ~/rendu/Perso/TestProj
 wincmd w
 argglobal
@@ -772,7 +933,7 @@ lcd ~/rendu/Perso/TestProj
 wincmd w
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
 exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabnext 6
+tabnext 11
 set stal=1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -790,7 +951,7 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 2wincmd w
-tabnext 6
+tabnext 11
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

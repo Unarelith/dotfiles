@@ -1,4 +1,33 @@
-defaultpackages='fish feh synapse xcompmgr lxappearance i3-wm i3lock i3status openssh pkgfile pulseaudio pulseaudio-alsa pavucontrol networkmanager network-manager-applet gvim python2 python3 redshift pavucontrol nautilus nautilus-open-terminal kdegraphics-kolourpaint chromium rxvt-unicode python-pexpect cronie volumeicon'
+defaultpackages='
+chromium
+cronie
+feh
+fish
+gvim
+i3-wm
+i3lock
+i3status
+kdegraphics-kolourpaint
+lxappearance
+nautilus
+nautilus-open-terminal
+network-manager-applet
+networkmanager
+openssh
+pavucontrol
+pkgfile
+pulseaudio
+pulseaudio-alsa
+python-pexpect
+python2
+python3
+redshift
+rxvt-unicode
+synapse
+ttf-dejavu
+volumeicon
+xcompmgr
+xsel'
 
 defaultaurpackages='volnoti dropbox nautilus-dropbox'
 
@@ -25,8 +54,8 @@ fi
 
 echo
 
-echo -e "${BOLD}Default packages: $WHITE$defaultpackages\n"
-echo -e "${BOLD}Default AUR packages: $WHITE$defaultaurpackages\n"
+echo -e "${BCYAN}* Default packages: $WHITE$defaultpackages\n"
+echo -e "${BCYAN}* Default AUR packages: $WHITE$defaultaurpackages\n"
 echo -ne "${BOLD}:: Do you want to install them? [y/N]" $WHITE
 
 read answer
