@@ -139,7 +139,7 @@
 [shortcuts]
     close = ctrl+space
     close_all = ctrl+shift+space
-    history = ctrl+agrave
+    history = ctrl+parenright
     context = ctrl+shift+semicolon
 
 [urgency_low]
