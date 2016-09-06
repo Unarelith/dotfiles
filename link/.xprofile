@@ -1,0 +1,5 @@
+#!/bin/sh
+
+eval $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export GNOME_KEYRING_CONTROL GPG_AGENT_INFO SSH_AUTH_SOCK
+
