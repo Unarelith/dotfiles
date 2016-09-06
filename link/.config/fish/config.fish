@@ -14,7 +14,7 @@ end
 #------------------------------------------------------------------------------
 # Environment variables
 #------------------------------------------------------------------------------
-set -x EDITOR nvim
+set -x EDITOR vim
 
 set -x PATH $PATH /usr/local/bin
 set -x PATH $PATH /opt/android-sdk/tools /opt/android-sdk/build-tools/23.0.2
@@ -22,6 +22,7 @@ set -x PATH $PATH /opt/cocos2d-x/tools/cocos2d-console/bin
 set -x PATH $PATH /opt/cocos2d-x/tools/cocos2d-console/plugins/plugin_package
 set -x PATH $PATH /home/$USER/.local/bin /home/$USER/.dotfiles/bin
 set -x PATH $PATH /home/$USER/.gem/ruby/2.2.0/bin
+set -x PATH $PATH /home/$USER/Development/i686-elf-gcc-4.9.1/bin
 
 set -x NDK_ROOT /opt/android-ndk
 set -x ANDROID_SDK_ROOT /opt/android-sdk
@@ -63,11 +64,11 @@ function emacs
 	command emacs -nw $argv
 end
 
-function vim
-	command nvim $argv
+# function vim
+# 	command nvim $argv
 	# command vim --servername "vim-server-"(echo %self) $argv
 	# command vim --servername "vim-server-"(ps -A | grep vim | grep (ps -A | grep %self | awk '{print $2}') | awk '{print $1}') $argv
-end
+# end
 
 function tree
 	command tree -C $argv
@@ -112,6 +113,10 @@ end
 function deadlines
 	cal -3
 	cat ~/rendu/deadlines
+end
+
+function zoom
+    printf '\33]50;%s\007' "xft:monospace:size=$argv"
 end
 
 #------------------------------------------------------------------------------

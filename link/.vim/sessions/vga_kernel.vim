@@ -1,6 +1,6 @@
-" ~/.dotfiles/link/.vim/sessions/default.vim:
+" ~/.dotfiles/link/.vim/sessions/vga_kernel.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 30 août 2016 at 18:02:12.
+" Created by session.vim 2.13.1 on 26 août 2016 at 10:46:09.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -19,7 +19,7 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/rendu/reverse/vga_widget
+cd ~/rendu/Perso/vga_kernel
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -44,11 +44,11 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 28) / 56)
+let s:l = 30 - ((29 * winheight(0) + 28) / 56)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+30
 normal! 0
 tabnext 1
 if exists('s:wipebuf')

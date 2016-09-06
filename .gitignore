@@ -29,8 +29,10 @@ link/Images/Web
 link/rendu/.cache.gws
 
 # Keep interesting stuff
+!link/.config/conky
 !link/.config/dunst/dunstrc
 !link/.config/fish/config.fish
+!link/.config/fontconfig/fonts.conf
 !link/.config/gtk-3.0/gtk.css
 !link/.config/gtk-3.0/settings.ini
 !link/.config/redshift.conf

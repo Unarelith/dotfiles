@@ -97,9 +97,11 @@ Plugin 'gmarik/Vundle.vim'
 "------------------------------------------------------------------------------
 " Original repos on GitHub
 "------------------------------------------------------------------------------
+Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-projectile'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-abolish'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/nerdtree'
 Plugin 'xolox/vim-misc'
@@ -121,9 +123,9 @@ Plugin 'vim-utils/vim-man'
 Plugin 'dag/vim-fish'
 Plugin 'wakatime/vim-wakatime'
 
-" Plugin 'Valloric/YouCompleteMe' <= Won't work without a dot file
+Plugin 'Valloric/YouCompleteMe' " <= Won't work without a dot file
 " Plugin 'jeaye/color_coded'      <= Too slow to refresh + same thing as above
-" Plugin 'rdnetto/YCM-Generator'  <= Used for these plugins
+Plugin 'rdnetto/YCM-Generator'  " <= Used for these plugins
 
 "------------------------------------------------------------------------------
 " vim-scripts repos
@@ -175,6 +177,11 @@ call altr#define('%/%.hpp', '%/%.cpp')
 call altr#define('%.h', '%.c')
 
 "------------------------------------------------------------------------------
+" YouCompleteMe config
+"------------------------------------------------------------------------------
+let g:ycm_show_diagnostics_ui = 0
+
+"------------------------------------------------------------------------------
 " syntastic config
 "------------------------------------------------------------------------------
 " set statusline+=%#warningmsg#
@@ -214,8 +221,7 @@ let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_no_include_search = 1
 let g:syntastic_cpp_no_default_include_dirs = 1
 let g:syntastic_cpp_auto_refresh_includes = 1
-let g:syntastic_cpp_compiler_options = '-std=c++11 `find include/* -type d | sed "s/^/-I/"` `find external/*/{include,external} -type d | sed "s/^/-I/"` -DLINUX'
-"-fPIC `find /usr/include/qt/ -type d | sed "s/^/-I/"`'
+let g:syntastic_cpp_compiler_options = '-std=c++11 -m32 `find include/* -type d | sed "s/^/-I/"` `find external/*/{include,external} -type d | sed "s/^/-I/"` -DLINUX -U__linux__ -fPIC `find /usr/include/qt/ -type d | sed "s/^/-I/"`'
 let g:syntastic_cpp_include_dirs = [
 	\ '.',
 	\ 'include',
@@ -230,6 +236,11 @@ let g:syntastic_cpp_include_dirs = [
 	\ '/opt/cocos2d-x/cocos/platform',
 	\ '/opt/cocos2d-x/cocos/audio/include'
 \ ]
+
+"------------------------------------------------------------------------------
+" syntastic ASM config
+"------------------------------------------------------------------------------
+let g:syntastic_asm_compiler_options = '-msyntax=intel'
 
 "------------------------------------------------------------------------------
 " vim-altr mappings
@@ -278,6 +289,10 @@ let g:epi_checker_bin = 'goku'
 "------------------------------------------------------------------------------
 let g:session_autoload = 'no'
 let g:session_autosave = 'no'
+
+map ,ss :SaveSession<CR>
+map ,so :OpenSession 
+map ,sc :CloseSession<CR>:q<CR>
 
 "------------------------------------------------------------------------------
 " Term conflict fixes
