@@ -113,18 +113,20 @@ Plugin 'tikhomirov/vim-glsl'
 Plugin 'kana/vim-altr'
 Plugin 'kien/ctrlp.vim'
 Plugin 'beyondmarc/opengl.vim'
-Plugin 'justmao945/vim-clang'
+" Plugin 'justmao945/vim-clang'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'basepi/vim-conque'
-Plugin 'lekv/vim-clewn'
 Plugin 'LeBarbu/vim-epitech'
 Plugin 'vim-utils/vim-man'
 Plugin 'dag/vim-fish'
 Plugin 'wakatime/vim-wakatime'
+Plugin 'Raimondi/delimitMate'
+Plugin 'gregsexton/VimCalc'
+Plugin 'terryma/vim-multiple-cursors'
 
 Plugin 'Valloric/YouCompleteMe' " <= Won't work without a dot file
-" Plugin 'jeaye/color_coded'      <= Too slow to refresh + same thing as above
+" Plugin 'jeaye/color_coded'      " <= Too slow to refresh + same thing as above + lots of bugs
 Plugin 'rdnetto/YCM-Generator'  " <= Used for these plugins
 
 "------------------------------------------------------------------------------
@@ -132,9 +134,9 @@ Plugin 'rdnetto/YCM-Generator'  " <= Used for these plugins
 "------------------------------------------------------------------------------
 Plugin 'L9'
 Plugin 'rails.vim'
-Plugin 'AutoClose'
+" Plugin 'AutoClose'
 Plugin 'c.vim'
-Plugin 'VimCalc'
+" Plugin 'VimCalc'
 Plugin 'VimIRC.vim'
 Plugin 'Tab-Manager'
 Plugin 'Tab-Menu'
@@ -156,10 +158,10 @@ let g:cpp_experimental_template_highlight = 1
 "------------------------------------------------------------------------------
 " vim-clang config
 "------------------------------------------------------------------------------
-let g:clang_auto = 0
-let g:clang_c_options   = '-std=gnu11'
-let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
-let g:clang_load_if_clang_dotfile = 1
+" let g:clang_auto = 0
+" let g:clang_c_options   = '-std=gnu11'
+" let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
+" let g:clang_load_if_clang_dotfile = 1
 
 "------------------------------------------------------------------------------
 " vim-altr config
@@ -180,6 +182,8 @@ call altr#define('%.h', '%.c')
 " YouCompleteMe config
 "------------------------------------------------------------------------------
 let g:ycm_show_diagnostics_ui = 0
+let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
 
 "------------------------------------------------------------------------------
 " syntastic config
@@ -251,7 +255,7 @@ nmap <S-Down> :call altr#forward()<CR>zz
 "------------------------------------------------------------------------------
 " Tagbar mapping
 "------------------------------------------------------------------------------
-nmap <C-T> :TagbarToggle<CR>
+nmap <C-K> :TagbarToggle<CR>
 
 "------------------------------------------------------------------------------
 " Shell mapping
@@ -319,23 +323,23 @@ map! <ESC>[17;5~ <C-F6>
 "------------------------------------------------------------------------------
 " Custom bindings
 "------------------------------------------------------------------------------
-" To open NERDTree, ctrl-x
+" To open NERDTree, Ctrl+B
 "------------------------------------------------------------------------------
 nmap <C-B> :NERDTree<CR>
 
 "------------------------------------------------------------------------------
-" To open a new tab: Ctrl+N
+" To open a new tab: Ctrl+Shift+N
 "------------------------------------------------------------------------------
-nmap <C-N> :tabnew<CR>
+nmap <C-S-N> :tabnew<CR>
 
 "------------------------------------------------------------------------------
-" To change tab to the left, ctrl-left
+" To change tab to the left, Alt+Left
 "------------------------------------------------------------------------------
 nmap <A-Left> :tabp<CR>
 imap <A-Left> <Esc>:tabp<CR>
 
 "------------------------------------------------------------------------------
-" To change tab to the right, ctrl-right
+" To change tab to the right, Alt+Right
 "------------------------------------------------------------------------------
 nmap <A-Right> :tabn<CR>
 imap <A-Right> <Esc>:tabn<CR>
@@ -381,13 +385,9 @@ imap <A-F5> <Esc>:cclose<CR>a
 "------------------------------------------------------------------------------
 " Perso commands
 "------------------------------------------------------------------------------
-map ,y "+y
-map ,yy "+yy
-map ,dd "+dd
-map ,p "+gP
-map ,sa ggVG
-map ,d yygP
+map ,d "pyy"pgP
 map ; a;<Esc>
+
 map ,b hT_
 map ,w f_l
 map ,c ct_
@@ -451,11 +451,6 @@ map ,gh :!git checkout
 map ,gi :!git init<cr>
 map ,gt :!tig<cr>
 map ,gl :!git log<cr>
-
-"------------------------------------------------------------------------------
-" proman commands
-"------------------------------------------------------------------------------
-map ,pa :!proman -Ma 
 
 "------------------------------------------------------------------------------
 " Don't use Ex mode, use Q for formatting

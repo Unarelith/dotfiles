@@ -8,7 +8,7 @@
 | ga          | Affiche les valeurs ASCII, hexa et octale      |
 |             | du caractère sous le curseur                   |
 |--------------------------------------------------------------|
-| <C-V>       | Insère une escape-sequence sous le curseur:   |
+| <C-V>       | Insère un caractère sous le curseur            |
 |--------------------------------------------------------------|
 | viw         | Sélectionne le mot sous le curseur             |
 |--------------------------------------------------------------|
@@ -29,6 +29,28 @@
 | :ll         | Aller à la première erreur trouvée par neomake |
 |--------------------------------------------------------------|
 | ,rc         | Lancer un projet cocos2d-x                     |
+|--------------------------------------------------------------|
+| VS{         | Entourer la sélection avec des {}              |
+|--------------------------------------------------------------|
+| ds(         | Supprimer les parenthèses                      |
+|--------------------------------------------------------------|
+| :Gbrowse    | Ouvrir le fichier sur GitHub (vim-fugitive)    |
+|--------------------------------------------------------------|
+| :Gstatus    | Ouvre un buffer avec le contenu de git status  |
+|--------------------------------------------------------------|
+| :Abolish    | Abbréviations avec globbing                    |
+|--------------------------------------------------------------|
+| :Subvert    | Remplacement avec globbing                     |
+|--------------------------------------------------------------|
+| crs / crc   | Switch to snake_case / camelCase               |
+|--------------------------------------------------------------|
+| \\w         | vim-easymotion > déplacement au début d'un mot |
+|--------------------------------------------------------------|
+| :Note       | Crée une nouvelle note                         |
+|--------------------------------------------------------------|
+| <C-N>       | Sélectionne des zones où placer des curseurs   |
+|--------------------------------------------------------------|
+| <F10>       | Identifie le groupe syntaxique sous le curseur |
 +--------------------------------------------------------------+
 |                                                              |
 | Ctrl+Shift+; => dunst menu                                   |

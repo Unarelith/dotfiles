@@ -54,9 +54,10 @@ link/.ssh/known_hosts
 link/.vim/bundle
 link/.vim/tmp
 
-# Ignore emacs temporary files
+# Ignore temporary files
 *~
 \#*\#
+*.pyc
 
 # Ignore any file with LOCAL in the name (good for per-machine vars/functions)
 *LOCAL*
