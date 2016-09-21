@@ -1,7 +1,7 @@
 "------------------------------------------------------------------------------
 " Vim configuration
 " - by gnidmoo <gnidmoo@gmail.com>
-" 
+"
 " Check ~/.vim/bundle/Vundle.vim is not empty before using this file
 "------------------------------------------------------------------------------
 
@@ -76,6 +76,8 @@ set encoding=utf-8
 set t_Co=256
 set laststatus=2        " Status line visible with only one buffer
 
+set shell=/bin/bash
+
 "------------------------------------------------------------------------------
 " Setup the default colorsheme
 "------------------------------------------------------------------------------
@@ -124,6 +126,9 @@ Plugin 'wakatime/vim-wakatime'
 Plugin 'Raimondi/delimitMate'
 Plugin 'gregsexton/VimCalc'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'itchyny/lightline.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'ntpeters/vim-better-whitespace'
 
 Plugin 'Valloric/YouCompleteMe' " <= Won't work without a dot file
 " Plugin 'jeaye/color_coded'      " <= Too slow to refresh + same thing as above + lots of bugs
@@ -150,10 +155,46 @@ Plugin 'git://git.wincent.com/command-t.git'
 call vundle#end() " required!
 
 "------------------------------------------------------------------------------
+" vim-better-whitespace config
+"------------------------------------------------------------------------------
+let g:better_whitespace_filetypes_blacklist = ['diff', 'gitcommit', 'unite', 'qf', 'help', 'vim']
+let g:better_whitespace_verbosity = 1
+
+au FileType c,cpp au BufWritePre <buffer> StripWhitespace
+
+"------------------------------------------------------------------------------
 " vim-cpp-enhanced-highlight config
 "------------------------------------------------------------------------------
 let g:cpp_class_scope_highlight = 1
 let g:cpp_experimental_template_highlight = 1
+
+"------------------------------------------------------------------------------
+" lightline.vim config
+"------------------------------------------------------------------------------
+" let g:lightline = {
+" 		\ 'colorscheme': 'wombat',
+" 		\ 'active': {
+" 		\   'left': [ [ 'mode', 'paste' ],
+" 		\             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+" 		\ },
+" 		\ 'component': {
+" 		\   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+" 		\ },
+" 		\ 'component_visible_condition': {
+" 		\   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+" 		\ },
+" 		\ }
+
+source ~/.vim/lightline.config.vim
+
+"------------------------------------------------------------------------------
+" vim-airline config
+"------------------------------------------------------------------------------
+let g:loaded_airline = 1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
+" let g:airline_theme='' " Use :AirlineTheme to test a theme
 
 "------------------------------------------------------------------------------
 " vim-clang config
@@ -186,6 +227,13 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 
 "------------------------------------------------------------------------------
+" vim-gitgutter config
+"------------------------------------------------------------------------------
+set updatetime=250
+nmap <C-G> :GitGutterToggle<CR>
+let g:gitgutter_enabled = 0
+
+"------------------------------------------------------------------------------
 " syntastic config
 "------------------------------------------------------------------------------
 " set statusline+=%#warningmsg#
@@ -193,9 +241,12 @@ let g:ycm_confirm_extra_conf = 0
 " set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:syntastic_error_symbol = "✖"
+let g:syntastic_warning_symbol = "⚠"
 
 "------------------------------------------------------------------------------
 " syntastic C config
@@ -225,7 +276,7 @@ let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_no_include_search = 1
 let g:syntastic_cpp_no_default_include_dirs = 1
 let g:syntastic_cpp_auto_refresh_includes = 1
-let g:syntastic_cpp_compiler_options = '-std=c++11 -m32 `find include/* -type d | sed "s/^/-I/"` `find external/*/{include,external} -type d | sed "s/^/-I/"` -DLINUX -U__linux__ -fPIC `find /usr/include/qt/ -type d | sed "s/^/-I/"`'
+let g:syntastic_cpp_compiler_options = '-Wall -Wextra -std=c++14 `find include/* -type d | sed "s/^/-I/"` `find external/*/{include,external} -type d | sed "s/^/-I/"` -DLINUX -U__linux__ -fPIC `find /usr/include/qt/ -type d | sed "s/^/-I/"`'
 let g:syntastic_cpp_include_dirs = [
 	\ '.',
 	\ 'include',
@@ -328,9 +379,9 @@ map! <ESC>[17;5~ <C-F6>
 nmap <C-B> :NERDTree<CR>
 
 "------------------------------------------------------------------------------
-" To open a new tab: Ctrl+Shift+N
+" To open a new tab: Ctrl+T
 "------------------------------------------------------------------------------
-nmap <C-S-N> :tabnew<CR>
+nmap <C-T> :tabnew<CR>
 
 "------------------------------------------------------------------------------
 " To change tab to the left, Alt+Left

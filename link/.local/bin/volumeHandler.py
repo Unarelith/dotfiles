@@ -11,11 +11,14 @@ if muteString == "yes":
     isMuted = True
 
 if len(sys.argv) < 2:
-    print("Usage: volumeHandler.py [get|up|down|toggle-mute]")
+    print("Usage: volumeHandler.py [get|set|up|down|toggle-mute]")
     quit()
 elif sys.argv[1] == "get":
     print(currentVolume)
     quit()
+elif sys.argv[1] == "set" and len(sys.argv) > 2:
+    currentVolume = int(sys.argv[2])
+    isMuted = False
 elif sys.argv[1] == "up":
     currentVolume += 5
     isMuted = False
@@ -28,10 +31,10 @@ elif sys.argv[1] == "toggle-mute":
 currentVolume = max(min(currentVolume, 100), 0)
 
 if isMuted:
-    os.system("volnoti-show -m")
     os.system("pactl set-sink-mute @DEFAULT_SINK@ 1")
+    os.system("volnoti-show -m")
 else:
-    os.system("volnoti-show " + str(currentVolume))
     os.system("pactl set-sink-mute @DEFAULT_SINK@ 0")
     os.system("pactl set-sink-volume @DEFAULT_SINK@ " + str(currentVolume) + "%")
+    os.system("volnoti-show " + str(currentVolume))
 

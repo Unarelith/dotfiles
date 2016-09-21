@@ -16,7 +16,8 @@ set $mod Mod4
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 
-font pango:Monospace 10
+# font pango:Ubuntu Mono 10
+font pango:DejaVu Sans Mono 10
 
 # font pango:Droid Sans Mono Dotted for Powerline 8
 # Before i3 v4.8, we used to recommend this one as the default:
@@ -39,6 +40,7 @@ exec dropbox
 exec dunst
 exec pulseaudio --start
 exec conky
+exec xrandr --setprovideroffloadsink 1 0
 
 for_window [class="URxvt"] border 1pixel
 
@@ -197,6 +199,9 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+bindsym $mod+Shift+B move workspace to output left
+bindsym $mod+Shift+N move workspace to output right
 
 # Rules for Hangouts
 for_window [window_role="pop-up"] floating enable

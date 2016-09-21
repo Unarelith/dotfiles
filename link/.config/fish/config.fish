@@ -4,6 +4,11 @@
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
+# Source /etc/profile
+#------------------------------------------------------------------------------
+env -i HOME=$HOME dash -l -c 'export -p' | sed -e "/PWD/d; /PATH/s/'//g;/PATH/s/:/ /g;s/=/ /;s/^export/set -x/" | source
+
+#------------------------------------------------------------------------------
 # Setup server screen
 #------------------------------------------------------------------------------
 if [ (hostname) = "quentin-laptop" ]
@@ -16,24 +21,11 @@ end
 #------------------------------------------------------------------------------
 set -x EDITOR vim
 
-set -x PATH $PATH /usr/local/bin
-set -x PATH $PATH /opt/android-sdk/tools /opt/android-sdk/build-tools/23.0.2
-set -x PATH $PATH /opt/cocos2d-x/tools/cocos2d-console/bin
-set -x PATH $PATH /opt/cocos2d-x/tools/cocos2d-console/plugins/plugin_package
-set -x PATH $PATH /home/$USER/.local/bin /home/$USER/.dotfiles/bin
-set -x PATH $PATH /home/$USER/.gem/ruby/2.2.0/bin
+set -x PATH $PATH /usr/local/bin /home/$USER/.local/bin /home/$USER/.dotfiles/bin
 set -x PATH $PATH /home/$USER/Development/i686-elf-gcc-4.9.1/bin
-
-set -x NDK_ROOT /opt/android-ndk
-set -x ANDROID_SDK_ROOT /opt/android-sdk
-set -x ANT_ROOT /usr/bin
-
-set -x GOPATH /home/$USER/.go
 
 # TO_CHANGE: Gogs username for fish
 set -x GOGS_USER gnidmoo
-
-set -x LD_LIBRARY_PATH /home/$USER/.froot/lib
 
 # Colored man pages
 set -x LESS -r
@@ -119,6 +111,25 @@ function zoom
     printf '\33]50;%s\007' "xft:monospace:size=$argv"
 end
 
+function zoompx
+    printf '\33]50;%s\007' "xft:monospace:pixelsize=$argv"
+end
+
+function steam
+	env LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' /usr/bin/steam
+end
+
+function alarm
+	# set alarm_player "env DISPLAY=:0 mplayer -nogui -softvol -softvol-max 120 -volume 120 -loop 0"
+	set alarm_player "env DISPLAY=:0 vlc"
+	set alarm_file "Musique/Liquicity\ Yearmix\ 2015\ \(Mixed\ by\ Maduk\)-cFnZeopsqos.mkv"
+	set alarm_command "$alarm_player $alarm_file"
+
+	python3 ~/.local/bin/volumeHandler.py set 100
+	echo "$alarm_command" | at $argv[1]
+	eval $alarm_command
+end
+
 #------------------------------------------------------------------------------
 # Misc
 #------------------------------------------------------------------------------
@@ -198,6 +209,8 @@ function vi_print_mode --description 'Displays the current mode'
 end
 
 function fish_prompt
+	# env FISH_VERSION=$FISH_VERSION PROMPTLINE_LAST_EXIT_CODE=$status bash ~/.promptline.sh left
+	
 	set last_status $status
 	
 	vi_print_mode

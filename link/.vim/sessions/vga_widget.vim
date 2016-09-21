@@ -1,6 +1,6 @@
 " ~/.dotfiles/link/.vim/sessions/vga_widget.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 08 septembre 2016 at 19:54:20.
+" Created by session.vim 2.13.1 on 21 septembre 2016 at 10:27:07.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -24,35 +24,57 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +12 Makefile
-badd +4 TODO
+badd +22 Makefile
+badd +1 TODO
 badd +1 Notes
 badd +1 source/client/main.cpp
 badd +24 source/client/MainWindow.cpp
-badd +1 include/client/MainWindow.hpp
-badd +1 include/client/Access.hpp
+badd +35 include/client/MainWindow.hpp
+badd +52 include/client/Access.hpp
 badd +1 include/client/DataSize.hpp
 badd +1 source/client/Access.cpp
-badd +1 include/client/SideBar.hpp
-badd +1 source/client/SideBar.cpp
-badd +20 include/client/VgaWidget.hpp
-badd +1 source/client/VgaWidget.cpp
-badd +32 include/server/VgaInspector.hpp
+badd +15 include/client/SideBar.hpp
+badd +15 source/client/SideBar.cpp
+badd +41 include/client/VgaWidget.hpp
+badd +37 source/client/VgaWidget.cpp
+badd +40 include/server/VgaInspector.hpp
 badd +1 source/server/VgaInspector.cpp
-badd +45 include/server/AccessContainer.hpp
+badd +39 include/server/AccessContainer.hpp
 badd +20 source/server/AccessContainer.cpp
-badd +1 include/server/Snapshot.hpp
+badd +31 include/server/Snapshot.hpp
 badd +1 include/server/Sequencer.hpp
-badd +1 include/server/RegisterContainer.hpp
+badd +31 include/server/RegisterContainer.hpp
 badd +1 source/server/RegisterContainer.cpp
 badd +1 include/server/GraphicsController.hpp
 badd +1 include/server/CrtController.hpp
-badd +1 include/server/Dac.hpp
+badd +25 include/server/Dac.hpp
 badd +1 source/server/Dac.cpp
-badd +1 include/server/AttributeController.hpp
+badd +46 include/server/AttributeController.hpp
 badd +1 source/server/AttributeController.cpp
-badd +1 include/server/ExternalRegisters.hpp
+badd +21 include/server/ExternalRegisters.hpp
 badd +1 source/server/ExternalRegisters.cpp
+badd +1 scripts/dump_accesses.py
+badd +1 scripts/dump_ports.py
+badd +32 include/RegisterContainerArray.hpp
+badd +33 include/server/VgaInspector_impl.hpp
+badd +60 include/server/RegisterContainerArray.hpp
+badd +30 include/client/VgaSideBar.hpp
+badd +1 source/client/VgaSideBar.cpp
+badd +15 include/server/VgaGfxInterpreter.hpp
+badd +15 source/server/VgaGfxInterpreter.cpp
+badd +15 external/vga_graphics_item.h
+badd +15 external/vga_graphics_item.cpp
+badd +3 external/zoomable_graphics_view.h
+badd +15 external/zoomable_graphics_view.cpp
+badd +1 /tmp/ycm_temp/server_60943_stdout.log
+badd +1 /tmp/ycm_temp/server_60943_stderr.log
+badd +1 vga
+badd +1 /tmp/ycm_temp/server_38699_stdout.log
+badd +76 /tmp/ycm_temp/server_38699_stderr.log
+badd +0 source/server/RegisterContainerArray.cpp
+badd +14 include/server/RegisterContainerArray_impl.hpp
+badd +15 include/server/RegisterContainerArray.tpp
+badd +32 include/server/RegisterContainerArray.inl
 argglobal
 silent! argdel *
 argadd Makefile
@@ -67,8 +89,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -79,12 +101,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 4 - ((2 * winheight(0) + 27) / 55)
+let s:l = 1 - ((0 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-4
-normal! 034|
+1
+normal! 016|
 wincmd w
 argglobal
 edit Notes
@@ -97,15 +119,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 8 - ((5 * winheight(0) + 27) / 55)
+let s:l = 11 - ((10 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-8
-normal! 014|
+11
+normal! 013|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
 tabedit Makefile
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -116,8 +138,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -128,12 +150,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 12 - ((8 * winheight(0) + 27) / 55)
+let s:l = 146 - ((74 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-12
-normal! 018|
+146
+normal! 032|
 wincmd w
 argglobal
 edit source/client/main.cpp
@@ -146,7 +168,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 21 - ((15 * winheight(0) + 27) / 55)
+let s:l = 21 - ((20 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -154,9 +176,9 @@ normal! zt
 normal! 0
 lcd ~/rendu/reverse/vga_widget
 wincmd w
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
-tabedit ~/rendu/reverse/vga_widget/include/client/MainWindow.hpp
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
+tabedit ~/rendu/reverse/vga_widget/scripts/dump_accesses.py
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -166,8 +188,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -178,7 +200,58 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 35 - ((25 * winheight(0) + 27) / 55)
+let s:l = 1 - ((0 * winheight(0) + 37) / 75)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+lcd ~/rendu/reverse/vga_widget
+wincmd w
+argglobal
+edit ~/rendu/reverse/vga_widget/scripts/dump_ports.py
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 46 - ((45 * winheight(0) + 37) / 75)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+46
+normal! 028|
+lcd ~/rendu/reverse/vga_widget
+wincmd w
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
+tabedit ~/rendu/reverse/vga_widget/include/client/MainWindow.hpp
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 35 - ((34 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -197,36 +270,28 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 39 - ((27 * winheight(0) + 27) / 55)
+let s:l = 51 - ((50 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-39
-normal! 019|
+51
+normal! 0
 lcd ~/rendu/reverse/vga_widget
 wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
 tabedit ~/rendu/reverse/vga_widget/include/client/Access.hpp
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
 1wincmd h
 wincmd w
-wincmd _ | wincmd |
-split
-1wincmd k
-wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe '2resize ' . ((&lines * 26 + 29) / 58)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
-exe '3resize ' . ((&lines * 28 + 29) / 58)
-exe 'vert 3resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -237,31 +302,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 20 - ((14 * winheight(0) + 27) / 55)
+let s:l = 52 - ((50 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-20
-normal! 019|
-lcd ~/rendu/reverse/vga_widget
-wincmd w
-argglobal
-edit ~/rendu/reverse/vga_widget/include/client/DataSize.hpp
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 13) / 26)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
+52
+normal! 077|
 lcd ~/rendu/reverse/vga_widget
 wincmd w
 argglobal
@@ -275,20 +321,17 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 21 - ((13 * winheight(0) + 14) / 28)
+let s:l = 32 - ((31 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-21
-normal! 09|
+32
+normal! 042|
 lcd ~/rendu/reverse/vga_widget
 wincmd w
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe '2resize ' . ((&lines * 26 + 29) / 58)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
-exe '3resize ' . ((&lines * 28 + 29) / 58)
-exe 'vert 3resize ' . ((&columns * 106 + 106) / 212)
-tabedit ~/rendu/reverse/vga_widget/include/client/SideBar.hpp
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
+tabedit ~/rendu/reverse/vga_widget/include/client/VgaSideBar.hpp
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -298,8 +341,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -310,35 +353,35 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 21 - ((15 * winheight(0) + 27) / 55)
+let s:l = 22 - ((21 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-21
-normal! 019|
-lcd ~/rendu/reverse/vga_widget
-wincmd w
-argglobal
-edit ~/rendu/reverse/vga_widget/source/client/SideBar.cpp
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 125 - ((14 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-125
+22
 normal! 0
 lcd ~/rendu/reverse/vga_widget
 wincmd w
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+argglobal
+edit ~/rendu/reverse/vga_widget/source/client/VgaSideBar.cpp
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 76 - ((70 * winheight(0) + 37) / 75)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+76
+normal! 0
+lcd ~/rendu/reverse/vga_widget
+wincmd w
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
 tabedit ~/rendu/reverse/vga_widget/include/client/VgaWidget.hpp
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -349,8 +392,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 119 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 119 + 119) / 239)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -361,12 +404,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 22 - ((16 * winheight(0) + 27) / 55)
+let s:l = 27 - ((25 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-22
-normal! 019|
+27
+normal! 011|
 lcd ~/rendu/reverse/vga_widget
 wincmd w
 argglobal
@@ -380,16 +423,17 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 29 - ((24 * winheight(0) + 27) / 55)
+let s:l = 57 - ((38 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-29
-normal! 0
+57
+normal! 022|
 lcd ~/rendu/reverse/vga_widget
 wincmd w
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 119 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 119 + 119) / 239)
 tabedit ~/rendu/reverse/vga_widget/include/server/VgaInspector.hpp
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -400,8 +444,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 104 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 107 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 117 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 121 + 119) / 239)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -412,12 +456,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 39 - ((20 * winheight(0) + 27) / 55)
+let s:l = 52 - ((51 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-39
-normal! 08|
+52
+normal! 049|
 lcd ~/rendu/reverse/vga_widget
 wincmd w
 argglobal
@@ -431,28 +475,35 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 81 - ((40 * winheight(0) + 27) / 55)
+let s:l = 84 - ((17 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-81
+84
 normal! 0
 lcd ~/rendu/reverse/vga_widget
 wincmd w
-exe 'vert 1resize ' . ((&columns * 104 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 107 + 106) / 212)
-tabedit ~/rendu/reverse/vga_widget/include/server/AccessContainer.hpp
+exe 'vert 1resize ' . ((&columns * 117 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 121 + 119) / 239)
+tabedit ~/rendu/reverse/vga_widget/include/server/RegisterContainerArray.hpp
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
 1wincmd h
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
 wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe '1resize ' . ((&lines * 44 + 39) / 78)
+exe 'vert 1resize ' . ((&columns * 119 + 119) / 239)
+exe '2resize ' . ((&lines * 30 + 39) / 78)
+exe 'vert 2resize ' . ((&columns * 119 + 119) / 239)
+exe 'vert 3resize ' . ((&columns * 119 + 119) / 239)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -463,12 +514,85 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 45 - ((27 * winheight(0) + 27) / 55)
+let s:l = 52 - ((32 * winheight(0) + 22) / 44)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+52
+normal! 0
+lcd ~/rendu/reverse/vga_widget
+wincmd w
+argglobal
+edit ~/rendu/reverse/vga_widget/include/server/RegisterContainerArray.inl
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 19 - ((7 * winheight(0) + 15) / 30)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+19
+normal! 020|
+lcd ~/rendu/reverse/vga_widget
+wincmd w
+argglobal
+edit ~/rendu/reverse/vga_widget/source/server/RegisterContainerArray.cpp
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 29 - ((28 * winheight(0) + 37) / 75)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+29
+normal! 0
+lcd ~/rendu/reverse/vga_widget
+wincmd w
+exe '1resize ' . ((&lines * 44 + 39) / 78)
+exe 'vert 1resize ' . ((&columns * 119 + 119) / 239)
+exe '2resize ' . ((&lines * 30 + 39) / 78)
+exe 'vert 2resize ' . ((&columns * 119 + 119) / 239)
+exe 'vert 3resize ' . ((&columns * 119 + 119) / 239)
+tabedit ~/rendu/reverse/vga_widget/include/server/AccessContainer.hpp
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 45 - ((37 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 45
-normal! 014|
+normal! 012|
 lcd ~/rendu/reverse/vga_widget
 wincmd w
 argglobal
@@ -482,16 +606,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 26 - ((18 * winheight(0) + 27) / 55)
+let s:l = 23 - ((22 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-26
+23
 normal! 0
 lcd ~/rendu/reverse/vga_widget
 wincmd w
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
 tabedit ~/rendu/reverse/vga_widget/include/server/RegisterContainer.hpp
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -502,8 +626,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -514,12 +638,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 27) / 55)
+let s:l = 31 - ((30 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 02|
+31
+normal! 0
 lcd ~/rendu/reverse/vga_widget
 wincmd w
 argglobal
@@ -533,16 +657,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 28 - ((20 * winheight(0) + 27) / 55)
+let s:l = 28 - ((20 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 28
-normal! 012|
+normal! 0
 lcd ~/rendu/reverse/vga_widget
 wincmd w
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
 tabedit ~/rendu/reverse/vga_widget/include/server/Snapshot.hpp
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -553,8 +677,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -565,12 +689,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 30 - ((21 * winheight(0) + 27) / 55)
+let s:l = 31 - ((27 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-30
-normal! 018|
+31
+normal! 0
 lcd ~/rendu/reverse/vga_widget
 wincmd w
 argglobal
@@ -584,16 +708,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 23 - ((16 * winheight(0) + 27) / 55)
+let s:l = 27 - ((25 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-23
-normal! 0
+27
+normal! 014|
 lcd ~/rendu/reverse/vga_widget
 wincmd w
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
 tabedit ~/rendu/reverse/vga_widget/include/server/GraphicsController.hpp
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -604,8 +728,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -616,7 +740,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 27) / 55)
+let s:l = 1 - ((0 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -635,7 +759,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 27) / 55)
+let s:l = 1 - ((0 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -643,8 +767,8 @@ normal! zt
 normal! 0
 lcd ~/rendu/reverse/vga_widget
 wincmd w
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
 tabedit ~/rendu/reverse/vga_widget/include/server/Dac.hpp
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -655,8 +779,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -667,7 +791,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 25 - ((18 * winheight(0) + 27) / 55)
+let s:l = 25 - ((24 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -686,7 +810,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 23 - ((16 * winheight(0) + 27) / 55)
+let s:l = 23 - ((22 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -694,8 +818,8 @@ normal! zt
 normal! 011|
 lcd ~/rendu/reverse/vga_widget
 wincmd w
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
 tabedit ~/rendu/reverse/vga_widget/include/server/AttributeController.hpp
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -706,8 +830,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -718,7 +842,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 30 - ((21 * winheight(0) + 27) / 55)
+let s:l = 30 - ((29 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -737,16 +861,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 23 - ((16 * winheight(0) + 27) / 55)
+let s:l = 23 - ((22 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 23
-normal! 027|
+normal! 021|
 lcd ~/rendu/reverse/vga_widget
 wincmd w
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
 tabedit ~/rendu/reverse/vga_widget/include/server/ExternalRegisters.hpp
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -757,8 +881,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -769,7 +893,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 21 - ((15 * winheight(0) + 27) / 55)
+let s:l = 21 - ((20 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -788,7 +912,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 19 - ((13 * winheight(0) + 27) / 55)
+let s:l = 19 - ((18 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -796,9 +920,9 @@ normal! zt
 normal! 012|
 lcd ~/rendu/reverse/vga_widget
 wincmd w
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
-tabnext 3
+exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
+tabnext 7
 set stal=1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -816,7 +940,7 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 2wincmd w
-tabnext 3
+tabnext 7
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

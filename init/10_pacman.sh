@@ -1,6 +1,7 @@
 defaultpackages='
 chromium
 cronie
+dash
 feh
 fish
 gvim
