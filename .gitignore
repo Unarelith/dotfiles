@@ -9,6 +9,7 @@ link/.config/fish/fishd*
 link/.config/gtk-3.0/servers
 link/.gnucash/*
 link/.i3/logs
+link/.i3/scripts/.mail.sh.x
 link/.kde4
 link/.local/bin/kakarot
 link/.local/bin/pcre-8.34

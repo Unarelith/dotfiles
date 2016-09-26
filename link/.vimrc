@@ -129,6 +129,8 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'itchyny/lightline.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'JamshedVesuna/vim-markdown-preview'
+Plugin 'plasticboy/vim-markdown'
 
 Plugin 'Valloric/YouCompleteMe' " <= Won't work without a dot file
 " Plugin 'jeaye/color_coded'      " <= Too slow to refresh + same thing as above + lots of bugs
@@ -160,13 +162,18 @@ call vundle#end() " required!
 let g:better_whitespace_filetypes_blacklist = ['diff', 'gitcommit', 'unite', 'qf', 'help', 'vim']
 let g:better_whitespace_verbosity = 1
 
-au FileType c,cpp au BufWritePre <buffer> StripWhitespace
+au FileType c,cpp,python au BufWritePre <buffer> StripWhitespace
 
 "------------------------------------------------------------------------------
 " vim-cpp-enhanced-highlight config
 "------------------------------------------------------------------------------
 let g:cpp_class_scope_highlight = 1
 let g:cpp_experimental_template_highlight = 1
+
+"------------------------------------------------------------------------------
+" vim-markdown-preview config
+"------------------------------------------------------------------------------
+let vim_markdown_preview_use_xdg_open = 1
 
 "------------------------------------------------------------------------------
 " lightline.vim config

@@ -38,3 +38,5 @@ else:
     os.system("pactl set-sink-volume @DEFAULT_SINK@ " + str(currentVolume) + "%")
     os.system("volnoti-show " + str(currentVolume))
 
+os.system("pkill -RTMIN+1 i3blocks")
+
