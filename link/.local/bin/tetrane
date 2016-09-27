@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ -z "$1" ]
+then
+	echo "Usage: tetrane [login|logout]"
+fi
+
+if [ "$1" == "login" ]
+then
+	xrandr --output DP2 --auto --primary --right-of eDP1
+	echo "[I]" $(date '+%a %e %b %H:%M:%S') > ~/.local/share/.tetrane.log
+elif [ "$1" == "logout" ]
+then
+	xrandr --output eDP1 --auto --output DP2 --off
+	echo "[O]" $(date '+%a %e %b %H:%M:%S') > ~/.local/share/.tetrane.log
+fi
+

@@ -1,10 +1,15 @@
 separator_block_width=14
 
-[external-ip]
-label= 
-command=curl -s http://whatismijnip.nl | cut -d " " -f 5
-interval=3600
+[now-playing]
+label= 
+command=qdbus org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Metadata | grep title | cut -d: -f3- | sed 's/^ *//g'
+interval=60
 color=#a8a8a8
+
+[Weather]
+command=~/.i3/scripts/weather "EUR|FR|FR069|LYON"
+interval=1800
+color=#e97ac8
 
 [updates]
 label= 
@@ -12,16 +17,26 @@ command=checkupdates | wc -l
 interval=10
 color=#50C878
 
-[Weather]
-command=~/.i3/scripts/weather "EUR|FR|FR069|LYON"
-interval=1800
-color=#e97ac8
+[tasks]
+#label= 
+label= 
+command=grep -P -n "[\x20-\x22]" ~/.vim/bundle/vim-notes/misc/notes/user/Tasks | wc -l
+interval=5
+# color=#50C878
+color=#878ca5
 
 [mail]
 label= 
 command=~/.i3/scripts/.mail.sh.x
 interval=100
-color=#7F00FF
+color=#7f7fff
+
+[accounts]
+#label= 
+label= 
+command=~/.i3/scripts/accounts
+interval=3600
+color=#a8a8a8
 
 [disk-root]
 label=:
@@ -36,6 +51,12 @@ instance=/home
 command=/usr/lib/i3blocks/disk
 interval=1
 color=#859900
+
+[external-ip]
+label= 
+command=curl -s http://whatismijnip.nl | cut -d " " -f 5
+interval=3600
+color=#a8a8a8
 
 [ssid]
 label=
@@ -103,13 +124,14 @@ interval=10
 
 [volume]
 label= 
-command=/usr/lib/i3blocks/volume
+command=/usr/lib/i3blocks/volume | tr '[:upper:]' '[:lower:]'
 interval=30
 signal=1
 color=#d70a53
 
 [time]
 label= 
+#command=echo "<span background=\"#002b36\">  $(date '+%a %e %b %H:%M:%S')</span>"
 command=date '+%a %e %b %H:%M:%S'
 interval=1
 color=#50C878
