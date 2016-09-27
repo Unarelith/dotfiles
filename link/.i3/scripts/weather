@@ -1,15 +1,24 @@
-#!/bin/bash 
+#!/bin/bash
 
 METRIC=1 #Should be 0 or 1; 0 for F, 1 for C
- 
+
 if [ -z $1 ]; then
 echo
 echo "USAGE: weather.sh <locationcode>"
 echo
 exit 0;
 fi
- 
-curl -s http://rss.accuweather.com/rss/liveweather_rss.asp\?metric\=${METRIC}\&locCode\=$1 | perl -ne 'use utf8; if (/Currently/) {chomp;/\<title\>Currently: (.*)?\<\/title\>/; my @values=split(":",$1); if( $values[0] eq "Sunny" || $values[0] eq "Mostly Sunny" || $values[0] eq "Partly Sunny" || $values[0] eq "Intermittent Clouds" || $values[0] eq "Hazy Sunshine" || $values[0] eq "Hazy Sunshine" || $values[0] eq "Hot") 
+
+if [ "$1" == "1" -o "$1" == "4" ]
+then
+	echo -n "Lyon "
+	locCode="EUR|FR|FR069|LYON"
+else
+	echo -n "Macon "
+	locCode="EUR|FR|FR071|MACON"
+fi
+
+curl -s http://rss.accuweather.com/rss/liveweather_rss.asp\?metric\=${METRIC}\&locCode\=$locCode | perl -ne 'use utf8; if (/Currently/) {chomp;/\<title\>Currently: (.*)?\<\/title\>/; my @values=split(":",$1); if( $values[0] eq "Sunny" || $values[0] eq "Mostly Sunny" || $values[0] eq "Partly Sunny" || $values[0] eq "Intermittent Clouds" || $values[0] eq "Hazy Sunshine" || $values[0] eq "Hazy Sunshine" || $values[0] eq "Hot") 
 {
 my $sun = "";
 binmode(STDOUT, ":utf8");

@@ -1,13 +1,20 @@
 separator_block_width=14
 
+#[clickme]
+#full_text=Click me!
+#command=echo button=$BLOCK_BUTTON x=$BLOCK_X y=$BLOCK_Y
+#min_width=button=1 x=1366 y=768
+#align=left
+
 [now-playing]
 label= 
 command=qdbus org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Metadata | grep title | cut -d: -f3- | sed 's/^ *//g'
 interval=60
 color=#a8a8a8
 
-[Weather]
-command=~/.i3/scripts/weather "EUR|FR|FR069|LYON"
+[weather]
+full_text=
+command=~/.i3/scripts/weather $BLOCK_BUTTON
 interval=1800
 color=#e97ac8
 
@@ -32,10 +39,10 @@ interval=100
 color=#7f7fff
 
 [accounts]
-#label= 
-label= 
-command=~/.i3/scripts/accounts
-interval=3600
+# label= 
+full_text=
+command=~/.i3/scripts/accounts $BLOCK_BUTTON
+# interval=3600
 color=#a8a8a8
 
 [disk-root]
