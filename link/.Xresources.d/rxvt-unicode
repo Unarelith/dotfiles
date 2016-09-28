@@ -15,7 +15,7 @@ URxvt*scrollWithBuffer:			true
 URxvt*scrollTtyKeypress:		true
 
 ! Setup font
-URxvt*font:						xft:DejaVu Sans Mono for Powerline:size=11
+URxvt*font:						xft:monospace:size=11
 
 ! Change transparency
 URxvt.keysym.Control-o:			command:\033]11;[70]#000\007

@@ -2,11 +2,10 @@
 
 METRIC=1 #Should be 0 or 1; 0 for F, 1 for C
 
-if [ -z $1 ]; then
-echo
-echo "USAGE: weather.sh <locationcode>"
-echo
-exit 0;
+if [ -z $1 ]
+then
+	echo "Usage: weather <locationcode>"
+	exit 0
 fi
 
 if [ "$1" == "1" -o "$1" == "4" ]
@@ -14,7 +13,7 @@ then
 	echo -n "Lyon "
 	locCode="EUR|FR|FR069|LYON"
 else
-	echo -n "Macon "
+	echo -n "Mâcon "
 	locCode="EUR|FR|FR071|MACON"
 fi
 

@@ -8,14 +8,14 @@ separator_block_width=14
 
 [now-playing]
 label= 
-command=qdbus org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Metadata | grep title | cut -d: -f3- | sed 's/^ *//g'
-interval=60
+command=~/.i3/scripts/now_playing
+interval=1
 color=#a8a8a8
 
 [weather]
 full_text=
 command=~/.i3/scripts/weather $BLOCK_BUTTON
-interval=1800
+interval=0
 color=#e97ac8
 
 [updates]
@@ -42,7 +42,7 @@ color=#7f7fff
 # label= 
 full_text=
 command=~/.i3/scripts/accounts $BLOCK_BUTTON
-# interval=3600
+interval=5
 color=#a8a8a8
 
 [disk-root]

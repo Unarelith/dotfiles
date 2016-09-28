@@ -78,6 +78,8 @@ set laststatus=2        " Status line visible with only one buffer
 
 set shell=/bin/bash
 
+au BufRead,BufNewFile *.md set wrap linebreak nofoldenable
+
 "------------------------------------------------------------------------------
 " Setup the default colorsheme
 "------------------------------------------------------------------------------
@@ -162,7 +164,7 @@ call vundle#end() " required!
 let g:better_whitespace_filetypes_blacklist = ['diff', 'gitcommit', 'unite', 'qf', 'help', 'vim']
 let g:better_whitespace_verbosity = 1
 
-au FileType c,cpp,python au BufWritePre <buffer> StripWhitespace
+au FileType cfg,c,cpp,python au BufWritePre <buffer> StripWhitespace
 
 "------------------------------------------------------------------------------
 " vim-cpp-enhanced-highlight config
@@ -454,13 +456,19 @@ map ,sf mu[[Vi}
 nmap <C-m> :noh<CR>
 imap <C-m> <Esc>:noh<CR>a
 
-"" Vmap for maintain Visual Mode after shifting > and <
+" Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
 vmap > >gv
 
-"" Move visual block
+" Move visual block
 vnoremap <C-J> :m '>+1<CR>gv=gv
 vnoremap <C-K> :m '<-2<CR>gv=gv
+
+" Fix up and down arrow if wrap is enabled
+map <Up> gk
+map <Down> gj
+imap <Up> <C-O>gk
+imap <Down> <C-O>gj
 
 "------------------------------------------------------------------------------
 " Window navigation

@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+
+import calendar
+import os
+import time
+
+title = os.popen("qdbus org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Metadata | grep title | cut -d: -f3- | sed 's/^ *//g'").read()
+
+maxWidth = 30
+delay = 5
+
+if len(title) >= maxWidth:
+    state = calendar.timegm(time.gmtime()) * 2 % (len(title) - maxWidth + delay * 2)
+    if state < delay * 2:
+        print("[", title[0:maxWidth], "]", sep='')
+    else:
+        state -= delay * 2
+        print("[", title[state:state + maxWidth], "]", sep='')
+else:
+    print(title)
+

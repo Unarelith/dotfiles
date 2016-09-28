@@ -1,0 +1,9 @@
+Tasks
+
+• Réécrire un script de dotfiles qui gère les dossiers correctement
+• Rajouter une commande “notes” pour gérer les notes vim
+   → Utilise le dossier ~/Notes pour les notes et fais des liens symboliques sur ~/.vim/bundle/vim-notes/misc/notes/user/Tasks
+   → Laisser la possibilité de faire des notes locales
+• Les fichiers de conf locaux doivent s’appeller *.local et seront ignorés par le .gitignore des dotfiles
+• Rajouter un système de détection automatique d’interface ethernet/wifi
+

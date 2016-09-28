@@ -6,7 +6,12 @@
 #------------------------------------------------------------------------------
 # Source /etc/profile
 #------------------------------------------------------------------------------
-env -i HOME=$HOME dash -l -c 'export -p' | sed -e "/PWD/d; /PATH/s/'//g;/PATH/s/:/ /g;s/=/ /;s/^export/set -x/" | source
+# [ -e /usr/bin/dash ]; and env -i HOME=$HOME dash -l -c 'export -p' | sed -e "/PWD/d; /PATH/s/'//g;/PATH/s/:/ /g;s/=/ /;s/^export/set -x/" | source
+
+#------------------------------------------------------------------------------
+# Source ~/.config/fish/config.fish.local
+#------------------------------------------------------------------------------
+[ -e ~/.config/fish/config.fish.local ]; and source ~/.config/fish/config.fish.local
 
 #------------------------------------------------------------------------------
 # Setup server screen
@@ -22,7 +27,6 @@ end
 set -x EDITOR vim
 
 set -x PATH $PATH /usr/local/bin /home/$USER/.local/bin /home/$USER/.dotfiles/bin
-set -x PATH $PATH /home/$USER/Development/i686-elf-gcc-4.9.1/bin
 
 # TO_CHANGE: Gogs username for fish
 set -x GOGS_USER gnidmoo
