@@ -1,0 +1,31 @@
+#!/bin/bash
+
+if [ -z "$1" ]
+then
+	echo "Usage: tetrane [login|logout]"
+	exit 1
+fi
+
+log_file="$HOME/.local/share/.tetrane.log"
+lastline="$(tail -1 $log_file)"
+
+if [ "$1" == "login" ]
+then
+	echo ""
+
+	if [ -z "$(echo $lastline | grep "[I]")" ]
+	then
+		xrandr --output DP2 --auto --primary --right-of eDP1
+		echo "[I]" $(date '+%a %e %b %H:%M:%S') >> $log_file
+	fi
+elif [ "$1" == "logout" ]
+then
+	echo ""
+
+	if [ -z "$(echo $lastline | grep "[O]")" ]
+	then
+		xrandr --output eDP1 --auto --output DP2 --off
+		echo "[O]" $(date '+%a %e %b %H:%M:%S') >> $log_file
+	fi
+fi
+

@@ -26,7 +26,6 @@ redshift
 rxvt-unicode
 synapse
 ttf-dejavu
-volumeicon
 xcompmgr
 xsel'
 

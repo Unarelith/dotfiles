@@ -1,0 +1,8 @@
+#!/bin/bash
+
+mouse_button=$(($1 - 1))
+args=($@)
+strings=("${args[@]:1}")
+
+echo -n ${strings[$mouse_button]}
+

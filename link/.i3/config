@@ -34,7 +34,6 @@ exec /bin/bash ~/.local/bin/update-background
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec xinput set-button-map 13 1 1 3
 exec nm-applet
-exec volumeicon
 exec redshift-gtk
 exec dropbox
 exec dunst

@@ -42,7 +42,7 @@ color=#7f7fff
 # label= 
 full_text=
 command=~/.i3/scripts/accounts $BLOCK_BUTTON
-interval=5
+interval=10
 color=#a8a8a8
 
 [disk-root]
@@ -108,13 +108,16 @@ command=echo "$(sensors coretemp-isa-0000 | awk '/Physical/ {print $4}')"
 interval=10
 color=#b58900
 
+[cpu-icon]
+full_text= 
+separator=false
+separator_block_width=0
+
 [cpu]
-label= 
 command=~/.i3/scripts/cpu_usage
 interval=10
-min_width= 100.00%
-#align=right
-#separator=false
+min_width=100.00%
+align=right
 
 [load]
 label= 
@@ -142,4 +145,9 @@ label=
 command=date '+%a %e %b %H:%M:%S'
 interval=1
 color=#50C878
+
+[tetrane]
+full_text=
+command=~/.i3/scripts/tetrane $(~/.i3/scripts/mouse_util $BLOCK_BUTTON "login" "-" "logout")
+color=#a8a8a8
 

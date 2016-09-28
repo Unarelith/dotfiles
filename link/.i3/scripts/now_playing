@@ -10,9 +10,11 @@ maxWidth = 30
 delay = 5
 
 if len(title) >= maxWidth:
-    state = calendar.timegm(time.gmtime()) * 2 % (len(title) - maxWidth + delay * 2)
+    state = calendar.timegm(time.gmtime()) * 2 % (len(title) - maxWidth + delay * 2 + 2)
     if state < delay * 2:
         print("[", title[0:maxWidth], "]", sep='')
+    elif state > len(title) - maxWidth + delay * 2 - 1:
+        print("[", title[-maxWidth - 1:-1], "]", sep='')
     else:
         state -= delay * 2
         print("[", title[state:state + maxWidth], "]", sep='')
