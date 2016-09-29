@@ -11,6 +11,35 @@
 
 set $mod Mod4
 
+# Workspace names
+set $workspace1  1:
+set $workspace2  2:2
+set $workspace3  3:3
+set $workspace4  4:4
+set $workspace5  5:5
+set $workspace6  6:6
+set $workspace7  7:7
+set $workspace8  8:
+set $workspace9  9:
+set $workspace10 10:
+set $workspaceU  11:
+set $workspaceI  12:
+set $workspaceO  13:O
+set $workspaceP  14:P
+set $workspaceJ  15:J
+set $workspaceK  16:K
+set $workspaceL  17:L
+set $workspaceM  18:
+
+# Other variables
+set $terminal urxvt -e fish
+
+set $launcher synapse
+# set $launcher i3-dmenu-desktop --dmenu="dmenu -l 10 -p 'Run' -i"
+set $launcher2 dmenu_run -l 10 -p "Run" -i
+
+set $lock_screen slimlock
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -27,18 +56,18 @@ font pango:DejaVu Sans Mono 10
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-exec setxkbmap -layout fr -variant oss
-exec xcompmgr
-exec volnoti
-exec /bin/bash ~/.local/bin/update-background
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec xinput set-button-map 13 1 1 3
-exec nm-applet
-exec redshift-gtk
-exec dropbox
-exec dunst
-exec conky
-exec xrandr --setprovideroffloadsink 1 0
+exec --no-startup-id setxkbmap -layout fr -variant oss
+exec --no-startup-id xcompmgr &
+exec --no-startup-id volnoti &
+exec --no-startup-id /bin/bash ~/.local/bin/update-background
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec --no-startup-id xinput set-button-map 13 1 1 3
+exec --no-startup-id nm-applet &
+exec --no-startup-id redshift-gtk &
+exec --no-startup-id dropbox &
+exec --no-startup-id dunst &
+exec --no-startup-id conky &
+exec --no-startup-id xrandr --setprovideroffloadsink 1 0
 
 # No window borders
 new_window normal 1
@@ -49,129 +78,116 @@ for_window [class="URxvt"] border none
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-# bindsym $mod+Return exec xterm
-bindsym $mod+Return exec urxvt -e fish
+# Start a terminal
+bindsym $mod+Return exec --no-startup-id $terminal
 
-# kill focused window
+# Lill focused window
 bindsym $mod+Shift+A kill
 
-# start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
-# bindsym $mod+d exec synapse
+# Launchers
+bindsym $mod+d exec --no-startup-id $launcher
+bindsym $mod+Shift+d exec --no-startup-id $launcher2
 
-## Software starting
-bindsym $mod+Shift+d exec --no-startup-id dmenu_run -l 10 -p "Run" -i
-#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -l 10 -p 'Run' -i"
-bindsym $mod+d exec --no-startup-id synapse
-
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-
+# Switch windows with $mod+Tab or $mod+a
 bindsym $mod+Tab focus right
 bindsym $mod+a focus left
 
-# change focus
+# Change focus
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move focused window
+# Move focused window
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
+# Splits
 bindsym $mod+h split h
-
-# split in vertical orientation
 bindsym $mod+v split v
 
-# enter fullscreen mode for the focused container
+# Enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
 
-# change container layout (stacked, tabbed, toggle split)
+# Change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+z layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
+# Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# change focus between tiling / floating windows
+# Change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
+# Focus the parent/child container
 bindsym $mod+q focus parent
-
-# focus the child container
 bindsym $mod+c focus child
 
-# switch to workspace
-bindsym $mod+ampersand   workspace "1:1"
-bindsym $mod+eacute      workspace "2:2"
-bindsym $mod+quotedbl    workspace "3:3"
-bindsym $mod+apostrophe  workspace "4:4"
-bindsym $mod+parenleft   workspace "5:5"
-bindsym $mod+minus       workspace "6:6"
-bindsym $mod+egrave      workspace "7:7"
-bindsym $mod+underscore  workspace "8:8"
-bindsym $mod+ccedilla    workspace "9:9"
-bindsym $mod+agrave      workspace "10:10"
+# Switch to workspace
+bindsym $mod+ampersand   workspace $workspace1
+bindsym $mod+eacute      workspace $workspace2
+bindsym $mod+quotedbl    workspace $workspace3
+bindsym $mod+apostrophe  workspace $workspace4
+bindsym $mod+parenleft   workspace $workspace5
+bindsym $mod+minus       workspace $workspace6
+bindsym $mod+egrave      workspace $workspace7
+bindsym $mod+underscore  workspace $workspace8
+bindsym $mod+ccedilla    workspace $workspace9
+bindsym $mod+agrave      workspace $workspace10
 
-bindsym $mod+KP_1 workspace "1:1"
-bindsym $mod+KP_2 workspace "2:2"
-bindsym $mod+KP_3 workspace "3:3"
-bindsym $mod+KP_4 workspace "4:4"
-bindsym $mod+KP_5 workspace "5:5"
-bindsym $mod+KP_6 workspace "6:6"
-bindsym $mod+KP_7 workspace "7:7"
-bindsym $mod+KP_8 workspace "8:8"
-bindsym $mod+KP_9 workspace "9:9"
-bindsym $mod+KP_0 workspace "10:10"
+bindsym $mod+KP_1 workspace $workspace1
+bindsym $mod+KP_2 workspace $workspace2
+bindsym $mod+KP_3 workspace $workspace3
+bindsym $mod+KP_4 workspace $workspace4
+bindsym $mod+KP_5 workspace $workspace5
+bindsym $mod+KP_6 workspace $workspace6
+bindsym $mod+KP_7 workspace $workspace7
+bindsym $mod+KP_8 workspace $workspace8
+bindsym $mod+KP_9 workspace $workspace9
+bindsym $mod+KP_0 workspace $workspace10
 
-bindsym $mod+u workspace "11:U"
-bindsym $mod+i workspace "12:I"
-bindsym $mod+o workspace "13:O"
-bindsym $mod+p workspace "14:P"
+bindsym $mod+u workspace $workspaceU
+bindsym $mod+i workspace $workspaceI
+bindsym $mod+o workspace $workspaceO
+bindsym $mod+p workspace $workspaceP
 
-bindsym $mod+j workspace "15:J"
-bindsym $mod+k workspace "16:K"
-bindsym $mod+l workspace "17:L"
-bindsym $mod+m workspace "18:M"
-
-# move focused container to workspace
-bindsym $mod+Shift+ampersand   move container to workspace "1:1"
-bindsym $mod+Shift+eacute      move container to workspace "2:2"
-bindsym $mod+Shift+quotedbl    move container to workspace "3:3"
-bindsym $mod+Shift+apostrophe  move container to workspace "4:4"
-bindsym $mod+Shift+parenleft   move container to workspace "5:5"
-bindsym $mod+Shift+minus       move container to workspace "6:6"
-bindsym $mod+Shift+egrave      move container to workspace "7:7"
-bindsym $mod+Shift+underscore  move container to workspace "8:8"
-bindsym $mod+Shift+ccedilla    move container to workspace "9:9"
-bindsym $mod+Shift+agrave      move container to workspace "10:10"
-
-bindsym $mod+Shift+u move container to workspace "11:U"
-bindsym $mod+Shift+i move container to workspace "12:I"
-bindsym $mod+Shift+o move container to workspace "13:O"
-bindsym $mod+Shift+p move container to workspace "14:P"
-
-bindsym $mod+Shift+j move container to workspace "15:J"
-bindsym $mod+Shift+k move container to workspace "16:K"
-bindsym $mod+Shift+l move container to workspace "17:L"
-bindsym $mod+Shift+m move container to workspace "18:M"
+bindsym $mod+j workspace $workspaceJ
+bindsym $mod+k workspace $workspaceK
+bindsym $mod+l workspace $workspaceL
+bindsym $mod+m workspace $workspaceM
 
 bindsym $mod+Ctrl+Left workspace prev
 bindsym $mod+Ctrl+Right workspace next
 
+# Move focused container to workspace
+bindsym $mod+Shift+ampersand   move container to workspace $workspace1
+bindsym $mod+Shift+eacute      move container to workspace $workspace2
+bindsym $mod+Shift+quotedbl    move container to workspace $workspace3
+bindsym $mod+Shift+apostrophe  move container to workspace $workspace4
+bindsym $mod+Shift+parenleft   move container to workspace $workspace5
+bindsym $mod+Shift+minus       move container to workspace $workspace6
+bindsym $mod+Shift+egrave      move container to workspace $workspace7
+bindsym $mod+Shift+underscore  move container to workspace $workspace8
+bindsym $mod+Shift+ccedilla    move container to workspace $workspace9
+bindsym $mod+Shift+agrave      move container to workspace $workspace10
+
+bindsym $mod+Shift+u move container to workspace $workspaceU
+bindsym $mod+Shift+i move container to workspace $workspaceI
+bindsym $mod+Shift+o move container to workspace $workspaceO
+bindsym $mod+Shift+p move container to workspace $workspaceP
+
+bindsym $mod+Shift+j move container to workspace $workspaceJ
+bindsym $mod+Shift+k move container to workspace $workspaceK
+bindsym $mod+Shift+l move container to workspace $workspaceL
+bindsym $mod+Shift+m move container to workspace $workspaceM
+
 bindsym $mod+Ctrl+Shift+Left move container to workspace prev; workspace prev
 bindsym $mod+Ctrl+Shift+Right move container to workspace next; workspace next
 
+# Volume management
 bindsym $mod+B exec python ~/.local/bin/volumeHandler.py down && killall -SIGUSR1 i3status
 bindsym $mod+N exec python ~/.local/bin/volumeHandler.py up   && killall -SIGUSR1 i3status
 
@@ -193,18 +209,23 @@ bindsym $mod+Shift+w exec i3-dtags-moveto.sh -fn '$font'
 
 # Renames a tag (optional)
 # bindsym $mod+x exec i3-input -F 'rename workspace to %s' -P 'New name: ' -f '$font'
-bindsym $mod+x exec slimlock
+
+# Lock screen
+bindsym $mod+x exec $lock_screen
 
 # Take a screenshot
 bindsym --release Print exec screenshot.bash
 
-# reload the configuration file
+# Reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
+
+# Exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+# Move workspace through screens
 bindsym $mod+Shift+B move workspace to output left
 bindsym $mod+Shift+N move workspace to output right
 
@@ -216,43 +237,38 @@ for_window [title="Actions Communication"] move container to workspace 5
 for_window [title="Actions Communication"] floating disable
 for_window [title="Anodyne"] floating enable
 
-# resize window (you can also use the mouse for that)
+# Resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
         bindsym m resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
+        # Back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# Start i3bar to display a workspace bar
 bar {
+    # status_command i3status
+    status_command i3blocks -c ~/.i3/blocks
+
 	# font pango:Source Sans Pro-10 10
 
-    status_command i3blocks -c ~/.i3/blocks
-    # status_command i3status
-    # status_command bash ~/.i3/scripts/status.bash
 	position top
 
 	strip_workspace_numbers yes
+
+	tray_output eDP1
+	tray_output DP2
 
 	colors {
 		separator #dfdde5
@@ -271,6 +287,5 @@ client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-
 client.background       #ffffff
 

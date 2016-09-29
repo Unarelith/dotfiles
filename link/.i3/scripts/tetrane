@@ -25,6 +25,7 @@ then
 	if [ -z "$(echo $lastline | grep "[O]")" ]
 	then
 		xrandr --output eDP1 --auto --output DP2 --off
+		qdbus org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Pause
 		echo "[O]" $(date '+%a %e %b %H:%M:%S') >> $log_file
 	fi
 fi

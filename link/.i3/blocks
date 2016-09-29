@@ -6,8 +6,13 @@ separator_block_width=14
 #min_width=button=1 x=1366 y=768
 #align=left
 
+[now-playing-icon]
+full_text= 
+command=qdbus org.mpris.MediaPlayer2.smplayer /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+separator=false
+separator_block_width=0
+
 [now-playing]
-label= 
 command=~/.i3/scripts/now_playing
 interval=1
 color=#a8a8a8
@@ -15,27 +20,26 @@ color=#a8a8a8
 [weather]
 full_text=
 command=~/.i3/scripts/weather $BLOCK_BUTTON
-interval=0
 color=#e97ac8
 
 [updates]
 label= 
 command=checkupdates | wc -l
-interval=10
+interval=1800
 color=#50C878
 
 [tasks]
 #label= 
 label= 
-command=grep -P -n "[\x20-\x22]" ~/.vim/bundle/vim-notes/misc/notes/user/Tasks | wc -l
-interval=5
+command=grep -P -n "•" ~/.vim/bundle/vim-notes/misc/notes/user/Tasks | wc -l
+interval=1800
 # color=#50C878
 color=#878ca5
 
 [mail]
 label= 
 command=~/.i3/scripts/.mail.sh.x
-interval=100
+interval=300
 color=#7f7fff
 
 [accounts]
@@ -49,14 +53,14 @@ color=#a8a8a8
 label=:
 instance=/
 command=/usr/lib/i3blocks/disk
-interval=1
+interval=300
 color=#1793D1
 
 [disk-home]
 label=:
 instance=/home
 command=/usr/lib/i3blocks/disk
-interval=1
+interval=300
 color=#859900
 
 [external-ip]
@@ -66,17 +70,17 @@ interval=3600
 color=#a8a8a8
 
 [ssid]
-label=
+label= 
 command=echo "$(iw dev wlo1 link | grep SSID | cut -d " " -f 2-)"
 color=#d33682
-interval=5
+interval=120
 
 [wireless]
 label=
 instance=wlo1
 command=/usr/lib/i3blocks/iface
 color=#00dd00
-interval=10
+interval=120
 
 [ethernet]
 label=
@@ -84,12 +88,12 @@ label=
 instance=enp0s25
 command=/usr/lib/i3blocks/iface
 color=#00FF00
-interval=10
+interval=120
 
 [strength]
-command=echo "$(iw dev wlo1 link | grep signal | cut -d " " -f 2-)"
-interval=10
-color=#cb4b16
+# command=echo "$(iw dev wlo1 link | grep signal | cut -d " " -f 2-)"
+# interval=10
+# color=#cb4b16
 
 [memory]
 # label=Mem:

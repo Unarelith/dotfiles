@@ -133,6 +133,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'PotatoesMaster/i3-vim-syntax'
 
 Plugin 'Valloric/YouCompleteMe' " <= Won't work without a dot file
 " Plugin 'jeaye/color_coded'      " <= Too slow to refresh + same thing as above + lots of bugs
@@ -157,6 +158,12 @@ Plugin 'project.tar.gz'
 Plugin 'git://git.wincent.com/command-t.git'
 
 call vundle#end() " required!
+"
+"------------------------------------------------------------------------------
+" i3-vim-syntax config
+"------------------------------------------------------------------------------
+au BufEnter *i3/config setlocal filetype=i3
+
 
 "------------------------------------------------------------------------------
 " vim-better-whitespace config

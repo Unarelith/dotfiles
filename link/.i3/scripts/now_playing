@@ -1,10 +1,26 @@
 #!/usr/bin/env python3
 
+from bs4 import BeautifulSoup
 import calendar
 import os
+import requests
 import time
 
-title = os.popen("qdbus org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Metadata | grep title | cut -d: -f3- | sed 's/^ *//g'").read()
+# def getYoutubeTitle(videoID):
+#     url = 'http://youtube.com?' + videoID
+#     r = requests.get(url)
+#     html_content = r.text
+#     soup = BeautifulSoup(html_content, 'lxml')
+#     return soup.title.string
+#
+# videoID = os.popen("qdbus org.mpris.MediaPlayer2.smplayer /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Metadata | grep title | cut -d: -f3- | sed 's/^ *//g'").read()
+# title = getYoutubeTitle(videoID)
+
+# title = os.popen("qdbus org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Metadata | grep title | cut -d: -f3- | sed 's/^ *//g'").read()
+title = os.popen("qdbus org.mpris.MediaPlayer2.smplayer /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Metadata | grep title | cut -d: -f3- | sed 's/^ *//g'").read()[:-1]
+
+if len(title) == 0:
+    title = "none"
 
 maxWidth = 30
 delay = 5
@@ -19,5 +35,5 @@ if len(title) >= maxWidth:
         state -= delay * 2
         print("[", title[state:state + maxWidth], "]", sep='')
 else:
-    print(title)
+    print("[", title, "]", sep='')
 
