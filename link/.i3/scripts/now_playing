@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 
-from bs4 import BeautifulSoup
+# from bs4 import BeautifulSoup
 import calendar
 import os
-import requests
+# import requests
+import sys
 import time
 
 # def getYoutubeTitle(videoID):
@@ -16,24 +17,41 @@ import time
 # videoID = os.popen("qdbus org.mpris.MediaPlayer2.smplayer /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Metadata | grep title | cut -d: -f3- | sed 's/^ *//g'").read()
 # title = getYoutubeTitle(videoID)
 
-# title = os.popen("qdbus org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Metadata | grep title | cut -d: -f3- | sed 's/^ *//g'").read()
-title = os.popen("qdbus org.mpris.MediaPlayer2.smplayer /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Metadata | grep title | cut -d: -f3- | sed 's/^ *//g'").read()[:-1]
+def getVlcTitle():
+    return os.popen("qdbus org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Metadata | grep title | cut -d: -f3- | sed 's/^ *//g'").read()
 
-if len(title) == 0:
-    title = "none"
+def getSMPlayerTitle():
+    return os.popen("qdbus org.mpris.MediaPlayer2.smplayer /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Metadata | grep title | cut -d: -f3- | sed 's/^ *//g'").read()[:-1]
 
-maxWidth = 30
-delay = 5
-
-if len(title) >= maxWidth:
-    state = calendar.timegm(time.gmtime()) * 2 % (len(title) - maxWidth + delay * 2 + 2)
+def scrollTitle(title, maxWidth, delay):
+    state = calendar.timegm(time.gmtime()) * 2 % (len(title) - maxWidth + delay * 2 + 4)
     if state < delay * 2:
-        print("[", title[0:maxWidth], "]", sep='')
+        sys.stdout.write(title[:maxWidth])
     elif state > len(title) - maxWidth + delay * 2 - 1:
-        print("[", title[-maxWidth - 1:-1], "]", sep='')
+        sys.stdout.write(title[-maxWidth:])
     else:
         state -= delay * 2
-        print("[", title[state:state + maxWidth], "]", sep='')
-else:
-    print("[", title, "]", sep='')
+        sys.stdout.write(title[state:state + maxWidth])
+
+def scrollTitleLoop(title, maxWidth):
+    title += " - "
+    state = calendar.timegm(time.gmtime()) * 2 % len(title)
+    if state + maxWidth < len(title):
+        sys.stdout.write(title[state:state + maxWidth])
+    else:
+        sys.stdout.write(title[state:] + title[:maxWidth - len(title[state:])])
+
+def printTitle(title, maxWidth, delay):
+    if len(title) == 0:
+        title = "none"
+    sys.stdout.write("[")
+    if len(title) > maxWidth:
+        # scrollTitle(title, maxWidth, delay)
+        scrollTitleLoop(title, maxWidth)
+    else:
+        sys.stdout.write(title)
+    sys.stdout.write("]")
+
+if __name__ == "__main__":
+    printTitle(getSMPlayerTitle(), 30, 5)
 
