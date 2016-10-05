@@ -47,8 +47,8 @@ URxvt*secondaryScreen: 1
 URxvt*secondaryScroll: 0
 
 ! Setup tabbedex
-URxvt.perl-lib:					.urxvt/
-URxvt.perl-ext-common:			default,matcher,tabbedex
+! URxvt.perl-lib:					/home/bazin_q/.urxvt/
+! URxvt.perl-ext-common:			default,matcher,tabbedex
 
 ! Launch chromium with the a left click on a URL
 URxvt.url-launcher:				/usr/bin/chromium

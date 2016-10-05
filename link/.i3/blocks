@@ -6,7 +6,13 @@ separator_block_width=14
 #min_width=button=1 x=1366 y=768
 #align=left
 
+# [test]
+# command=while true; do echo "<span color='blue'>$(date)</span>"; sleep 1; done
+# interval=persist
+# markup=pango
+
 [now-playing-icon]
+short_text=
 full_text= 
 command=qdbus org.mpris.MediaPlayer2.smplayer /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 separator=false
@@ -14,12 +20,13 @@ separator_block_width=0
 
 [now-playing]
 command=~/.i3/scripts/now_playing
-interval=1
+interval=persistent
 color=#a8a8a8
 
 [weather]
 full_text=
 command=~/.i3/scripts/weather $BLOCK_BUTTON
+interval=1800
 color=#e97ac8
 
 [updates]
@@ -31,7 +38,7 @@ color=#50C878
 [tasks]
 #label= 
 label= 
-command=grep -P -n "•" ~/.vim/bundle/vim-notes/misc/notes/user/Tasks | wc -l
+command=grep -P -n "•" ~/Notes/Tasks.note | wc -l
 interval=1800
 # color=#50C878
 color=#878ca5
@@ -64,23 +71,22 @@ interval=300
 color=#859900
 
 [external-ip]
-label= 
-command=curl -s http://whatismijnip.nl | cut -d " " -f 5
-interval=3600
+full_text=
+command=[ "$BLOCK_BUTTON" == "1" ] && echo "  $(curl -s http://whatismijnip.nl | cut -d " " -f 5)" || echo ""
 color=#a8a8a8
 
 [ssid]
 label= 
 command=echo "$(iw dev wlo1 link | grep SSID | cut -d " " -f 2-)"
 color=#d33682
-interval=120
+interval=5
 
 [wireless]
 label=
 instance=wlo1
 command=/usr/lib/i3blocks/iface
 color=#00dd00
-interval=120
+interval=5
 
 [ethernet]
 label=
@@ -88,7 +94,7 @@ label=
 instance=enp0s25
 command=/usr/lib/i3blocks/iface
 color=#00FF00
-interval=120
+interval=5
 
 [strength]
 # command=echo "$(iw dev wlo1 link | grep signal | cut -d " " -f 2-)"

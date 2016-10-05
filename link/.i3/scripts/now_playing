@@ -23,8 +23,8 @@ def getVlcTitle():
 def getSMPlayerTitle():
     return os.popen("qdbus org.mpris.MediaPlayer2.smplayer /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Metadata | grep title | cut -d: -f3- | sed 's/^ *//g'").read()[:-1]
 
-def scrollTitle(title, maxWidth, delay):
-    state = calendar.timegm(time.gmtime()) * 2 % (len(title) - maxWidth + delay * 2 + 4)
+def scrollTitle(title, maxWidth, textSpeed, delay):
+    state = int(time.time() * textSpeed % (len(title) - maxWidth + delay * 2 + 4))
     if state < delay * 2:
         sys.stdout.write(title[:maxWidth])
     elif state > len(title) - maxWidth + delay * 2 - 1:
@@ -33,25 +33,29 @@ def scrollTitle(title, maxWidth, delay):
         state -= delay * 2
         sys.stdout.write(title[state:state + maxWidth])
 
-def scrollTitleLoop(title, maxWidth):
+def scrollTitleLoop(title, maxWidth, textSpeed):
     title += " - "
-    state = calendar.timegm(time.gmtime()) * 2 % len(title)
+    state = int(time.time() * textSpeed % len(title))
     if state + maxWidth < len(title):
         sys.stdout.write(title[state:state + maxWidth])
     else:
         sys.stdout.write(title[state:] + title[:maxWidth - len(title[state:])])
 
-def printTitle(title, maxWidth, delay):
+def printTitle(title, maxWidth, textSpeed, delay):
     if len(title) == 0:
         title = "none"
     sys.stdout.write("[")
     if len(title) > maxWidth:
-        # scrollTitle(title, maxWidth, delay)
-        scrollTitleLoop(title, maxWidth)
+        # scrollTitle(title, maxWidth, textSpeed, delay)
+        scrollTitleLoop(title, maxWidth, textSpeed)
     else:
         sys.stdout.write(title)
-    sys.stdout.write("]")
+    sys.stdout.write("]\n")
+    sys.stdout.flush()
+    time.sleep(textSpeed / 75)
 
 if __name__ == "__main__":
-    printTitle(getSMPlayerTitle(), 30, 5)
+    title = getSMPlayerTitle()
+    while 1:
+        printTitle(title, 30, 4, 5)
 

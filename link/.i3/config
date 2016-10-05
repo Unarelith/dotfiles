@@ -16,20 +16,21 @@ set $workspace1  1:
 set $workspace2  2:2
 set $workspace3  3:3
 set $workspace4  4:4
-set $workspace5  5:5
+set $workspace5  5:
 set $workspace6  6:6
 set $workspace7  7:7
-set $workspace8  8:
-set $workspace9  9:
+set $workspace8  8:8
+set $workspace9  9:
 set $workspace10 10:
-set $workspaceU  11:
-set $workspaceI  12:
-set $workspaceO  13:O
-set $workspaceP  14:P
-set $workspaceJ  15:J
-set $workspaceK  16:K
-set $workspaceL  17:L
-set $workspaceM  18:
+set $workspace11 11:
+set $workspaceU  12:
+set $workspaceI  13:
+set $workspaceO  14:O
+set $workspaceP  15:P
+set $workspaceJ  16:J
+set $workspaceK  17:K
+set $workspaceL  18:L
+set $workspaceM  19:
 
 # Other variables
 set $terminal urxvt -e fish
@@ -63,8 +64,6 @@ exec --no-startup-id /bin/bash ~/.local/bin/update-background
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id xinput set-button-map 13 1 1 3
 exec --no-startup-id nm-applet &
-exec --no-startup-id redshift-gtk &
-exec --no-startup-id dropbox &
 exec --no-startup-id dunst &
 exec --no-startup-id conky &
 exec --no-startup-id xrandr --setprovideroffloadsink 1 0
@@ -137,6 +136,7 @@ bindsym $mod+egrave      workspace $workspace7
 bindsym $mod+underscore  workspace $workspace8
 bindsym $mod+ccedilla    workspace $workspace9
 bindsym $mod+agrave      workspace $workspace10
+bindsym $mod+parenright  workspace $workspace11
 
 bindsym $mod+KP_1 workspace $workspace1
 bindsym $mod+KP_2 workspace $workspace2

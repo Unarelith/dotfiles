@@ -76,9 +76,15 @@ set encoding=utf-8
 set t_Co=256
 set laststatus=2        " Status line visible with only one buffer
 
+set list
+set listchars=tab:··
+"set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+
 set shell=/bin/bash
 
 au BufRead,BufNewFile *.md set wrap linebreak nofoldenable
+au BufRead,BufNewFile *.note set filetype=notes nofoldenable
+au BufRead,BufNewFile Notes set filetype=notes nofoldenable
 
 "------------------------------------------------------------------------------
 " Setup the default colorsheme
@@ -164,14 +170,13 @@ call vundle#end() " required!
 "------------------------------------------------------------------------------
 au BufEnter *i3/config setlocal filetype=i3
 
-
 "------------------------------------------------------------------------------
 " vim-better-whitespace config
 "------------------------------------------------------------------------------
 let g:better_whitespace_filetypes_blacklist = ['diff', 'gitcommit', 'unite', 'qf', 'help', 'vim']
 let g:better_whitespace_verbosity = 1
 
-au FileType cfg,c,cpp,python au BufWritePre <buffer> StripWhitespace
+au FileType cfg,cmake,c,cpp,python au BufWritePre <buffer> StripWhitespace
 
 "------------------------------------------------------------------------------
 " vim-cpp-enhanced-highlight config
@@ -582,9 +587,7 @@ if has("autocmd")
   augroup END
 
 else
-
-  set autoindent		" always set autoindenting on
-
+  set autoindent " always set autoindenting on
 endif " has("autocmd")
 
 "------------------------------------------------------------------------------

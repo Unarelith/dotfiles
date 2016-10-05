@@ -13,18 +13,20 @@ if [ "$1" == "login" ]
 then
 	echo ""
 
+	xrandr --output DP2 --auto --primary --right-of eDP1
+
 	if [ -z "$(echo $lastline | grep "[I]")" ]
 	then
-		xrandr --output DP2 --auto --primary --right-of eDP1
 		echo "[I]" $(date '+%a %e %b %H:%M:%S') >> $log_file
 	fi
 elif [ "$1" == "logout" ]
 then
 	echo ""
 
+	xrandr --output eDP1 --auto --output DP2 --off
+
 	if [ -z "$(echo $lastline | grep "[O]")" ]
 	then
-		xrandr --output eDP1 --auto --output DP2 --off
 		qdbus org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Pause
 		echo "[O]" $(date '+%a %e %b %H:%M:%S') >> $log_file
 	fi

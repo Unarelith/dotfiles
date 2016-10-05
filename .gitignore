@@ -31,6 +31,7 @@ link/rendu/.cache.gws
 
 # Keep interesting stuff
 !link/.config/conky
+!link/.config/Trolltech.conf
 !link/.config/dunst/dunstrc
 !link/.config/fish/config.fish
 !link/.config/fontconfig/fonts.conf

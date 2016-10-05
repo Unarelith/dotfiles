@@ -1,6 +1,6 @@
 " ~/.dotfiles/link/.vim/sessions/vga_widget.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 21 septembre 2016 at 10:27:07.
+" Created by session.vim 2.13.1 on 04 octobre 2016 at 18:13:23.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -24,7 +24,7 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +22 Makefile
+badd +146 Makefile
 badd +1 TODO
 badd +1 Notes
 badd +1 source/client/main.cpp
@@ -35,11 +35,11 @@ badd +1 include/client/DataSize.hpp
 badd +1 source/client/Access.cpp
 badd +15 include/client/SideBar.hpp
 badd +15 source/client/SideBar.cpp
-badd +41 include/client/VgaWidget.hpp
+badd +27 include/client/VgaWidget.hpp
 badd +37 source/client/VgaWidget.cpp
-badd +40 include/server/VgaInspector.hpp
+badd +52 include/server/VgaInspector.hpp
 badd +1 source/server/VgaInspector.cpp
-badd +39 include/server/AccessContainer.hpp
+badd +45 include/server/AccessContainer.hpp
 badd +20 source/server/AccessContainer.cpp
 badd +31 include/server/Snapshot.hpp
 badd +1 include/server/Sequencer.hpp
@@ -49,7 +49,7 @@ badd +1 include/server/GraphicsController.hpp
 badd +1 include/server/CrtController.hpp
 badd +25 include/server/Dac.hpp
 badd +1 source/server/Dac.cpp
-badd +46 include/server/AttributeController.hpp
+badd +30 include/server/AttributeController.hpp
 badd +1 source/server/AttributeController.cpp
 badd +21 include/server/ExternalRegisters.hpp
 badd +1 source/server/ExternalRegisters.cpp
@@ -57,8 +57,8 @@ badd +1 scripts/dump_accesses.py
 badd +1 scripts/dump_ports.py
 badd +32 include/RegisterContainerArray.hpp
 badd +33 include/server/VgaInspector_impl.hpp
-badd +60 include/server/RegisterContainerArray.hpp
-badd +30 include/client/VgaSideBar.hpp
+badd +52 include/server/RegisterContainerArray.hpp
+badd +22 include/client/VgaSideBar.hpp
 badd +1 source/client/VgaSideBar.cpp
 badd +15 include/server/VgaGfxInterpreter.hpp
 badd +15 source/server/VgaGfxInterpreter.cpp
@@ -71,7 +71,7 @@ badd +1 /tmp/ycm_temp/server_60943_stderr.log
 badd +1 vga
 badd +1 /tmp/ycm_temp/server_38699_stdout.log
 badd +76 /tmp/ycm_temp/server_38699_stderr.log
-badd +0 source/server/RegisterContainerArray.cpp
+badd +1 source/server/RegisterContainerArray.cpp
 badd +14 include/server/RegisterContainerArray_impl.hpp
 badd +15 include/server/RegisterContainerArray.tpp
 badd +32 include/server/RegisterContainerArray.inl
@@ -321,12 +321,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 32 - ((31 * winheight(0) + 37) / 75)
+let s:l = 43 - ((42 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-32
-normal! 042|
+43
+normal! 041|
 lcd ~/rendu/reverse/vga_widget
 wincmd w
 exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
@@ -372,7 +372,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 76 - ((70 * winheight(0) + 37) / 75)
+let s:l = 76 - ((37 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -423,15 +423,14 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 57 - ((38 * winheight(0) + 37) / 75)
+let s:l = 61 - ((51 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-57
-normal! 022|
+61
+normal! 0
 lcd ~/rendu/reverse/vga_widget
 wincmd w
-2wincmd w
 exe 'vert 1resize ' . ((&columns * 119 + 119) / 239)
 exe 'vert 2resize ' . ((&columns * 119 + 119) / 239)
 tabedit ~/rendu/reverse/vga_widget/include/server/VgaInspector.hpp
@@ -456,12 +455,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 52 - ((51 * winheight(0) + 37) / 75)
+let s:l = 52 - ((46 * winheight(0) + 33) / 67)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 52
-normal! 049|
+normal! 027|
 lcd ~/rendu/reverse/vga_widget
 wincmd w
 argglobal
@@ -475,14 +474,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 84 - ((17 * winheight(0) + 37) / 75)
+let s:l = 110 - ((42 * winheight(0) + 33) / 67)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-84
+110
 normal! 0
 lcd ~/rendu/reverse/vga_widget
 wincmd w
+2wincmd w
 exe 'vert 1resize ' . ((&columns * 117 + 119) / 239)
 exe 'vert 2resize ' . ((&columns * 121 + 119) / 239)
 tabedit ~/rendu/reverse/vga_widget/include/server/RegisterContainerArray.hpp
@@ -499,9 +499,9 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 44 + 39) / 78)
+exe '1resize ' . ((&lines * 44 + 35) / 70)
 exe 'vert 1resize ' . ((&columns * 119 + 119) / 239)
-exe '2resize ' . ((&lines * 30 + 39) / 78)
+exe '2resize ' . ((&lines * 30 + 35) / 70)
 exe 'vert 2resize ' . ((&columns * 119 + 119) / 239)
 exe 'vert 3resize ' . ((&columns * 119 + 119) / 239)
 argglobal
@@ -560,9 +560,9 @@ normal! zt
 normal! 0
 lcd ~/rendu/reverse/vga_widget
 wincmd w
-exe '1resize ' . ((&lines * 44 + 39) / 78)
+exe '1resize ' . ((&lines * 44 + 35) / 70)
 exe 'vert 1resize ' . ((&columns * 119 + 119) / 239)
-exe '2resize ' . ((&lines * 30 + 39) / 78)
+exe '2resize ' . ((&lines * 30 + 35) / 70)
 exe 'vert 2resize ' . ((&columns * 119 + 119) / 239)
 exe 'vert 3resize ' . ((&columns * 119 + 119) / 239)
 tabedit ~/rendu/reverse/vga_widget/include/server/AccessContainer.hpp
@@ -922,7 +922,7 @@ lcd ~/rendu/reverse/vga_widget
 wincmd w
 exe 'vert 1resize ' . ((&columns * 118 + 119) / 239)
 exe 'vert 2resize ' . ((&columns * 120 + 119) / 239)
-tabnext 7
+tabnext 8
 set stal=1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -940,7 +940,7 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 2wincmd w
-tabnext 7
+tabnext 8
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

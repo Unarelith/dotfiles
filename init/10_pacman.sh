@@ -4,6 +4,8 @@ cronie
 dash
 feh
 fish
+gnome-calculator
+gnome-keyring
 gvim
 i3-wm
 i3lock
@@ -14,11 +16,13 @@ lxappearance
 mlocate
 nautilus
 nautilus-open-terminal
+net-tools
 network-manager-applet
 networkmanager
 openssh
 pavucontrol
 pkgfile
+polkit-gnome
 pulseaudio
 pulseaudio-alsa
 python-pexpect
@@ -45,7 +49,9 @@ cronie
 NetworkManager'
 
 systemd_user_services='
-pulseaudio'
+dropbox
+pulseaudio
+redshift-gtk'
 
 echo -ne "$BOLD:: Do you want to install yaourt? [y/N]" $WHITE
 
