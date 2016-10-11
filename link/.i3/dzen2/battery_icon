@@ -1,0 +1,28 @@
+#!/bin/bash
+
+percentage=$(acpi | awk '{print $4}' | tr -d '%' | tr -d ',')
+charge=$(acpi | awk '{print $3}' | tr -d ',')
+
+print_icon() {
+	echo -n "^fg($1)^fn(Ionicons:size=16)$2^fn()"
+}
+
+if [[ "$charge" = "Full" ]]
+then
+	print_icon "#afffaf" ""
+elif [[ "$charge" = "Charging" ]]
+then
+	print_icon "#ffeb87" ""
+elif (("$percentage" < 100)) && (("$percentage" >= 70))
+then
+	print_icon "#ffeb87" ""
+elif (("$percentage" < 70)) && (("$percentage" >= 45))
+then
+	print_icon "#d78787" ""
+elif (("$percentage" < 45)) && (("$percentage" >= 1))
+then
+	print_icon "#d78787" ""
+else
+	print_icon "#d78787" ""
+fi
+

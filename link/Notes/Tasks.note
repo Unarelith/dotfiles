@@ -11,6 +11,7 @@ Tasks
 • Réécrire un script de batterie avec les icônes `fontawesome`
 • Faire un script d’init qui remplit et compile automatiquement `.mail.sh.x`
    → Remplacer `unknown number of` par `?`
+• Passer `now_playing` en async parce que le titre ne change pas tout seul apparemment
 
 ## Plus chiant et plus long
 
@@ -18,6 +19,8 @@ Tasks
    → Faire un script d’update des dossiers “link” et “copy” (rien n’est automatiquement rajouté pour l’instant)
    → Faire un script d’update de packages entre deux PC
 • Regarder la barre la plus intéressante entre `lemonbar` et `dzen` (ce qui impliquerait de drop `i3blocks` ? :/)
+• Faire quelque chose pour la config en dehors du home
+   → Par exemple proposer la couleur dans `pacman` avec un `sudo sed -i` dans un script d’init
 
 # Projets
 

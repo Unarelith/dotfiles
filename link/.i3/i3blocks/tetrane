@@ -14,6 +14,7 @@ then
 	echo ""
 
 	xrandr --output DP2 --auto --primary --right-of eDP1
+	bash ~/.local/bin/update-background
 
 	if [ -z "$(echo $lastline | grep "[I]")" ]
 	then

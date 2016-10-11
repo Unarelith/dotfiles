@@ -9,7 +9,7 @@ link/.config/fish/fishd*
 link/.config/gtk-3.0/servers
 link/.gnucash/*
 link/.i3/logs
-link/.i3/scripts/.mail.sh.x
+link/.i3/i3blocks/.mail.sh.x
 link/.kde4
 link/.local/bin/kakarot
 link/.local/bin/pcre-8.34
@@ -31,6 +31,7 @@ link/rendu/.cache.gws
 
 # Keep interesting stuff
 !link/.config/conky
+!link/.config/lemonbuddy
 !link/.config/Trolltech.conf
 !link/.config/dunst/dunstrc
 !link/.config/fish/config.fish

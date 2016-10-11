@@ -6,9 +6,9 @@ crontab='30 * * * * env DISPLAY=:0 /home/$USER/.local/bin/check-current-projects
 #*/5 * * * * env DISPLAY=:0 /home/$USER/Téléchargements/PDFs/script.sh
 '
 
-echo "i${crontab}jj:wq" > .30_crontab.tmp
+echo -e "Go${crontab}\e:wq" > .40_crontab.tmp
 
-EDITOR='vim -s .30_crontab.tmp'
+EDITOR='vim -s .40_crontab.tmp'
 
 crontab -e
 

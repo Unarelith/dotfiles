@@ -8,8 +8,7 @@
 "------------------------------------------------------------------------------
 " Add Eplith language support
 "------------------------------------------------------------------------------
-au BufRead,BufNewFile *.ep set filetype=eplith
-au BufRead,BufNewFile *.eplith set filetype=eplith
+au BufRead,BufNewFile *.ep,*.eplith set filetype=eplith
 au! Syntax eplith source .vim/syntax/eplith.vim
 
 "------------------------------------------------------------------------------
@@ -83,8 +82,7 @@ set listchars=tab:··
 set shell=/bin/bash
 
 au BufRead,BufNewFile *.md set wrap linebreak nofoldenable
-au BufRead,BufNewFile *.note set filetype=notes nofoldenable
-au BufRead,BufNewFile Notes set filetype=notes nofoldenable
+au BufRead,BufNewFile *.note,Notes,TODO,FIXME set filetype=notes nofoldenable
 
 "------------------------------------------------------------------------------
 " Setup the default colorsheme
@@ -347,7 +345,7 @@ let g:ctrlp_cmd = 'CtrlPCurWD'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
 
-set wildignore+=*/tmp/*,*/doxygen/*,*.so,*.swp,*.zip,*.o,*.d,*.o32,*.exe
+set wildignore+=*/tmp/*,*/doxygen/*,*.so,*.swp,*.zip,*.o,*.d,*.o32,*.exe,*.oxx,*.moc.*
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
@@ -410,11 +408,17 @@ nmap <C-T> :tabnew<CR>
 nmap <A-Left> :tabp<CR>
 imap <A-Left> <Esc>:tabp<CR>
 
+nmap <A-S-Left> :-tabmove<CR>
+imap <A-S-Left> <Esc>:-tabmove<CR>
+
 "------------------------------------------------------------------------------
 " To change tab to the right, Alt+Right
 "------------------------------------------------------------------------------
 nmap <A-Right> :tabn<CR>
 imap <A-Right> <Esc>:tabn<CR>
+
+nmap <A-S-Right> :+tabmove<CR>
+imap <A-S-Right> <Esc>:+tabmove<CR>
 
 "------------------------------------------------------------------------------
 " Identify the syntax highlighting group used at the cursor

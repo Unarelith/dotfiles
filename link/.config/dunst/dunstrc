@@ -59,7 +59,7 @@
 	# The width can be negative. In this case the actual width is the
 	# screen width minus the width defined in within the geometry option.
 	# geometry = "300x5-20+20"
-	geometry = "270x20-20+33"
+	geometry = "400x20-20+33"
 
 	# The transparency of the window. range: [0; 100]
 	# This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
@@ -155,6 +155,7 @@
 [urgency_critical]
     background = "#ff9999"
     foreground = "#000000"
+    icon = error
     timeout = 0
 
 [libpurple_signed]

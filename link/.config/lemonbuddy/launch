@@ -1,0 +1,6 @@
+#!/bin/bash
+
+lemonbuddy_terminate noconfirm
+
+lemonbuddy_wrapper bar &
+

@@ -27,6 +27,7 @@ end
 set -x EDITOR vim
 
 set -x PATH $PATH /usr/local/bin /home/$USER/.local/bin /home/$USER/.dotfiles/bin 2> /dev/null
+set -x PATH $PATH /usr/bin/core_perl 2> /dev/null
 
 # TO_CHANGE: Gogs username for fish
 set -x GOGS_USER gnidmoo

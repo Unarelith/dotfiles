@@ -15,18 +15,18 @@ separator_block_width=14
 short_text=
 full_text= 
 command=qdbus org.mpris.MediaPlayer2.smplayer /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
-separator=false
-separator_block_width=0
-
-[now-playing]
-command=~/.i3/scripts/now_playing
-interval=persistent
-color=#a8a8a8
+# separator=false
+# separator_block_width=0
+#
+# [now-playing]
+# command=~/.i3/i3blocks/now_playing
+# interval=persistent
+# color=#a8a8a8
 
 [weather]
 full_text=
-command=~/.i3/scripts/weather $BLOCK_BUTTON
-interval=1800
+command=~/.i3/i3blocks/weather $BLOCK_BUTTON
+# interval=1800
 color=#e97ac8
 
 [updates]
@@ -39,20 +39,20 @@ color=#50C878
 #label= 
 label= 
 command=grep -P -n "•" ~/Notes/Tasks.note | wc -l
-interval=1800
+interval=30
 # color=#50C878
 color=#878ca5
 
 [mail]
 label= 
-command=~/.i3/scripts/.mail.sh.x
+command=~/.i3/i3blocks/.mail.sh.x
 interval=300
 color=#7f7fff
 
 [accounts]
 # label= 
 full_text=
-command=~/.i3/scripts/accounts $BLOCK_BUTTON
+command=~/.i3/i3blocks/accounts $BLOCK_BUTTON
 interval=10
 color=#a8a8a8
 
@@ -124,7 +124,7 @@ separator=false
 separator_block_width=0
 
 [cpu]
-command=~/.i3/scripts/cpu_usage
+command=~/.i3/i3blocks/cpu_usage
 interval=10
 min_width=100.00%
 align=right
@@ -139,7 +139,7 @@ color=#6c71c4
 #label=BAT
 #label=⚡
 #command=/usr/lib/i3blocks/battery BAT0
-command=~/.i3/scripts/battery BAT0
+command=~/.i3/i3blocks/battery BAT0
 interval=10
 
 [volume]
@@ -158,6 +158,6 @@ color=#50C878
 
 [tetrane]
 full_text=
-command=~/.i3/scripts/tetrane $(~/.i3/scripts/mouse_util $BLOCK_BUTTON "login" "-" "logout")
+command=~/.i3/i3blocks/tetrane $(~/.i3/i3blocks/mouse_util $BLOCK_BUTTON "login" "-" "logout")
 color=#a8a8a8
 

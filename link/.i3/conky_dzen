@@ -1,0 +1,19 @@
+-- vim: ts=4 sw=4 noet ai cindent syntax=lua
+conky.config = {
+	short_units = true,
+	background = true,
+	out_to_console = true,
+	out_to_x = false,
+	update_interval = 10,
+	update_interval_on_battery = 30,
+	override_utf8_locale = true
+}
+
+conky.text = [[
+^ca(1, amixer set Master toggle)^bg(\#666666)  ${exec ~/.i3/dzen2/volume} ${exec amixer get Master | grep "Front Left:" | awk '{print $5}' | tr -d '[]'}  ^bg()^ca()\
+\
+^ca(1, ~/.i3/dzen2/battery_state) ${execi 2 ~/.i3/dzen2/battery_icon} ${exec acpi | awk '{print $4}' | tr -d ','} ^ca()\
+\
+^ca(1, i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit')^fg(\#cacaca)^bg(\#875f87) ^fn(FontAwesome:size=13)^fn() ^ca()
+]]
+

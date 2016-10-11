@@ -6,11 +6,11 @@ lyon="EUR|FR|FR069|LYON"
 macon="EUR|FR|FR071|MACON"
 
 # Check if internet is available
-ping_test="$(ping -c 1 8.8.8.8)"
-if [ -n "$(echo $ping_test | grep unreachable)" ] || [ -n "$(echo $ping_test | grep "100% packet loss")" ]
-then
-	exit 1
-fi
+# ping_test="$(ping -c 1 8.8.8.8)"
+# if [ -n "$(echo $ping_test | grep unreachable)" ] || [ -n "$(echo $ping_test | grep "100% packet loss")" ]
+# then
+# 	exit 1
+# fi
 
 if [ -z $1 ] || [ "$1" == "1" ] || [ "$1" == "4" ]
 then
@@ -20,5 +20,5 @@ else
 fi
 
 url="http://rss.accuweather.com/rss/liveweather_rss.asp?metric=${METRIC}&locCode=$locCode"
-curl -s "$url" | python3 ~/.i3/scripts/weather.py
+curl -s "$url" | python3 ~/.i3/i3blocks/weather.py
 
