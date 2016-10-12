@@ -2,5 +2,6 @@
 
 lemonbuddy_terminate noconfirm
 
-lemonbuddy_wrapper bar &
+lemonbuddy_wrapper top &
+lemonbuddy_wrapper bottom &
 

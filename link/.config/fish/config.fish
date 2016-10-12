@@ -4,11 +4,6 @@
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
-# Source /etc/profile
-#------------------------------------------------------------------------------
-# [ -e /usr/bin/dash ]; and env -i HOME=$HOME dash -l -c 'export -p' | sed -e "/PWD/d; /PATH/s/'//g;/PATH/s/:/ /g;s/=/ /;s/^export/set -x/" | source
-
-#------------------------------------------------------------------------------
 # Source ~/.config/fish/config.fish.local
 #------------------------------------------------------------------------------
 [ -e ~/.config/fish/config.fish.local ]; and source ~/.config/fish/config.fish.local
@@ -139,6 +134,14 @@ function tasks
 	vim ~/Notes/Tasks.note
 end
 
+function rm
+	command rm -I $argv
+end
+
+function mp
+	command ncmpcpp
+end
+
 #------------------------------------------------------------------------------
 # Misc
 #------------------------------------------------------------------------------
@@ -219,45 +222,45 @@ end
 
 function fish_prompt
 	# env FISH_VERSION=$FISH_VERSION PROMPTLINE_LAST_EXIT_CODE=$status bash ~/.promptline.sh left
-	
+
 	set last_status $status
-	
+
 	vi_print_mode
-	
+
 	echo -ne '['
-	
+
 	set_color --bold cyan
 	echo -n $USER
 	set_color normal
-	
+
 	echo -n ' | '
-	
+
 	echo -ne "\033[38;5;38m"
 	printf '%s' (date "+%a %d %b %Y")
 	set_color normal
-	
+
 	echo -n ' | '
-	
+
 	set_color --bold blue
 	printf '%s' (date "+%H:%M:%S")
 	set_color normal
-	
+
 	set fish_git_prompt (__fish_git_prompt)
 	if [ -n "$fish_git_prompt" ]
 		echo -n ' |'
-		
+
 		printf '%s' $fish_git_prompt
 		set_color normal
 	end
-	
+
 	echo -n ' | '
-	
+
 	set_color blue
 	printf '%s' (echo (pwd -L) | sed "s/\/home\/$USER/\~/")
 	set_color normal
-	
+
 	echo ']'
-	
+
 	set_color --bold green
 	echo -n ' $ '
 	set_color normal

@@ -1,7 +1,6 @@
 default_packages='
 chromium
 cronie
-dash
 feh
 fish
 gnome-calculator
@@ -14,6 +13,7 @@ kdegraphics-kolourpaint
 lm_sensors
 lxappearance
 mlocate
+mpd
 nautilus
 nautilus-open-terminal
 net-tools
@@ -35,12 +35,14 @@ smtube
 synapse
 sysstat
 ttf-dejavu
+ttf-fontawesome
 xcompmgr
 xsel'
 
 default_aur_packages='
 dropbox
 i3blocks
+lemonbuddy-git
 nautilus-dropbox
 volnoti'
 

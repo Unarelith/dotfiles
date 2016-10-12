@@ -138,6 +138,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'PotatoesMaster/i3-vim-syntax'
+Plugin 'dkprice/vim-easygrep'
 
 Plugin 'Valloric/YouCompleteMe' " <= Won't work without a dot file
 " Plugin 'jeaye/color_coded'      " <= Too slow to refresh + same thing as above + lots of bugs
