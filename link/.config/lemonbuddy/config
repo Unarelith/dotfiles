@@ -3,7 +3,7 @@
 ; throttle_limit = 3
 
 [bar/top]
-monitor = eDP1
+monitor = DP2
 ; bottom = true
 width = 100%
 ; height = 34
@@ -22,10 +22,10 @@ tray-position = right
 spacing = 4
 ;spacing = 2
 lineheight = 2
-padding_left = 2
-padding_right = 5
-module_margin_left = 3
-module_margin_right = 3
+padding-left = 2
+padding-right = 5
+module-margin-left = 3
+module-margin-right = 3
 ;module_margin_left = 1
 ;module_margin_right = 1
 
@@ -37,7 +37,7 @@ font-2 = FontAwesome:size=10;0
 
 modules-left = i3
 modules-center = date
-modules-right = volume backlight wireless-network wired-network battery
+modules-right = disk-root disk-home volume backlight wireless-network wired-network battery tetrane-login
 
 [bar/bottom]
 monitor = DP2
@@ -52,10 +52,10 @@ linecolor = ${bar/top.background}
 
 spacing = 3
 lineheight = 2
-padding_left = 4
-padding_right = 4
-module_margin_left = 0
-module_margin_right = 6
+padding-left = 4
+padding-right = 4
+module-margin-left = 0
+module-margin-right = 6
 
 font-0 = Sans-Regular:size=8;0
 font-1 = Unifont:size=6;-3
@@ -65,8 +65,7 @@ font-3 = MaterialIcons:size=10;-1
 ; font-5 = Termsynu:size=8;-1
 
 modules-left = mpd
-modules-center = i3
-modules-right = cpu memory
+modules-center = memory cpu
 
 [bar/external_bottom]
 ;inherit_from = bar/bottom
@@ -222,29 +221,78 @@ label-occupied-padding = 1
 label-empty = 
 label-empty-padding = 1
 
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <label> <ramp-coreload>
+label = CPU
+
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 2
+ramp-coreload-0-foreground = #aaff77
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 2
+ramp-coreload-1-foreground = #aaff77
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 2
+ramp-coreload-2-foreground = #aaff77
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 2
+ramp-coreload-3-foreground = #aaff77
+ramp-coreload-4 = ▅
+ramp-coreload-4-font = 2
+ramp-coreload-4-foreground = #fba922
+ramp-coreload-5 = ▆
+ramp-coreload-5-font = 2
+ramp-coreload-5-foreground = #fba922
+ramp-coreload-6 = ▇
+ramp-coreload-6-font = 2
+ramp-coreload-6-foreground = #ff5555
+ramp-coreload-7 = █
+ramp-coreload-7-font = 2
+ramp-coreload-7-foreground = #ff5555
+
+[module/date]
+type = internal/date
+date =    %%{F#999}%a %e %b%%{F-}  %%{F#fff}%H:%M:%S%%{F-}
+
+[module/disk-home]
+type = custom/script
+
+format =     <output>
+exec = /usr/lib/i3blocks/disk | head -1
+
+[module/disk-root]
+type = custom/script
+
+format =     <output>
+exec = BLOCK_INSTANCE='/' /usr/lib/i3blocks/disk | head -1
+
 [module/i3]
 type = internal/i3
 
-workspace_icon-0 = 1;
-workspace_icon-1 = 2;2
-workspace_icon-2 = 3;3
-workspace_icon-3 = 4;4
-workspace_icon-4 = 5;
-workspace_icon-5 = 6;6
-workspace_icon-6 = 7;7
-workspace_icon-7 = 8;8
-workspace_icon-8 = 9;
-workspace_icon-9 = 10;
-workspace_icon-10 = 11;
-workspace_icon-11 = 12;
-workspace_icon-12 = 13;
-workspace_icon-13 = 14;O
-workspace_icon-14 = 15;P
-workspace_icon-15 = 16;J
-workspace_icon-16 = 17;K
-workspace_icon-17 = 18;L
-workspace_icon-18 = 19;
-workspace_icon-default = ♟
+pin-workspaces = true
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;3
+ws-icon-3 = 4;4
+ws-icon-4 = 5;
+ws-icon-5 = 6;6
+ws-icon-6 = 7;7
+ws-icon-7 = 8;8
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+ws-icon-10 = 11;
+ws-icon-11 = 12;
+ws-icon-12 = 13;
+ws-icon-13 = 14;O
+ws-icon-14 = 15;P
+ws-icon-15 = 16;J
+ws-icon-16 = 17;K
+ws-icon-17 = 18;
+ws-icon-18 = 19;
+ws-icon-default = ♟
 
 label-focused = %icon%
 label-focused-foreground = #ffffff
@@ -264,43 +312,6 @@ label-urgent-foreground = #000000
 label-urgent-background = #bd2c40
 label-urgent-padding = 2
 
-[module/cpu]
-type = internal/cpu
-interval = 0.5
-format = <label> <ramp-load_per_core>
-label = CPU
-
-ramp-load_per_core-0 = ▁
-ramp-load_per_core-0-font = 2
-ramp-load_per_core-0-foreground = #aaff77
-ramp-load_per_core-1 = ▂
-ramp-load_per_core-1-font = 2
-ramp-load_per_core-1-foreground = #aaff77
-ramp-load_per_core-2 = ▃
-ramp-load_per_core-2-font = 2
-ramp-load_per_core-2-foreground = #aaff77
-ramp-load_per_core-3 = ▄
-ramp-load_per_core-3-font = 2
-ramp-load_per_core-3-foreground = #aaff77
-ramp-load_per_core-4 = ▅
-ramp-load_per_core-4-font = 2
-ramp-load_per_core-4-foreground = #fba922
-ramp-load_per_core-5 = ▆
-ramp-load_per_core-5-font = 2
-ramp-load_per_core-5-foreground = #fba922
-ramp-load_per_core-6 = ▇
-ramp-load_per_core-6-font = 2
-ramp-load_per_core-6-foreground = #ff5555
-ramp-load_per_core-7 = █
-ramp-load_per_core-7-font = 2
-ramp-load_per_core-7-foreground = #ff5555
-
-[module/date]
-type = internal/date
-date =    %%{F#999}%a %e %b%%{F-} %%{F#fff}%H:%M:%S%%{F-}
-; date = %%{F#99}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
-date_detailed = %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
-
 [module/memory]
 type = internal/memory
 format = <label> <bar-used>
@@ -312,12 +323,12 @@ bar-used-foreground-1 = #aaff77
 bar-used-foreground-2 = #fba922
 bar-used-foreground-3 = #ff5555
 bar-used-indicator = |
-bar-used-indicator-font = 6
 bar-used-indicator-foreground = #ff
+bar-used-indicator-font = 3
 bar-used-fill = ─
-bar-used-fill-font = 6
+bar-used-fill-font = 3
 bar-used-empty = ─
-bar-used-empty-font = 6
+bar-used-empty-font = 3
 bar-used-empty-foreground = #444444
 
 [module/mpd]
@@ -325,7 +336,8 @@ type = internal/mpd
 clickable_progress = true
 format-online = <icon-prev> <icon-stop> <toggle> <icon-next>  <icon-repeat> <icon-random>  <bar-progress> <label-time>  <label-song>
 
-label-song = %artist% - %album% - %title%
+; label-song = %artist% - %album% - %title%
+label-song = %artist% - %title%
 
 icon-play = 
 icon-pause = 
@@ -349,52 +361,6 @@ bar-progress-fill-font = 3
 bar-progress-empty = ─
 bar-progress-empty-font = 3
 bar-progress-empty-foreground = #44
-
-[module/wireless-network]
-type = internal/network
-interface = wlo1
-interval = 3.0
-ping_interval = 10
-
-format-connected = <ramp-signal> <label-connected>
-label-connected = %essid%
-label-disconnected =    not connected
-label-disconnected-foreground = #66
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-
-animation-packetloss-0 = 
-animation-packetloss-0-foreground = #ffa64c
-animation-packetloss-1 = 
-animation-packetloss-1-foreground = ${bar/top.foreground}
-animation-packetloss-framerate_ms = 500
-
-[module/wired-network]
-type = internal/network
-interface = enp0s25
-interval = 3.0
-
-label-connected =    %{T3}%local_ip%%{T-}
-label-disconnected-foreground = #66
-
-[module/volume]
-type = internal/volume
-; speaker_mixer = Speaker
-; headphone_mixer = Headphone
-; headphone_control_numid = 9
-
-format-volume = <ramp-volume> <label-volume>
-label-muted =   muted
-label-muted-foreground = #66
-
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-ramp-volume-3 = 
 
 [module/powermenu]
 type = custom/menu
@@ -428,4 +394,59 @@ menu-2-1 = Cancel
 menu-2-1-foreground = #fba922
 menu-2-1-exec = menu_open-0
 
+[module/tetrane-login]
+type = custom/text
+
+content = 
+
+click-left = bash ~/.i3/i3blocks/tetrane login
+click-right = bash ~/.i3/i3blocks/tetrane logout
+
+[module/volume]
+type = internal/volume
+; speaker_mixer = Speaker
+; headphone_mixer = Headphone
+; headphone_control_numid = 9
+
+format-volume = <ramp-volume> <label-volume>
+label-muted =   muted
+label-muted-foreground = #66
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+
+[module/wireless-network]
+type = internal/network
+interface = wlo1
+interval = 3.0
+ping_interval = 10
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid%
+label-disconnected =    not connected
+label-disconnected-foreground = #66
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+
+animation-packetloss-0 = 
+animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-1 = 
+animation-packetloss-1-foreground = ${bar/top.foreground}
+animation-packetloss-framerate_ms = 500
+
+[module/wired-network]
+type = internal/network
+interface = enp0s25
+interval = 3.0
+
+label-connected =    %{T3}%local_ip%%{T-}
+label-disconnected-foreground = #66
+
 ; vim:ft=dosini
+

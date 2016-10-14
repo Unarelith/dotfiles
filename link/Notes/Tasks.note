@@ -15,6 +15,7 @@ Tasks
 
 ## Plus chiant et plus long
 
+• Utiliser compton
 • Réécrire un script de dotfiles qui gère les dossiers correctement
    → Faire un script d’update des dossiers “link” et “copy” (rien n’est automatiquement rajouté pour l’instant)
    → Faire un script d’update de packages entre deux PC
@@ -25,6 +26,7 @@ Tasks
 # Projets
 
 • Améliorer et clean `pybot`
+   → Régler notemment un problème d’encodage des titres des liens
 • Réécrire `ZeldaOOL` en se basant sur le code de la `libegdt`
 
 # Blog
@@ -37,5 +39,5 @@ Tasks
 
 # Serveur
 
-• Update la config
+• Update la config ou réinstaller Arch
 

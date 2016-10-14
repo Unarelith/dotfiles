@@ -13,6 +13,8 @@ if [ "$1" == "login" ]
 then
 	echo ""
 
+	notify-send "Logged in, welcome!"
+
 	xrandr --output DP2 --auto --primary --right-of eDP1
 	bash ~/.local/bin/update-background
 
@@ -23,6 +25,8 @@ then
 elif [ "$1" == "logout" ]
 then
 	echo ""
+
+	notify-send "Logged out, bye!"
 
 	xrandr --output eDP1 --auto --output DP2 --off
 

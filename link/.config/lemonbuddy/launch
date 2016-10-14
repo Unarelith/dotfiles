@@ -1,7 +1,7 @@
 #!/bin/bash
 
-lemonbuddy_terminate noconfirm
+killall lemonbuddy
 
-lemonbuddy_wrapper top &
-lemonbuddy_wrapper bottom &
+lemonbuddy top &
+lemonbuddy bottom &
 

@@ -169,6 +169,7 @@ bindsym $mod+Shift+egrave           move container to workspace $workspace7
 bindsym $mod+Shift+underscore       move container to workspace $workspace8
 bindsym $mod+Shift+ccedilla         move container to workspace $workspace9
 bindsym $mod+Shift+agrave           move container to workspace $workspace10
+bindsym $mod+Shift+parenright       move container to workspace $workspace11
 
 bindsym $mod+Shift+u                move container to workspace $workspaceU
 bindsym $mod+Shift+i                move container to workspace $workspaceI

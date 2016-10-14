@@ -1,0 +1,52 @@
+Lemonbuddy stuff
+
+TODO - Paste mon fichier de config
+
+# Problèmes
+
+## Issues created
+
+• Tray bar qui ne s’affiche plus quand
+   → Je relance la même barre une deuxième fois
+   → Je lance `i3bar` (si je tue `i3bar` la tray bar ne revient pas)
+      • Lors du relancement de la barre, la tray bar a totalement disparu
+• Il arrive que certaines icônes de la tray bar, notamment `nm-applet`, ne s’updatent plus
+• Quand deux barres sont lancées avec `-r` et que j’update le fichier de config:
+   → Il arrive que seulement une (ou pas du tout) se relance
+      => Je suis pas arrivé à reproduire le bug
+• Il arrive que `lemonbuddy` prenne énormément de RAM/CPU
+• De temps en temps j’ai ces messages quand je relance mes barres:
+   > warning: Action block not closed
+   > warning: action.command = backlight_percentage p5
+   > warning: Action block not closed
+   > warning: action.command = backlight_percentage m5
+  et
+   > error: module/battery: Failed to read ' 	'
+  et
+   > error: module/battery: Failed to read '0'
+  et
+   > terminate called after throwing an instance of 'std::invalid_argument'
+   > what():  stoull
+• Monter/baisser le son avec la molette ne fonctionne plus
+   → Permettre à l’utilisateur de chosir le pas de l’incrémentation/décrémentation
+   → Faire la même chose avec la luminosité ?
+
+## Not created
+
+• L’icône de wifi disparaît de temps en temps, ça vient peut-être de mes icônes?
+• Certaines icônes de `FontAwesome` ne s’affichent pas du tout
+
+# Suggestions
+
+• Les champs `click-left` et `click-right` pourraient sortir l’output directement sur la barre
+   → Ou du moins rajouter une option pour rendre ça possible (utile pour mon script `tetrane`)
+• Rajouter des modules d’espace disque
+• Le champ `interval` de `custom/script` ne peut pas être mis à “never” ?
+• Actuellement le module `i3` utilise le nom du workspace, alors qu’il devrait utiliser l’index...
+   → À voir..........
+• Si possible avec `lemonbar`, rajouter la possibilité de créer des popups à la `dzen2`
+• Déplacer la doc dans le wiki du dépôt
+• Rajouter un champ `extended` comme pour `internal/date`, qui permet de changer la sortie en cliquant
+• Autoriser l’override d’output lors de l’appel de la commande `lemonbuddy`
+   → Ça pourrait éviter d’avoir à dupliquer la config des barres en cas de multi-output
+
