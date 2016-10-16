@@ -3,7 +3,7 @@
 ; throttle_limit = 3
 
 [bar/top]
-monitor = DP2
+monitor = eDP1
 ; bottom = true
 width = 100%
 ; height = 34
@@ -17,7 +17,7 @@ linecolor = ${bar/bottom.background}
 
 locale = fr_FR.UTF-8
 
-tray-position = right
+; tray-position = right
 
 spacing = 4
 ;spacing = 2
@@ -40,7 +40,7 @@ modules-center = date
 modules-right = disk-root disk-home volume backlight wireless-network wired-network battery tetrane-login
 
 [bar/bottom]
-monitor = DP2
+monitor = eDP1
 bottom = true
 width = 100%
 height = 28
@@ -421,7 +421,7 @@ ramp-volume-3 = 
 type = internal/network
 interface = wlo1
 interval = 3.0
-ping_interval = 10
+ping-interval = 10
 
 format-connected = <ramp-signal> <label-connected>
 label-connected = %essid%
@@ -433,6 +433,7 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
+ramp-signal-5 = 
 
 animation-packetloss-0 = 
 animation-packetloss-0-foreground = #ffa64c

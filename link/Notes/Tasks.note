@@ -12,6 +12,7 @@ Tasks
 • Faire un script d’init qui remplit et compile automatiquement `.mail.sh.x`
    → Remplacer `unknown number of` par `?`
 • Passer `now_playing` en async parce que le titre ne change pas tout seul apparemment
+• Ajouter la tâche cron `updatedb` en dans la crontab root
 
 ## Plus chiant et plus long
 

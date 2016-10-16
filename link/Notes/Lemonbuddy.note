@@ -40,8 +40,8 @@ TODO - Paste mon fichier de config
 
 • Les champs `click-left` et `click-right` pourraient sortir l’output directement sur la barre
    → Ou du moins rajouter une option pour rendre ça possible (utile pour mon script `tetrane`)
-• Rajouter des modules d’espace disque
 • Le champ `interval` de `custom/script` ne peut pas être mis à “never” ?
+• Rajouter des modules d’espace disque
 • Actuellement le module `i3` utilise le nom du workspace, alors qu’il devrait utiliser l’index...
    → À voir..........
 • Si possible avec `lemonbar`, rajouter la possibilité de créer des popups à la `dzen2`

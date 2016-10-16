@@ -1,7 +1,14 @@
 #!/bin/bash
 
-killall lemonbuddy
+killall -q lemonbuddy
 
-lemonbuddy top &
-lemonbuddy bottom &
+while pgrep -x lemonbuddy > /dev/null
+do
+	sleep 1
+done
+
+echo "[*] Launched $(LANG="en_US.UTF-8" date '+%a %e %b %H:%M:%S')" >> ~/.config/lemonbuddy/top.log
+echo "[*] Launched $(LANG="en_US.UTF-8" date '+%a %e %b %H:%M:%S')" >> ~/.config/lemonbuddy/bottom.log
+lemonbuddy top >> ~/.config/lemonbuddy/top.log 2>&1 &
+lemonbuddy bottom >> ~/.config/lemonbuddy/bottom.log 2>&1 &
 

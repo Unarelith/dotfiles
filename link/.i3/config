@@ -64,6 +64,8 @@ exec --no-startup-id                dunst &
 exec --no-startup-id                conky &
 exec --no-startup-id                xrandr --setprovideroffloadsink 1 0
 
+exec_always --no-startup-id         /bin/bash ~/.config/lemonbuddy/launch
+
 # No window borders
 new_window                          normal 1
 new_float                           normal 1
@@ -250,26 +252,26 @@ mode "resize" {
 bindsym $mod+r                      mode "resize"
 
 # Start i3bar to display a workspace bar
-bar {
-    status_command                  i3blocks -c ~/.i3/blocks
-
-    position                        top
-
-    strip_workspace_numbers         yes
-
-    tray_output                     eDP1
-    tray_output                     DP2
-
-    colors {
-        separator                   #dfdde5
-        background                  #002211
-        statusline                  #bfbbcc
-        focused_workspace           #bfbbcc #002211 #dfdde5
-        # active_workspace          # # #
-        # inactive_workspace        # # #
-        # urgent_workspace          # # #
-    }
-}
+# bar {
+#     status_command                  i3blocks -c ~/.i3/blocks
+#
+#     position                        top
+#
+#     strip_workspace_numbers         yes
+#
+#     tray_output                     eDP1
+#     tray_output                     DP2
+#
+#     colors {
+#         separator                   #dfdde5
+#         background                  #002211
+#         statusline                  #bfbbcc
+#         focused_workspace           #bfbbcc #002211 #dfdde5
+#         # active_workspace          # # #
+#         # inactive_workspace        # # #
+#         # urgent_workspace          # # #
+#     }
+# }
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #434343 #002211 #bfbbcc #2e9ef4   #3a3a3a
