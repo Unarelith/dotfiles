@@ -53,6 +53,8 @@
 | gf          | Suit un lien                                   |
 |--------------------------------------------------------------|
 | <F10>       | Identifie le groupe syntaxique sous le curseur |
+|--------------------------------------------------------------|
+| :DiffOrig   | Voir les changements faits depuis l'ouverture  |
 +--------------------------------------------------------------+
 |                                                              |
 | Ctrl+Shift+; => dunst menu                                   |

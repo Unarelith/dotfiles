@@ -3,7 +3,7 @@
 ; throttle_limit = 3
 
 [bar/top]
-monitor = eDP1
+monitor = DP2
 ; bottom = true
 width = 100%
 ; height = 34
@@ -26,8 +26,8 @@ padding-left = 2
 padding-right = 5
 module-margin-left = 3
 module-margin-right = 3
-;module_margin_left = 1
-;module_margin_right = 1
+;module-margin-left = 1
+;module-margin-right = 1
 
 ;font-0 = envypn:pixelsize=13;0
 font-0 = Sans-Regular:size=8;0
@@ -37,10 +37,10 @@ font-2 = FontAwesome:size=10;0
 
 modules-left = i3
 modules-center = date
-modules-right = disk-root disk-home volume backlight wireless-network wired-network battery tetrane-login
+modules-right = volume backlight wireless-network wired-network battery tetrane-login
 
 [bar/bottom]
-monitor = eDP1
+monitor = DP2
 bottom = true
 width = 100%
 height = 28
@@ -66,9 +66,10 @@ font-3 = MaterialIcons:size=10;-1
 
 modules-left = mpd
 modules-center = memory cpu
+modules-right = pacman-updates disk-root disk-home
 
 [bar/external_bottom]
-;inherit_from = bar/bottom
+;inherit-from = bar/bottom
 
 monitor = HDMI-1
 bottom = true
@@ -81,9 +82,9 @@ linecolor = ${bar/bottom.linecolor}
 
 spacing = ${bar/bottom.spacing}
 lineheight = ${bar/bottom.lineheight}
-padding_right = ${bar/bottom.padding_right}
-module_margin_left = ${bar/bottom.module_margin_left}
-module_margin_right = ${bar/bottom.module_margin_right}
+padding-right = ${bar/bottom.padding-right}
+module-margin-left = ${bar/bottom.module-margin-left}
+module-margin-right = ${bar/bottom.module-margin-right}
 
 font-0 = ${bar/bottom.font-0}
 font-1 = ${bar/bottom.font-1}
@@ -117,7 +118,7 @@ bar-empty-foreground = #44
 
 [module/battery]
 type = internal/battery
-full_at = 98
+; full-at = 98
 
 battery = BAT0
 adapter = AC
@@ -148,17 +149,17 @@ animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
-animation-charging-framerate_ms = 750
+animation-charging-framerate-ms = 750
 
 [module/bspwm]
 type = internal/bspwm
 
-workspace_icon-0 = term;
-workspace_icon-1 = web;
-workspace_icon-2 = code;
-workspace_icon-3 = music;
-workspace_icon-4 = irssi;
-workspace_icon-default = 
+workspace-icon-0 = term;
+workspace-icon-1 = web;
+workspace-icon-2 = code;
+workspace-icon-3 = music;
+workspace-icon-4 = irssi;
+workspace-icon-default = 
 
 format = <label-state> <label-mode>
 
@@ -286,7 +287,7 @@ ws-icon-9 = 10;
 ws-icon-10 = 11;
 ws-icon-11 = 12;
 ws-icon-12 = 13;
-ws-icon-13 = 14;O
+ws-icon-13 = 14;
 ws-icon-14 = 15;P
 ws-icon-15 = 16;J
 ws-icon-16 = 17;K
@@ -333,7 +334,7 @@ bar-used-empty-foreground = #444444
 
 [module/mpd]
 type = internal/mpd
-clickable_progress = true
+clickable-progress = true
 format-online = <icon-prev> <icon-stop> <toggle> <icon-next>  <icon-repeat> <icon-random>  <bar-progress> <label-time>  <label-song>
 
 ; label-song = %artist% - %album% - %title%
@@ -347,8 +348,8 @@ icon-next = 
 icon-random = 
 icon-repeat = 
 
-toggle_on-foreground =
-toggle_off-foreground = #55
+toggle-on-foreground =
+toggle-off-foreground = #55
 
 bar-progress-width = 10
 bar-progress-format = %{A4:mpdseek+2: A5:mpdseek-2:}%fill%%indicator%%empty%%{A A}
@@ -361,6 +362,12 @@ bar-progress-fill-font = 3
 bar-progress-empty = ─
 bar-progress-empty-font = 3
 bar-progress-empty-foreground = #44
+
+[module/pacman-updates]
+type = custom/script
+
+format =     <output>
+exec = checkupdates | wc -l
 
 [module/powermenu]
 type = custom/menu
@@ -375,14 +382,14 @@ menu-0-0-foreground = #fba922
 menu-0-0-exec = bspc quit -1
 menu-0-1 = Reboot
 menu-0-1-foreground = #fba922
-menu-0-1-exec = menu_open-1
+menu-0-1-exec = menu-open-1
 menu-0-2 = Power off
 menu-0-2-foreground = #fba922
-menu-0-2-exec = menu_open-2
+menu-0-2-exec = menu-open-2
 
 menu-1-0 = Cancel
 menu-1-0-foreground = #fba922
-menu-1-0-exec = menu_open-0
+menu-1-0-exec = menu-open-0
 menu-1-1 = Reboot
 menu-1-1-foreground = #fba922
 menu-1-1-exec = sudo reboot
@@ -392,7 +399,7 @@ menu-2-0-foreground = #fba922
 menu-2-0-exec = sudo poweroff
 menu-2-1 = Cancel
 menu-2-1-foreground = #fba922
-menu-2-1-exec = menu_open-0
+menu-2-1-exec = menu-open-0
 
 [module/tetrane-login]
 type = custom/text
@@ -404,9 +411,9 @@ click-right = bash ~/.i3/i3blocks/tetrane logout
 
 [module/volume]
 type = internal/volume
-; speaker_mixer = Speaker
-; headphone_mixer = Headphone
-; headphone_control_numid = 9
+; speaker-mixer = Speaker
+; headphone-mixer = Headphone
+; headphone-control-numid = 9
 
 format-volume = <ramp-volume> <label-volume>
 label-muted =   muted
@@ -421,7 +428,7 @@ ramp-volume-3 = 
 type = internal/network
 interface = wlo1
 interval = 3.0
-ping-interval = 10
+; ping-interval = 10
 
 format-connected = <ramp-signal> <label-connected>
 label-connected = %essid%
@@ -435,11 +442,11 @@ ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-5 = 
 
-animation-packetloss-0 = 
+animation-packetloss-0 = 
 animation-packetloss-0-foreground = #ffa64c
 animation-packetloss-1 = 
 animation-packetloss-1-foreground = ${bar/top.foreground}
-animation-packetloss-framerate_ms = 500
+animation-packetloss-framerate-ms = 500
 
 [module/wired-network]
 type = internal/network

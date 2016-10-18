@@ -139,8 +139,10 @@ Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'dkprice/vim-easygrep'
+Plugin 'Yggdroot/indentLine'
 
-Plugin 'Valloric/YouCompleteMe' " <= Won't work without a dot file
+Plugin 'Valloric/YouCompleteMe' " Valloric is the original author but oblitum claims better C/C++ support
+" Plugin 'oblitum/YouCompleteMe' " Valloric is the original author but oblitum claims better C/C++ support
 " Plugin 'jeaye/color_coded'      " <= Too slow to refresh + same thing as above + lots of bugs
 Plugin 'rdnetto/YCM-Generator'  " <= Used for these plugins
 
@@ -168,6 +170,18 @@ call vundle#end() " required!
 " i3-vim-syntax config
 "------------------------------------------------------------------------------
 au BufEnter *i3/config setlocal filetype=i3
+
+"------------------------------------------------------------------------------
+" indentLine config
+"------------------------------------------------------------------------------
+let g:indentLine_char = '│'
+let g:indentLine_enabled = 0
+let g:indentLine_leadingSpaceChar = '·'
+
+" let g:indentLine_char = '·'
+" let g:indentLine_leadingSpaceEnabled = 1
+
+nmap <C-M> :LeadingSpaceToggle<CR>
 
 "------------------------------------------------------------------------------
 " vim-better-whitespace config
@@ -210,9 +224,9 @@ source ~/.vim/lightline.config.vim
 "------------------------------------------------------------------------------
 " vim-airline config
 "------------------------------------------------------------------------------
-let g:loaded_airline = 1
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
+" let g:loaded_airline = 1
+" let g:airline_powerline_fonts = 1
+" let g:airline#extensions#tabline#enabled = 1
 
 " let g:airline_theme='' " Use :AirlineTheme to test a theme
 
@@ -242,9 +256,11 @@ call altr#define('%.h', '%.c')
 "------------------------------------------------------------------------------
 " YouCompleteMe config
 "------------------------------------------------------------------------------
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
+let g:ycm_show_diagnostics_ui = 1
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
+
+nmap <C-P> :YcmCompleter FixIt<CR>
 
 "------------------------------------------------------------------------------
 " vim-gitgutter config
@@ -470,9 +486,6 @@ map ,w f_l
 map ,c ct_
 map ,sf mu[[Vi}
 
-nmap <C-m> :noh<CR>
-imap <C-m> <Esc>:noh<CR>a
-
 " Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
 vmap > >gv
@@ -486,6 +499,9 @@ map <Up> gk
 map <Down> gj
 imap <Up> <C-O>gk
 imap <Down> <C-O>gj
+
+map ,u <C-I>
+map ,i <C-O>
 
 "------------------------------------------------------------------------------
 " Window navigation
