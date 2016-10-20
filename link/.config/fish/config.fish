@@ -147,7 +147,8 @@ end
 #------------------------------------------------------------------------------
 set fish_greeting
 
-# fish_vi_mode
+fish_vi_key_bindings
+set __fish_vi_mode 'yes'
 
 sh ~/.local/lib/colorsrc
 

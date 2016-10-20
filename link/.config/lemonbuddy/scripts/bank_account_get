@@ -1,0 +1,28 @@
+#!/bin/env python3
+# encoding: utf-8
+
+from datetime import datetime, timezone
+import os
+from os.path import expanduser
+from piecash import open_book
+import sys
+
+state = -1
+if len(sys.argv) > 1:
+    state = int(sys.argv[1]) - 1
+    state = int(state / 2) if state % 2 == 0 else -1
+
+sys.stdout.write("")
+
+with open_book(expanduser("~") + "/Dropbox/Comptes/Comptes.gnucash", open_if_lock=True) as book:
+    for acc in book.accounts:
+        if acc.name == "Compte chèques":
+            sums = [sum([sp.value for sp in acc.splits if sp.reconcile_state != 'n']) * acc.sign,                              # Reconciled
+                    sum([sp.value for sp in acc.splits if sp.transaction.post_date < datetime.now(timezone.utc)]) * acc.sign,  # Present
+                    sum([sp.value for sp in acc.splits]) * acc.sign]                                                           # Future
+            char_states = ['R', 'P', 'F']
+            if state != -1 and state < 3:
+                print(" [", char_states[state], "] ", sums[state], " €", sep='')
+
+# os.system("pkill -RTMIN+2 i3blocks")
+

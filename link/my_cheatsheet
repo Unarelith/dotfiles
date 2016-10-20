@@ -55,6 +55,8 @@
 | <F10>       | Identifie le groupe syntaxique sous le curseur |
 |--------------------------------------------------------------|
 | :DiffOrig   | Voir les changements faits depuis l'ouverture  |
+|--------------------------------------------------------------|
+| <C-R>=2+2   | Insère le résultat de 2 + 2 dans le fichier    |
 +--------------------------------------------------------------+
 |                                                              |
 | Ctrl+Shift+; => dunst menu                                   |

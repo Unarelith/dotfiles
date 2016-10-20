@@ -54,7 +54,8 @@ font                                pango:DejaVu Sans Mono 10
 
 # Startup
 exec --no-startup-id                setxkbmap -layout fr -variant oss
-exec --no-startup-id                xcompmgr &
+# exec --no-startup-id                compton --config ~/.config/compton/compton.conf &
+exec --no-startup-id                xcompmgr -c -f -I0.045 -O0.045 &
 exec --no-startup-id                volnoti &
 exec --no-startup-id                /bin/bash ~/.local/bin/update-background
 exec --no-startup-id                /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &

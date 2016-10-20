@@ -140,6 +140,8 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'Yggdroot/indentLine'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 Plugin 'Valloric/YouCompleteMe' " Valloric is the original author but oblitum claims better C/C++ support
 " Plugin 'oblitum/YouCompleteMe' " Valloric is the original author but oblitum claims better C/C++ support
@@ -170,6 +172,14 @@ call vundle#end() " required!
 " i3-vim-syntax config
 "------------------------------------------------------------------------------
 au BufEnter *i3/config setlocal filetype=i3
+
+"------------------------------------------------------------------------------
+" UltiSnips config
+"------------------------------------------------------------------------------
+let g:UltiSnipsExpandTrigger = '<A-X>'
+let g:UltiSnipsJumpForwardTrigger = '×'
+let g:UltiSnipsJumpBackwardTrigger = '¿'
+let g:UltiSnipsEditSplit = 'vertical'
 
 "------------------------------------------------------------------------------
 " indentLine config
@@ -412,7 +422,7 @@ map! <ESC>[17;5~ <C-F6>
 "------------------------------------------------------------------------------
 " To open NERDTree, Ctrl+B
 "------------------------------------------------------------------------------
-nmap <C-B> :NERDTree<CR>
+" nmap <C-B> :NERDTree<CR>
 
 "------------------------------------------------------------------------------
 " To open a new tab: Ctrl+T

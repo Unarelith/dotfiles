@@ -18,6 +18,8 @@ then
 	xrandr --output DP2 --auto --primary --right-of eDP1
 	bash ~/.local/bin/update-background
 
+	sed -i 's/eDP1/DP2/g' ~/.config/lemonbuddy/config
+
 	if [ -z "$(echo $lastline | grep "[I]")" ]
 	then
 		echo "[I]" $(date '+%a %e %b %H:%M:%S') >> $log_file
@@ -29,6 +31,8 @@ then
 	notify-send "Logged out, bye!"
 
 	xrandr --output eDP1 --auto --output DP2 --off
+
+	sed -i 's/DP2/eDP1/g' ~/.config/lemonbuddy/config
 
 	if [ -z "$(echo $lastline | grep "[O]")" ]
 	then

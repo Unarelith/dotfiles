@@ -30,12 +30,12 @@ Lemonbuddy stuff
    → Faire la même chose avec la luminosité ?
 • `CPU and RAM overuse:` Lemonbuddy utilise 25% CPU (50% après un killall) et 18% RAM (la ram incrémente, là je suis à 25%),
                        le tout sans traybar et juste après le retour de veille
+• L’icône de wifi disparaît de temps en temps, ça vient peut-être de mes icônes?
 
 ## Not created
 
-• L’icône de wifi disparaît de temps en temps, ça vient peut-être de mes icônes?
 • Certaines icônes de `FontAwesome` ne s’affichent pas du tout
-• Les boutons shuffle et loop ne marchent plus
+   → À confirmer
 
 # Suggestions
 

@@ -23,6 +23,7 @@ Tasks
 • Regarder la barre la plus intéressante entre `lemonbar` et `dzen` (ce qui impliquerait de drop `i3blocks` ? :/)
 • Faire quelque chose pour la config en dehors du home
    → Par exemple proposer la couleur dans `pacman` avec un `sudo sed -i` dans un script d’init
+• Découper la config de `vim` en plusieurs fichiers
 
 # Projets
 

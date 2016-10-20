@@ -1,0 +1,24 @@
+#!/bin/bash
+
+FG='#dcdcdc'
+# BG='#333333'
+BG='#090909'
+
+font1="Inconsolata:size=11"
+
+money_r=$(exec ~/.config/lemonbuddy/scripts/bank_account_get 1)
+money_p=$(exec ~/.config/lemonbuddy/scripts/bank_account_get 3)
+money_f=$(exec ~/.config/lemonbuddy/scripts/bank_account_get 5)
+
+(
+echo "
+^fg(#e2abd4)^fn(Inconsolata:bold:size=11)Bank account
+"
+echo "$money_r
+"
+echo "$money_p
+"
+echo "$money_f
+"
+
+) | dzen2 -p -x 3540 -y 1155 -w 150 -bg $BG -fg $FG -l 8 -sa c -ta c -e 'onstart=uncollapse;button1=exit;button3=exit' -fn $font1
