@@ -1,0 +1,11 @@
+[Unit]
+Description=DBus Popup Manager Service
+After=display-manager.service
+
+[Service]
+ExecStart=/usr/bin/python3 /home/bazin_q/.config/lemonbuddy/dbus/server.py
+ExecStop=/usr/bin/python3 /home/bazin_q/.config/lemonbuddy/dbus/server.py stop
+Restart=always
+
+[Install]
+WantedBy=default.target

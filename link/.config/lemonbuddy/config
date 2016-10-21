@@ -121,7 +121,7 @@ type = custom/text
 
 content = 
 
-click-left = bash ~/.config/lemonbuddy/scripts/bank_account
+click-left = python ~/.config/lemonbuddy/dbus/client.py "bank-account"
 
 [module/battery]
 type = internal/battery

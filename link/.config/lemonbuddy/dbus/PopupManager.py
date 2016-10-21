@@ -14,7 +14,10 @@ class PopupManager:
 
     def closeOpenedPopups(self):
         for popup in list(self.openedPopups):
-            os.kill(popup[1], signal.SIGUSR1)
+            try:
+                os.kill(popup[1], signal.SIGUSR1)
+            except:
+                pass
             self.openedPopups.remove(popup)
 
     def openPopup(self, request):
