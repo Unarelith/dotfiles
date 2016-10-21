@@ -4,21 +4,35 @@ FG='#dcdcdc'
 # BG='#333333'
 BG='#090909'
 
-font1="Inconsolata:size=11"
+font1="Sans:size=10"
 
 money_r=$(exec ~/.config/lemonbuddy/scripts/bank_account_get 1)
 money_p=$(exec ~/.config/lemonbuddy/scripts/bank_account_get 3)
 money_f=$(exec ~/.config/lemonbuddy/scripts/bank_account_get 5)
 
+monitors=$(xrandr --listactivemonitors | head -1 | awk '{print $2}')
+if [ $monitors == '1' ]
+then
+	x=1625
+	y=899
+else
+	x=3545
+	y=1018
+fi
+
 (
 echo "
-^fg(#e2abd4)^fn(Inconsolata:bold:size=11)Bank account
+^fg(#e2abd4)^fn(Sans:bold:size=10)Bank account
 "
 echo "$money_r
 "
 echo "$money_p
 "
-echo "$money_f
-"
+echo "$money_f"
 
-) | dzen2 -p -x 3540 -y 1155 -w 150 -bg $BG -fg $FG -l 8 -sa c -ta c -e 'onstart=uncollapse;button1=exit;button3=exit' -fn $font1
+) | dzen2 -p -x $x -y $y -w 150 -bg $BG -fg $FG -l 8 -sa c -ta c -e 'onstart=uncollapse;button1=exit;button3=exit' -fn $font1 &
+
+pid=$!
+echo $pid
+wait $pid
+

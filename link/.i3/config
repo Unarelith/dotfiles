@@ -72,6 +72,7 @@ new_window                          normal 1
 new_float                           normal 1
 
 for_window [class="URxvt"]          border none
+# for_window [name="dzen slave"]      border pixel 4
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier                   $mod

@@ -12,8 +12,6 @@ if len(sys.argv) > 1:
     state = int(sys.argv[1]) - 1
     state = int(state / 2) if state % 2 == 0 else -1
 
-sys.stdout.write("")
-
 with open_book(expanduser("~") + "/Dropbox/Comptes/Comptes.gnucash", open_if_lock=True) as book:
     for acc in book.accounts:
         if acc.name == "Compte chèques":
@@ -22,7 +20,7 @@ with open_book(expanduser("~") + "/Dropbox/Comptes/Comptes.gnucash", open_if_loc
                     sum([sp.value for sp in acc.splits]) * acc.sign]                                                           # Future
             char_states = ['R', 'P', 'F']
             if state != -1 and state < 3:
-                print(" [", char_states[state], "] ", sums[state], " €", sep='')
+                print("[", char_states[state], "] ", sums[state], " €", sep='')
 
 # os.system("pkill -RTMIN+2 i3blocks")
 

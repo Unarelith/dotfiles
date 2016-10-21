@@ -176,7 +176,7 @@ au BufEnter *i3/config setlocal filetype=i3
 "------------------------------------------------------------------------------
 " UltiSnips config
 "------------------------------------------------------------------------------
-let g:UltiSnipsExpandTrigger = '<A-X>'
+let g:UltiSnipsExpandTrigger = '<C-B>'
 let g:UltiSnipsJumpForwardTrigger = '×'
 let g:UltiSnipsJumpBackwardTrigger = '¿'
 let g:UltiSnipsEditSplit = 'vertical'
@@ -191,7 +191,7 @@ let g:indentLine_leadingSpaceChar = '·'
 " let g:indentLine_char = '·'
 " let g:indentLine_leadingSpaceEnabled = 1
 
-nmap <C-M> :LeadingSpaceToggle<CR>
+" nmap <C-M> :LeadingSpaceToggle<CR>
 
 "------------------------------------------------------------------------------
 " vim-better-whitespace config
@@ -488,13 +488,13 @@ imap <A-F5> <Esc>:cclose<CR>a
 "------------------------------------------------------------------------------
 " Perso commands
 "------------------------------------------------------------------------------
-map ,d "pyy"pgP
-map ; a;<Esc>
+nmap ,d "pyy"pgP
+nmap ; a;<Esc>
 
-map ,b hT_
-map ,w f_l
-map ,c ct_
-map ,sf mu[[Vi}
+nmap ,b hT_
+nmap ,w f_l
+nmap ,c ct_
+nmap ,sf mu[[Vi}
 
 " Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
@@ -505,13 +505,17 @@ vnoremap <C-J> :m '>+1<CR>gv=gv
 vnoremap <C-K> :m '<-2<CR>gv=gv
 
 " Fix up and down arrow if wrap is enabled
-map <Up> gk
-map <Down> gj
+nmap <Up> gk
+nmap <Down> gj
 imap <Up> <C-O>gk
 imap <Down> <C-O>gj
 
-map ,u <C-I>
-map ,i <C-O>
+nmap ,u <C-I>
+nmap ,i <C-O>
+
+nmap ,ms :e source/%:t:r.cpp<CR>
+
+nmap <C-M> :noh<CR>
 
 "------------------------------------------------------------------------------
 " Window navigation

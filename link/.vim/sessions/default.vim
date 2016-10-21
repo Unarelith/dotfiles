@@ -1,6 +1,6 @@
 " ~/.dotfiles/link/.vim/sessions/default.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 30 août 2016 at 18:02:12.
+" Created by session.vim 2.13.1 on 21 octobre 2016 at 08:50:51.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -19,16 +19,19 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/rendu/reverse/vga_widget
+cd ~/.dotfiles/link/.config/lemonbuddy/dbus
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 Makefile
+badd +33 server.py
+badd +0 client.py
+badd +0 common.py
 argglobal
 silent! argdel *
-argadd Makefile
-edit Makefile
+argadd server.py
+set stal=2
+edit common.py
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -44,18 +47,68 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 28) / 56)
+let s:l = 2 - ((1 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+2
 normal! 0
+tabedit server.py
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 48 - ((42 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+48
+normal! 08|
+wincmd w
+argglobal
+edit client.py
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 32 - ((30 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+32
+normal! 026|
+wincmd w
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
 tabnext 1
+set stal=1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
 endif
 " unlet! s:wipebuf
-set winheight=1 winwidth=20 shortmess=filnxtToO
+set winheight=1 winwidth=20 shortmess=filnxtToOc
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if file_readable(s:sx)
   exe "source " . fnameescape(s:sx)

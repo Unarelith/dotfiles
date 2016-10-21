@@ -19,6 +19,7 @@ then
 	bash ~/.local/bin/update-background
 
 	sed -i 's/eDP1/DP2/g' ~/.config/lemonbuddy/config
+	exec ~/.config/lemonbuddy/launch
 
 	if [ -z "$(echo $lastline | grep "[I]")" ]
 	then

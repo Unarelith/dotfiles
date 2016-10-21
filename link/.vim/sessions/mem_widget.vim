@@ -1,6 +1,6 @@
 " ~/.dotfiles/link/.vim/sessions/mem_widget.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 18 octobre 2016 at 15:23:15.
+" Created by session.vim 2.13.1 on 20 octobre 2016 at 17:00:35.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -30,6 +30,8 @@ badd +1 local/MainWindow.cpp
 badd +28 Makefile
 badd +19 include/MemoryWidget.hpp
 badd +1 source/MemoryWidget.cpp
+badd +24 include/AccessDatabaseReader.hpp
+badd +0 source/AccessDatabaseReader.cpp
 argglobal
 silent! argdel *
 argadd local/main.cpp
@@ -159,7 +161,7 @@ if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 19
-normal! 035|
+normal! 024|
 wincmd w
 argglobal
 edit source/MemoryWidget.cpp
@@ -179,10 +181,59 @@ normal! zt
 18
 normal! 0
 wincmd w
+exe 'vert 1resize ' . ((&columns * 119 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 119 + 119) / 239)
+tabedit include/AccessDatabaseReader.hpp
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 119 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 119 + 119) / 239)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 24 - ((23 * winheight(0) + 36) / 73)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+24
+normal! 0
+wincmd w
+argglobal
+edit source/AccessDatabaseReader.cpp
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 18 - ((17 * winheight(0) + 36) / 73)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+18
+normal! 0
+wincmd w
 2wincmd w
 exe 'vert 1resize ' . ((&columns * 119 + 119) / 239)
 exe 'vert 2resize ' . ((&columns * 119 + 119) / 239)
-tabnext 3
+tabnext 4
 set stal=1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -200,7 +251,7 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 2wincmd w
-tabnext 3
+tabnext 4
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')
