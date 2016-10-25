@@ -21,7 +21,7 @@ class DzenServerObject(dbus.service.Object):
     @dbus.service.method(common.DZEN_INTERFACE, in_signature='s', out_signature='')
     def displayPopup(self, message):
         message = str(message)
-        print('server: got new dzen request: %r' % message)
+        print('[I] Got new request: %r' % message)
         self.popupManager.openPopup(message)
 
     @dbus.service.method(common.QUIT_INTERFACE, in_signature='', out_signature='')
@@ -43,9 +43,9 @@ def server():
     try:
         name = dbus.service.BusName(common.DZEN_BUS_NAME, bus, do_not_queue=True)
     except dbus.NameExistsException:
-        sys.exit('Server is already running.')
+        sys.exit('[I] Server is already running.')
     else:
-        print('Server is not running yet. Putting on listening ears.')
+        print('[I] Server is not running yet. Putting on listening ears.')
     dzen = DzenServerObject(bus, common.DZEN_OBJECT_PATH)
 
     mainloop = gi.repository.GLib.MainLoop()

@@ -64,7 +64,7 @@ font-2 = FontAwesome:size=8;-2
 font-3 = MaterialIcons:size=10;-1
 ; font-5 = Termsynu:size=8;-1
 
-modules-left = mpd
+modules-left = mpd-playlist mpd
 modules-center = memory cpu
 modules-right = bank-account pacman-updates disk-root disk-home
 
@@ -287,7 +287,7 @@ ws-icon-2 = 3;3
 ws-icon-3 = 4;4
 ws-icon-4 = 5;
 ws-icon-5 = 6;6
-ws-icon-6 = 7;7
+ws-icon-6 = 7;
 ws-icon-7 = 8;8
 ws-icon-8 = 9;
 ws-icon-9 = 10;
@@ -370,11 +370,22 @@ bar-progress-empty = ─
 bar-progress-empty-font = 3
 bar-progress-empty-foreground = #44
 
+[module/mpd-playlist]
+type = custom/text
+
+content = 
+click-left = python ~/.config/lemonbuddy/dbus/client.py "mpd-playlist"
+
+padding-right = 0
+module-margin-right = 0
+
 [module/pacman-updates]
 type = custom/script
 
 format =     <output>
 exec = checkupdates | wc -l
+
+click-left = python ~/.config/lemonbuddy/dbus/client.py "pacman-updates"
 
 [module/powermenu]
 type = custom/menu
@@ -420,7 +431,7 @@ click-right = bash ~/.i3/i3blocks/tetrane logout
 type = internal/volume
 ; speaker-mixer = Speaker
 ; headphone-mixer = Headphone
-; headphone-control-numid = 9
+; headphone-id = 9
 
 format-volume = <ramp-volume> <label-volume>
 label-muted =   muted

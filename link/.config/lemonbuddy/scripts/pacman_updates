@@ -1,0 +1,33 @@
+#!/bin/bash
+
+FG='#dcdcdc'
+# BG='#333333'
+BG='#090909'
+
+font1='Ubuntu:size=10'
+line_count=$(($(checkupdates | wc -l)+1))
+
+monitors=$(xrandr --listactivemonitors | head -1 | awk '{print $2}')
+if [ $monitors == '1' ]
+then
+	screen_height=$(xrandr --listactivemonitors | head -2 | tail -1 | cut -dx -f2 | awk '{print $1+0}')
+
+	x=1635
+	# y=899
+	y=$(($screen_height - $line_count * 15 - 28 - 27))
+else
+	screen_height=$(xrandr --listactivemonitors | head -2 | tail -1 | cut -dx -f2 | awk '{print $1+0}')
+
+	x=3545
+	# y=1018
+	y=$(($screen_height - $line_count * 15 - 28 - 27))
+fi
+
+updates=$(checkupdates | sed 's/^/   \^fn(Ionicons:size=10)^fg(#beffbe)^fg(#dcdcdc)^fn(Meslo LG S DZ:size=9) /')
+
+echo -e "\n$updates" | dzen2 -p 10 -x $x -y $y -w "250" -bg $BG -fg $FG -l "$line_count" -sa 'l' -ta 'c' -e 'onstart=uncollapse;button1=exit;button3=exit' -fn $font1 &
+
+pid=$!
+echo $pid
+wait $pid
+

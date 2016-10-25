@@ -142,6 +142,10 @@ function mp
 	command ncmpcpp
 end
 
+function restart_pybot
+	ssh linux@gnidmoo.tk "systemctl --user restart pybot"
+end
+
 #------------------------------------------------------------------------------
 # Misc
 #------------------------------------------------------------------------------

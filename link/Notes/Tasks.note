@@ -2,44 +2,45 @@ Tasks
 
 # Config
 
+## Urgent
+
+• TODO: Régler le problème de la popup de playlist mpd
+
 ## Facile et rapide
 
-• Rajouter un système de détection automatique d’interface ethernet/wifi
+• TODO: Rajouter un système de détection automatique d’interface ethernet/wifi
    → http://unix.stackexchange.com/a/125401
-• Rajouter une icône play/pause à côté du bloc `now-playing`
-• Faire en sorte que le script `now_playing` affiche vlc ou smplayer en fonction de celui qui est lancé (SMPlayer en prio)
-• Réécrire un script de batterie avec les icônes `fontawesome`
-• Faire un script d’init qui remplit et compile automatiquement `.mail.sh.x`
+• TODO: Faire un script d’init qui remplit et compile automatiquement `.mail.sh.x`
    → Remplacer `unknown number of` par `?`
-• Passer `now_playing` en async parce que le titre ne change pas tout seul apparemment
-• Ajouter la tâche cron `updatedb` en dans la crontab root
 
 ## Plus chiant et plus long
 
-• Utiliser compton
-• Réécrire un script de dotfiles qui gère les dossiers correctement
+• TODO: Utiliser compton
+• TODO: Réécrire un script de dotfiles qui gère les dossiers correctement
    → Faire un script d’update des dossiers “link” et “copy” (rien n’est automatiquement rajouté pour l’instant)
    → Faire un script d’update de packages entre deux PC
-• Regarder la barre la plus intéressante entre `lemonbar` et `dzen` (ce qui impliquerait de drop `i3blocks` ? :/)
-• Faire quelque chose pour la config en dehors du home
+• TODO: Faire quelque chose pour la config en dehors du home
    → Par exemple proposer la couleur dans `pacman` avec un `sudo sed -i` dans un script d’init
-• Découper la config de `vim` en plusieurs fichiers
+   → Ajouter la tâche cron `updatedb` en dans la crontab root
+   → Ajouter la possibilité de rajouter la config dans `/etc/X11/xorg.conf.d/` (donc récupérer celle déjà existante)
+   → Idem avec `/etc/slim.conf`,`/etc/slimlock.conf`, `/usr/share/slim/themes`
+• TODO: Découper la config de `vim` et `fish` en plusieurs fichiers
 
 # Projets
 
-• Améliorer et clean `pybot`
+• FIXME: Améliorer et clean `pybot`
    → Régler notemment un problème d’encodage des titres des liens
-• Réécrire `ZeldaOOL` en se basant sur le code de la `libegdt`
+• TODO: Réécrire `ZeldaOOL` en se basant sur le code de la `libegdt`
 
 # Blog
 
-• Update le code de l’article sur le `système d’entité à composants`.
-• Update le texte
+• TODO: Update le code de l’article sur le `système d’entité à composants`.
+• FIXME: Update le texte
    → “Il est facile de...”, “c’est simple”: laisser le lecteur décider de ça
    → Réécrire l’article en anglais?
-• Régler le problème CSS du code qui s’étend trop loin sur mobile
+• FIXME: Régler le problème CSS du code qui s’étend trop loin sur mobile
 
 # Serveur
 
-• Update la config ou réinstaller Arch
+• TODO: Update la config et/ou réinstaller Arch
 

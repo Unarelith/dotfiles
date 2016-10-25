@@ -1,6 +1,6 @@
 " ~/.dotfiles/link/.vim/sessions/mem_widget.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 20 octobre 2016 at 17:00:35.
+" Created by session.vim 2.13.1 on 24 octobre 2016 at 10:41:14.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -27,11 +27,16 @@ set shortmess=aoO
 badd +1 local/main.cpp
 badd +32 local/MainWindow.hpp
 badd +1 local/MainWindow.cpp
-badd +28 Makefile
-badd +19 include/MemoryWidget.hpp
+badd +6 Makefile
+badd +30 include/MemoryWidget.hpp
 badd +1 source/MemoryWidget.cpp
-badd +24 include/AccessDatabaseReader.hpp
-badd +0 source/AccessDatabaseReader.cpp
+badd +20 include/AccessDatabaseReader.hpp
+badd +1 source/AccessDatabaseReader.cpp
+badd +1 local/MemoryAccess.hpp
+badd +1 .ycm_extra_conf.py
+badd +28 scripts/mem_widget.py
+badd +0 /tmp/ycm_temp/server_59023_stdout.log
+badd +260 /tmp/ycm_temp/server_59023_stderr.log
 argglobal
 silent! argdel *
 argadd local/main.cpp
@@ -42,12 +47,19 @@ wincmd _ | wincmd |
 vsplit
 1wincmd h
 wincmd w
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 exe 'vert 1resize ' . ((&columns * 119 + 119) / 239)
+exe '2resize ' . ((&lines * 36 + 38) / 76)
 exe 'vert 2resize ' . ((&columns * 119 + 119) / 239)
+exe '3resize ' . ((&lines * 36 + 38) / 76)
+exe 'vert 3resize ' . ((&columns * 119 + 119) / 239)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -58,12 +70,30 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 28 - ((27 * winheight(0) + 36) / 73)
+let s:l = 6 - ((5 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-28
-normal! 0
+6
+normal! 051|
+wincmd w
+argglobal
+edit .ycm_extra_conf.py
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 59 - ((24 * winheight(0) + 18) / 36)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+59
+normal! 046|
 wincmd w
 argglobal
 edit local/main.cpp
@@ -76,7 +106,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 36) / 73)
+let s:l = 1 - ((0 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -84,7 +114,10 @@ normal! zt
 normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 119 + 119) / 239)
+exe '2resize ' . ((&lines * 36 + 38) / 76)
 exe 'vert 2resize ' . ((&columns * 119 + 119) / 239)
+exe '3resize ' . ((&lines * 36 + 38) / 76)
+exe 'vert 3resize ' . ((&columns * 119 + 119) / 239)
 tabedit local/MainWindow.hpp
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -156,12 +189,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 19 - ((18 * winheight(0) + 36) / 73)
+let s:l = 1 - ((0 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-19
-normal! 024|
+1
+normal! 02|
 wincmd w
 argglobal
 edit source/MemoryWidget.cpp
@@ -174,27 +207,35 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 18 - ((17 * winheight(0) + 36) / 73)
+let s:l = 65 - ((64 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-18
-normal! 0
+65
+normal! 09|
 wincmd w
+2wincmd w
 exe 'vert 1resize ' . ((&columns * 119 + 119) / 239)
 exe 'vert 2resize ' . ((&columns * 119 + 119) / 239)
-tabedit include/AccessDatabaseReader.hpp
+tabedit scripts/mem_widget.py
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
 1wincmd h
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
 wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 119 + 119) / 239)
-exe 'vert 2resize ' . ((&columns * 119 + 119) / 239)
+exe '1resize ' . ((&lines * 36 + 38) / 76)
+exe 'vert 1resize ' . ((&columns * 117 + 119) / 239)
+exe '2resize ' . ((&lines * 36 + 38) / 76)
+exe 'vert 2resize ' . ((&columns * 117 + 119) / 239)
+exe 'vert 3resize ' . ((&columns * 121 + 119) / 239)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -205,12 +246,30 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 24 - ((23 * winheight(0) + 36) / 73)
+let s:l = 16 - ((0 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-24
+16
 normal! 0
+wincmd w
+argglobal
+edit include/AccessDatabaseReader.hpp
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 32 - ((24 * winheight(0) + 18) / 36)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+32
+normal! 036|
 wincmd w
 argglobal
 edit source/AccessDatabaseReader.cpp
@@ -223,17 +282,41 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 18 - ((17 * winheight(0) + 36) / 73)
+let s:l = 28 - ((27 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-18
+28
 normal! 0
 wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 119 + 119) / 239)
-exe 'vert 2resize ' . ((&columns * 119 + 119) / 239)
-tabnext 4
+exe '1resize ' . ((&lines * 36 + 38) / 76)
+exe 'vert 1resize ' . ((&columns * 117 + 119) / 239)
+exe '2resize ' . ((&lines * 36 + 38) / 76)
+exe 'vert 2resize ' . ((&columns * 117 + 119) / 239)
+exe 'vert 3resize ' . ((&columns * 121 + 119) / 239)
+tabedit local/MemoryAccess.hpp
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 21 - ((20 * winheight(0) + 36) / 73)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+21
+normal! 0
+tabnext 3
 set stal=1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -251,7 +334,7 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 2wincmd w
-tabnext 4
+tabnext 3
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

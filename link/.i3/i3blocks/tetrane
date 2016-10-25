@@ -13,23 +13,22 @@ if [ "$1" == "login" ]
 then
 	echo ""
 
-	notify-send "Logged in, welcome!"
-
 	xrandr --output DP2 --auto --primary --right-of eDP1
 	bash ~/.local/bin/update-background
 
 	sed -i 's/eDP1/DP2/g' ~/.config/lemonbuddy/config
-	exec ~/.config/lemonbuddy/launch
 
 	if [ -z "$(echo $lastline | grep "[I]")" ]
 	then
+		notify-send "Logged in, welcome!"
+
 		echo "[I]" $(date '+%a %e %b %H:%M:%S') >> $log_file
 	fi
+
+	exec ~/.config/lemonbuddy/launch
 elif [ "$1" == "logout" ]
 then
 	echo ""
-
-	notify-send "Logged out, bye!"
 
 	xrandr --output eDP1 --auto --output DP2 --off
 
@@ -37,7 +36,10 @@ then
 
 	if [ -z "$(echo $lastline | grep "[O]")" ]
 	then
-		qdbus org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Pause
+		notify-send "Logged out, bye!"
+
+		mpc pause
+
 		echo "[O]" $(date '+%a %e %b %H:%M:%S') >> $log_file
 	fi
 fi
