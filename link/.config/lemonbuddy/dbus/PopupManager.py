@@ -11,7 +11,8 @@ class PopupManager:
         self.popups = {
             'bank-account':   '/.config/lemonbuddy/scripts/bank_account',
             'pacman-updates': '/.config/lemonbuddy/scripts/pacman_updates',
-            'mpd-playlist':   '/.config/lemonbuddy/scripts/mpd_playlist'
+            'mpd-playlist':   '/.config/lemonbuddy/scripts/mpd_playlist',
+            'weather':        '/.config/lemonbuddy/scripts/weather_popup'
         }
 
     def closeOpenedPopups(self):

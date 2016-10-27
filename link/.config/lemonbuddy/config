@@ -66,7 +66,7 @@ font-3 = MaterialIcons:size=10;-1
 
 modules-left = mpd-playlist mpd
 modules-center = memory cpu
-modules-right = bank-account pacman-updates disk-root disk-home
+modules-right = train_on_time weather-lyon weather-macon bank-account pacman-updates disk-root disk-home
 
 [bar/external_bottom]
 ;inherit-from = bar/bottom
@@ -269,12 +269,14 @@ type = custom/script
 
 format =     <output>
 exec = /usr/lib/i3blocks/disk | head -1
+interval = 5
 
 [module/disk-root]
 type = custom/script
 
 format =     <output>
 exec = BLOCK_INSTANCE='/' /usr/lib/i3blocks/disk | head -1
+interval = 5
 
 [module/i3]
 type = internal/i3
@@ -384,6 +386,7 @@ type = custom/script
 
 format =     <output>
 exec = checkupdates | wc -l
+interval = 1800
 
 click-left = python ~/.config/lemonbuddy/dbus/client.py "pacman-updates"
 
@@ -427,6 +430,13 @@ content = 
 click-left = bash ~/.i3/i3blocks/tetrane login
 click-right = bash ~/.i3/i3blocks/tetrane logout
 
+[module/train_on_time]
+type = custom/script
+
+format =     <output>
+exec = bash ~/.config/lemonbuddy/scripts/train_on_time
+interval = 300
+
 [module/volume]
 type = internal/volume
 ; speaker-mixer = Speaker
@@ -441,6 +451,31 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-3 = 
+
+[module/weather]
+type = custom/script
+
+format = <output>
+exec = bash ~/.config/lemonbuddy/scripts/weather_icon
+interval = 1800
+
+[module/weather-lyon]
+type = custom/script
+
+format = <output>
+exec = bash ~/.i3/i3blocks/weather 1
+interval = 1800
+
+click-left = python ~/.config/lemonbuddy/dbus/client.py "weather"
+
+[module/weather-macon]
+type = custom/script
+
+format = <output>
+exec = bash ~/.i3/i3blocks/weather 3
+interval = 1800
+
+click-left = python ~/.config/lemonbuddy/dbus/client.py "weather"
 
 [module/wireless-network]
 type = internal/network

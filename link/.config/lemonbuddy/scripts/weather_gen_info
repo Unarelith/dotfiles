@@ -1,0 +1,11 @@
+#!/bin/bash
+
+location_info=$(curl "https://location.services.mozilla.com/v1/geolocate?key=16674381-f021-49de-8622-3021c5942aff")
+
+lat=$(echo $location_info | jshon -e location -e lat)
+lon=$(echo $location_info | jshon -e location -e lng)
+
+# curl "https://api.darksky.net/forecast/ef003983a3527a4d57fc8683fed790eb/$lat,$lon?units=si&exclude=hourly,flags" > ~/.cache/Forecast.json
+
+curl "http://maps.googleapis.com/maps/api/geocode/json?latlng=$lat,$lon&sensor=true" | jshon -e results -e 1 -e formatted_address > ~/.cache/city_location
+

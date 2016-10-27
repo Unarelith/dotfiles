@@ -13,6 +13,7 @@ kdegraphics-kolourpaint
 lm_sensors
 lxappearance
 mlocate
+mpc
 mpd
 nautilus
 nautilus-open-terminal

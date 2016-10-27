@@ -1,0 +1,11 @@
+#!/bin/bash
+
+logfile="$HOME/.cache/train_on_time.log"
+
+wget -q -O $logfile "http://www.sncf.com/sncf/train?numeroTrain=17761&date=27/10/2016&heure=1730&fromRedirect=true&companyCode=SN&equipmentType=TER"
+
+IFS=$'\n'
+text=($(cat $logfile | sed -n '690p;699p;707p' | sed -e 's/<[^>]*>//g' | awk '{$1=$1};1' | tr -d $'\r'))
+
+echo "${text[1]} at ${text[0]}: ${text[2]}"
+

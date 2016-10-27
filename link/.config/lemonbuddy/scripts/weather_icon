@@ -1,0 +1,16 @@
+#!/bin/bash
+
+LC_ALL="en_US.UTF-8"
+
+status=$(cat ~/.cache/Forecast.json | jshon -Q -e currently)
+
+if [[ "$status" = "" ]]
+	then
+	info="%{F#666666}No Access"
+else
+	icon=$(grep `cat ~/.cache/Forecast.json | jshon -e currently | jq '.icon' | grep -o '[^\"]*'` ~/Dzen2/dzen-configs/strangeWORLD/weatherIconList | awk 'NR==1' | grep -o "\"[^\"]*\"" | grep -o "[^\"]*")
+	temp=$(printf "%0.0f\n" `cat ~/.cache/Forecast.json | jshon -e currently | jq '.temperature'`)
+	info="(font:Weather Icons)$icon $temp°C"
+fi
+
+echo "$info"

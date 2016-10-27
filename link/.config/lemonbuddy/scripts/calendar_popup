@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 FG='#dcdcdc'
 BG='#333333'
@@ -35,4 +35,9 @@ echo "Current day of the year: $day_year"
 echo "Current week of the year: $week_year"
 echo ""
 
-) | dzen2 -p -x 415 -y 28 -w 235 -bg $BG -fg $FG -l 33 -sa c -ta c -e 'onstart=uncollapse;button1=exit;button3=exit' -fn $font1
+) | dzen2 -p -x 415 -y 28 -w 235 -bg $BG -fg $FG -l 33 -sa c -ta c -e 'onstart=uncollapse;button1=exit;button3=exit' -fn $font1 &
+
+pid=$!
+echo $pid
+wait $pid
+

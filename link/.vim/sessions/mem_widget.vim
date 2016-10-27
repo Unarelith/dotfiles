@@ -1,6 +1,6 @@
 " ~/.dotfiles/link/.vim/sessions/mem_widget.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 24 octobre 2016 at 10:41:14.
+" Created by session.vim 2.13.1 on 26 octobre 2016 at 10:29:29.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -13,7 +13,7 @@ if &background != 'dark'
 	set background=dark
 endif
 if !exists('g:colors_name') || g:colors_name != 'default' | colorscheme default | endif
-call setqflist([])
+call setqflist([{'lnum': 118, 'col': 58, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': 'F', 'pattern': '', 'filename': 'source/MemoryWidget.cpp', 'text': ';'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
@@ -24,18 +24,18 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
+badd +87 source/MemoryWidget.cpp
 badd +1 local/main.cpp
 badd +32 local/MainWindow.hpp
 badd +1 local/MainWindow.cpp
 badd +6 Makefile
-badd +30 include/MemoryWidget.hpp
-badd +1 source/MemoryWidget.cpp
-badd +20 include/AccessDatabaseReader.hpp
+badd +27 include/MemoryWidget.hpp
+badd +28 include/AccessDatabaseReader.hpp
 badd +1 source/AccessDatabaseReader.cpp
 badd +1 local/MemoryAccess.hpp
 badd +1 .ycm_extra_conf.py
-badd +28 scripts/mem_widget.py
-badd +0 /tmp/ycm_temp/server_59023_stdout.log
+badd +16 scripts/mem_widget.py
+badd +1 /tmp/ycm_temp/server_59023_stdout.log
 badd +260 /tmp/ycm_temp/server_59023_stderr.log
 argglobal
 silent! argdel *
@@ -177,8 +177,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 119 + 119) / 239)
-exe 'vert 2resize ' . ((&columns * 119 + 119) / 239)
+exe 'vert 1resize ' . ((&columns * 117 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 121 + 119) / 239)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -189,12 +189,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 36) / 73)
+let s:l = 27 - ((14 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 02|
+27
+normal! 09|
 wincmd w
 argglobal
 edit source/MemoryWidget.cpp
@@ -207,35 +207,28 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 65 - ((64 * winheight(0) + 36) / 73)
+let s:l = 129 - ((47 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-65
-normal! 09|
+129
+normal! 05|
 wincmd w
 2wincmd w
-exe 'vert 1resize ' . ((&columns * 119 + 119) / 239)
-exe 'vert 2resize ' . ((&columns * 119 + 119) / 239)
-tabedit scripts/mem_widget.py
+exe 'vert 1resize ' . ((&columns * 117 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 121 + 119) / 239)
+tabedit include/AccessDatabaseReader.hpp
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
 1wincmd h
-wincmd _ | wincmd |
-split
-1wincmd k
-wincmd w
 wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 36 + 38) / 76)
 exe 'vert 1resize ' . ((&columns * 117 + 119) / 239)
-exe '2resize ' . ((&lines * 36 + 38) / 76)
-exe 'vert 2resize ' . ((&columns * 117 + 119) / 239)
-exe 'vert 3resize ' . ((&columns * 121 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 121 + 119) / 239)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -246,30 +239,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 16 - ((0 * winheight(0) + 18) / 36)
+let s:l = 33 - ((32 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-16
-normal! 0
-wincmd w
-argglobal
-edit include/AccessDatabaseReader.hpp
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 32 - ((24 * winheight(0) + 18) / 36)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-32
-normal! 036|
+33
+normal! 09|
 wincmd w
 argglobal
 edit source/AccessDatabaseReader.cpp
@@ -282,18 +257,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 28 - ((27 * winheight(0) + 36) / 73)
+let s:l = 45 - ((38 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-28
-normal! 0
+45
+normal! 09|
 wincmd w
-exe '1resize ' . ((&lines * 36 + 38) / 76)
 exe 'vert 1resize ' . ((&columns * 117 + 119) / 239)
-exe '2resize ' . ((&lines * 36 + 38) / 76)
-exe 'vert 2resize ' . ((&columns * 117 + 119) / 239)
-exe 'vert 3resize ' . ((&columns * 121 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 121 + 119) / 239)
 tabedit local/MemoryAccess.hpp
 set splitbelow splitright
 set nosplitbelow

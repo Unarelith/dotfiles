@@ -142,6 +142,9 @@ Plugin 'dkprice/vim-easygrep'
 Plugin 'Yggdroot/indentLine'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'ramele/agrep'
+Plugin 'skywind3000/asyncrun.vim'
+Plugin 'metakirby5/codi.vim'
 
 Plugin 'Valloric/YouCompleteMe' " Valloric is the original author but oblitum claims better C/C++ support
 " Plugin 'oblitum/YouCompleteMe' " Valloric is the original author but oblitum claims better C/C++ support

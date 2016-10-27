@@ -5,7 +5,7 @@ FG='#dcdcdc'
 BG='#090909'
 
 font1='Ubuntu:size=10'
-line_count=$(($(checkupdates | wc -l)+1))
+line_count=$(($(checkupdates | wc -l)))
 
 monitors=$(xrandr --listactivemonitors | head -1 | awk '{print $2}')
 if [ $monitors == '1' ]
@@ -14,13 +14,13 @@ then
 
 	x=1635
 	# y=899
-	y=$(($screen_height - $line_count * 15 - 28 - 27))
+	y=$(($screen_height - $line_count * 17 - 28 - 34))
 else
 	screen_height=$(xrandr --listactivemonitors | head -2 | tail -1 | cut -dx -f2 | awk '{print $1+0}')
 
 	x=3545
 	# y=1018
-	y=$(($screen_height - $line_count * 15 - 28 - 27))
+	y=$(($screen_height - $line_count * 17 - 28 - 34))
 fi
 
 updates=$(checkupdates | sed 's/^/   \^fn(Ionicons:size=10)^fg(#beffbe)^fg(#dcdcdc)^fn(Meslo LG S DZ:size=9) /')
