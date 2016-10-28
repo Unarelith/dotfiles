@@ -48,14 +48,16 @@ set $launcher                       synapse
 set $launcher2                      dmenu_run -l 10 -p "Run" -i
 # set $launcher                     i3-dmenu-desktop --dmenu="dmenu -l 10 -p 'Run' -i"
 
+set $composer                       compton --config ~/.config/compton/compton.conf
+# set $composer                       xcompmgr -c -f -I0.045 -O0.045
+
 set $lock_screen                    slimlock
 
 font                                pango:DejaVu Sans Mono 10
 
 # Startup
 exec --no-startup-id                setxkbmap -layout fr -variant oss
-# exec --no-startup-id                compton --config ~/.config/compton/compton.conf &
-exec --no-startup-id                xcompmgr -c -f -I0.045 -O0.045 &
+exec --no-startup-id                $composer r&
 exec --no-startup-id                volnoti &
 exec --no-startup-id                /bin/bash ~/.local/bin/update-background
 exec --no-startup-id                /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
@@ -73,6 +75,10 @@ new_float                           normal 1
 
 for_window [class="URxvt"]          border none
 # for_window [name="dzen slave"]      border pixel 4
+
+gaps inner 25
+bindsym $mod+g                      gaps inner current set 0
+bindsym $mod+Shift+g                gaps inner current set 25
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier                   $mod
@@ -215,7 +221,7 @@ bindsym $mod+Shift+w                exec i3-dtags-moveto.sh -fn '$font'
 bindsym $mod+x                      exec $lock_screen
 
 # Take a screenshot
-bindsym --release Print             exec screenshot.bash
+bindsym --release Print             exec ~/.local/bin/screenshot.bash
 
 # Reload the configuration file
 bindsym $mod+Shift+c                reload

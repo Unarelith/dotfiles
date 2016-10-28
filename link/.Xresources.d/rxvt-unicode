@@ -71,7 +71,7 @@ URxvt*secondaryScroll: 0
 ! URxvt.tabbed.title-fg: 7
 
 ! Fade the terminal by 20% when it looses focus
-URxvt*fading: 20
+! URxvt*fading: 20
 
 Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintfull

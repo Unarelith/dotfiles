@@ -31,6 +31,7 @@ link/Images/Web
 link/rendu/.cache.gws
 
 # Keep interesting stuff
+!link/.config/compton
 !link/.config/conky
 !link/.config/lemonbuddy
 !link/.config/dunst/dunstrc

@@ -10,22 +10,27 @@ wget -q -O $logfile "http://www.sncf.com/sncf/train?numeroTrain=$trainId&date=$(
 
 IFS=$'\n'
 
-line_city=$(cat -n $logfile | grep "$station" | awk '{print $1}')
-line_hour=$((line_city - 9))
-line_on_time=$((line_city + 8))
-lines="${line_hour}p;${line_city}p;${line_on_time}p"
+get_infos() {
+	line_city=$(cat -n $logfile | grep "$station" | awk '{print $1}')
+	line_hour=$((line_city - $1))
+	line_on_time=$((line_city + $2))
+	lines="${line_hour}p;${line_city}p;${line_on_time}p"
 
-text=($(cat $logfile | sed -n "$lines" | sed -e 's/<[^>]*>//g' | awk '{$1=$1};1' | tr -d $'\r'))
+	cat $logfile | sed -n "$lines" | sed -e 's/<[^>]*>//g' | awk '{$1=$1};1' | tr -d $'\r'
+}
 
-if [ -n "${text[2]}" ]
+text=($(get_infos 9 8))
+[ -z "${text[2]}" ] && text=($(get_infos 7 8))
+
+if [ -n "${text[2]}" ] && [ "$(date +%u)" -le 5 -a "$(date +%H)" -le 19 ]
 then
 	echo "${text[1]} at ${text[0]}: ${text[2]}"
 
-	if [ "${text[2]}" != "On time" ]
+	if [ "$(date +%H)" -ge "17" ] && [ "${text[2]}" != "On time" ]
 	then
 		notify-send -u critical "SNCF" "Train en retard !"
 	fi
-else
-	echo "N/A"
+# else
+# 	echo "N/A"
 fi
 

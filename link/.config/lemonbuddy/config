@@ -3,7 +3,7 @@
 ; throttle_limit = 3
 
 [bar/top]
-monitor = DP2
+monitor = eDP1
 ; bottom = true
 width = 100%
 ; height = 34
@@ -40,7 +40,7 @@ modules-center = date
 modules-right = volume backlight wireless-network wired-network battery tetrane-login
 
 [bar/bottom]
-monitor = DP2
+monitor = eDP1
 bottom = true
 width = 100%
 height = 28
@@ -66,7 +66,7 @@ font-3 = MaterialIcons:size=10;-1
 
 modules-left = mpd-playlist mpd
 modules-center = memory cpu
-modules-right = train_on_time weather-lyon weather-macon bank-account pacman-updates disk-root disk-home
+modules-right = train_on_time weather-macon weather-lyon bank-account pacman-updates disk-root disk-home
 
 [bar/external_bottom]
 ;inherit-from = bar/bottom
@@ -344,7 +344,7 @@ bar-used-empty-foreground = #444444
 [module/mpd]
 type = internal/mpd
 clickable-progress = true
-format-online = <icon-prev> <icon-stop> <toggle> <icon-next>  <icon-repeat> <icon-random>  <bar-progress> <label-time>  <label-song>
+format-online = <icon-prev> <icon-stop> <toggle> <icon-next>  <icon-repeat> <icon-repeatone> <icon-random>  <bar-progress> <label-time>  <label-song>
 
 ; label-song = %artist% - %album% - %title%
 label-song = %artist% - %title%
@@ -354,8 +354,11 @@ icon-pause = 
 icon-stop = 
 icon-prev = 
 icon-next = 
+; icon-seekb =
+; icon-seekf =
 icon-random = 
 icon-repeat = 
+icon-repeatone = 
 
 toggle-on-foreground =
 toggle-off-foreground = #55
