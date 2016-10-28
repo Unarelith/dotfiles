@@ -5,7 +5,9 @@ location_info=$(curl "https://location.services.mozilla.com/v1/geolocate?key=166
 lat=$(echo $location_info | jshon -e location -e lat)
 lon=$(echo $location_info | jshon -e location -e lng)
 
-# curl "https://api.darksky.net/forecast/ef003983a3527a4d57fc8683fed790eb/$lat,$lon?units=si&exclude=hourly,flags" > ~/.cache/Forecast.json
+weather_info=$(curl "https://api.darksky.net/forecast/ef003983a3527a4d57fc8683fed790eb/$lat,$lon?units=si&exclude=hourly,flags")
+weather_city=$(curl "http://maps.googleapis.com/maps/api/geocode/json?latlng=$lat,$lon&sensor=true" | jshon -e results -e 1 -e formatted_address)
 
-curl "http://maps.googleapis.com/maps/api/geocode/json?latlng=$lat,$lon&sensor=true" | jshon -e results -e 1 -e formatted_address > ~/.cache/city_location
+[ -n "$weather_info" ] && echo "$weather_info" > ~/.cache/Forecast.json
+[ -n "$weather_city" ] && echo "$weather_city" > ~/.cache/city_location
 

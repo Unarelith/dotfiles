@@ -2,10 +2,30 @@
 
 logfile="$HOME/.cache/train_on_time.log"
 
-wget -q -O $logfile "http://www.sncf.com/sncf/train?numeroTrain=17761&date=27/10/2016&heure=1730&fromRedirect=true&companyCode=SN&equipmentType=TER"
+trainId=17761
+hour=1730
+station="MACON VILLE"
+
+wget -q -O $logfile "http://www.sncf.com/sncf/train?numeroTrain=$trainId&date=$(date +%d/%m/%Y)&heure=$hour&fromRedirect=true&companyCode=SN&equipmentType=TER"
 
 IFS=$'\n'
-text=($(cat $logfile | sed -n '690p;699p;707p' | sed -e 's/<[^>]*>//g' | awk '{$1=$1};1' | tr -d $'\r'))
 
-echo "${text[1]} at ${text[0]}: ${text[2]}"
+line_city=$(cat -n $logfile | grep "$station" | awk '{print $1}')
+line_hour=$((line_city - 9))
+line_on_time=$((line_city + 8))
+lines="${line_hour}p;${line_city}p;${line_on_time}p"
+
+text=($(cat $logfile | sed -n "$lines" | sed -e 's/<[^>]*>//g' | awk '{$1=$1};1' | tr -d $'\r'))
+
+if [ -n "${text[2]}" ]
+then
+	echo "${text[1]} at ${text[0]}: ${text[2]}"
+
+	if [ "${text[2]}" != "On time" ]
+	then
+		notify-send -u critical "SNCF" "Train en retard !"
+	fi
+else
+	echo "N/A"
+fi
 

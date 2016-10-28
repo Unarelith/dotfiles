@@ -2,7 +2,11 @@
 
 export LC_ALL="en_US.UTF-8"
 
-bash ~/.config/lemonbuddy/scripts/weather_gen_info
+current_timestamp=$(date +%s)
+if [ "$(cat ~/.cache/Forecast.json | jshon -e currently -e time)" -lt "$(($current_timestamp - 1800))" ]
+then
+	bash ~/.config/lemonbuddy/scripts/weather_gen_info
+fi
 
 FG='#dcdcdc'
 BG='#090909'
@@ -25,7 +29,7 @@ if [ $monitors == '1' ]
 then
 	screen_height=$(xrandr --listactivemonitors | head -2 | tail -1 | cut -dx -f2 | awk '{print $1+0}')
 
-	x=635
+	x=1385
 	# y=899
 	y=$(($screen_height - 434))
 else
@@ -229,13 +233,16 @@ day7_icon=$(grep `cat ~/.cache/Forecast.json | jshon -e daily | jq '.data[6].ico
 day7_temp_max=$(printf "%0.0f\n" `cat ~/.cache/Forecast.json | jshon -e daily | jq '.data[6].temperatureMax'`)
 day7_temp_min=$(printf "%0.0f\n" `cat ~/.cache/Forecast.json | jshon -e daily | jq '.data[6].temperatureMin'`)
 
+date=$(date -d "@$(cat ~/.cache/Forecast.json | jshon -e currently -e time)" "+%a %e %b %H:%M")
+
 (
 echo "   ^fn($fn_14)$current_temp°, $current_sum  ^fn($fn1)$(cat ~/.cache/city_location | tr -d '"')"
 echo "   ^p(+50;-9)^fn($wic_45)$current_icon^fn($fn1)^p() ^p(+75)^fg(#87d7ff)$today_temp_min°^fg()^fn($icons2)^fn($fn1)^p(+2)^fg(#ff8b8b)$today_temp_max°^fg()^p()  $wind_dir ^fn($wic_16)$wind_icon^fn($fn1) $windSpeed m/s"
 echo "   ^p(+50;-36)^fn($wic_45)$current_icon^fn($fn1)^p() ^p(+75)^fn($wic_16)^fn($fn1) $humidity%  ^fn($icons3)^fn($fn1) $cloudiness%"
 echo "   ^p(+50;-63)^fn($wic_45)$current_icon^fn($fn1)^p()^p(+82)^fg(#ffd7af)^fn($wic_13)^fn($fn1)^fg() $sunrise  ^fg(#ffafaf)^fn($wic_13)^fn($fn1)^fg() $sunset"
 echo "   $today_sum"
-echo "   ^fg(#666666)-----------------------------------------------------"
+echo "  ^fg(#666666)^fn(Monospace:size=11)─────────────────────────────────────────────────────^fn($fn1)"
+# echo "   ^fg(#666666)-----------------------------------------------------"
 echo "   ^bg(#222222)^fn($fn_14) $next_name ^fn($fn1)^bg()  ^fn($wic_16)$next_icon^fn($fn1) ^p(;+2)^fg(#87d7ff)$next_temp_min°^fg()^fn($icons4)^fn($fn1)^p(+3)^fg(#ff8b8b)$next_temp_max°^fg()^p()   ^fg(#ffd7af)^fn($wic_13)^fn($fn1)^fg() $next_sunrise ^fg(#ffafaf)^fn($wic_13)^fn($fn1)^fg() $next_sunset  ^fn($wic_16)^fn($fn1) $next_humidity%"
 echo "   $next_sum"
 echo "   ^bg(#222222)^fn($fn_14) $day3_name ^fn($fn1)^bg()  ^fn($wic_16)$day3_icon^fn($fn1) ^p(;+2)^fg(#87d7ff)$day3_temp_min°^fg()^fn($icons4)^fn($fn1)^p(+3)^fg(#ff8b8b)$day3_temp_max°^fg()"
@@ -244,7 +251,7 @@ echo "   ^bg(#222222)^fn($fn_14) $day4_name ^fn($fn1)^bg()  ^fn($wic_16)$day4_ic
 echo "   $day4_sum"
 echo "   ^bg(#222222)^fn($fn_14) $day5_name ^fn($fn1)^bg()  ^fn($wic_16)$day5_icon^fn($fn1) ^p(;+2)^fg(#87d7ff)$day5_temp_min°^fg()^fn($icons4)^fn($fn1)^p(+3)^fg(#ff8b8b)$day5_temp_max°^fg()"
 echo "   $day5_sum"
-echo "^bg(#666666)^fg(#222222)   Powered by forecast.io   "
+echo "^bg(#666666)^fg(#222222)   Last updated: $date   "
 
 ) | dzen2 -p -x $x -y $y -w 420 -bg $BG -fg $FG -h 27 -l 14 -sa l -ta l -e 'onstart=uncollapse;button1=exit;button3=exit' -fn $fn1 &
 

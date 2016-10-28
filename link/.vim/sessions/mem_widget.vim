@@ -1,6 +1,6 @@
 " ~/.dotfiles/link/.vim/sessions/mem_widget.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 26 octobre 2016 at 10:29:29.
+" Created by session.vim 2.13.1 on 27 octobre 2016 at 17:31:12.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -13,7 +13,7 @@ if &background != 'dark'
 	set background=dark
 endif
 if !exists('g:colors_name') || g:colors_name != 'default' | colorscheme default | endif
-call setqflist([{'lnum': 118, 'col': 58, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': 'F', 'pattern': '', 'filename': 'source/MemoryWidget.cpp', 'text': ';'}])
+call setqflist([{'lnum': 47, 'col': 88, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': 'F', 'pattern': '', 'filename': 'source/SideBar.cpp', 'text': '&'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
@@ -37,6 +37,10 @@ badd +1 .ycm_extra_conf.py
 badd +16 scripts/mem_widget.py
 badd +1 /tmp/ycm_temp/server_59023_stdout.log
 badd +260 /tmp/ycm_temp/server_59023_stderr.log
+badd +14 include/Hilbert.hpp
+badd +0 source/Hilbert.cpp
+badd +19 include/SideBar.hpp
+badd +14 source/SideBar.cpp
 argglobal
 silent! argdel *
 argadd local/main.cpp
@@ -140,12 +144,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 32 - ((31 * winheight(0) + 36) / 73)
+let s:l = 23 - ((22 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-32
-normal! 0
+23
+normal! 039|
 wincmd w
 argglobal
 edit local/MainWindow.cpp
@@ -158,12 +162,61 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 34 - ((33 * winheight(0) + 36) / 73)
+let s:l = 31 - ((30 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-34
+31
+normal! 034|
+wincmd w
+exe 'vert 1resize ' . ((&columns * 119 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 119 + 119) / 239)
+tabedit include/SideBar.hpp
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 119 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 119 + 119) / 239)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 32 - ((31 * winheight(0) + 36) / 73)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+32
 normal! 0
+wincmd w
+argglobal
+edit source/SideBar.cpp
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 37 - ((24 * winheight(0) + 36) / 73)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+37
+normal! 029|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 119 + 119) / 239)
 exe 'vert 2resize ' . ((&columns * 119 + 119) / 239)
@@ -189,12 +242,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 27 - ((14 * winheight(0) + 36) / 73)
+let s:l = 13 - ((0 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-27
-normal! 09|
+13
+normal! 03|
 wincmd w
 argglobal
 edit source/MemoryWidget.cpp
@@ -207,16 +260,64 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 129 - ((47 * winheight(0) + 36) / 73)
+let s:l = 36 - ((30 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-129
+36
 normal! 05|
 wincmd w
-2wincmd w
 exe 'vert 1resize ' . ((&columns * 117 + 119) / 239)
 exe 'vert 2resize ' . ((&columns * 121 + 119) / 239)
+tabedit include/Hilbert.hpp
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 119 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 119 + 119) / 239)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 36) / 73)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 02|
+wincmd w
+argglobal
+edit source/Hilbert.cpp
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 77 - ((61 * winheight(0) + 36) / 73)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+77
+normal! 0
+wincmd w
+exe 'vert 1resize ' . ((&columns * 119 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 119 + 119) / 239)
 tabedit include/AccessDatabaseReader.hpp
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -239,12 +340,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 33 - ((32 * winheight(0) + 36) / 73)
+let s:l = 37 - ((36 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-33
-normal! 09|
+37
+normal! 034|
 wincmd w
 argglobal
 edit source/AccessDatabaseReader.cpp
@@ -257,13 +358,14 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 45 - ((38 * winheight(0) + 36) / 73)
+let s:l = 37 - ((34 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-45
-normal! 09|
+37
+normal! 0
 wincmd w
+2wincmd w
 exe 'vert 1resize ' . ((&columns * 117 + 119) / 239)
 exe 'vert 2resize ' . ((&columns * 121 + 119) / 239)
 tabedit local/MemoryAccess.hpp
@@ -288,7 +390,7 @@ exe s:l
 normal! zt
 21
 normal! 0
-tabnext 3
+tabnext 6
 set stal=1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -306,7 +408,7 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 2wincmd w
-tabnext 3
+tabnext 6
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

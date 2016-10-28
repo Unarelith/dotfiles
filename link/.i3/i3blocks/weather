@@ -20,5 +20,13 @@ else
 fi
 
 url="http://rss.accuweather.com/rss/liveweather_rss.asp?metric=${METRIC}&locCode=$locCode"
-curl -s "$url" | python3 ~/.i3/i3blocks/weather.py
+
+weather_info=$(curl -s "$url")
+
+if [ -n "$weather_info" ]
+then
+	echo "$weather_info" | python3 ~/.i3/i3blocks/weather.py
+else
+	echo "   N/A"
+fi
 
