@@ -14,7 +14,8 @@ get_infos() {
 	line_city=$(cat -n $logfile | grep "$station" | awk '{print $1}')
 	line_hour=$((line_city - $1))
 	line_on_time=$((line_city + $2))
-	lines="${line_hour}p;${line_city}p;${line_on_time}p"
+	line_delay_reason=$((line_city + $2 + 1))
+	lines="${line_hour}p;${line_city}p;${line_on_time}p;${line_delay_reason}p"
 
 	if [ -n "$line_city" ]
 	then
@@ -23,15 +24,32 @@ get_infos() {
 }
 
 text=($(get_infos 9 8))
-[ -z "${text[2]}" ] && text=($(get_infos 7 8))
+[ -z "${text[3]}" ] && text=($(get_infos 7 8))
+
+# echo "=== DEBUG ==="
+# for i in ${text[@]}
+# do
+# 	echo $i
+# done
+# echo "============="
 
 if [ -n "${text[2]}" ] && [ "$(date +%u)" -le 5 -a "$(date +%H)" -le 19 -a "$(date +%H)" -ge 15 ]
 then
-	echo "${text[1]} at ${text[0]}: ${text[2]}"
+	echo -n "${text[1]}" | sed 's/[^ ]\+/\L\u&/g'
+	echo -n " at ${text[0]}: " | tr '[:upper:]' '[:lower:]'
+	echo "${text[2]}" | sed 's/[^ ]\+/\L\u&/g'
+	# echo -n "${text[1]} at ${text[0]}: ${text[2]}"
 
-	if [ "$(date +%H)" -ge "17" -a "$(date +%M)" -ge "30" ] && [ "${text[2]}" != "On time" ]
+	# if [ "${text[2]}" != "On time" ]
+	# then
+	# 	echo " ${text[3]}" | tr '[:upper:]' '[:lower:]' | tr -d ':'
+	# else
+	# 	echo
+	# fi
+
+	if [ "$1" == "--notify" ] || [ "$(date +%H)" -ge "17" -a "$(date +%M)" -ge "30" -a "${text[2]}" != "On time" ]
 	then
-		notify-send -u critical "SNCF" "Train en retard !"
+		notify-send -u critical "SNCF" "Train $(echo ${text[2]} | tr '[:upper:]' '[:lower:]')!\nReason:$(echo -n ${text[3]} | cut -d':' -f2-)"
 	fi
 # else
 # 	echo "N/A"

@@ -438,6 +438,8 @@ format =     <output>
 exec = bash ~/.config/lemonbuddy/scripts/train_on_time
 interval = 300
 
+click-left = bash ~/.config/lemonbuddy/scripts/train_on_time --notify
+
 [module/volume]
 type = internal/volume
 ; speaker-mixer = Speaker

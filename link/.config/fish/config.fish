@@ -146,6 +146,10 @@ function restart_pybot
 	ssh linux@gnidmoo.tk "systemctl --user restart pybot"
 end
 
+function gnidhaste
+	env HASTE_SERVER=http://paste.gnidmoo.tk haste $argv
+end
+
 #------------------------------------------------------------------------------
 # Misc
 #------------------------------------------------------------------------------
