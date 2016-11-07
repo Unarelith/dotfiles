@@ -43,3 +43,5 @@ emacs*ReverseVideo:		on
 
 #include ".Xresources.d/rxvt-unicode"
 #include ".Xresources.d/rxvt-unicode-colors"
+#include ".Xresources.d/xft"
+

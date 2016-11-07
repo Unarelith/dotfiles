@@ -170,7 +170,7 @@ Plugin 'project.tar.gz'
 Plugin 'git://git.wincent.com/command-t.git'
 
 call vundle#end() " required!
-"
+
 "------------------------------------------------------------------------------
 " i3-vim-syntax config
 "------------------------------------------------------------------------------

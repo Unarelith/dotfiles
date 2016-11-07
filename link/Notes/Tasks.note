@@ -4,7 +4,7 @@ Tasks
 
 ## Urgent
 
-• TODO: Régler le problème de la popup de playlist mpd
+• DONE: Régler le problème de la popup de playlist mpd
 
 ## Facile et rapide
 
@@ -12,6 +12,7 @@ Tasks
    → http://unix.stackexchange.com/a/125401
 • TODO: Faire un script d’init qui remplit et compile automatiquement `.mail.sh.x`
    → Remplacer `unknown number of` par `?`
+• TODO: Créer deux popups pour l’heure, une avec le calendrier, une avec `remind -c1 -m ~/.reminders`
 
 ## Plus chiant et plus long
 

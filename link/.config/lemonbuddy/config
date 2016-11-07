@@ -3,7 +3,7 @@
 ; throttle_limit = 3
 
 [bar/top]
-monitor = eDP1
+monitor = DP2
 ; bottom = true
 width = 100%
 ; height = 34
@@ -40,7 +40,7 @@ modules-center = date
 modules-right = volume backlight wireless-network wired-network battery tetrane-login
 
 [bar/bottom]
-monitor = eDP1
+monitor = DP2
 bottom = true
 width = 100%
 height = 28
@@ -283,25 +283,26 @@ type = internal/i3
 
 pin-workspaces = true
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;3
-ws-icon-3 = 4;4
-ws-icon-4 = 5;
-ws-icon-5 = 6;6
-ws-icon-6 = 7;
-ws-icon-7 = 8;8
-ws-icon-8 = 9;
-ws-icon-9 = 10;
-ws-icon-10 = 11;
-ws-icon-11 = 12;
-ws-icon-12 = 13;
-ws-icon-13 = 14;
-ws-icon-14 = 15;P
-ws-icon-15 = 16;J
-ws-icon-16 = 17;K
-ws-icon-17 = 18;
-ws-icon-18 = 19;
+ws-icon-0 = 0;
+ws-icon-1 = 1;
+ws-icon-2 = 2;
+ws-icon-3 = 3;3
+ws-icon-4 = 4;4
+ws-icon-5 = 5;
+ws-icon-6 = 6;6
+ws-icon-7 = 7;
+ws-icon-8 = 8;8
+ws-icon-9 = 9;
+ws-icon-10 = 10;
+ws-icon-11 = 11;
+ws-icon-12 = 12;
+ws-icon-13 = 13;
+ws-icon-14 = 14;
+ws-icon-15 = 15;P
+ws-icon-16 = 16;J
+ws-icon-17 = 17;K
+ws-icon-18 = 18;
+ws-icon-19 = 19;
 ws-icon-default = ♟
 
 label-focused = %icon%
@@ -378,11 +379,8 @@ bar-progress-empty-foreground = #44
 [module/mpd-playlist]
 type = custom/text
 
-content = 
+content = 
 click-left = python ~/.config/lemonbuddy/dbus/client.py "mpd-playlist"
-
-padding-right = 0
-module-margin-right = 0
 
 [module/pacman-updates]
 type = custom/script

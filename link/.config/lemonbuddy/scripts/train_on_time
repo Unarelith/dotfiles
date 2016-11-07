@@ -16,17 +16,20 @@ get_infos() {
 	line_on_time=$((line_city + $2))
 	lines="${line_hour}p;${line_city}p;${line_on_time}p"
 
-	cat $logfile | sed -n "$lines" | sed -e 's/<[^>]*>//g' | awk '{$1=$1};1' | tr -d $'\r'
+	if [ -n "$line_city" ]
+	then
+		cat $logfile | sed -n "$lines" | sed -e 's/<[^>]*>//g' | awk '{$1=$1};1' | tr -d $'\r'
+	fi
 }
 
 text=($(get_infos 9 8))
 [ -z "${text[2]}" ] && text=($(get_infos 7 8))
 
-if [ -n "${text[2]}" ] && [ "$(date +%u)" -le 5 -a "$(date +%H)" -le 19 ]
+if [ -n "${text[2]}" ] && [ "$(date +%u)" -le 5 -a "$(date +%H)" -le 19 -a "$(date +%H)" -ge 15 ]
 then
 	echo "${text[1]} at ${text[0]}: ${text[2]}"
 
-	if [ "$(date +%H)" -ge "17" ] && [ "${text[2]}" != "On time" ]
+	if [ "$(date +%H)" -ge "17" -a "$(date +%M)" -ge "30" ] && [ "${text[2]}" != "On time" ]
 	then
 		notify-send -u critical "SNCF" "Train en retard !"
 	fi

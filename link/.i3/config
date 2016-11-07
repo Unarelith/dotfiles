@@ -21,6 +21,27 @@ set $mod                            Mod4
 # set $workspaceL                     18:L
 # set $workspaceM                     19:
 
+# set $workspace1                     1:1
+# set $workspace2                     2:2
+# set $workspace3                     3:3
+# set $workspace4                     4:4
+# set $workspace5                     5:5
+# set $workspace6                     6:6
+# set $workspace7                     7:7
+# set $workspace8                     8:8
+# set $workspace9                     9:9
+# set $workspace10                    10:10
+# set $workspace11                    11:)
+# set $workspaceU                     12:U
+# set $workspaceI                     13:I
+# set $workspaceO                     14:O
+# set $workspaceP                     15:P
+# set $workspaceJ                     16:J
+# set $workspaceK                     17:K
+# set $workspaceL                     18:L
+# set $workspaceM                     19:M
+
+set $workspace0                     0
 set $workspace1                     1
 set $workspace2                     2
 set $workspace3                     3
@@ -45,11 +66,11 @@ set $workspaceM                     19
 set $terminal                       urxvt -e fish
 
 set $launcher                       synapse
+set $launcher_alt                   i3-dmenu-desktop --dmenu="dmenu -l 10 -p 'Run' -i"
 set $launcher2                      dmenu_run -l 10 -p "Run" -i
-# set $launcher                     i3-dmenu-desktop --dmenu="dmenu -l 10 -p 'Run' -i"
 
-set $composer                       compton --config ~/.config/compton/compton.conf
-# set $composer                       xcompmgr -c -f -I0.045 -O0.045
+set $composer                       xcompmgr -c -f -I0.045 -O0.045 &
+set $composer2                      compton -b --config ~/.config/compton/compton.conf
 
 set $lock_screen                    slimlock
 
@@ -57,7 +78,7 @@ font                                pango:DejaVu Sans Mono 10
 
 # Startup
 exec --no-startup-id                setxkbmap -layout fr -variant oss
-exec --no-startup-id                $composer r&
+exec --no-startup-id                $composer
 exec --no-startup-id                volnoti &
 exec --no-startup-id                /bin/bash ~/.local/bin/update-background
 exec --no-startup-id                /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
@@ -66,6 +87,8 @@ exec --no-startup-id                nm-applet &
 exec --no-startup-id                dunst &
 exec --no-startup-id                conky &
 exec --no-startup-id                xrandr --setprovideroffloadsink 1 0
+exec --no-startup-id                mpd
+exec --no-startup-id                i3-msg "workspace $workspace1"
 
 exec_always --no-startup-id         /bin/bash ~/.config/lemonbuddy/launch
 
@@ -132,6 +155,7 @@ bindsym $mod+q                      focus parent
 bindsym $mod+c                      focus child
 
 # Switch to workspace
+bindsym $mod+twosuperior            workspace $workspace0
 bindsym $mod+ampersand              workspace $workspace1
 bindsym $mod+eacute                 workspace $workspace2
 bindsym $mod+quotedbl               workspace $workspace3
@@ -169,6 +193,7 @@ bindsym $mod+Ctrl+Left              workspace prev
 bindsym $mod+Ctrl+Right             workspace next
 
 # Move focused container to workspace
+bindsym $mod+Shift+twosuperior      move container to workspace $workspace0
 bindsym $mod+Shift+ampersand        move container to workspace $workspace1
 bindsym $mod+Shift+eacute           move container to workspace $workspace2
 bindsym $mod+Shift+quotedbl         move container to workspace $workspace3
@@ -282,7 +307,7 @@ bindsym $mod+r                      mode "resize"
 # }
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #434343 #002211 #bfbbcc #2e9ef4   #3a3a3a
+client.focused          #434343 #171717 #bfbbcc #2e9ef4   #3a3a3a
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
