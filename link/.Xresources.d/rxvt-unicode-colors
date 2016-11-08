@@ -2,6 +2,8 @@
 ! urxvt colors configuration
 !-----------------------------------------------------------------------------
 ! Setup transparency
+! URxvt*transparent:        true
+! URxvt*shading:            30
 URxvt*depth:              32
 URxvt*background:         [70]#000000
 ! URxvt*foreground:         white

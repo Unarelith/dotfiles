@@ -67,6 +67,7 @@ dropbox
 i3-gaps
 imgurbash2
 font-awesome
+gws
 lemonbuddy-git
 nautilus-dropbox
 ttf-material-icons
@@ -136,3 +137,4 @@ then
 		sudo systemctl --user enable $service
 	done
 fi
+

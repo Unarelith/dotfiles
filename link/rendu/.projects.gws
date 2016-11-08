@@ -3,21 +3,27 @@ Commun/epitech-tutos | git@git.gnidmoo.tk:gnidmoo/epitech-tutos.git
 Commun/fish-wakatime | git@github.com:Quent42340/fish-wakatime.git
 
 # B1 - C Prog Elem
-CPE/Rush1 | git@git.epitech.eu:/lacroi_m/CPE_2015_BSQ
 CPE/CPE_2015_Allum1 | git@git.epitech.eu:/bazin_q/CPE_2015_Allum1
 CPE/CPE_2015_BSQ | git@git.epitech.eu:/bazin_q/CPE_2015_BSQ
 CPE/CPE_2015_BSQ_bootstrap | git@git.epitech.eu:/bazin_q/CPE_2015_BSQ_bootstrap
-CPE/CPE_2015_corewar | git@git.epitech.eu:/grange_c/CPE_2015_corewar
-CPE/CPE_2015_getnextline | git@git.epitech.eu:/bazin_q/CPE_2015_getnextline
 CPE/CPE_2015_Lemin | git@git.epitech.eu:/audet_b/CPE_2015_Lemin
 CPE/CPE_2015_Pushswap | git@git.epitech.eu:/bazin_q/CPE_2015_Pushswap
+CPE/CPE_2015_corewar | git@git.epitech.eu:/grange_c/CPE_2015_corewar
+CPE/CPE_2015_getnextline | git@git.epitech.eu:/bazin_q/CPE_2015_getnextline
+CPE/CPE_colle_semaine2 | git@git.epitech.eu:/bunel_b/CPE_colle_semaine2
+CPE/Rush1 | git@git.epitech.eu:/lacroi_m/CPE_2015_BSQ
+CPE/marvin_bunel_b | git@git.epitech.eu:/bunel_b/marvin_bunel_b
+CPE/sudoki-bi | git@git.epitech.eu:/bazin_q/sudoki-bi
 
 # B1 - Expression Écrite
 Expr/B1EMPLOI | git@git.epitech.eu:/bazin_q/B1EMPLOI
 Expr/B1Lettre | git@git.epitech.eu:/bazin_q/B1Lettre
 Expr/B1Mailpro | git@git.epitech.eu:/bazin_q/B1Mailpro
+Expr/B2PRECISER | git@git.epitech.eu:/bazin_q/B2PRECISER
+Expr/B2VENTE | git@git.epitech.eu:/bazin_q/B2VENTE
 
 # B1 - Infographie
+Infographie/colle3 | git@git.epitech.eu:/bazin_q/colle3
 Infographie/gfx_colle_fantasy1 | git@git.epitech.eu:/bazin_q/gfx_colle_fantasy1
 Infographie/gfx_colle_fantasy2 | git@git.epitech.eu:/bazin_q/gfx_colle_fantasy2
 Infographie/gfx_colle_fantasy3 | git@git.epitech.eu:/bazin_q/gfx_colle_fantasy3
@@ -42,7 +48,15 @@ MyLibs/libmy_printf | git@git.epitech.eu:/bazin_q/libmy_printf
 MyLibs/make-tools | git@git.epitech.eu:/bazin_q/make-tools
 
 # Perso
+Perso/Asylia | git@github.com:Quent42340/Asylia.git
+Perso/CubeLand | git@github.com:Quent42340/CubeLand.git
+Perso/Eplith | git@github.com:Quent42340/Eplith.git
+Perso/KubKraft | git@github.com:Quent42340/KubKraft.git
 Perso/TestProj | git@github.com:Quent42340/TestProj.git
+Perso/ZeldaOOL | git@github.com:Quent42340/ZeldaOOL.git
+Perso/libegdt | git@github.com:Quent42340/libegdt.git
+Perso/pybot | gogs@gnidmoo.tk:gnidmoo/pybot.git
+Perso/quent42340.github.io | git@github.com:Quent42340/quent42340.github.io.git
 
 # B1 - Piscine
 Piscine/Piscine_C_J01 | git@git.epitech.eu:/bazin_q/Piscine_C_J01
@@ -82,9 +96,15 @@ PSU/PSU_2015_my_printf_bootstrap | git@git.epitech.eu:/bazin_q/PSU_2015_my_print
 PSU/PSU_2015_my_select | git@git.epitech.eu:/bazin_q/PSU_2015_my_select
 PSU/PSU_2015_tetris | git@git.epitech.eu:/bazin_q/PSU_2015_tetris
 
+# B3 - Stage
+reverse/kernel | git@github.com:Quent42340/vga_text_kernel.git
+reverse/mem_widget | gogs@gnidmoo.tk:gnidmoo/mem_widget.git
+reverse/vga_widget | gogs@gnidmoo.tk:gnidmoo/vgaemu.git
+
 # B1 - Infographie: Skill Tests
 SkillTests/alphachannel_2020 | git@git.epitech.eu:/bazin_q/alphachannel_2020
 SkillTests/binarizer_2020 | git@git.epitech.eu:/bazin_q/binarizer_2020
+SkillTests/chatty_2020 | git@git.epitech.eu:/bazin_q/chatty_2020
 SkillTests/chromatic_2020 | git@git.epitech.eu:/bazin_q/chromatic_2020
 SkillTests/iconofsin_2020 | git@git.epitech.eu:/bazin_q/iconofsin_2020
 SkillTests/lightning_2020 | git@git.epitech.eu:/bazin_q/lightning_2020

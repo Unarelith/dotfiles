@@ -33,7 +33,7 @@ text=($(get_infos 9 8))
 # done
 # echo "============="
 
-if [ -n "${text[2]}" ] && [ "$(date +%u)" -le 5 -a "$(date +%H)" -le 19 -a "$(date +%H)" -ge 15 ]
+if [ -n "${text[2]}" ] && [ "$(date +%u)" -le 5 -a "$(date +%H)" -ge 16 -a "$(date +%H)" -le 18 -a "$(date +%M)" -le 30 ]
 then
 	echo -n "${text[1]}" | sed 's/[^ ]\+/\L\u&/g'
 	echo -n " at ${text[0]}: " | tr '[:upper:]' '[:lower:]'

@@ -1,6 +1,6 @@
 " ~/.dotfiles/link/.vim/sessions/mem_widget.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 04 novembre 2016 at 17:40:10.
+" Created by session.vim 2.13.1 on 07 novembre 2016 at 17:55:45.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -31,7 +31,7 @@ badd +34 local/MainWindow.hpp
 badd +1 local/MainWindow.cpp
 badd +21 Makefile
 badd +46 include/MemoryWidget.hpp
-badd +40 include/AccessDatabaseReader.hpp
+badd +47 include/AccessDatabaseReader.hpp
 badd +1 source/AccessDatabaseReader.cpp
 badd +1 local/MemoryAccess.hpp
 badd +1 .ycm_extra_conf.py
@@ -146,12 +146,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 34 - ((33 * winheight(0) + 36) / 73)
+let s:l = 36 - ((35 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-34
-normal! 012|
+36
+normal! 056|
 wincmd w
 argglobal
 edit local/MainWindow.cpp
@@ -262,12 +262,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 52 - ((18 * winheight(0) + 36) / 73)
+let s:l = 71 - ((37 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-52
-normal! 022|
+71
+normal! 025|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 116 + 119) / 239)
 exe 'vert 2resize ' . ((&columns * 122 + 119) / 239)
@@ -293,12 +293,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 47 - ((46 * winheight(0) + 36) / 73)
+let s:l = 41 - ((40 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-47
-normal! 038|
+41
+normal! 064|
 wincmd w
 argglobal
 edit source/AccessDatabaseReader.cpp
@@ -311,12 +311,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 73 - ((42 * winheight(0) + 36) / 73)
+let s:l = 58 - ((3 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-73
-normal! 015|
+58
+normal! 054|
 wincmd w
 2wincmd w
 exe 'vert 1resize ' . ((&columns * 116 + 119) / 239)
@@ -361,12 +361,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 49 - ((24 * winheight(0) + 36) / 73)
+let s:l = 75 - ((41 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-49
-normal! 05|
+75
+normal! 080|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 116 + 119) / 239)
 exe 'vert 2resize ' . ((&columns * 122 + 119) / 239)
