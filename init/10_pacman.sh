@@ -114,7 +114,7 @@ read answer
 
 if [ "$answer" == "y" ] || [ "$anwser" == "Y" ]
 then
-	yaourt -S $default_packages $default_aur_packages
+	yaourt -Sy --needed $default_packages $default_aur_packages
 fi
 
 echo

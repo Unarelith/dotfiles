@@ -10,6 +10,9 @@ Tasks
 
 • TODO: Rajouter un système de détection automatique d’interface ethernet/wifi
    → http://unix.stackexchange.com/a/125401
+   → `xrandr --listactivemonitors | awk '{print $4}' | head -2 | tail -1`
+   → `ls /sys/class/net | grep wl`
+   → `ls /sys/class/net | grep en`
 • TODO: Faire un script d’init qui remplit et compile automatiquement `.mail.sh.x`
    → Remplacer `unknown number of` par `?`
 • TODO: Créer deux popups pour l’heure, une avec le calendrier, une avec `remind -c1 -m ~/.reminders`
@@ -23,8 +26,8 @@ Tasks
 • TODO: Faire quelque chose pour la config en dehors du home
    → Par exemple proposer la couleur dans `pacman` avec un `sudo sed -i` dans un script d’init
    → Ajouter la tâche cron `updatedb` en dans la crontab root
-   → Ajouter la possibilité de rajouter la config dans `/etc/X11/xorg.conf.d/` (donc récupérer celle déjà existante)
-   → Idem avec `/etc/slim.conf`,`/etc/slimlock.conf`, `/usr/share/slim/themes`
+   → Ajouter la possibilité de rajouter la config dans /etc/X11/xorg.conf.d/ (donc récupérer celle déjà existante)
+   → Idem avec /etc/slim.conf, /etc/slimlock.conf, /usr/share/slim/themes
 • TODO: Découper la config de `vim` et `fish` en plusieurs fichiers
 
 # Projets

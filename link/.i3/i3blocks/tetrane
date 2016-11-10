@@ -42,5 +42,7 @@ then
 
 		echo "[O]" $(date '+%a %e %b %H:%M:%S') >> $log_file
 	fi
+
+	exec ~/.config/lemonbuddy/launch
 fi
 

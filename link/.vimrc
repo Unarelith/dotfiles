@@ -269,7 +269,7 @@ call altr#define('%.h', '%.c')
 "------------------------------------------------------------------------------
 " YouCompleteMe config
 "------------------------------------------------------------------------------
-let g:ycm_show_diagnostics_ui = 1
+let g:ycm_show_diagnostics_ui = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 
@@ -329,6 +329,7 @@ let g:syntastic_cpp_compiler_options = '-Wall -Wextra -std=c++14 `find include/*
 let g:syntastic_cpp_include_dirs = [
 	\ '.',
 	\ 'include',
+	\ 'local',
 	\ 'external',
 	\ 'external/include',
 	\ '/usr/include/qt',
