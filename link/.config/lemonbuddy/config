@@ -3,7 +3,7 @@
 ; throttle_limit = 3
 
 [bar/top]
-monitor = DP2
+monitor = eDP1
 ; bottom = true
 width = 100%
 ; height = 34
@@ -29,18 +29,16 @@ module-margin-right = 3
 ;module-margin-left = 1
 ;module-margin-right = 1
 
-;font-0 = envypn:pixelsize=13;0
 font-0 = Sans-Regular:size=8;0
 font-1 = MaterialIcons:size=10;0
-; font-2 = Termsynu:size=8;-1
 font-2 = FontAwesome:size=10;0
 
 modules-left = i3
 modules-center = date-script
-modules-right = volume backlight wireless-network wired-network battery tetrane-login
+modules-right = train_on_time volume backlight wireless-network wired-network battery tetrane-login
 
 [bar/bottom]
-monitor = DP2
+monitor = eDP1
 bottom = true
 width = 100%
 height = 28
@@ -59,14 +57,12 @@ module-margin-right = 6
 
 font-0 = Sans-Regular:size=8;0
 font-1 = Unifont:size=6;-3
-font-2 = FontAwesome:size=8;-2
-; font-3 = NotoSans-Regular:size=8;-1
+font-2 = FontAwesome:size=10;0
 font-3 = MaterialIcons:size=10;-1
-; font-5 = Termsynu:size=8;-1
 
 modules-left = mpd-playlist mpd
 modules-center = memory cpu
-modules-right = train_on_time weather-macon weather-lyon bank-account pacman-updates disk-root disk-home
+modules-right = temperature weather-macon weather-lyon bank-account pacman-updates disk-root disk-home
 
 [bar/external_bottom]
 ;inherit-from = bar/bottom
@@ -96,8 +92,20 @@ modules-left = bspwm
 modules-right = clock
 
 [module/backlight]
-type = internal/backlight
-card = intel_backlight
+type = internal/xbacklight
+
+; XRandR output to get get values from
+; Default: the monitor defined for the running bar
+output = eDP1
+
+; Create scroll handlers used to set the backlight value
+; Default: true
+enable-scroll = false
+
+; Available tags:
+;   <label> (default)
+;   <ramp>
+;   <bar>
 format = <ramp> <bar>
 
 ramp-0 = 
@@ -288,6 +296,67 @@ format =     <output>
 exec = BLOCK_INSTANCE='/' /usr/lib/i3blocks/disk | head -1
 interval = 5
 
+[module/filesystem]
+type = internal/fs
+
+; Mountpoints to display
+mount-0 = /
+mount-1 = /home
+
+; Seconds to sleep between updates
+; Default: 30
+interval = 10
+
+; Display fixed precision values
+; Default: false
+fixed-values = true
+
+; Spacing between entries
+; Default: 2
+spacing = 4
+
+bar-used-width = 10
+bar-used-foreground-0 = #55aa55
+bar-used-foreground-1 = #55aa55
+bar-used-foreground-2 = #f5a70a
+bar-used-foreground-3 = #ff5555
+bar-used-gradient = false
+bar-used-indicator = │
+bar-used-indicator-font = 2
+bar-used-indicator-foreground = #ff
+bar-used-fill = ─
+bar-used-fill-font = 2
+bar-used-empty = ─
+bar-used-empty-font = 2
+bar-used-empty-foreground = #55
+
+; Available tags:
+;   <label-mounted> (default)
+;   <bar-free>
+;   <bar-used>
+;   <ramp-capacity>
+; format-mounted = <label-mounted> <bar-used>
+
+; Available tags:
+;   <label-unmounted> (default)
+; format-unmounted = <label-mounted>
+
+; Available tokens:
+;   %mountpoint%
+;   %type%
+;   %fsname%
+;   %percentage_free%
+;   %percentage_used%
+;   %total%
+;   %free%
+;   %used%
+; label-mounted = %mountpoint%: %percentage_free% of %total%
+
+; Available tokens:
+;   %mountpoint%
+; label-unmounted = %mountpoint%: not mounted
+; label-unmounted-foreground = #55
+
 [module/i3]
 type = internal/i3
 
@@ -432,6 +501,56 @@ menu-2-0-exec = sudo poweroff
 menu-2-1 = Cancel
 menu-2-1-foreground = #fba922
 menu-2-1-exec = menu-open-0
+
+[module/temperature]
+type = internal/temperature
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 1
+
+; Thermal zone to use
+; To list all the zone types, run
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+; Default: 0
+thermal-zone = 0
+
+; Threshold temperature to display warning label
+; Default: 80
+warn-temperature = 80
+
+; Available tags:
+;   <label> (default)
+;   <ramp>
+format = <ramp> <label>
+
+; Available tags:
+;   <label> (default)
+;   <ramp>
+format-warn = <ramp> <label-warn>
+
+; Available tokens:
+;   %temperature% (default)
+label = %temperature%
+
+; Available tokens:
+;   %temperature% (default)
+label-warn = %temperature%
+label-warn-foreground = #f00
+
+; Requires the <ramp> tag
+; The icon selection will range from 0 to `warn-temperature`
+; with the current temperature as index.
+ramp-0 = 
+ramp-0-foreground = #aaaaaa
+ramp-1 = 
+ramp-1-foreground = #bbaaaa
+ramp-2 = 
+ramp-2-foreground = #ccaaaa
+ramp-3 = 
+ramp-3-foreground = #ddaaaa
+ramp-4 = 
+ramp-4-foreground = #eeaaaa
 
 [module/tetrane-login]
 type = custom/text

@@ -135,7 +135,7 @@ then
 
 	for service in $systemd_user_services
 	do
-		sudo systemctl --user enable $service
+		systemctl --user enable $service
 	done
 fi
 

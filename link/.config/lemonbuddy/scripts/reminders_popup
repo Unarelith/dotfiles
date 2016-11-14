@@ -26,7 +26,7 @@ sleep 1
 
 echo "$reminders"
 
-) | dzen2 -p -x $x -y $y -w $width -bg $BG -fg $FG -l $line_count -sa c -ta c -e 'onstart=uncollapse;button1=exit;button3=exit' -fn $font1 &
+) | dzen2 -p 10 -x $x -y $y -w $width -bg $BG -fg $FG -l $line_count -sa c -ta c -e 'onstart=uncollapse;button1=exit;button3=exit' -fn $font1 &
 
 pid=$!
 echo $pid

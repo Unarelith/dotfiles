@@ -28,10 +28,12 @@ Tasks
    → Ajouter la tâche cron `updatedb` en dans la crontab root
    → Ajouter la possibilité de rajouter la config dans /etc/X11/xorg.conf.d/ (donc récupérer celle déjà existante)
    → Idem avec /etc/slim.conf, /etc/slimlock.conf, /usr/share/slim/themes
+   → Idem avec toute la config du serveur (/etc/httpd/.../)
 • TODO: Découper la config de `vim` et `fish` en plusieurs fichiers
 • TODO: Faire une “bibliothèque utilitaire” pour les popups dzen
    → Par exemple les popups `mpd_playlist` et `pacman_updates` partagent du code vu que ce sont des listes
    → En profiter pour réduire la taille de leurs fenêtres s’il y a moins de 8 lignes à afficher
+• TODO: Faire une popup avec `dzen` et `conky` pour l’espace disque
 
 # Projets
 
