@@ -265,6 +265,7 @@ function fish_prompt
 	echo -n ' | '
 
 	set_color blue
+	set -g fish_prompt_pwd_dir_length 0
 	printf '%s' (echo (prompt_pwd) | sed "s/\/home\/$USER/\~/")
 	set_color normal
 

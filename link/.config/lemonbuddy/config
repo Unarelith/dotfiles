@@ -36,7 +36,7 @@ font-1 = MaterialIcons:size=10;0
 font-2 = FontAwesome:size=10;0
 
 modules-left = i3
-modules-center = date
+modules-center = date-script
 modules-right = volume backlight wireless-network wired-network battery tetrane-login
 
 [bar/bottom]
@@ -264,6 +264,16 @@ ramp-coreload-7-foreground = #ff5555
 type = internal/date
 date =    %%{F#999}%a %e %b%%{F-}  %%{F#fff}%H:%M:%S%%{F-}
 
+[module/date-script]
+type = custom/script
+
+format =     <output>
+exec = echo "%{F#999}`date "+%a %e %b"`%{F-}  %{F#fff}`date +%H:%M:%S`%{F-}"
+interval = 1
+
+click-left = python ~/.config/lemonbuddy/dbus/client.py "calendar"
+click-right = python ~/.config/lemonbuddy/dbus/client.py "reminders"
+
 [module/disk-home]
 type = custom/script
 
@@ -291,7 +301,7 @@ ws-icon-4 = 4;4
 ws-icon-5 = 5;
 ws-icon-6 = 6;
 ws-icon-7 = 7;
-ws-icon-8 = 8;8
+ws-icon-8 = 8;
 ws-icon-9 = 9;
 ws-icon-10 = 10;
 ws-icon-11 = 11;
@@ -299,8 +309,8 @@ ws-icon-12 = 12;
 ws-icon-13 = 13;
 ws-icon-14 = 14;
 ws-icon-15 = 15;P
-ws-icon-16 = 16;J
-ws-icon-17 = 17;K
+ws-icon-16 = 16;
+ws-icon-17 = 17;
 ws-icon-18 = 18;
 ws-icon-19 = 19;
 ws-icon-default = ♟

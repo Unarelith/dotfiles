@@ -70,6 +70,7 @@ font-awesome
 gws
 lemonbuddy-git
 nautilus-dropbox
+ttf-font-awesome
 ttf-material-icons
 ttf-weather-icons
 volnoti

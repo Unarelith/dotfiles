@@ -10,8 +10,10 @@ class PopupManager:
 
         self.popups = {
             'bank-account':   '/.config/lemonbuddy/scripts/bank_account',
-            'pacman-updates': '/.config/lemonbuddy/scripts/pacman_updates',
+            'calendar':       '/.config/lemonbuddy/scripts/calendar_popup',
             'mpd-playlist':   '/.config/lemonbuddy/scripts/mpd_playlist',
+            'pacman-updates': '/.config/lemonbuddy/scripts/pacman_updates',
+            'reminders':      '/.config/lemonbuddy/scripts/reminders_popup',
             'weather':        '/.config/lemonbuddy/scripts/weather_popup'
         }
 
