@@ -58,6 +58,7 @@ ttf-ionicons
 ttf-liberation
 ttf-ubuntu-font-family
 vinagre
+xbacklight
 xchat
 xcompmgr
 xsel'
@@ -68,8 +69,8 @@ i3-gaps
 imgurbash2
 font-awesome
 gws
-lemonbuddy-git
 nautilus-dropbox
+polybar-git
 ttf-font-awesome
 ttf-material-icons
 ttf-weather-icons

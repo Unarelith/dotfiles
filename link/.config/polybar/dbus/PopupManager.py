@@ -9,12 +9,12 @@ class PopupManager:
         self.openedPopups = []
 
         self.popups = {
-            'bank-account':   '/.config/lemonbuddy/scripts/bank_account',
-            'calendar':       '/.config/lemonbuddy/scripts/calendar_popup',
-            'mpd-playlist':   '/.config/lemonbuddy/scripts/mpd_playlist',
-            'pacman-updates': '/.config/lemonbuddy/scripts/pacman_updates',
-            'reminders':      '/.config/lemonbuddy/scripts/reminders_popup',
-            'weather':        '/.config/lemonbuddy/scripts/weather_popup'
+            'bank-account':   '/.config/polybar/scripts/bank_account',
+            'calendar':       '/.config/polybar/scripts/calendar_popup',
+            'mpd-playlist':   '/.config/polybar/scripts/mpd_playlist',
+            'pacman-updates': '/.config/polybar/scripts/pacman_updates',
+            'reminders':      '/.config/polybar/scripts/reminders_popup',
+            'weather':        '/.config/polybar/scripts/weather_popup'
         }
 
     def closeOpenedPopups(self):

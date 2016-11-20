@@ -1,0 +1,14 @@
+#!/bin/bash
+
+killall -q polybar
+
+while pgrep -x polybar > /dev/null
+do
+	sleep 1
+done
+
+echo "[*] Launched $(LANG="en_US.UTF-8" date '+%a %e %b %H:%M:%S')" >> ~/.config/polybar/top.log
+echo "[*] Launched $(LANG="en_US.UTF-8" date '+%a %e %b %H:%M:%S')" >> ~/.config/polybar/bottom.log
+polybar top >> ~/.config/polybar/top.log 2>&1 &
+polybar bottom >> ~/.config/polybar/bottom.log 2>&1 &
+

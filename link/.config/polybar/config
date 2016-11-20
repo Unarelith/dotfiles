@@ -129,7 +129,7 @@ type = custom/text
 
 content = 
 
-click-left = python ~/.config/lemonbuddy/dbus/client.py "bank-account"
+click-left = python ~/.config/polybar/dbus/client.py "bank-account"
 
 [module/battery]
 type = internal/battery
@@ -279,8 +279,8 @@ format =     <output>
 exec = echo "%{F#999}`date "+%a %e %b"`%{F-}  %{F#fff}`date +%H:%M:%S`%{F-}"
 interval = 1
 
-click-left = python ~/.config/lemonbuddy/dbus/client.py "calendar"
-click-right = python ~/.config/lemonbuddy/dbus/client.py "reminders"
+click-left = python ~/.config/polybar/dbus/client.py "calendar"
+click-right = python ~/.config/polybar/dbus/client.py "reminders"
 
 [module/disk-home]
 type = custom/script
@@ -459,7 +459,7 @@ bar-progress-empty-foreground = #44
 type = custom/text
 
 content = 
-click-left = python ~/.config/lemonbuddy/dbus/client.py "mpd-playlist"
+click-left = python ~/.config/polybar/dbus/client.py "mpd-playlist"
 
 [module/pacman-updates]
 type = custom/script
@@ -468,7 +468,7 @@ format =     <output>
 exec = checkupdates | wc -l
 interval = 1800
 
-click-left = python ~/.config/lemonbuddy/dbus/client.py "pacman-updates"
+click-left = python ~/.config/polybar/dbus/client.py "pacman-updates"
 
 [module/powermenu]
 type = custom/menu
@@ -564,10 +564,10 @@ click-right = bash ~/.i3/i3blocks/tetrane logout
 type = custom/script
 
 format =     <output>
-exec = bash ~/.config/lemonbuddy/scripts/train_on_time
+exec = bash ~/.config/polybar/scripts/train_on_time
 interval = 300
 
-click-left = bash ~/.config/lemonbuddy/scripts/train_on_time --notify
+click-left = bash ~/.config/polybar/scripts/train_on_time --notify
 
 [module/volume]
 type = internal/volume
@@ -588,7 +588,7 @@ ramp-volume-3 = 
 type = custom/script
 
 format = <output>
-exec = bash ~/.config/lemonbuddy/scripts/weather_icon
+exec = bash ~/.config/polybar/scripts/weather_icon
 interval = 1800
 
 [module/weather-lyon]
@@ -598,7 +598,7 @@ format = <output>
 exec = bash ~/.i3/i3blocks/weather 1
 interval = 1800
 
-click-left = python ~/.config/lemonbuddy/dbus/client.py "weather"
+click-left = python ~/.config/polybar/dbus/client.py "weather"
 
 [module/weather-macon]
 type = custom/script
@@ -607,7 +607,7 @@ format = <output>
 exec = bash ~/.i3/i3blocks/weather 3
 interval = 1800
 
-click-left = python ~/.config/lemonbuddy/dbus/client.py "weather"
+click-left = python ~/.config/polybar/dbus/client.py "weather"
 
 [module/wireless-network]
 type = internal/network

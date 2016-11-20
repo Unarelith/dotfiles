@@ -4,7 +4,7 @@ backups/
 
 # Don't commit uninteresting stuff
 link/.config/*
-link/.config/lemonbuddy/*.log
+link/.config/polybar/*.log
 link/.config/fish/fish_history
 link/.config/fish/fishd*
 link/.config/gtk-3.0/servers
@@ -33,7 +33,7 @@ link/rendu/.cache.gws
 # Keep interesting stuff
 !link/.config/compton
 !link/.config/conky
-!link/.config/lemonbuddy
+!link/.config/polybar
 !link/.config/dunst/dunstrc
 !link/.config/fish/config.fish
 !link/.config/fontconfig/fonts.conf
