@@ -3,7 +3,7 @@
 ; throttle_limit = 3
 
 [bar/top]
-monitor = eDP1
+monitor = DP2
 ; bottom = true
 width = 100%
 ; height = 34
@@ -38,7 +38,7 @@ modules-center = date-script
 modules-right = train_on_time volume backlight wireless-network wired-network battery tetrane-login
 
 [bar/bottom]
-monitor = eDP1
+monitor = DP2
 bottom = true
 width = 100%
 height = 28
@@ -62,7 +62,7 @@ font-3 = MaterialIcons:size=10;-1
 
 modules-left = mpd-playlist mpd
 modules-center = memory cpu
-modules-right = temperature weather-macon weather-lyon bank-account pacman-updates disk-root disk-home
+modules-right = systemd_user temperature weather-macon weather-lyon bank-account pacman-updates disk-root disk-home
 
 [bar/external_bottom]
 ;inherit-from = bar/bottom
@@ -96,7 +96,7 @@ type = internal/xbacklight
 
 ; XRandR output to get get values from
 ; Default: the monitor defined for the running bar
-output = eDP1
+output = DP2
 
 ; Create scroll handlers used to set the backlight value
 ; Default: true
@@ -501,6 +501,14 @@ menu-2-0-exec = sudo poweroff
 menu-2-1 = Cancel
 menu-2-1-foreground = #fba922
 menu-2-1-exec = menu-open-0
+
+[module/systemd_user]
+type = custom/script
+
+format =     <output>
+format-foreground = #f00
+exec = failed=`systemctl --user status | head -4 | tail -1 | awk '{print $2+0}'`; [ "$failed" -ne 0 ] && echo $failed
+interval = 1800
 
 [module/temperature]
 type = internal/temperature

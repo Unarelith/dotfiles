@@ -25,8 +25,8 @@ get_infos() {
 	fi
 }
 
-text=($(get_infos 11 8))
-[ -z "${text[2]}" ] && text=($(get_infos 7 8))
+text=($(get_infos 10 7))
+[ -z "${text[2]}" ] && text=($(get_infos 7 7))
 
 # echo "=== DEBUG ==="
 # for i in ${text[@]}
@@ -38,7 +38,7 @@ text=($(get_infos 11 8))
 if [ -n "${text[2]}" ] && [ "$(date +%u)" -le 5 -a "$(date +%H)" -ge 16 -a "$(date +%H)" -le 18 ]
 then
 	echo -n "${text[1]}" | sed 's/[^ ]\+/\L\u&/g'
-	echo -n " at ${text[0]}: " | tr '[:upper:]' '[:lower:]'
+	echo -n "at ${text[0]}: " | tr '[:upper:]' '[:lower:]'
 	echo "${text[2]}" | sed 's/[^ ]\+/\L\u&/g'
 	# echo -n "${text[1]} at ${text[0]}: ${text[2]}"
 

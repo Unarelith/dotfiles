@@ -5,7 +5,7 @@ export LC_ALL="en_US.UTF-8"
 current_timestamp=$(date +%s)
 if [ "$(cat ~/.cache/Forecast.json | jshon -e currently -e time)" -lt "$(($current_timestamp - 1800))" ]
 then
-	bash ~/.config/lemonbuddy/scripts/weather_gen_info
+	bash ~/.config/polybar/scripts/weather_gen_info
 fi
 
 FG='#dcdcdc'

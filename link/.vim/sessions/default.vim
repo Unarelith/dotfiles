@@ -1,6 +1,6 @@
 " ~/.dotfiles/link/.vim/sessions/default.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 21 octobre 2016 at 11:38:36.
+" Created by session.vim 2.13.1 on 25 novembre 2016 at 14:37:25.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -19,21 +19,16 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/.dotfiles/link/.config/lemonbuddy/dbus
+cd ~/rendu/Perso/ZeldaOOS
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +33 server.py
-badd +0 client.py
-badd +0 common.py
-badd +0 PopupManager.py
-badd +0 ../scripts/bank_account
+badd +0 source/main.cpp
 argglobal
 silent! argdel *
-argadd server.py
-set stal=2
-edit common.py
+argadd source/main.cpp
+edit source/main.cpp
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -49,107 +44,13 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 2 - ((1 * winheight(0) + 36) / 73)
+let s:l = 1 - ((0 * winheight(0) + 37) / 74)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-2
+1
 normal! 0
-tabedit server.py
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 117 + 119) / 239)
-exe 'vert 2resize ' . ((&columns * 121 + 119) / 239)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 27 - ((26 * winheight(0) + 36) / 73)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-27
-normal! 048|
-wincmd w
-argglobal
-edit client.py
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 42 - ((41 * winheight(0) + 36) / 73)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-42
-normal! 0
-wincmd w
-exe 'vert 1resize ' . ((&columns * 117 + 119) / 239)
-exe 'vert 2resize ' . ((&columns * 121 + 119) / 239)
-tabedit PopupManager.py
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 32 - ((31 * winheight(0) + 36) / 73)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-32
-normal! 0118|
-tabedit ../scripts/bank_account
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 38 - ((37 * winheight(0) + 30) / 60)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-38
-normal! 0
-tabnext 3
-set stal=1
+tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -166,7 +67,7 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 1wincmd w
-tabnext 3
+tabnext 1
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

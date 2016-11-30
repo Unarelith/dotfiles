@@ -155,8 +155,9 @@ end
 #------------------------------------------------------------------------------
 set fish_greeting
 
-fish_vi_key_bindings
-set __fish_vi_mode 'yes'
+fish_default_key_bindings
+# fish_vi_key_bindings
+# set __fish_vi_mode 'yes'
 
 sh ~/.local/lib/colorsrc
 
@@ -230,9 +231,9 @@ function vi_print_mode --description 'Displays the current mode'
 end
 
 function fish_prompt
-	# env FISH_VERSION=$FISH_VERSION PROMPTLINE_LAST_EXIT_CODE=$status bash ~/.promptline.sh left
-
 	set last_status $status
+
+	# env FISH_VERSION=$FISH_VERSION PROMPTLINE_LAST_EXIT_CODE=$status bash ~/.promptline.sh left
 
 	vi_print_mode
 

@@ -6,9 +6,9 @@ BG='#090909'
 
 font1="Sans:size=10"
 
-money_r=$(exec ~/.config/lemonbuddy/scripts/bank_account_get 1)
-money_p=$(exec ~/.config/lemonbuddy/scripts/bank_account_get 3)
-money_f=$(exec ~/.config/lemonbuddy/scripts/bank_account_get 5)
+money_r=$(exec ~/.config/polybar/scripts/bank_account_get 1)
+money_p=$(exec ~/.config/polybar/scripts/bank_account_get 3)
+money_f=$(exec ~/.config/polybar/scripts/bank_account_get 5)
 
 monitors=$(xrandr --listactivemonitors | head -1 | awk '{print $2}')
 if [ $monitors == '1' ]

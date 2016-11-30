@@ -1,6 +1,6 @@
 " ~/.dotfiles/link/.vim/sessions/ZeldaOOL.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 10 mai 2016 at 18:11:50.
+" Created by session.vim 2.13.1 on 28 novembre 2016 at 16:58:07.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -28,31 +28,59 @@ badd +46 source/core/Application.cpp
 badd +1 include/core/SDLLoader.hpp
 badd +1 source/core/SDLLoader.cpp
 badd +43 Makefile
-badd +1 CMakeLists.txt
-badd +1 source/display/RectangleShape.cpp
-badd +1 include/display/RectangleShape.hpp
-badd +59 source/core/Window.cpp
+badd +18 CMakeLists.txt
+badd +47 source/display/RectangleShape.cpp
+badd +30 include/display/RectangleShape.hpp
+badd +52 source/core/Window.cpp
 badd +1 include/core/Window.hpp
-badd +1 include/core/Color.hpp
-badd +1 source/core/Color.cpp
-badd +1 include/core/IntTypes.hpp
-badd +1 include/system/GameClock.hpp
-badd +1 source/system/GameClock.cpp
+badd +27 include/core/Color.hpp
+badd +14 source/core/Color.cpp
+badd +14 include/core/IntTypes.hpp
+badd +14 include/system/GameClock.hpp
+badd +17 source/system/GameClock.cpp
 badd +1 include/core/Application.hpp
-badd +1 include/display/map/Map.hpp
-badd +0 source/display/map/Map.cpp
-badd +0 include/core/Debug.hpp
+badd +61 include/display/map/Map.hpp
+badd +75 source/display/map/Map.cpp
+badd +1 include/core/Debug.hpp
+badd +10 Notes
+badd +33 include/system/Exception.hpp
+badd +29 source/main.cpp
+badd +0 include/scene/SceneObject.hpp
 argglobal
 silent! argdel *
 argadd source/core/Application.cpp
 set stal=2
-edit CMakeLists.txt
+edit Notes
 set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 119 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 119 + 119) / 239)
 argglobal
+setlocal fdm=expr
+setlocal fde=xolox#notes#foldexpr()
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+let s:l = 10 - ((9 * winheight(0) + 36) / 73)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+10
+normal! 017|
+lcd ~/rendu/Perso/ZeldaOOL
+wincmd w
+argglobal
+edit ~/rendu/Perso/ZeldaOOL/CMakeLists.txt
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -62,13 +90,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 27) / 55)
+let s:l = 39 - ((38 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+39
 normal! 0
 lcd ~/rendu/Perso/ZeldaOOL
+wincmd w
+exe 'vert 1resize ' . ((&columns * 119 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 119 + 119) / 239)
 tabedit ~/rendu/Perso/ZeldaOOL/include/core/Application.hpp
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -79,8 +110,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 117 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 121 + 119) / 239)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -91,7 +122,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 27) / 55)
+let s:l = 1 - ((0 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -110,28 +141,22 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 46 - ((23 * winheight(0) + 27) / 55)
+let s:l = 64 - ((49 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-46
-normal! 020|
+64
+normal! 05|
 lcd ~/rendu/Perso/ZeldaOOL
 wincmd w
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit ~/rendu/Perso/ZeldaOOL/include/core/SDLLoader.hpp
+exe 'vert 1resize ' . ((&columns * 117 + 119) / 239)
+exe 'vert 2resize ' . ((&columns * 121 + 119) / 239)
+tabedit ~/rendu/Perso/ZeldaOOL/include/scene/SceneObject.hpp
 set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -140,345 +165,22 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal fen
+setlocal nofen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 27) / 55)
+let s:l = 1 - ((0 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
 normal! 0
 lcd ~/rendu/Perso/ZeldaOOL
-wincmd w
-argglobal
-edit ~/rendu/Perso/ZeldaOOL/source/core/SDLLoader.cpp
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-lcd ~/rendu/Perso/ZeldaOOL
-wincmd w
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit ~/rendu/Perso/ZeldaOOL/include/display/RectangleShape.hpp
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-lcd ~/rendu/Perso/ZeldaOOL
-wincmd w
-argglobal
-edit ~/rendu/Perso/ZeldaOOL/source/display/RectangleShape.cpp
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 47 - ((32 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-47
-normal! 0
-lcd ~/rendu/Perso/ZeldaOOL
-wincmd w
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit ~/rendu/Perso/ZeldaOOL/include/core/IntTypes.hpp
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 14 - ((13 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-14
-normal! 0
-lcd ~/rendu/Perso/ZeldaOOL
-tabedit ~/rendu/Perso/ZeldaOOL/include/system/GameClock.hpp
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 14 - ((13 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-14
-normal! 0
-lcd ~/rendu/Perso/ZeldaOOL
-wincmd w
-argglobal
-edit ~/rendu/Perso/ZeldaOOL/source/system/GameClock.cpp
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 14 - ((0 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-14
-normal! 0
-lcd ~/rendu/Perso/ZeldaOOL
-wincmd w
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit ~/rendu/Perso/ZeldaOOL/include/core/Window.hpp
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-lcd ~/rendu/Perso/ZeldaOOL
-wincmd w
-argglobal
-edit ~/rendu/Perso/ZeldaOOL/source/core/Window.cpp
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 38 - ((14 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-38
-normal! 063|
-lcd ~/rendu/Perso/ZeldaOOL
-wincmd w
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit ~/rendu/Perso/ZeldaOOL/include/core/Color.hpp
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 17 - ((16 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-17
-normal! 023|
-lcd ~/rendu/Perso/ZeldaOOL
-wincmd w
-argglobal
-edit ~/rendu/Perso/ZeldaOOL/source/core/Color.cpp
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 14 - ((13 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-14
-normal! 0
-lcd ~/rendu/Perso/ZeldaOOL
-wincmd w
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit ~/rendu/Perso/ZeldaOOL/include/display/map/Map.hpp
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 43 - ((0 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-43
-normal! 0
-lcd ~/rendu/Perso/ZeldaOOL
-wincmd w
-argglobal
-edit ~/rendu/Perso/ZeldaOOL/source/display/map/Map.cpp
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 82 - ((30 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-82
-normal! 027|
-lcd ~/rendu/Perso/ZeldaOOL
-wincmd w
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit ~/rendu/Perso/ZeldaOOL/include/core/Debug.hpp
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 43 - ((36 * winheight(0) + 27) / 55)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-43
-normal! 043|
-lcd ~/rendu/Perso/ZeldaOOL
-tabnext 10
+tabnext 3
 set stal=1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
 endif
 " unlet! s:wipebuf
-set winheight=1 winwidth=20 shortmess=filnxtToO
+set winheight=1 winwidth=20 shortmess=filnxtToOc
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if file_readable(s:sx)
   exe "source " . fnameescape(s:sx)
@@ -490,7 +192,7 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 1wincmd w
-tabnext 10
+tabnext 3
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

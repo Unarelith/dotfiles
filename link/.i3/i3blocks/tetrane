@@ -16,7 +16,7 @@ then
 	xrandr --output DP2 --auto --primary --right-of eDP1
 	bash ~/.local/bin/update-background
 
-	sed -i 's/eDP1/DP2/g' ~/.config/lemonbuddy/config
+	sed -i 's/eDP1/DP2/g' ~/.config/polybar/config
 
 	if [ -z "$(echo $lastline | grep "[I]")" ]
 	then
@@ -25,14 +25,14 @@ then
 		echo "[I]" $(date '+%a %e %b %H:%M:%S') >> $log_file
 	fi
 
-	exec ~/.config/lemonbuddy/launch
+	exec ~/.config/polybar/launch
 elif [ "$1" == "logout" ]
 then
 	echo ""
 
 	xrandr --output eDP1 --auto --output DP2 --off
 
-	sed -i 's/DP2/eDP1/g' ~/.config/lemonbuddy/config
+	sed -i 's/DP2/eDP1/g' ~/.config/polybar/config
 
 	if [ -z "$(echo $lastline | grep "[O]")" ]
 	then
@@ -43,6 +43,6 @@ then
 		echo "[O]" $(date '+%a %e %b %H:%M:%S') >> $log_file
 	fi
 
-	exec ~/.config/lemonbuddy/launch
+	exec ~/.config/polybar/launch
 fi
 

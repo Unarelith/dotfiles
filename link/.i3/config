@@ -88,9 +88,10 @@ exec --no-startup-id                dunst &
 exec --no-startup-id                conky &
 exec --no-startup-id                xrandr --setprovideroffloadsink 1 0
 exec --no-startup-id                mpd
+exec --no-startup-id                remind -z1 -m ~/.reminders &
 exec --no-startup-id                i3-msg "workspace $workspace1"
 
-exec_always --no-startup-id         /bin/bash ~/.config/lemonbuddy/launch
+exec_always --no-startup-id         /bin/bash ~/.config/polybar/launch
 
 # No window borders
 new_window                          normal 1
