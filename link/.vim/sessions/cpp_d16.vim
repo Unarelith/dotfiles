@@ -1,6 +1,6 @@
-" ~/.dotfiles/link/.vim/sessions/default.vim:
+" ~/.dotfiles/link/.vim/sessions/cpp_d16.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 24 février 2017 at 02:59:02.
+" Created by session.vim 2.13.1 on 20 janvier 2017 at 09:02:27.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -19,22 +19,22 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/rendu/PSU/PSU_2016_nmobjdump/objdump
+cd ~/rendu/PiscineCPP/cpp_d16
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 source/main.c
-badd +0 Makefile
-badd +1 include/elf_print_infos.h
-badd +0 source/elf_print_infos.c
-badd +1 include/elf_print_section.h
-badd +0 source/elf_print_section.c
+badd +17 ex00/Parser.h
+badd +0 ex00/Parser.cpp
+badd +1 ex04/Ratatouille.h
+badd +0 ex04/Ratatouille.cpp
+badd +1 ex03/BF_Translator.h
+badd +0 ex03/BF_Translator.cpp
 argglobal
 silent! argdel *
-$argadd source/main.c
+argadd ex00/Parser.h
 set stal=2
-edit Makefile
+edit ex00/Parser.h
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -43,9 +43,9 @@ wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -56,15 +56,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 26) / 52)
+let s:l = 30 - ((28 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+30
 normal! 0
 wincmd w
 argglobal
-edit source/main.c
+edit ex00/Parser.cpp
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -74,17 +74,17 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 18 - ((17 * winheight(0) + 26) / 52)
+let s:l = 70 - ((50 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-18
-normal! 012|
+70
+normal! 017|
 wincmd w
 2wincmd w
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit include/elf_print_infos.h
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+tabedit ex03/BF_Translator.h
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -93,9 +93,9 @@ wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -106,15 +106,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 26) / 52)
+let s:l = 14 - ((13 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+14
+normal! 024|
 wincmd w
 argglobal
-edit source/elf_print_infos.c
+edit ex03/BF_Translator.cpp
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -124,16 +124,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 26) / 52)
+let s:l = 1 - ((0 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit include/elf_print_section.h
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+tabedit ex04/Ratatouille.h
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -142,9 +142,9 @@ wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -155,15 +155,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 26) / 52)
+let s:l = 34 - ((33 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+34
+normal! 05|
 wincmd w
 argglobal
-edit source/elf_print_section.c
+edit ex04/Ratatouille.cpp
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -173,15 +173,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 26) / 52)
+let s:l = 1 - ((0 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
 tabnext 1
 set stal=1
 if exists('s:wipebuf')
@@ -189,7 +189,6 @@ if exists('s:wipebuf')
 endif
 " unlet! s:wipebuf
 set winheight=1 winwidth=20 shortmess=filnxtToO
-set winminheight=1 winminwidth=1
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if file_readable(s:sx)
   exe "source " . fnameescape(s:sx)

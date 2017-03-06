@@ -4,6 +4,8 @@ Lemonbuddy stuff
 
 ## Issues created
 
+• FIXME: Les modules ne fournissant plus aucune sortie sont encore affichés
+
 • Tray bar qui ne s’affiche plus quand
    → Je relance la même barre une deuxième fois
    → Je lance `i3bar` (si je tue `i3bar` la tray bar ne revient pas)

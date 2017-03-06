@@ -15,6 +15,9 @@ CPE/Rush1 | git@git.epitech.eu:/lacroi_m/CPE_2015_BSQ
 CPE/marvin_bunel_b | git@git.epitech.eu:/bunel_b/marvin_bunel_b
 CPE/sudoki-bi | git@git.epitech.eu:/bazin_q/sudoki-bi
 
+# B4 - C++
+CPP/cpp_nanotekspice | git@git.epitech.eu:/bazin_q/cpp_nanotekspice
+
 # B1 - Expression Écrite
 Expr/B1EMPLOI | git@git.epitech.eu:/bazin_q/B1EMPLOI
 Expr/B1Lettre | git@git.epitech.eu:/bazin_q/B1Lettre
@@ -82,6 +85,27 @@ Piscine/Piscine_C_infinadd | git@git.epitech.eu:/bazin_q/Piscine_C_infinadd
 Piscine/Piscine_C_match-nmatch | git@git.epitech.eu:/bazin_q/Piscine_C_match-nmatch
 Piscine/Piscine_C_workshoplib | git@git.epitech.eu:/bazin_q/Piscine_C_workshoplib
 
+# B4 - Piscine C++
+PiscineCPP/cpp_d01 | git@git.epitech.eu:/bazin_q/cpp_d01
+PiscineCPP/cpp_d02a | git@git.epitech.eu:/bazin_q/cpp_d02a
+PiscineCPP/cpp_d02m | git@git.epitech.eu:/bazin_q/cpp_d02m
+PiscineCPP/cpp_d03 | git@git.epitech.eu:/bazin_q/cpp_d03
+PiscineCPP/cpp_d06 | git@git.epitech.eu:/bazin_q/cpp_d06
+PiscineCPP/cpp_d07a | git@git.epitech.eu:/bazin_q/cpp_d07a
+PiscineCPP/cpp_d07m | git@git.epitech.eu:/bazin_q/cpp_d07m
+PiscineCPP/cpp_d08 | git@git.epitech.eu:/bazin_q/cpp_d08
+PiscineCPP/cpp_d09 | git@git.epitech.eu:/bazin_q/cpp_d09
+PiscineCPP/cpp_d10 | git@git.epitech.eu:/bazin_q/cpp_d10
+PiscineCPP/cpp_d13 | git@git.epitech.eu:/bazin_q/cpp_d13
+PiscineCPP/cpp_d14a | git@git.epitech.eu:/bazin_q/cpp_d14a
+PiscineCPP/cpp_d14m | git@git.epitech.eu:/bazin_q/cpp_d14m
+PiscineCPP/cpp_d15 | git@git.epitech.eu:/bazin_q/cpp_d15
+PiscineCPP/cpp_d16 | git@git.epitech.eu:/bazin_q/cpp_d16
+PiscineCPP/cpp_d17 | git@git.epitech.eu:/bazin_q/cpp_d17
+PiscineCPP/cpp_gkrellm | git@git.epitech.eu:/bazin_q/cpp_gkrellm
+PiscineCPP/cpp_santa | git@git.epitech.eu:/bazin_q/cpp_santa
+PiscineCPP/cpp_SKL | git@git.epitech.eu:/bazin_q/cpp_SKL
+
 # B1 - Système Unix
 PSU/PSU_2015_42sh | git@git.epitech.eu:/bazin_q/PSU_2015_42sh
 PSU/PSU_2015_minishell1 | git@git.epitech.eu:/bazin_q/PSU_2015_minishell1
@@ -95,6 +119,9 @@ PSU/PSU_2015_my_printf | git@git.epitech.eu:/bazin_q/PSU_2015_my_printf
 PSU/PSU_2015_my_printf_bootstrap | git@git.epitech.eu:/bazin_q/PSU_2015_my_printf_bootstrap
 PSU/PSU_2015_my_select | git@git.epitech.eu:/bazin_q/PSU_2015_my_select
 PSU/PSU_2015_tetris | git@git.epitech.eu:/bazin_q/PSU_2015_tetris
+PSU/PSU_2016_malloc | git@git.epitech.eu:/bouama_r/PSU_2016_malloc
+PSU/PSU_2016_nmobjdump | git@git.epitech.eu:/bazin_q/PSU_2016_nmobjdump
+PSU/PSU_2016_philo | git@git.epitech.eu:/bazin_q/PSU_2016_philo
 
 # B3 - Stage
 reverse/kernel | git@github.com:Quent42340/vga_text_kernel.git

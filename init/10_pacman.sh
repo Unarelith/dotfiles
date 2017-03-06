@@ -66,6 +66,8 @@ xsel'
 default_aur_packages='
 dropbox
 i3-gaps
+i3lock-color-git
+i3lock-fancy-dualmonitors-git
 imgurbash2
 font-awesome
 gws
@@ -79,6 +81,7 @@ zeal'
 
 systemd_services='
 cronie
+slim
 NetworkManager'
 
 systemd_user_services='

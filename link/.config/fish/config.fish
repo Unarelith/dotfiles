@@ -27,6 +27,9 @@ set -x PATH $PATH /usr/bin/core_perl 2> /dev/null
 # TO_CHANGE: Gogs username for fish
 set -x GOGS_USER gnidmoo
 
+# TO_CHANGE: Epitech email
+set -x EPIMAIL quentin.bazin@epitech.eu
+
 # Colored man pages
 set -x LESS -r
 set -x LESS_TERMCAP_mb (printf "\e[01;31m")       # begin blinking

@@ -1,6 +1,6 @@
-" ~/.dotfiles/link/.vim/sessions/default.vim:
+" ~/.dotfiles/link/.vim/sessions/objdump.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 24 février 2017 at 02:59:02.
+" Created by session.vim 2.13.1 on 27 février 2017 at 06:05:48.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -25,11 +25,11 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +1 source/main.c
-badd +0 Makefile
+badd +14 Makefile
 badd +1 include/elf_print_infos.h
-badd +0 source/elf_print_infos.c
+badd +1 source/elf_print_infos.c
 badd +1 include/elf_print_section.h
-badd +0 source/elf_print_section.c
+badd +1 source/elf_print_section.c
 argglobal
 silent! argdel *
 $argadd source/main.c
@@ -44,7 +44,9 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
+exe '1resize ' . ((&lines * 52 + 28) / 56)
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe '2resize ' . ((&lines * 52 + 28) / 56)
 exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
 argglobal
 setlocal fdm=manual
@@ -56,12 +58,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 26) / 52)
+let s:l = 14 - ((13 * winheight(0) + 26) / 52)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+14
+normal! 062|
 wincmd w
 argglobal
 edit source/main.c
@@ -74,15 +76,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 18 - ((17 * winheight(0) + 26) / 52)
+let s:l = 28 - ((27 * winheight(0) + 26) / 52)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-18
-normal! 012|
+28
+normal! 017|
 wincmd w
-2wincmd w
+exe '1resize ' . ((&lines * 52 + 28) / 56)
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe '2resize ' . ((&lines * 52 + 28) / 56)
 exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
 tabedit include/elf_print_infos.h
 set splitbelow splitright
@@ -106,7 +109,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 26) / 52)
+let s:l = 1 - ((0 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -124,13 +127,14 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 26) / 52)
+let s:l = 48 - ((39 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+48
+normal! 030|
 wincmd w
+2wincmd w
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
 exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
 tabedit include/elf_print_section.h
@@ -143,7 +147,9 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
+exe '1resize ' . ((&lines * 52 + 28) / 56)
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe '2resize ' . ((&lines * 52 + 28) / 56)
 exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
 argglobal
 setlocal fdm=manual
@@ -155,11 +161,11 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 26) / 52)
+let s:l = 16 - ((15 * winheight(0) + 26) / 52)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+16
 normal! 0
 wincmd w
 argglobal
@@ -173,16 +179,18 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 26) / 52)
+let s:l = 78 - ((25 * winheight(0) + 26) / 52)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+78
+normal! 044|
 wincmd w
+exe '1resize ' . ((&lines * 52 + 28) / 56)
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe '2resize ' . ((&lines * 52 + 28) / 56)
 exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabnext 1
+tabnext 2
 set stal=1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -201,7 +209,7 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 2wincmd w
-tabnext 1
+tabnext 2
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

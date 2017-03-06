@@ -2,6 +2,10 @@ Tasks
 
 # Config
 
+## Notes
+
+• Utiliser `cppman`
+
 ## Urgent
 
 • DONE: Régler le problème de la popup de playlist mpd
@@ -16,6 +20,10 @@ Tasks
    → `ls /sys/class/net | grep en`
 • TODO: Faire un script d’init qui remplit et compile automatiquement `.mail.sh.x`
    → Remplacer `unknown number of` par `?`
+• TODO: Améliorer le script d’affichage des failed units systemd (`systemctl --user --state=failed`)
+   → Rajouter une popup qui affiche les failed units et qui propose de les relancer
+   → Ajouter la possibilité que ça fonctionne aussi sans le `--user`
+• TODO: Régler le problème qui bloque le `popup-manager` au bout d’un certain temps
 
 ## Plus chiant et plus long
 

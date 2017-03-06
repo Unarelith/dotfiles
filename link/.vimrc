@@ -145,8 +145,9 @@ Plugin 'honza/vim-snippets'
 Plugin 'ramele/agrep'
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'metakirby5/codi.vim'
+" Plugin 'michamos/vim-bepo'
 
-Plugin 'Valloric/YouCompleteMe' " Valloric is the original author but oblitum claims better C/C++ support
+" Plugin 'Valloric/YouCompleteMe' " Valloric is the original author but oblitum claims better C/C++ support
 " Plugin 'oblitum/YouCompleteMe' " Valloric is the original author but oblitum claims better C/C++ support
 " Plugin 'jeaye/color_coded'      " <= Too slow to refresh + same thing as above + lots of bugs
 Plugin 'rdnetto/YCM-Generator'  " <= Used for these plugins
@@ -170,6 +171,8 @@ Plugin 'project.tar.gz'
 Plugin 'git://git.wincent.com/command-t.git'
 
 call vundle#end() " required!
+
+au VimEnter * unmap cr
 
 "------------------------------------------------------------------------------
 " i3-vim-syntax config
@@ -304,7 +307,7 @@ let g:syntastic_c_check_header = 1
 let g:syntastic_c_no_include_search = 1
 let g:syntastic_c_no_default_include_dirs = 1
 let g:syntastic_c_auto_refresh_includes = 1
-let g:syntastic_c_compiler_options = '`find lib -name "include" -type d | sed "s/^/-I/"` `find ../lib -name "include" -type d | sed "s/^/-I/"` `find common/lib -name "include" -type d | sed "s/^/-I/"`'
+let g:syntastic_c_compiler_options = '-Wall -Wextra -DPROGRAM_NAME="\"nm\"" -std=gnu99 `find lib -name "include" -type d | sed "s/^/-I/"` `find ../lib -name "include" -type d | sed "s/^/-I/"` `find common/lib -name "include" -type d | sed "s/^/-I/"`'
 let g:syntastic_c_include_dirs = [
 	\ '.',
 	\ 'include',
@@ -314,8 +317,9 @@ let g:syntastic_c_include_dirs = [
 	\ '../include',
 	\ '../common/include',
 	\ 'server/include',
-	\ '../corewar/include',
-	\ 'common/include'
+	\ 'common/include',
+	\ 'nm/include',
+	\ 'objdump/include'
 \ ]
 
 "------------------------------------------------------------------------------
@@ -509,10 +513,10 @@ vnoremap <C-J> :m '>+1<CR>gv=gv
 vnoremap <C-K> :m '<-2<CR>gv=gv
 
 " Fix up and down arrow if wrap is enabled
-nmap <Up> gk
-nmap <Down> gj
-imap <Up> <C-O>gk
-imap <Down> <C-O>gj
+nnoremap <Up> gk
+nnoremap <Down> gj
+inoremap <Up> <C-O>gk
+inoremap <Down> <C-O>gj
 
 nmap ,u <C-I>
 nmap ,i <C-O>
@@ -521,28 +525,52 @@ nmap ,ms :e source/%:t:r.cpp<CR>
 
 nmap <C-M> :noh<CR>
 
+function! MakeClass(headerExt, path, className)
+	silent !clear
+	execute "!make_class " . a:headerExt . " " . a:path . " " . a:className
+
+	execute "tabnew " . a:path . "/" . a:className . ".cpp"
+	execute "vsplit " . a:path . "/" . a:className . "." . a:headerExt
+endfunction
+
+function! CleanCode()
+	normal gg9dd\cfdi
+	normal 2dd
+	%s/# /#/g
+	%s/\t/ /g
+	14,$s/[ ]\+/ /g
+	%s/\n[ ]*{/ {/g
+	%s/\/\* \([A-Z_]\+\) \*\//\/\/ \1/g
+	%s/_\([a-z_]\+\)/m_\1/g
+	%s/return (\(.*\));/return \1;/g
+	normal gg=G
+	write
+endfunction
+
+nmap ,lc :call CleanCode()<CR>
+
 "------------------------------------------------------------------------------
 " Window navigation
 "------------------------------------------------------------------------------
-nmap <C-Left> <C-W>h
-nmap <C-Down> <C-W>j
-nmap <C-Up> <C-W>k
-nmap <C-Right> <C-W>l
+nnoremap <C-Left> <C-W>h
+nnoremap <C-Down> <C-W>j
+nnoremap <C-Up> <C-W>k
+nnoremap <C-Right> <C-W>l
 
-imap <C-Left> <Esc><C-W>h
-imap <C-Down> <Esc><C-W>j
-imap <C-Up> <Esc><C-W>k
-imap <C-Right> <Esc><C-W>l
+inoremap <C-Left> <Esc><C-W>h
+inoremap <C-Down> <Esc><C-W>j
+inoremap <C-Up> <Esc><C-W>k
+inoremap <C-Right> <Esc><C-W>l
 
-nmap <C-S-Left> <C-W>H
-nmap <C-S-Down> <C-W>J
-nmap <C-S-Up> <C-W>K
-nmap <C-S-Right> <C-W>L
+nnoremap <C-S-Left> <C-W>H
+nnoremap <C-S-Down> <C-W>J
+nnoremap <C-S-Up> <C-W>K
+nnoremap <C-S-Right> <C-W>L
 
-imap <C-S-Left> <Esc><C-W>H
-imap <C-S-Down> <Esc><C-W>J
-imap <C-S-Up> <Esc><C-W>K
-imap <C-S-Right> <Esc><C-W>L
+inoremap <C-S-Left> <Esc><C-W>H
+inoremap <C-S-Down> <Esc><C-W>J
+inoremap <C-S-Up> <Esc><C-W>K
+inoremap <C-S-Right> <Esc><C-W>L
 
 "------------------------------------------------------------------------------
 " Fix indent

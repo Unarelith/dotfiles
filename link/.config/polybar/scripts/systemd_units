@@ -1,0 +1,45 @@
+#!/bin/bash
+
+FG='#dcdcdc'
+# BG='#333333'
+BG='#090909'
+
+font1='Ubuntu:pixelsize=13'
+
+units=$(systemctl --user --state=failed | grep failed | awk '{print $2}')
+units_count=$(echo -n "$units" | wc -l)
+line_count=$((units_count < 8 ? units_count : 8))
+
+echo $units_count
+
+monitors=$(xrandr --listactivemonitors | head -1 | awk '{print $2}')
+if [ $monitors == '1' ]
+then
+	screen_height=$(xrandr --listactivemonitors | head -2 | tail -1 | cut -dx -f2 | awk '{print $1+0}')
+
+	x=1250
+	y=$(($screen_height - $line_count * 16 - 28 - 16))
+else
+	screen_height=$(xrandr --listactivemonitors | head -2 | tail -1 | cut -dx -f2 | awk '{print $1+0}')
+
+	x=$((1920 + 1250))
+	y=$(($screen_height - $line_count * 16 - 28 - 16))
+fi
+
+sleep 1
+
+fifo="/tmp/systemd_units_script.fifo"
+[ ! -e $fifo ] && mkfifo $fifo
+echo -e "Failed units\n$units" | dzen2 -m -p 10 -x $x -y $y -w "250" -bg $BG -fg $FG -l "$(($line_count + 1))" -sa 'l' -ta 'c' -e 'onstart=uncollapse,scrollhome;enterslave=grabkeys;leaveslave=ungrabkeys;key_Home=scrollhome;key_End=scrollend;button1=menuprint,exit;button3=exit;button4=scrollup:1;button5=scrolldown:1' -fn $font1 > $fifo &
+
+pid=$!
+echo $pid
+# strace -p $pid > ~/.config/lemonbuddy/scripts/$pid.log 2>&1 &
+
+while read line
+do
+	choice="$line"
+done < $fifo
+
+systemctl --user restart $choice
+

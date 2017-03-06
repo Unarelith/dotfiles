@@ -62,6 +62,70 @@ set $workspaceK                     17
 set $workspaceL                     18
 set $workspaceM                     19
 
+# AZERTY layout
+set $workspace0_key                 twosuperior
+set $workspace1_key                 ampersand
+set $workspace2_key                 eacute
+set $workspace3_key                 quotedbl
+set $workspace4_key                 apostrophe
+set $workspace5_key                 parenleft
+set $workspace6_key                 minus
+set $workspace7_key                 egrave
+set $workspace8_key                 underscore
+set $workspace9_key                 ccedilla
+set $workspace10_key                agrave
+set $workspace11_key                parenright
+set $workspaceU_key                 u
+set $workspaceI_key                 i
+set $workspaceO_key                 o
+set $workspaceP_key                 p
+set $workspaceJ_key                 j
+set $workspaceK_key                 k
+set $workspaceL_key                 l
+set $workspaceM_key                 m
+set $launcher_key                   d
+set $stacked_key                    s
+set $tabbed_key                     z
+set $split_key                      e
+set $restart_key                    r
+set $resize_key                     r
+set $volup_key                      n
+set $voldown_key                    b
+# set $ws_to_right_key                Shift+n
+# set $ws_to_left_key                 Shift+b
+set $move_ws_key                    Shift+n
+
+# BEPO layout
+# set $workspace0_key                 dollar
+# set $workspace1_key                 quotedbl
+# set $workspace2_key                 guillemotleft
+# set $workspace3_key                 guillemotright
+# set $workspace4_key                 parenleft
+# set $workspace5_key                 parenright
+# set $workspace6_key                 at
+# set $workspace7_key                 plus
+# set $workspace8_key                 minus
+# set $workspace9_key                 slash
+# set $workspace10_key                asterisk
+# set $workspace11_key                equal
+# set $workspaceU_key                 d
+# set $workspaceI_key                 l
+# set $workspaceO_key                 j
+# set $workspaceP_key                 z
+# set $workspaceJ_key                 s
+# set $workspaceK_key                 r
+# set $workspaceL_key                 n
+# set $workspaceM_key                 m
+# set $launcher_key                   k
+# set $stacked_key                    y
+# set $tabbed_key                     u
+# set $split_key                      i
+# set $restart_key                    p
+# set $resize_key                     p
+# set $volup_key                      egrave
+# set $voldown_key                    o
+# set $move_ws_key                    Shift+ccedilla
+
 # Other variables
 set $terminal                       urxvt -e fish
 
@@ -72,7 +136,7 @@ set $launcher2                      dmenu_run -l 10 -p "Run" -i
 set $composer                       xcompmgr -c -f -I0.045 -O0.045 &
 set $composer2                      compton -b --config ~/.config/compton/compton.conf
 
-set $lock_screen                    slimlock
+set $lock_screen                    i3lock-fancy
 
 font                                pango:DejaVu Sans Mono 10
 
@@ -114,8 +178,8 @@ bindsym $mod+Return                 exec --no-startup-id $terminal
 bindsym $mod+Shift+A                kill
 
 # Launchers
-bindsym $mod+d                      exec --no-startup-id $launcher
-bindsym $mod+Shift+d                exec --no-startup-id $launcher2
+bindsym $mod+$launcher_key          exec --no-startup-id $launcher
+bindsym $mod+Shift+$launcher_key    exec --no-startup-id $launcher2
 
 # Switch windows with $mod+Tab or $mod+a
 bindsym $mod+Tab                    focus right
@@ -141,9 +205,9 @@ bindsym $mod+v                      split v
 bindsym $mod+f                      fullscreen
 
 # Change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s                      layout stacking
-bindsym $mod+z                      layout tabbed
-bindsym $mod+e                      layout toggle split
+bindsym $mod+$stacked_key           layout stacking
+bindsym $mod+$tabbed_key            layout tabbed
+bindsym $mod+$split_key             layout toggle split
 
 # Toggle tiling / floating
 bindsym $mod+Shift+space            floating toggle
@@ -156,18 +220,18 @@ bindsym $mod+q                      focus parent
 bindsym $mod+c                      focus child
 
 # Switch to workspace
-bindsym $mod+twosuperior            workspace $workspace0
-bindsym $mod+ampersand              workspace $workspace1
-bindsym $mod+eacute                 workspace $workspace2
-bindsym $mod+quotedbl               workspace $workspace3
-bindsym $mod+apostrophe             workspace $workspace4
-bindsym $mod+parenleft              workspace $workspace5
-bindsym $mod+minus                  workspace $workspace6
-bindsym $mod+egrave                 workspace $workspace7
-bindsym $mod+underscore             workspace $workspace8
-bindsym $mod+ccedilla               workspace $workspace9
-bindsym $mod+agrave                 workspace $workspace10
-bindsym $mod+parenright             workspace $workspace11
+bindsym $mod+$workspace0_key        workspace $workspace0
+bindsym $mod+$workspace1_key        workspace $workspace1
+bindsym $mod+$workspace2_key        workspace $workspace2
+bindsym $mod+$workspace3_key        workspace $workspace3
+bindsym $mod+$workspace4_key        workspace $workspace4
+bindsym $mod+$workspace5_key        workspace $workspace5
+bindsym $mod+$workspace6_key        workspace $workspace6
+bindsym $mod+$workspace7_key        workspace $workspace7
+bindsym $mod+$workspace8_key        workspace $workspace8
+bindsym $mod+$workspace9_key        workspace $workspace9
+bindsym $mod+$workspace10_key       workspace $workspace10
+bindsym $mod+$workspace11_key       workspace $workspace11
 
 bindsym $mod+KP_1                   workspace $workspace1
 bindsym $mod+KP_2                   workspace $workspace2
@@ -180,49 +244,49 @@ bindsym $mod+KP_8                   workspace $workspace8
 bindsym $mod+KP_9                   workspace $workspace9
 bindsym $mod+KP_0                   workspace $workspace10
 
-bindsym $mod+u                      workspace $workspaceU
-bindsym $mod+i                      workspace $workspaceI
-bindsym $mod+o                      workspace $workspaceO
-bindsym $mod+p                      workspace $workspaceP
+bindsym $mod+$workspaceU_key        workspace $workspaceU
+bindsym $mod+$workspaceI_key        workspace $workspaceI
+bindsym $mod+$workspaceO_key        workspace $workspaceO
+bindsym $mod+$workspaceP_key        workspace $workspaceP
 
-bindsym $mod+j                      workspace $workspaceJ
-bindsym $mod+k                      workspace $workspaceK
-bindsym $mod+l                      workspace $workspaceL
-bindsym $mod+m                      workspace $workspaceM
+bindsym $mod+$workspaceJ_key        workspace $workspaceJ
+bindsym $mod+$workspaceK_key        workspace $workspaceK
+bindsym $mod+$workspaceL_key        workspace $workspaceL
+bindsym $mod+$workspaceM_key        workspace $workspaceM
 
 bindsym $mod+Ctrl+Left              workspace prev
 bindsym $mod+Ctrl+Right             workspace next
 
 # Move focused container to workspace
-bindsym $mod+Shift+twosuperior      move container to workspace $workspace0
-bindsym $mod+Shift+ampersand        move container to workspace $workspace1
-bindsym $mod+Shift+eacute           move container to workspace $workspace2
-bindsym $mod+Shift+quotedbl         move container to workspace $workspace3
-bindsym $mod+Shift+apostrophe       move container to workspace $workspace4
-bindsym $mod+Shift+parenleft        move container to workspace $workspace5
-bindsym $mod+Shift+minus            move container to workspace $workspace6
-bindsym $mod+Shift+egrave           move container to workspace $workspace7
-bindsym $mod+Shift+underscore       move container to workspace $workspace8
-bindsym $mod+Shift+ccedilla         move container to workspace $workspace9
-bindsym $mod+Shift+agrave           move container to workspace $workspace10
-bindsym $mod+Shift+parenright       move container to workspace $workspace11
+bindsym $mod+Shift+$workspace0_key   move container to workspace $workspace0
+bindsym $mod+Shift+$workspace1_key   move container to workspace $workspace1
+bindsym $mod+Shift+$workspace2_key   move container to workspace $workspace2
+bindsym $mod+Shift+$workspace3_key   move container to workspace $workspace3
+bindsym $mod+Shift+$workspace4_key   move container to workspace $workspace4
+bindsym $mod+Shift+$workspace5_key   move container to workspace $workspace5
+bindsym $mod+Shift+$workspace6_key   move container to workspace $workspace6
+bindsym $mod+Shift+$workspace7_key   move container to workspace $workspace7
+bindsym $mod+Shift+$workspace8_key   move container to workspace $workspace8
+bindsym $mod+Shift+$workspace9_key   move container to workspace $workspace9
+bindsym $mod+Shift+$workspace10_key  move container to workspace $workspace10
+bindsym $mod+Shift+$workspace11_key  move container to workspace $workspace11
 
-bindsym $mod+Shift+u                move container to workspace $workspaceU
-bindsym $mod+Shift+i                move container to workspace $workspaceI
-bindsym $mod+Shift+o                move container to workspace $workspaceO
-bindsym $mod+Shift+p                move container to workspace $workspaceP
+bindsym $mod+Shift+$workspaceU_key   move container to workspace $workspaceU
+bindsym $mod+Shift+$workspaceI_key   move container to workspace $workspaceI
+bindsym $mod+Shift+$workspaceO_key   move container to workspace $workspaceO
+bindsym $mod+Shift+$workspaceP_key   move container to workspace $workspaceP
 
-bindsym $mod+Shift+j                move container to workspace $workspaceJ
-bindsym $mod+Shift+k                move container to workspace $workspaceK
-bindsym $mod+Shift+l                move container to workspace $workspaceL
-bindsym $mod+Shift+m                move container to workspace $workspaceM
+bindsym $mod+Shift+$workspaceJ_key   move container to workspace $workspaceJ
+bindsym $mod+Shift+$workspaceK_key   move container to workspace $workspaceK
+bindsym $mod+Shift+$workspaceL_key   move container to workspace $workspaceL
+bindsym $mod+Shift+$workspaceM_key   move container to workspace $workspaceM
 
 bindsym $mod+Ctrl+Shift+Left        move container to workspace prev; workspace prev
 bindsym $mod+Ctrl+Shift+Right       move container to workspace next; workspace next
 
 # Volume management
-bindsym $mod+B                      exec python ~/.local/bin/volumeHandler.py down && killall -SIGUSR1 i3status
-bindsym $mod+N                      exec python ~/.local/bin/volumeHandler.py up   && killall -SIGUSR1 i3status
+bindsym $mod+$voldown_key           exec python ~/.local/bin/volumeHandler.py down && killall -SIGUSR1 i3status
+bindsym $mod+$volup_key             exec python ~/.local/bin/volumeHandler.py up   && killall -SIGUSR1 i3status
 
 bindsym XF86AudioLowerVolume        exec python ~/.local/bin/volumeHandler.py down && killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume        exec python ~/.local/bin/volumeHandler.py up   && killall -SIGUSR1 i3status
@@ -230,6 +294,10 @@ bindsym XF86AudioMute               exec python ~/.local/bin/volumeHandler.py to
 
 bindsym XF86MonBrightnessUp         exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown       exec xbacklight -dec 5
+
+bindsym XF86Calculator              exec gnome-calculator
+
+bindsym XF86AudioPlay               exec mpc toggle
 
 # Invert colors
 bindsym $mod+Ctrl+i                 exec xcalib -i -a
@@ -253,14 +321,14 @@ bindsym --release Print             exec ~/.local/bin/screenshot.bash
 bindsym $mod+Shift+c                reload
 
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r                restart
+bindsym $mod+Shift+$restart_key     restart
 
 # Exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e                exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Move workspace through screens
-bindsym $mod+Shift+B                move workspace to output left
-bindsym $mod+Shift+N                move workspace to output right
+bindsym $mod+$move_ws_key           move workspace to output left
+# bindsym $mod+$ws_to_right_key       move workspace to output right
 
 # Rules for Hangouts
 for_window [window_role="pop-up"]   floating enable
@@ -283,7 +351,9 @@ mode "resize" {
         bindsym Escape              mode "default"
 }
 
-bindsym $mod+r                      mode "resize"
+bindsym $mod+$resize_key            mode "resize"
+
+for_window [instance="League of Legends.exe"] move absolute position 0 px 0 px
 
 # Start i3bar to display a workspace bar
 # bar {

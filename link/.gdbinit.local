@@ -8,4 +8,4 @@ set history size 4000
 set history remove-duplicates unlimited
 set history expansion
 
-set disassemble-next-line on
+# set disassemble-next-line on

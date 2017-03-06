@@ -15,7 +15,7 @@ then
 		echo -n "Password: "
 		read -s unix_passwd ; echo
 
-		blih_try=$(echo "$unix_passwd" | blim whoami > /dev/null 2>&1 ; echo $?)
+		blih_try=$(echo "$unix_passwd" | blim -u $EPIMAIL whoami > /dev/null 2>&1 ; echo $?)
 
 		let tries_left--
 	done
@@ -26,9 +26,9 @@ then
 		exit 1
 	fi
 
-	echo "$unix_passwd" | blim repository create $1
-	echo "$unix_passwd" | blim repository setacl $1 ramassage-tek r
-	echo "$unix_passwd" | blim repository getacl $1
+	echo "$unix_passwd" | blim -u $EPIMAIL repository create $1
+	echo "$unix_passwd" | blim -u $EPIMAIL repository setacl $1 ramassage-tek r
+	echo "$unix_passwd" | blim -u $EPIMAIL repository getacl $1
 
 	if [ "$?" == "0" ] && [ "$(git clone "git@git.epitech.eu:/${USER}/$1" > /dev/null 2>&1 ; echo "$?")" == "0" ]
 	then

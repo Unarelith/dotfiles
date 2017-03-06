@@ -14,6 +14,7 @@ class PopupManager:
             'mpd-playlist':   '/.config/polybar/scripts/mpd_playlist',
             'pacman-updates': '/.config/polybar/scripts/pacman_updates',
             'reminders':      '/.config/polybar/scripts/reminders_popup',
+            'systemd_units':  '/.config/polybar/scripts/systemd_units',
             'weather':        '/.config/polybar/scripts/weather_popup'
         }
 

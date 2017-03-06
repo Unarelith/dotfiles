@@ -3,7 +3,7 @@
 ; throttle_limit = 3
 
 [bar/top]
-monitor = DP2
+monitor = eDP1
 ; bottom = true
 width = 100%
 ; height = 34
@@ -35,10 +35,10 @@ font-2 = FontAwesome:size=10;0
 
 modules-left = i3
 modules-center = date-script
-modules-right = train_on_time volume backlight wireless-network wired-network battery tetrane-login
+modules-right = volume backlight wireless-network wired-network battery
 
 [bar/bottom]
-monitor = DP2
+monitor = eDP1
 bottom = true
 width = 100%
 height = 28
@@ -62,7 +62,7 @@ font-3 = MaterialIcons:size=10;-1
 
 modules-left = mpd-playlist mpd
 modules-center = memory cpu
-modules-right = systemd_user temperature weather-macon weather-lyon bank-account pacman-updates disk-root disk-home
+modules-right = systemd_user temperature weather-lyon bank-account pacman-updates disk-root disk-home
 
 [bar/external_bottom]
 ;inherit-from = bar/bottom
@@ -96,7 +96,7 @@ type = internal/xbacklight
 
 ; XRandR output to get get values from
 ; Default: the monitor defined for the running bar
-output = DP2
+output = eDP1
 
 ; Create scroll handlers used to set the backlight value
 ; Default: true
@@ -366,7 +366,7 @@ ws-icon-0 = 0;
 ws-icon-1 = 1;
 ws-icon-2 = 2;
 ws-icon-3 = 3;3
-ws-icon-4 = 4;4
+ws-icon-4 = 4;
 ws-icon-5 = 5;
 ws-icon-6 = 6;
 ws-icon-7 = 7;
@@ -508,7 +508,9 @@ type = custom/script
 format =     <output>
 format-foreground = #f00
 exec = failed=`systemctl --user status | head -4 | tail -1 | awk '{print $2+0}'`; [ "$failed" -ne 0 ] && echo $failed
-interval = 1800
+interval = 300
+
+click-left = python ~/.config/polybar/dbus/client.py "systemd_units"
 
 [module/temperature]
 type = internal/temperature

@@ -1,6 +1,6 @@
-" ~/.dotfiles/link/.vim/sessions/ZeldaOOS.vim:
+" ~/.dotfiles/link/.vim/sessions/ex03.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 09 février 2017 at 20:24:08.
+" Created by session.vim 2.13.1 on 14 janvier 2017 at 07:51:25.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -19,93 +19,29 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/rendu/Perso/ZeldaOOS
+cd ~/rendu/PiscineCPP/cpp_d10/ex03
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +20 source/main.cpp
-badd +1 CMakeLists.txt
-badd +9 Notes
-badd +30 include/core/Application.hpp
-badd +35 source/core/Application.cpp
-badd +33 include/core/ApplicationStateStack.hpp
-badd +23 include/core/states/ApplicationState.hpp
-badd +13 include/core/IntTypes.hpp
-badd +1 include/core/SDLHeaders.hpp
-badd +70 source/core/Window.cpp
-badd +29 include/core/Window.hpp
-badd +38 tests/ApplicationStateStackTest.hpp
-badd +22 ~/rendu/Perso/ZeldaOOL/tests/SceneObjectTests.hpp
-badd +16 tests/ApplicationStateStackTests.hpp
-badd +32 include/display/opengl/Texture.hpp
-badd +44 source/display/opengl/Texture.cpp
-badd +20 include/core/Config.hpp
-badd +1 include/display/opengl/VertexBuffer.hpp
-badd +1 source/display/opengl/VertexBuffer.cpp
-badd +21 include/core/Exception.hpp
-badd +26 include/display/opengl/Shader.hpp
-badd +1 source/display/opengl/Shader.cpp
-badd +42 include/core/Debug.hpp
-badd +28 include/core/XMLFile.hpp
-badd +45 source/core/XMLFile.cpp
-badd +18 include/core/input/KeyboardHandler.hpp
-badd +23 source/core/input/KeyboardHandler.cpp
-badd +0 include/core/input/InputHandler.hpp
-badd +1 CMakeCache.txt
+badd +17 AMateria.hh
+badd +0 AMateria.cpp
+badd +17 Ice.hh
+badd +0 Ice.cpp
+badd +17 Cure.hh
+badd +0 Cure.cpp
+badd +19 Character.hh
+badd +0 Character.cpp
+badd +19 MateriaSource.hh
+badd +0 MateriaSource.cpp
+badd +19 test.cpp
+badd +10 test_expected_output
+badd +0 test_out
 argglobal
 silent! argdel *
-argadd source/main.cpp
+argadd AMateria.hh
 set stal=2
-edit Notes
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-argglobal
-setlocal fdm=expr
-setlocal fde=xolox#notes#foldexpr()
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-let s:l = 19 - ((18 * winheight(0) + 26) / 53)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-19
-normal! 045|
-wincmd w
-argglobal
-edit CMakeLists.txt
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 26) / 53)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-wincmd w
-exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit include/core/Application.hpp
+edit AMateria.hh
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -127,15 +63,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 30 - ((29 * winheight(0) + 26) / 53)
+let s:l = 18 - ((17 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-30
-normal! 05|
+18
+normal! 012|
 wincmd w
 argglobal
-edit source/core/Application.cpp
+edit AMateria.cpp
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -145,16 +81,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 35 - ((20 * winheight(0) + 26) / 53)
+let s:l = 25 - ((24 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-35
-normal! 0
+25
+normal! 032|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
 exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
-tabedit include/display/opengl/VertexBuffer.hpp
+tabedit Ice.hh
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -164,8 +100,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -174,36 +110,36 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal nofen
+setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 26) / 53)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 02|
-wincmd w
-argglobal
-edit source/display/opengl/VertexBuffer.cpp
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 29 - ((20 * winheight(0) + 26) / 53)
+let s:l = 29 - ((28 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 29
-normal! 034|
+normal! 018|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
-tabedit include/display/opengl/Shader.hpp
+argglobal
+edit Ice.cpp
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 29 - ((28 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+29
+normal! 0
+wincmd w
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+tabedit Cure.hh
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -213,8 +149,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -223,17 +159,17 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal nofen
+setlocal fen
 silent! normal! zE
-let s:l = 26 - ((18 * winheight(0) + 26) / 53)
+let s:l = 26 - ((25 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 26
-normal! 036|
+normal! 027|
 wincmd w
 argglobal
-edit source/display/opengl/Shader.cpp
+edit Cure.cpp
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -241,24 +177,200 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal nofen
+setlocal fen
 silent! normal! zE
-let s:l = 64 - ((33 * winheight(0) + 26) / 53)
+let s:l = 22 - ((21 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-64
+22
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 106 + 106) / 212)
-tabnext 2
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+tabedit Character.hh
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 47 - ((46 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+47
+normal! 0
+wincmd w
+argglobal
+edit Character.cpp
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 35 - ((31 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+35
+normal! 019|
+wincmd w
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+tabedit MateriaSource.hh
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 27 - ((26 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+27
+normal! 043|
+wincmd w
+argglobal
+edit MateriaSource.cpp
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 37 - ((36 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+37
+normal! 0
+wincmd w
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+tabedit test.cpp
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe '2resize ' . ((&lines * 26 + 28) / 56)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+exe '3resize ' . ((&lines * 26 + 28) / 56)
+exe 'vert 3resize ' . ((&columns * 105 + 106) / 212)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 42 - ((38 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+42
+normal! 031|
+wincmd w
+argglobal
+edit test_expected_output
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 10 - ((9 * winheight(0) + 13) / 26)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+10
+normal! 03|
+wincmd w
+argglobal
+edit test_out
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 8 - ((7 * winheight(0) + 13) / 26)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+8
+normal! 0
+wincmd w
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 212)
+exe '2resize ' . ((&lines * 26 + 28) / 56)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 212)
+exe '3resize ' . ((&lines * 26 + 28) / 56)
+exe 'vert 3resize ' . ((&columns * 105 + 106) / 212)
+tabnext 4
 set stal=1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
 endif
 " unlet! s:wipebuf
-set winheight=1 winwidth=20 shortmess=filnxtToOc
+set winheight=1 winwidth=20 shortmess=filnxtToO
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if file_readable(s:sx)
   exe "source " . fnameescape(s:sx)
@@ -269,8 +381,8 @@ let &so = s:so_save | let &siso = s:siso_save
 " Everything down here is generated by vim-session (not supported
 " by :mksession out of the box).
 
-1wincmd w
-tabnext 2
+2wincmd w
+tabnext 4
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

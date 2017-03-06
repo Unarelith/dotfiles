@@ -6,14 +6,19 @@ then
 	exit 1
 fi
 
+if [ -z "$(cat $1 | grep "Started on")" ]
+then
+	exit 1
+fi
+
 date="$(LC_ALL='C' date '+%a %b %d %T %Y')"
 
-started_on="Started on  $date Quentin Bazin"
+# started_on="Started on  $date Quentin Bazin"
 last_update="Last update $date Quentin Bazin"
 
-prefix="**"
+prefix="//"
 [ -n "$(echo $1 | grep Makefile)" ] && prefix="##"
 
-sed -i "$1" -e "7s/^.*$/$prefix $started_on/g"
-sed -i "$1" -e "8s/^.*$/$prefix $last_update/g"
+# sed -i "$1" -e "7s|^.*$|$prefix $started_on|g"
+sed -i "$1" -e "8s|^.*$|$prefix $last_update|g"
 
