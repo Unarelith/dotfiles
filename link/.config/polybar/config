@@ -3,25 +3,27 @@
 ; throttle_limit = 3
 
 [bar/top]
-monitor = eDP1
+monitor = DP1
 ; bottom = true
 width = 100%
 ; height = 34
 height = 28
 clickareas = 35
-dock = false
+; dock = false
 
 background = #ff000000
 foreground = #ccffffff
-linecolor = ${bar/bottom.background}
+underline-color = ${bar/bottom.background}
+overline-color = ${bar/bottom.background}
 
 locale = fr_FR.UTF-8
 
-; tray-position = right
+tray-position = right
 
 spacing = 4
 ;spacing = 2
-lineheight = 2
+overline-size = 2
+underline-size = 2
 padding-left = 2
 padding-right = 5
 module-margin-left = 3
@@ -30,35 +32,37 @@ module-margin-right = 3
 ;module-margin-right = 1
 
 font-0 = Sans-Regular:size=8;0
-font-1 = MaterialIcons:size=10;0
-font-2 = FontAwesome:size=10;0
+font-1 = MaterialIcons:size=10;1
+font-2 = FontAwesome:size=10;1
 
 modules-left = i3
 modules-center = date-script
-modules-right = volume backlight wireless-network wired-network battery
+modules-right = volume backlight wireless-network wired-network battery screens
 
 [bar/bottom]
-monitor = eDP1
+monitor = DP1
 bottom = true
 width = 100%
 height = 28
-dock = false
+; dock = false
 
 background = ${bar/top.background}
 foreground = ${bar/top.foreground}
-linecolor = ${bar/top.background}
+underline-color = ${bar/top.background}
+overline-color = ${bar/top.background}
 
 spacing = 3
-lineheight = 2
+overline-size = 2
+underline-size = 2
 padding-left = 4
 padding-right = 4
 module-margin-left = 0
 module-margin-right = 6
 
 font-0 = Sans-Regular:size=8;0
-font-1 = Unifont:size=6;-3
-font-2 = FontAwesome:size=10;0
-font-3 = MaterialIcons:size=10;-1
+font-1 = Unifont:size=6;0
+font-2 = FontAwesome:size=10;1
+font-3 = MaterialIcons:size=10;1
 
 modules-left = mpd-playlist mpd
 modules-center = memory cpu
@@ -77,7 +81,8 @@ foreground = ${bar/bottom.foreground}
 linecolor = ${bar/bottom.linecolor}
 
 spacing = ${bar/bottom.spacing}
-lineheight = ${bar/bottom.lineheight}
+underline-size = ${bar/bottom.underline-size}
+overline-size = ${bar/bottom.overline-size}
 padding-right = ${bar/bottom.padding-right}
 module-margin-left = ${bar/bottom.module-margin-left}
 module-margin-right = ${bar/bottom.module-margin-right}
@@ -96,7 +101,7 @@ type = internal/xbacklight
 
 ; XRandR output to get get values from
 ; Default: the monitor defined for the running bar
-output = eDP1
+output = DP1
 
 ; Create scroll handlers used to set the backlight value
 ; Default: true
@@ -275,7 +280,7 @@ date =    %%{F#999}%a %e %b%%{F-}  %%{F#fff}%H:%M:%S%%{F-}
 [module/date-script]
 type = custom/script
 
-format =     <output>
+format =     <label>
 exec = echo "%{F#999}`date "+%a %e %b"`%{F-}  %{F#fff}`date +%H:%M:%S`%{F-}"
 interval = 1
 
@@ -285,14 +290,14 @@ click-right = python ~/.config/polybar/dbus/client.py "reminders"
 [module/disk-home]
 type = custom/script
 
-format =     <output>
+format =     <label>
 exec = /usr/lib/i3blocks/disk | head -1
 interval = 5
 
 [module/disk-root]
 type = custom/script
 
-format =     <output>
+format =     <label>
 exec = BLOCK_INSTANCE='/' /usr/lib/i3blocks/disk | head -1
 interval = 5
 
@@ -464,7 +469,7 @@ click-left = python ~/.config/polybar/dbus/client.py "mpd-playlist"
 [module/pacman-updates]
 type = custom/script
 
-format =     <output>
+format =     <label>
 exec = checkupdates | wc -l
 interval = 1800
 
@@ -502,10 +507,19 @@ menu-2-1 = Cancel
 menu-2-1-foreground = #fba922
 menu-2-1-exec = menu-open-0
 
+[module/screens]
+type = custom/text
+
+content = 
+
+click-left = bash ~/.config/polybar/scripts/screens laptop
+click-middle = bash ~/.config/polybar/scripts/screens both
+click-right = bash ~/.config/polybar/scripts/screens desktop
+
 [module/systemd_user]
 type = custom/script
 
-format =     <output>
+format =     <label>
 format-foreground = #f00
 exec = failed=`systemctl --user status | head -4 | tail -1 | awk '{print $2+0}'`; [ "$failed" -ne 0 ] && echo $failed
 interval = 300
@@ -562,14 +576,6 @@ ramp-3-foreground = #ddaaaa
 ramp-4 = 
 ramp-4-foreground = #eeaaaa
 
-[module/tetrane-login]
-type = custom/text
-
-content = 
-
-click-left = bash ~/.i3/i3blocks/tetrane login
-click-right = bash ~/.i3/i3blocks/tetrane logout
-
 [module/train_on_time]
 type = custom/script
 
@@ -604,7 +610,7 @@ interval = 1800
 [module/weather-lyon]
 type = custom/script
 
-format = <output>
+format = <label>
 exec = bash ~/.i3/i3blocks/weather 1
 interval = 1800
 
@@ -626,7 +632,7 @@ interval = 3.0
 ; ping-interval = 10
 
 format-connected = <ramp-signal> <label-connected>
-label-connected = %essid%
+label-connected = %essid%          %local_ip%
 label-disconnected =    not connected
 label-disconnected-foreground = #66
 

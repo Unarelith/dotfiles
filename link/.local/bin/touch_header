@@ -13,12 +13,18 @@ fi
 
 date="$(LC_ALL='C' date '+%a %b %d %T %Y')"
 
-# started_on="Started on  $date Quentin Bazin"
+filename="$(basename $1) for  in /home/bazin_q/rendu/PSU/PSU_2016_ftrace"
+made_by="Made by Quentin Bazin"
+login="Login   <bazin_q@epitech.net>"
+started_on="Started on  $date Quentin Bazin"
 last_update="Last update $date Quentin Bazin"
 
-prefix="//"
+prefix="**"
 [ -n "$(echo $1 | grep Makefile)" ] && prefix="##"
 
-# sed -i "$1" -e "7s|^.*$|$prefix $started_on|g"
+sed -i "$1" -e "2s|^.*$|$prefix $filename|g"
+sed -i "$1" -e "4s|^.*$|$prefix $made_by|g"
+sed -i "$1" -e "5s|^.*$|$prefix $login|g"
+sed -i "$1" -e "7s|^.*$|$prefix $started_on|g"
 sed -i "$1" -e "8s|^.*$|$prefix $last_update|g"
 

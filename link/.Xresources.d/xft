@@ -2,5 +2,7 @@
 ! xft configuration
 !-----------------------------------------------------------------------------
 Xft.lcdfilter: lcddefault
+Xft.hinting:   true
 Xft.hintstyle: hintfull
+Xft.antialias: true
 

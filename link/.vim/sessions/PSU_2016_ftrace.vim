@@ -1,6 +1,6 @@
-" ~/.dotfiles/link/.vim/sessions/PSU_2016_philo.vim:
+" ~/.dotfiles/link/.vim/sessions/PSU_2016_ftrace.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 16 mars 2017 at 14:46:03.
+" Created by session.vim 2.13.1 on 07 mai 2017 at 19:44:20.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -19,30 +19,29 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/rendu/PSU/PSU_2016_philo
+cd ~/rendu/PSU/PSU_2016_ftrace
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +11 source/main.c
-badd +15 Makefile
-badd +1 libriceferee/extern.h
-badd +13 include/option.h
-badd +15 include/options.h
-badd +1 source/options.c
-badd +30 include/philo.h
-badd +1 source/philo.c
-badd +16 include/application.h
+badd +1 Notes
+badd +17 Makefile
+badd +1 source/main.c
+badd +1 include/application.h
 badd +1 source/application.c
-badd +1 TODO
-badd +30 source/philo_states.c
-badd +13 include/arbitrator.h
-badd +0 source/arbitrator.c
+badd +1 include/error.h
+badd +1 source/error.c
+badd +1 include/options.h
+badd +1 source/options.c
+badd +48 include/syscalls.h
+badd +1 include/tracer.h
+badd +1 source/tracer.c
+badd +0 source/tracer_display.c
 argglobal
 silent! argdel *
-$argadd source/main.c
+$argadd Notes
 set stal=2
-edit TODO
+edit Notes
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -57,12 +56,12 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 5 - ((4 * winheight(0) + 25) / 51)
+let s:l = 14 - ((13 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-5
-normal! 082|
+14
+normal! 051|
 tabedit Makefile
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -83,14 +82,14 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal fen
+setlocal nofen
 silent! normal! zE
-let s:l = 20 - ((18 * winheight(0) + 25) / 51)
+let s:l = 1 - ((0 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-20
-normal! 032|
+1
+normal! 0
 wincmd w
 argglobal
 edit source/main.c
@@ -101,39 +100,17 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal fen
+setlocal nofen
 silent! normal! zE
-let s:l = 17 - ((15 * winheight(0) + 25) / 51)
+let s:l = 25 - ((24 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-17
-normal! 039|
+25
+normal! 03|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabedit libriceferee/extern.h
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 24 - ((22 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-24
-normal! 0
 tabedit include/application.h
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -154,13 +131,13 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal fen
+setlocal nofen
 silent! normal! zE
-let s:l = 16 - ((14 * winheight(0) + 25) / 51)
+let s:l = 27 - ((26 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-16
+27
 normal! 0
 wincmd w
 argglobal
@@ -172,14 +149,14 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal fen
+setlocal nofen
 silent! normal! zE
-let s:l = 28 - ((26 * winheight(0) + 25) / 51)
+let s:l = 23 - ((19 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-28
-normal! 05|
+23
+normal! 019|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
@@ -203,14 +180,14 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal fen
+setlocal nofen
 silent! normal! zE
-let s:l = 15 - ((13 * winheight(0) + 25) / 51)
+let s:l = 10 - ((9 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-15
-normal! 042|
+10
+normal! 0
 wincmd w
 argglobal
 edit source/options.c
@@ -221,18 +198,18 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal fen
+setlocal nofen
 silent! normal! zE
-let s:l = 29 - ((28 * winheight(0) + 25) / 51)
+let s:l = 51 - ((20 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-29
-normal! 018|
+51
+normal! 024|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabedit include/philo.h
+tabedit include/syscalls.h
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -252,17 +229,17 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal fen
+setlocal nofen
 silent! normal! zE
-let s:l = 30 - ((29 * winheight(0) + 25) / 51)
+let s:l = 42 - ((14 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-30
-normal! 032|
+42
+normal! 062|
 wincmd w
 argglobal
-edit source/philo.c
+edit source/tracer_display.c
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -270,41 +247,68 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal fen
+setlocal nofen
 silent! normal! zE
-let s:l = 62 - ((37 * winheight(0) + 25) / 51)
+let s:l = 84 - ((44 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-62
-normal! 013|
+84
+normal! 026|
+wincmd w
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+tabedit include/tracer.h
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winheight=1 winminwidth=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 33 - ((32 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+33
+normal! 037|
+wincmd w
+argglobal
+edit source/tracer.c
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 50 - ((28 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+50
+normal! 021|
 wincmd w
 2wincmd w
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabedit source/philo_states.c
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 11 - ((10 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-11
-normal! 0
-tabedit include/arbitrator.h
+tabedit include/error.h
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -326,15 +330,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal nofen
 silent! normal! zE
-let s:l = 15 - ((14 * winheight(0) + 25) / 51)
+let s:l = 1 - ((0 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-15
-normal! 024|
+1
+normal! 02|
 wincmd w
 argglobal
-edit source/arbitrator.c
+edit source/error.c
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -344,12 +348,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal nofen
 silent! normal! zE
-let s:l = 27 - ((26 * winheight(0) + 25) / 51)
+let s:l = 1 - ((0 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-27
-normal! 024|
+1
+normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)

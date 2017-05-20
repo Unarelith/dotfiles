@@ -299,6 +299,8 @@ bindsym XF86Calculator              exec gnome-calculator
 
 bindsym XF86AudioPlay               exec mpc toggle
 
+bindsym XF86Sleep                   exec systemctl suspend
+
 # Invert colors
 bindsym $mod+Ctrl+i                 exec xcalib -i -a
 

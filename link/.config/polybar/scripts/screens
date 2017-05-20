@@ -1,0 +1,37 @@
+#!/bin/bash
+
+if [ -z "$1" ]
+then
+	echo "Usage: screens [login|logout]"
+	exit 1
+fi
+
+log_file="$HOME/.local/share/.tetrane.log"
+lastline="$(tail -1 $log_file)"
+
+if [ "$1" == "laptop" ]
+then
+	echo ""
+
+	xrandr --output eDP1 --auto --output DP1 --off
+
+	sed -i 's/DP1/eDP1/g' ~/.config/polybar/config
+
+elif [ "$1" == "both" ]
+then
+	echo ""
+
+	xrandr --output DP1 --auto --primary --right-of eDP1
+
+	sed -i 's/eDP1/DP1/g' ~/.config/polybar/config
+elif [ "$1" == "desktop" ]
+then
+	echo ""
+
+	xrandr --output DP1 --auto --primary --output eDP1 --off
+
+	sed -i 's/eDP1/DP1/g' ~/.config/polybar/config
+fi
+
+exec ~/.config/polybar/launch
+
