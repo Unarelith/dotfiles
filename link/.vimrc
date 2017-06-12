@@ -146,8 +146,9 @@ Plugin 'ramele/agrep'
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'metakirby5/codi.vim'
 " Plugin 'michamos/vim-bepo'
+" Plugin 'w0rp/ale'
 
-" Plugin 'Valloric/YouCompleteMe' " Valloric is the original author but oblitum claims better C/C++ support
+Plugin 'Valloric/YouCompleteMe' " Valloric is the original author but oblitum claims better C/C++ support
 " Plugin 'oblitum/YouCompleteMe' " Valloric is the original author but oblitum claims better C/C++ support
 " Plugin 'jeaye/color_coded'      " <= Too slow to refresh + same thing as above + lots of bugs
 Plugin 'rdnetto/YCM-Generator'  " <= Used for these plugins
@@ -272,9 +273,10 @@ call altr#define('%.h', '%.c')
 "------------------------------------------------------------------------------
 " YouCompleteMe config
 "------------------------------------------------------------------------------
-let g:ycm_show_diagnostics_ui = 0
+let g:ycm_show_diagnostics_ui = 1
+let g:ycm_enable_diagnostic_highlighting = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf = 0
+let g:ycm_confirm_extra_conf = 1
 
 nmap <C-P> :YcmCompleter FixIt<CR>
 
@@ -284,6 +286,60 @@ nmap <C-P> :YcmCompleter FixIt<CR>
 set updatetime=250
 nmap <C-G> :GitGutterToggle<CR>
 let g:gitgutter_enabled = 0
+
+"------------------------------------------------------------------------------
+" ale config
+"------------------------------------------------------------------------------
+let g:ale_sign_column_always = 1
+
+let g:ale_sign_error = "✖"
+let g:ale_sign_warning = "⚠"
+let g:ale_lint_on_text_changed = 'never'
+
+let g:ale_c_clang_options = '-Wall -Wextra -DPROGRAM_NAME="\"nm\"" -std=gnu99 '
+	\ . system("find lib -name include -type d | sed 's/^/-I/'")
+	\ . system("find ../lib -name include -type d | sed 's/^/-I/'")
+	\ . system("find common/lib -name include -type d | sed 's/^/-I/'")
+let g:ale_cpp_clang_options = '-Wall -Wextra -std=c++14 -DLINUX -U__linux__ -fPIC '
+	\ . system("find include -type d | sed 's/^/-I/'")
+	\ . system("find external/{include,external} -type d | sed 's/^/-I/'")
+	\ . system("find /usr/include/OGRE -type d | sed 's/^/-isystem/'")
+	" \ . system("find /usr/include/qt/ -type d | sed 's/^/-I/'")
+
+let g:ale_c_clang_options = substitute(g:ale_c_clang_options, '\n', ' ', 'g')
+let g:ale_cpp_clang_options = substitute(g:ale_cpp_clang_options, '\n', ' ', 'g')
+
+let g:c_include_dirs = [
+	\ '.',
+	\ 'include',
+	\ 'external',
+	\ '/home/bazin_q/.froot/include',
+	\ '../libmy/include',
+	\ '../include',
+	\ '../common/include',
+	\ 'server/include',
+	\ 'common/include',
+	\ 'nm/include',
+	\ 'objdump/include'
+\ ]
+
+let g:cpp_include_dirs = [
+	\ '.',
+	\ 'include',
+	\ 'local',
+	\ 'external',
+	\ 'external/include',
+	\ '/usr/include/qt',
+	\ '../corewar/include',
+	\ '/usr/include/GLFW',
+	\ '/usr/include/SDL2',
+\ ]
+	" \ '/opt/cocos2d-x/cocos',
+	" \ '/opt/cocos2d-x/cocos/platform',
+	" \ '/opt/cocos2d-x/cocos/audio/include',
+
+let g:ale_c_clang_options .= " -I" . join(g:c_include_dirs, " -I")
+let g:ale_cpp_clang_options .= " -I" . join(g:cpp_include_dirs, " -I")
 
 "------------------------------------------------------------------------------
 " syntastic config
@@ -340,13 +396,13 @@ let g:syntastic_cpp_include_dirs = [
 	\ 'external/include',
 	\ '/usr/include/qt',
 	\ '../corewar/include',
-	\ '/opt/cocos2d-x/cocos',
-	\ '/usr/local/include/GLFW',
 	\ '/usr/include/GLFW',
-	\ '/opt/cocos2d-x/cocos',
-	\ '/opt/cocos2d-x/cocos/platform',
-	\ '/opt/cocos2d-x/cocos/audio/include'
+	\ '/usr/include/OGRE',
+	\ '/usr/include/OGRE/Bites'
 \ ]
+	" \ '/opt/cocos2d-x/cocos',
+	" \ '/opt/cocos2d-x/cocos/platform',
+	" \ '/opt/cocos2d-x/cocos/audio/include',
 
 "------------------------------------------------------------------------------
 " syntastic ASM config
@@ -382,7 +438,7 @@ let g:ctrlp_cmd = 'CtrlPCurWD'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
 
-set wildignore+=*/tmp/*,*/doxygen/*,*.so,*.swp,*.zip,*.o,*.d,*.o32,*.exe,*.oxx,*.moc.*
+set wildignore+=*/doxygen/*,*.so,*.swp,*.zip,*.o,*.d,*.o32,*.exe,*.oxx,*.moc.*,*/doc/html,*/doc/latex,*.png,*.mesh,*.skeleton
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 

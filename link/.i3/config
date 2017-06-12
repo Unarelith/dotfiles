@@ -296,10 +296,11 @@ bindsym XF86MonBrightnessUp         exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown       exec xbacklight -dec 5
 
 bindsym XF86Calculator              exec gnome-calculator
+bindsym XF86HomePage                exec --no-startup-id $terminal
 
 bindsym XF86AudioPlay               exec mpc toggle
 
-bindsym XF86Sleep                   exec systemctl suspend
+bindsym XF86Sleep                   exec systemctl suspend && $lock_screen
 
 # Invert colors
 bindsym $mod+Ctrl+i                 exec xcalib -i -a
@@ -335,6 +336,7 @@ bindsym $mod+$move_ws_key           move workspace to output left
 # Rules for Hangouts
 for_window [window_role="pop-up"]   floating enable
 for_window [title="Anodyne"]        floating enable
+for_window [title="Indie Studio: Gauntlet"] floating enable
 
 # Resize window (you can also use the mouse for that)
 mode "resize" {

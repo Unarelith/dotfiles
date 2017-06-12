@@ -1,6 +1,6 @@
 " ~/.dotfiles/link/.vim/sessions/PSU_2016_myftp.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 20 mai 2017 at 17:13:09.
+" Created by session.vim 2.13.1 on 21 mai 2017 at 23:41:10.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -26,18 +26,25 @@ endif
 set shortmess=aoO
 badd +22 Makefile
 badd +1 source/main.c
-badd +19 include/application.h
+badd +13 include/application.h
 badd +15 source/application.h
 badd +1 source/application.c
-badd +18 include/error.h
+badd +20 include/error.h
 badd +1 source/error.c
 badd +1 Notes
-badd +25 include/socket.h
+badd +27 include/socket.h
 badd +1 source/socket.c
-badd +1 include/command.h
+badd +38 include/command.h
 badd +1 source/command.c
-badd +1 include/ftp.h
-badd +1 source/ftp.c
+badd +18 include/ftp.h
+badd +45 source/ftp.c
+badd +19 include/client.h
+badd +11 source/client.c
+badd +0 include/server.h
+badd +0 source/server.c
+badd +24 source/ftp2.c
+badd +11 source/ftp3.c
+badd +13 source/ftp_file.c
 argglobal
 silent! argdel *
 $argadd Makefile
@@ -57,11 +64,11 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 5 - ((3 * winheight(0) + 25) / 51)
+let s:l = 19 - ((18 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-5
+19
 normal! 06|
 tabedit Makefile
 set splitbelow splitright
@@ -73,9 +80,9 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe '1resize ' . ((&lines * 51 + 27) / 55)
+exe '1resize ' . ((&lines * 50 + 27) / 54)
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe '2resize ' . ((&lines * 51 + 27) / 55)
+exe '2resize ' . ((&lines * 50 + 27) / 54)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
 argglobal
 setlocal fdm=manual
@@ -87,12 +94,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 22 - ((20 * winheight(0) + 25) / 51)
+let s:l = 25 - ((24 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-22
-normal! 025|
+25
+normal! 026|
 wincmd w
 argglobal
 edit source/main.c
@@ -105,16 +112,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 11 - ((10 * winheight(0) + 25) / 51)
+let s:l = 11 - ((10 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 11
 normal! 016|
 wincmd w
-exe '1resize ' . ((&lines * 51 + 27) / 55)
+exe '1resize ' . ((&lines * 50 + 27) / 54)
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe '2resize ' . ((&lines * 51 + 27) / 55)
+exe '2resize ' . ((&lines * 50 + 27) / 54)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
 tabedit include/application.h
 set splitbelow splitright
@@ -138,12 +145,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 13 - ((11 * winheight(0) + 26) / 52)
+let s:l = 19 - ((17 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-13
-normal! 021|
+19
+normal! 036|
 wincmd w
 argglobal
 edit source/application.c
@@ -156,17 +163,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 61 - ((39 * winheight(0) + 26) / 52)
+let s:l = 35 - ((25 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-61
-normal! 011|
+35
+normal! 0
 wincmd w
-2wincmd w
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabedit include/socket.h
+tabedit include/server.h
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -176,62 +182,7 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe '1resize ' . ((&lines * 51 + 27) / 55)
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe '2resize ' . ((&lines * 51 + 27) / 55)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 27 - ((26 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-27
-normal! 02|
-wincmd w
-argglobal
-edit source/socket.c
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 60 - ((33 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-60
-normal! 030|
-wincmd w
-exe '1resize ' . ((&lines * 51 + 27) / 55)
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe '2resize ' . ((&lines * 51 + 27) / 55)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabedit include/command.h
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe '1resize ' . ((&lines * 51 + 27) / 55)
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe '2resize ' . ((&lines * 51 + 27) / 55)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
 argglobal
 setlocal fdm=manual
@@ -243,15 +194,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal nofen
 silent! normal! zE
-let s:l = 38 - ((25 * winheight(0) + 25) / 51)
+let s:l = 19 - ((12 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-38
-normal! 071|
+19
+normal! 06|
 wincmd w
 argglobal
-edit source/command.c
+edit source/server.c
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -261,16 +212,14 @@ setlocal fml=1
 setlocal fdn=20
 setlocal nofen
 silent! normal! zE
-let s:l = 49 - ((41 * winheight(0) + 25) / 51)
+let s:l = 39 - ((32 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-49
-normal! 010|
+39
+normal! 070|
 wincmd w
-exe '1resize ' . ((&lines * 51 + 27) / 55)
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe '2resize ' . ((&lines * 51 + 27) / 55)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
 tabedit include/ftp.h
 set splitbelow splitright
@@ -282,9 +231,9 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe '1resize ' . ((&lines * 51 + 27) / 55)
+exe '1resize ' . ((&lines * 50 + 27) / 54)
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe '2resize ' . ((&lines * 51 + 27) / 55)
+exe '2resize ' . ((&lines * 50 + 27) / 54)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
 argglobal
 setlocal fdm=manual
@@ -296,12 +245,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal nofen
 silent! normal! zE
-let s:l = 17 - ((15 * winheight(0) + 25) / 51)
+let s:l = 23 - ((22 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-17
-normal! 02|
+23
+normal! 0
 wincmd w
 argglobal
 edit source/ftp.c
@@ -314,16 +263,221 @@ setlocal fml=1
 setlocal fdn=20
 setlocal nofen
 silent! normal! zE
-let s:l = 84 - ((46 * winheight(0) + 25) / 51)
+let s:l = 49 - ((48 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-84
-normal! 039|
+49
+normal! 0
 wincmd w
-exe '1resize ' . ((&lines * 51 + 27) / 55)
+exe '1resize ' . ((&lines * 50 + 27) / 54)
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe '2resize ' . ((&lines * 51 + 27) / 55)
+exe '2resize ' . ((&lines * 50 + 27) / 54)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+tabedit source/ftp2.c
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winheight=1 winminwidth=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 87 - ((41 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+87
+normal! 052|
+wincmd w
+argglobal
+edit source/ftp3.c
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 19 - ((10 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+19
+normal! 031|
+wincmd w
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+tabedit include/ftp.h
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winheight=1 winminwidth=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 02|
+wincmd w
+argglobal
+edit source/ftp_file.c
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 105 - ((42 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+105
+normal! 061|
+wincmd w
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+tabedit include/command.h
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winheight=1 winminwidth=1 winwidth=1
+exe '1resize ' . ((&lines * 50 + 27) / 54)
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 50 + 27) / 54)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 46 - ((0 * winheight(0) + 25) / 50)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+46
+normal! 018|
+wincmd w
+argglobal
+edit source/command.c
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 50 - ((49 * winheight(0) + 25) / 50)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+50
+normal! 027|
+wincmd w
+exe '1resize ' . ((&lines * 50 + 27) / 54)
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 50 + 27) / 54)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+tabedit include/socket.h
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winheight=1 winminwidth=1 winwidth=1
+exe '1resize ' . ((&lines * 50 + 27) / 54)
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 50 + 27) / 54)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 2 - ((0 * winheight(0) + 25) / 50)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+2
+normal! 066|
+wincmd w
+argglobal
+edit source/socket.c
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 42 - ((41 * winheight(0) + 25) / 50)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+42
+normal! 017|
+wincmd w
+exe '1resize ' . ((&lines * 50 + 27) / 54)
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 50 + 27) / 54)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
 tabedit include/error.h
 set splitbelow splitright
@@ -335,9 +489,9 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe '1resize ' . ((&lines * 51 + 27) / 55)
+exe '1resize ' . ((&lines * 50 + 27) / 54)
 exe 'vert 1resize ' . ((&columns * 102 + 103) / 207)
-exe '2resize ' . ((&lines * 51 + 27) / 55)
+exe '2resize ' . ((&lines * 50 + 27) / 54)
 exe 'vert 2resize ' . ((&columns * 104 + 103) / 207)
 argglobal
 setlocal fdm=manual
@@ -349,12 +503,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 20 - ((18 * winheight(0) + 25) / 51)
+let s:l = 21 - ((19 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-20
-normal! 043|
+21
+normal! 017|
 wincmd w
 argglobal
 edit source/error.c
@@ -367,18 +521,18 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 21 - ((19 * winheight(0) + 25) / 51)
+let s:l = 36 - ((34 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-21
-normal! 041|
+36
+normal! 014|
 wincmd w
-exe '1resize ' . ((&lines * 51 + 27) / 55)
+exe '1resize ' . ((&lines * 50 + 27) / 54)
 exe 'vert 1resize ' . ((&columns * 102 + 103) / 207)
-exe '2resize ' . ((&lines * 51 + 27) / 55)
+exe '2resize ' . ((&lines * 50 + 27) / 54)
 exe 'vert 2resize ' . ((&columns * 104 + 103) / 207)
-tabnext 3
+tabnext 6
 set stal=1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -397,7 +551,7 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 2wincmd w
-tabnext 3
+tabnext 6
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')
