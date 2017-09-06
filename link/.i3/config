@@ -153,6 +153,8 @@ exec --no-startup-id                conky &
 exec --no-startup-id                xrandr --setprovideroffloadsink 1 0
 exec --no-startup-id                mpd
 exec --no-startup-id                remind -z1 -m ~/.reminders &
+exec --no-startup-id                i3-msg "workspace $workspaceU; exec /usr/bin/urxvt -e fish -c 'cd ~/rendu/Perso/ModularGameEngine/Core'"
+exec --no-startup-id                i3-msg "workspace $workspaceI; exec /usr/bin/urxvt -e fish -c 'cd ~/rendu/Perso/ModularGameEngine/Core'"
 exec --no-startup-id                i3-msg "workspace $workspace1"
 
 exec_always --no-startup-id         /bin/bash ~/.config/polybar/launch
@@ -163,6 +165,9 @@ new_float                           normal 1
 
 for_window [class="URxvt"]          border none
 # for_window [name="dzen slave"]      border pixel 4
+
+assign [class="Chromium"] $workspace1
+assign [class="Discord"] $workspace10
 
 gaps inner 25
 bindsym $mod+g                      gaps inner current set 0

@@ -148,8 +148,7 @@ Plugin 'metakirby5/codi.vim'
 " Plugin 'michamos/vim-bepo'
 " Plugin 'w0rp/ale'
 
-Plugin 'Valloric/YouCompleteMe' " Valloric is the original author but oblitum claims better C/C++ support
-" Plugin 'oblitum/YouCompleteMe' " Valloric is the original author but oblitum claims better C/C++ support
+Plugin 'Valloric/YouCompleteMe'
 " Plugin 'jeaye/color_coded'      " <= Too slow to refresh + same thing as above + lots of bugs
 Plugin 'rdnetto/YCM-Generator'  " <= Used for these plugins
 

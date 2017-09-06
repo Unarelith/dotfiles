@@ -155,6 +155,10 @@ function gnidhaste
 	env HASTE_SERVER=http://paste.gnidmoo.tk haste $argv
 end
 
+function openfolder
+	nautilus . > /dev/null 2>&1 &
+end
+
 #------------------------------------------------------------------------------
 # Misc
 #------------------------------------------------------------------------------

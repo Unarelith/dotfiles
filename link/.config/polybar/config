@@ -3,7 +3,7 @@
 ; throttle_limit = 3
 
 [bar/top]
-monitor = DP1
+monitor = eDP1
 ; bottom = true
 width = 100%
 ; height = 34
@@ -40,7 +40,7 @@ modules-center = date-script
 modules-right = volume backlight wireless-network wired-network battery screens
 
 [bar/bottom]
-monitor = DP1
+monitor = eDP1
 bottom = true
 width = 100%
 height = 28
@@ -101,7 +101,7 @@ type = internal/xbacklight
 
 ; XRandR output to get get values from
 ; Default: the monitor defined for the running bar
-output = DP1
+output = eDP1
 
 ; Create scroll handlers used to set the backlight value
 ; Default: true

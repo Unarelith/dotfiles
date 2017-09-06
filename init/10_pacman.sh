@@ -18,6 +18,7 @@ gnucash
 gparted
 gtk-xfce-engine
 gvim
+hexchat
 i3status
 imagemagick
 kolourpaint
@@ -34,6 +35,7 @@ network-manager-applet
 networkmanager
 ntfs-3g
 openssh
+os-prober
 pavucontrol
 pkgfile
 polkit-gnome
@@ -58,8 +60,7 @@ ttf-ionicons
 ttf-liberation
 ttf-ubuntu-font-family
 vinagre
-xbacklight
-xchat
+xorg-xbacklight
 xcompmgr
 xsel'
 
@@ -69,7 +70,6 @@ i3-gaps
 i3lock-color-git
 i3lock-fancy-dualmonitors-git
 imgurbash2
-font-awesome
 gws
 nautilus-dropbox
 polybar-git
