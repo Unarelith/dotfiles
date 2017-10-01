@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-import os;
-import sys;
+import os
+import sys
 
 currentVolume = int(os.popen("pacmd list-sinks | grep volume | tail -3 | head -1 | awk '{print $5+0}'").read())
 

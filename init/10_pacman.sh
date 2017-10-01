@@ -19,6 +19,7 @@ gparted
 gtk-xfce-engine
 gvim
 hexchat
+i3blocks
 i3status
 imagemagick
 kolourpaint
@@ -119,7 +120,12 @@ read answer
 
 if [ "$answer" == "y" ] || [ "$anwser" == "Y" ]
 then
-	yaourt -Sy --needed $default_packages $default_aur_packages
+	sudo pacman -Sy --needed $default_packages
+
+	for package in $default_aur_packages
+	do
+		yaourt -S $package
+	done
 fi
 
 echo
@@ -135,11 +141,13 @@ then
 	for service in $systemd_services
 	do
 		sudo systemctl enable $service
+		sudo systemctl start $service
 	done
 
 	for service in $systemd_user_services
 	do
 		systemctl --user enable $service
+		systemctl --user start $service
 	done
 fi
 

@@ -3,7 +3,7 @@
 ; throttle_limit = 3
 
 [bar/top]
-monitor = eDP1
+monitor = ${env:MONITOR:}
 ; bottom = true
 width = 100%
 ; height = 34
@@ -40,7 +40,7 @@ modules-center = date-script
 modules-right = volume backlight wireless-network wired-network battery screens
 
 [bar/bottom]
-monitor = eDP1
+monitor = ${env:MONITOR:}
 bottom = true
 width = 100%
 height = 28
@@ -69,7 +69,7 @@ modules-center = memory cpu
 modules-right = systemd_user temperature weather-lyon bank-account pacman-updates disk-root disk-home
 
 [bar/external_bottom]
-;inherit-from = bar/bottom
+inherit-from = bar/bottom
 
 monitor = HDMI-1
 bottom = true
@@ -101,7 +101,7 @@ type = internal/xbacklight
 
 ; XRandR output to get get values from
 ; Default: the monitor defined for the running bar
-output = eDP1
+output = DP1
 
 ; Create scroll handlers used to set the backlight value
 ; Default: true

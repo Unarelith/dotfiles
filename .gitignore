@@ -26,8 +26,7 @@ link/.vim/.netrwhist
 link/.vim/sessions/*.lock
 link/.xchat2/scrollback
 link/.xchat2/xchatlogs
-link/Images/Screenshots
-link/Images/Web
+link/Images/*
 link/rendu/.cache.gws
 
 # Keep interesting stuff
@@ -47,6 +46,7 @@ link/rendu/.cache.gws
 !link/.local/share/konsole/Terminal.profile
 !link/.local/share/konsole/WhiteOnBlack.colorscheme
 !link/.local/share/systemd/user
+!link/Images/Backgrounds
 
 # Top secret stuff!
 link/.ssh/authorized_keys

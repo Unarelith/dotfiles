@@ -13,24 +13,20 @@ if [ "$1" == "laptop" ]
 then
 	echo ""
 
-	xrandr --output eDP1 --auto --output DP1 --off
-
-	sed -i 's/DP1/eDP1/g' ~/.config/polybar/config
+	xrandr --output eDP1 --auto --output DP1 --off --output DP2 --off
 
 elif [ "$1" == "both" ]
 then
 	echo ""
 
-	xrandr --output DP1 --auto --primary --right-of eDP1
+	xrandr --output DP2 --auto --right-of eDP1
+	xrandr --output DP1 --auto --primary --right-of DP2
 
-	sed -i 's/eDP1/DP1/g' ~/.config/polybar/config
 elif [ "$1" == "desktop" ]
 then
 	echo ""
 
 	xrandr --output DP1 --auto --primary --output eDP1 --off
-
-	sed -i 's/eDP1/DP1/g' ~/.config/polybar/config
 fi
 
 exec ~/.config/polybar/launch
