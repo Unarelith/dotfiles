@@ -22,6 +22,7 @@ hexchat
 i3status
 imagemagick
 kolourpaint
+libcanberra
 lm_sensors
 lxappearance
 mlocate
@@ -36,6 +37,7 @@ networkmanager
 ntfs-3g
 openssh
 os-prober
+patch
 pavucontrol
 pkgfile
 polkit-gnome

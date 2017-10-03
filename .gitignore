@@ -5,6 +5,7 @@ backups/
 # Don't commit uninteresting stuff
 link/.config/*
 link/.config/polybar/*.log
+link/.config/polybar/gmail
 link/.config/fish/fish_history
 link/.config/fish/fishd*
 link/.config/gtk-3.0/servers
