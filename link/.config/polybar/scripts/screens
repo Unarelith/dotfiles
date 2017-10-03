@@ -1,33 +1,43 @@
 #!/bin/bash
 
-if [ -z "$1" ]
-then
-	echo "Usage: screens [login|logout]"
-	exit 1
+# if [ -z "$1" ]
+# then
+# 	echo "Usage: screens [login|logout]"
+# 	exit 1
+# fi
+
+# log_file="$HOME/.local/share/.tetrane.log"
+# lastline="$(tail -1 $log_file)"
+#
+# if [ "$1" == "laptop" ]
+# then
+# 	echo ""
+#
+# 	xrandr --output eDP1 --auto --output DP1 --off --output DP2 --off
+#
+# elif [ "$1" == "both" ]
+# then
+# 	echo ""
+#
+# 	xrandr --output DP2 --auto --right-of eDP1
+# 	xrandr --output DP1 --auto --primary --right-of DP2
+#
+# elif [ "$1" == "desktop" ]
+# then
+# 	echo ""
+#
+# 	xrandr --output DP1 --auto --primary --output eDP1 --off
+# fi
+
+if type "xrandr" > /dev/null; then
+	for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+		xrandr --output $m --auto
+	done
+
+	for m in $(xrandr --query | grep " disconnected" | cut -d" " -f1); do
+		xrandr --output $m --off
+	done
 fi
 
-log_file="$HOME/.local/share/.tetrane.log"
-lastline="$(tail -1 $log_file)"
-
-if [ "$1" == "laptop" ]
-then
-	echo ""
-
-	xrandr --output eDP1 --auto --output DP1 --off --output DP2 --off
-
-elif [ "$1" == "both" ]
-then
-	echo ""
-
-	xrandr --output DP2 --auto --right-of eDP1
-	xrandr --output DP1 --auto --primary --right-of DP2
-
-elif [ "$1" == "desktop" ]
-then
-	echo ""
-
-	xrandr --output DP1 --auto --primary --output eDP1 --off
-fi
-
-exec ~/.config/polybar/launch
+bash ~/.config/polybar/launch &
 

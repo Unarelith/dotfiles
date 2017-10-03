@@ -512,9 +512,7 @@ type = custom/text
 
 content = 
 
-click-left = bash ~/.config/polybar/scripts/screens laptop
-click-middle = bash ~/.config/polybar/scripts/screens both
-click-right = bash ~/.config/polybar/scripts/screens desktop
+click-left = ~/.config/polybar/scripts/screens
 
 [module/systemd_user]
 type = custom/script
