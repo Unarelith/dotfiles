@@ -625,7 +625,7 @@ click-left = python ~/.config/polybar/dbus/client.py "weather"
 
 [module/wireless-network]
 type = internal/network
-interface = wlo1
+interface = ${env:POLYBAR_WLO:}
 interval = 3.0
 ; ping-interval = 10
 
@@ -649,7 +649,7 @@ animation-packetloss-framerate-ms = 500
 
 [module/wired-network]
 type = internal/network
-interface = enp0s25
+interface = ${env:POLYBAR_ETH:}
 interval = 3.0
 
 label-connected =    %{T3}%local_ip%%{T-}
