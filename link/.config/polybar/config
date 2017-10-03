@@ -101,11 +101,11 @@ type = internal/xbacklight
 
 ; XRandR output to get get values from
 ; Default: the monitor defined for the running bar
-output = DP1
+; output = DP1
 
 ; Create scroll handlers used to set the backlight value
 ; Default: true
-enable-scroll = false
+; enable-scroll = false
 
 ; Available tags:
 ;   <label> (default)
