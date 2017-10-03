@@ -11,18 +11,20 @@ if type "xrandr" > /dev/null; then
 fi
 
 # Needed to setup my personal workspace
-old_output=""
-for output in eDP1 DP2 DP1; do
-	if [ -z $(xrandr --query | grep "$output connected") ]; then
-		continue
-	fi
+if [ "$1" == "workspace" ]; then
+	old_output=""
+	for output in eDP1 DP2 DP1; do
+		if [ -z $(xrandr --query | grep "$output connected") ]; then
+			continue
+		fi
 
-	if [ -n "$old_output" ]; then
-		xrandr --output $old_output --left-of $output
-	fi
+		if [ -n "$old_output" ]; then
+			xrandr --output $old_output --left-of $output
+		fi
 
-	old_output=$output
-done
+		old_output=$output
+	done
+fi
 
 bash ~/.config/polybar/launch &
 

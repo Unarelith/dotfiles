@@ -513,6 +513,7 @@ type = custom/text
 content = 
 
 click-left = ~/.config/polybar/scripts/screens
+click-right = ~/.config/polybar/scripts/screens workspace
 
 [module/systemd_user]
 type = custom/script
