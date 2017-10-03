@@ -205,7 +205,7 @@ let g:indentLine_leadingSpaceChar = '·'
 let g:better_whitespace_filetypes_blacklist = ['diff', 'gitcommit', 'unite', 'qf', 'help', 'vim']
 let g:better_whitespace_verbosity = 1
 
-au FileType cfg,cmake,c,cpp,python au BufWritePre <buffer> StripWhitespace
+au FileType cfg,cmake,c,cpp,python,java au BufWritePre <buffer> StripWhitespace
 
 "------------------------------------------------------------------------------
 " vim-cpp-enhanced-highlight config
@@ -437,7 +437,7 @@ let g:ctrlp_cmd = 'CtrlPCurWD'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
 
-set wildignore+=*/doxygen/*,*.so,*.swp,*.zip,*.o,*.d,*.o32,*.exe,*.oxx,*.moc.*,*/doc/html,*/doc/latex,*.png,*.mesh,*.skeleton
+set wildignore+=*/doxygen/*,*.so,*.swp,*.zip,*.o,*.d,*.o32,*.exe,*.oxx,*.moc.*,*/doc/html,*/doc/latex,*.png,*.mesh,*.skeleton,*.class
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
