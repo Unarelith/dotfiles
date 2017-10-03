@@ -19,7 +19,6 @@ gparted
 gtk-xfce-engine
 gvim
 hexchat
-i3blocks
 i3status
 imagemagick
 kolourpaint

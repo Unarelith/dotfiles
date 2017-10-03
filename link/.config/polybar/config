@@ -291,14 +291,14 @@ click-right = python ~/.config/polybar/dbus/client.py "reminders"
 type = custom/script
 
 format =     <label>
-exec = /usr/lib/i3blocks/disk | head -1
+exec = ~/.i3/i3blocks/disk | head -1
 interval = 5
 
 [module/disk-root]
 type = custom/script
 
 format =     <label>
-exec = BLOCK_INSTANCE='/' /usr/lib/i3blocks/disk | head -1
+exec = BLOCK_INSTANCE='/' ~/.i3/i3blocks/disk | head -1
 interval = 5
 
 [module/filesystem]
