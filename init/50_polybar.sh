@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -ne "${BOLD}:: Do you want to install polybar plugins? [y/N]" $WHITE
+echo -ne "${BOLD}:: Do you want to install polybar plugins? [y/N] " $WHITE
 
 read answer
 

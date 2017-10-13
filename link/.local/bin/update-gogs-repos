@@ -121,7 +121,7 @@ do
 			echo -e "$BCYAN=> Trying to add 'gogs' remote in $(basename "$(pwd)")..." $WHITE
 			git remote remove origin
 			git remote add origin "$old_origin"
-			git remote set-url --add --push origin "$old_origin"
+			git remote set-url --add origin "$old_origin"
 
 			# Add 'gogs' remote to gogs repos
 			gogs_repo="$(basename "$(pwd)").git"
@@ -129,7 +129,7 @@ do
 			if [ $push_code -eq 0 ]
 			then
 				echo -e $BBLUE "[*] Gogs repo found in" "$(pwd)" $WHITE
-				git remote set-url --add --push origin gogs@git.gnidmoo.tk:$GOGS_USER/$(basename "$(pwd)").git
+				git remote set-url --add origin gogs@git.gnidmoo.tk:$GOGS_USER/$(basename "$(pwd)").git
 
 				echo -e $BBLUE "[*] Trying to push to 'origin'..." $WHITE
 				push_code="$(git push -u origin master > /dev/null 2>&1 ; echo $?)"

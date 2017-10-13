@@ -1,0 +1,49 @@
+$-------------------------------------------------------------------------
+== preprocessor.include-global ==
+#include <<CURSOR>>
+$-------------------------------------------------------------------------
+== preprocessor.include-local ==
+#include "<CURSOR>"
+$-------------------------------------------------------------------------
+== preprocessor.define ==
+#define	<CURSOR>
+$-------------------------------------------------------------------------
+== preprocessor.undefine ==
+#undef	<CURSOR>
+$-------------------------------------------------------------------------
+== preprocessor.if-else-endif ==
+#if |?CONDITION:u|
+<CURSOR><SPLIT>
+#else
+<+ELSE PART+>
+#endif
+$-------------------------------------------------------------------------
+== preprocessor.ifdef-else-endif ==
+#ifdef |?CONDITION:u|
+<CURSOR><SPLIT>
+#else
+<+ELSE PART+>
+#endif
+$-------------------------------------------------------------------------
+== preprocessor.ifndef-else-endif ==
+#ifndef |?CONDITION:u|
+<CURSOR><SPLIT>
+#else 
+<+ELSE PART+>
+#endif
+$-------------------------------------------------------------------------
+== preprocessor.ifndef-def-endif ==
+#ifndef |?BASENAME:L|_H_
+# define |BASENAME|_H_
+<CURSOR><SPLIT>
+#endif /* !|BASENAME|_H_ */
+$-------------------------------------------------------------------------
+== preprocessor.error ==
+#error "<CURSOR>"
+$-------------------------------------------------------------------------
+== preprocessor.line ==
+#line <CURSOR>
+$-------------------------------------------------------------------------
+== preprocessor.pragma ==
+#pragma <CURSOR>
+$-------------------------------------------------------------------------

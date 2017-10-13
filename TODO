@@ -1,0 +1,30 @@
+TODO
+
+# Core
+
+• TODO: Générer la locale en_US automatiquement
+• TODO: Ajouter les scripts qui sont dans `~/Dzen2`
+• TODO: Régler les problèmes avec les icônes de température
+• TODO: Trouver pourquoi le `popup-manager` ne démarre pas avec le système
+• TODO: Créer un script d’install pour ArchLinux
+
+# Dotfiles init scripts
+
+• TODO: Ne pas démarrer `NetworkManager`
+   → Peut-être même créer un script spécial pour `systemd`
+• TODO: Utiliser `yay` au lieu de `yaourt` pour l’installation des paquets AUR
+   → Séparer les paquets en `core` et `optional`, installer `core` et laisser choisir les paquets `optional`
+   → Ne pas installer les paquets déjà installés
+
+# Polybar
+
+• TODO: Régler les problèmes avec `POLYBAR_WLO`
+• TODO: Régler les problèmes avec l’affichage de l’IP en ethernet
+• TODO: Les écrans se mettent en place au deuxième clic droit uniquement
+
+# Vim
+
+• TODO: Ajouter mes templates custom dans `c.vim`
+   → Faire également un petit script pour remplir le fichier `Templates`
+• DONE: Virer les requêtes du plugin Wakatime pour la clé d’API
+
