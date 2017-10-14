@@ -44,5 +44,6 @@ TODO
 • DONE: Faire en sorte que le `popup-manager` démarre avec le système
 • TODO: Trouver une meilleure solution que relancer le service au lancement d’i3
 • TODO: Utiliser quelque chose de mieux que `dzen2`
-• TODO: Afficher les popups sur le bon écran
+• DONE: Afficher les popups sur le bon écran
+• TODO: Trouver une bonne formule d’affichage pour les listes (mpd, pacman)
 

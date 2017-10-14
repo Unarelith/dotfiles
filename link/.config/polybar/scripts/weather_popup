@@ -24,21 +24,21 @@ icons2="Typicons:size=16"
 icons3="Ionicons:size=16"
 icons4="Typicons:size=13"
 
-monitors=$(xrandr --listactivemonitors | head -1 | awk '{print $2}')
-if [ $monitors == '1' ]
-then
+# monitors=$(xrandr --listactivemonitors | head -1 | awk '{print $2}')
+# if [ $monitors == '1' ]
+# then
 	screen_height=$(xrandr --listactivemonitors | head -2 | tail -1 | cut -dx -f2 | awk '{print $1+0}')
 
 	x=1385
 	# y=899
 	y=$(($screen_height - 434))
-else
-	screen_height=$(xrandr --listactivemonitors | head -2 | tail -1 | cut -dx -f2 | awk '{print $1+0}')
-
-	x=3285
-	# y=1018
-	y=$(($screen_height - 434))
-fi
+# else
+# 	screen_height=$(xrandr --listactivemonitors | head -2 | tail -1 | cut -dx -f2 | awk '{print $1+0}')
+#
+# 	x=3285
+# 	# y=1018
+# 	y=$(($screen_height - 434))
+# fi
 
 #
 # ---------- Today info
@@ -253,7 +253,7 @@ echo "   ^bg(#222222)^fn($fn_14) $day5_name ^fn($fn1)^bg()  ^fn($wic_16)$day5_ic
 echo "   $day5_sum"
 echo "^bg(#666666)^fg(#222222)   Last update: $date   "
 
-) | dzen2 -p 10 -x $x -y $y -w 420 -bg $BG -fg $FG -h 27 -l 14 -sa l -ta l -e 'onstart=uncollapse;button1=exit;button3=exit' -fn $fn1 &
+) | dzen2 -p 10 -x $x -y $y -w 420 -bg $BG -fg $FG -h 27 -l 14 -sa l -ta l -e 'onstart=uncollapse;button1=exit;button3=exit' -fn $fn1 -xs "$(bash ~/.local/bin/get-current-output | awk '{print $2}')" &
 
 pid=$!
 echo $pid

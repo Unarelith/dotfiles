@@ -10,15 +10,15 @@ money_r=$(exec ~/.config/polybar/scripts/bank_account_get 1)
 money_p=$(exec ~/.config/polybar/scripts/bank_account_get 3)
 money_f=$(exec ~/.config/polybar/scripts/bank_account_get 5)
 
-monitors=$(xrandr --listactivemonitors | head -1 | awk '{print $2}')
-if [ $monitors == '1' ]
-then
+# monitors=$(xrandr --listactivemonitors | head -1 | awk '{print $2}')
+# if [ $monitors == '1' ]
+# then
 	x=1625
 	y=899
-else
-	x=3545
-	y=1018
-fi
+# else
+# 	x=3545
+# 	y=1018
+# fi
 
 (
 echo "
@@ -30,7 +30,7 @@ echo "$money_p
 "
 echo "$money_f"
 
-) | dzen2 -p 10 -x $x -y $y -w 150 -bg $BG -fg $FG -l 8 -sa c -ta c -e 'onstart=uncollapse;button1=exit;button3=exit' -fn $font1 &
+) | dzen2 -p 10 -x $x -y $y -w 150 -bg $BG -fg $FG -l 8 -sa c -ta c -e 'onstart=uncollapse;button1=exit;button3=exit' -fn $font1 -xs "$(bash ~/.local/bin/get-current-output | awk '{print $2}')" &
 
 pid=$!
 echo $pid
