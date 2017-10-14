@@ -88,17 +88,6 @@ ttf-weather-icons
 volnoti
 zeal'
 
-systemd_services='
-cronie
-slim
-NetworkManager'
-
-systemd_user_services='
-dropbox
-popup-manager
-pulseaudio
-redshift-gtk'
-
 echo -ne "$BOLD:: Do you want to install yaourt? [y/N]" $WHITE
 
 read answer
@@ -133,29 +122,6 @@ then
 	for package in $default_aur_packages
 	do
 		yaourt -S $package
-	done
-fi
-
-echo
-
-echo -e "${BOLD}Systemd services: $WHITE$systemd_services\n"
-echo -e "${BOLD}Systemd user services: $WHITE$systemd_user_services\n"
-echo -ne "${BOLD}:: Do you want to enable them? [y/N]" $WHITE
-
-read answer
-
-if [ "$answer" == "y" ] || [ "$anwser" == "Y" ]
-then
-	for service in $systemd_services
-	do
-		sudo systemctl enable $service
-		sudo systemctl start $service
-	done
-
-	for service in $systemd_user_services
-	do
-		systemctl --user enable $service
-		systemctl --user start $service
 	done
 fi
 

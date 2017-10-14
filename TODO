@@ -1,30 +1,48 @@
 TODO
 
+# System
+
+• TODO: Créer un script d’install pour ArchLinux
+   ◦ TODO: Générer la locale en_US automatiquement pour la popup météo
+
 # Core
 
-• TODO: Générer la locale en_US automatiquement
 • TODO: Ajouter les scripts qui sont dans `~/Dzen2`
-• TODO: Régler les problèmes avec les icônes de température
-• TODO: Trouver pourquoi le `popup-manager` ne démarre pas avec le système
-• TODO: Créer un script d’install pour ArchLinux
+• TODO: Créer un script pour afficher le résultat de speedtests (paquet `speedtest-cli`)
+• TODO: Réécrire un script de gestion de dotfiles
+   ◦ TODO: Repenser l’architecture des init scripts
+
+# Conky
+
+• TODO: Faire un vrai conky: https://github.com/davidrlunu/dots-and-dashes
+   ◦ TODO: Ajouter un scrapper pour récupérer les deadlines des projets sur l’intra
 
 # Dotfiles init scripts
 
-• TODO: Ne pas démarrer `NetworkManager`
-   → Peut-être même créer un script spécial pour `systemd`
+• DONE: Ne pas démarrer `NetworkManager`
+   → DONE: Peut-être même créer un script spécial pour `systemd`
 • TODO: Utiliser `yay` au lieu de `yaourt` pour l’installation des paquets AUR
    → Séparer les paquets en `core` et `optional`, installer `core` et laisser choisir les paquets `optional`
    → Ne pas installer les paquets déjà installés
+• TODO: Faire des groupements de paquets pour permettre à l’utilisateur de n’installer qu’une partie du système
 
 # Polybar
 
 • TODO: Régler les problèmes avec `POLYBAR_WLO`
 • TODO: Régler les problèmes avec l’affichage de l’IP en ethernet
-• TODO: Les écrans se mettent en place au deuxième clic droit uniquement
+• TODO: Les écrans se mettent en place au deuxième clic droit uniquement, pourquoi ?
 
 # Vim
 
-• TODO: Ajouter mes templates custom dans `c.vim`
-   → Faire également un petit script pour remplir le fichier `Templates`
+• WIP: Ajouter mes templates custom dans `c.vim`
+   ◦ TODO: Copier automatiquement les fichiers custom
+   ◦ TODO: Faire également un petit script pour remplir le fichier `Templates`
 • DONE: Virer les requêtes du plugin Wakatime pour la clé d’API
+
+# Popup Manager
+
+• DONE: Faire en sorte que le `popup-manager` démarre avec le système
+• TODO: Trouver une meilleure solution que relancer le service au lancement d’i3
+• TODO: Utiliser quelque chose de mieux que `dzen2`
+• TODO: Afficher les popups sur le bon écran
 
