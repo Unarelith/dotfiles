@@ -134,6 +134,7 @@ type = custom/script
 
 format = <label>
 exec = python ~/.config/polybar/scripts/bank_account_get status
+exec-if = which gnucash
 interval = 300
 
 click-left = python ~/.config/polybar/dbus/client.py "bank-account"
