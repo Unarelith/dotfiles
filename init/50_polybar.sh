@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -ne "${BOLD}:: Do you want to install polybar plugins? [y/N] " $WHITE
+echo -ne "${BOLD}:: Do you want to install polybar gmail plugin? [y/N] " $WHITE
 
 read answer
 
@@ -15,5 +15,16 @@ then
 	mv polybar-gmail-master gmail && \
 	patch ~/.config/polybar/gmail/launch.py -i ~/.dotfiles/patches/polybar_gmail.patch && \
 	python ~/.config/polybar/gmail/auth.py
+fi
+
+echo -ne "${BOLD}:: Do you want to install piecash? [y/N] " $WHITE
+
+read answer
+
+if [ "$answer" == "y" ] || [ "$anwser" == "Y" ]
+then
+	echo -e "\n=> Installing piecash...\n"
+
+	sudo pip install piecash
 fi
 

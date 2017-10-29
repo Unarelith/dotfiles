@@ -1,6 +1,6 @@
-" ~/.dotfiles/link/.vim/sessions/default.vim:
+" ~/.dotfiles/link/.vim/sessions/Java_jcoinche_2017.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 20 octobre 2017 at 15:19:13.
+" Created by session.vim 2.13.1 on 23 octobre 2017 at 12:56:14.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -24,10 +24,21 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +19 build.gradle
+badd +20 build.gradle
 badd +1 source/Greeter.java
-badd +0 source/HelloWorld.java
-badd +0 TODO
+badd +5 source/HelloWorld.java
+badd +38 TODO
+badd +1 source/server/Greeter.java
+badd +5 source/server/HelloWorld.java
+badd +3 source/client/HelloWorld.java
+badd +2 source/client/Greeter.java
+badd +1 settings.gradle
+badd +1 source/common/Greeter.java
+badd +1 source/client/Application.java
+badd +10 source/server/Application.java
+badd +10 source/server/CardDeck.java
+badd +3 source/server/Card.java
+badd +1 source/server/CardType.java
 argglobal
 silent! argdel *
 $argadd build.gradle
@@ -38,12 +49,19 @@ wincmd _ | wincmd |
 vsplit
 1wincmd h
 wincmd w
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 4 + 27) / 54)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+exe '3resize ' . ((&lines * 46 + 27) / 54)
+exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
 argglobal
 setlocal fdm=expr
 setlocal fde=xolox#notes#foldexpr()
@@ -53,12 +71,30 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 4 - ((3 * winheight(0) + 25) / 51)
+let s:l = 38 - ((37 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-4
+38
 normal! 0
+wincmd w
+argglobal
+if bufexists('settings.gradle') | buffer settings.gradle | else | edit settings.gradle | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 2) / 4)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 09|
 wincmd w
 argglobal
 if bufexists('build.gradle') | buffer build.gradle | else | edit build.gradle | endif
@@ -71,16 +107,19 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 19 - ((18 * winheight(0) + 25) / 51)
+let s:l = 28 - ((11 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-19
-normal! 050|
+28
+normal! 071|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 4 + 27) / 54)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabedit source/HelloWorld.java
+exe '3resize ' . ((&lines * 46 + 27) / 54)
+exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
+tabedit source/server/Application.java
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -100,17 +139,17 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal fen
+setlocal nofen
 silent! normal! zE
-let s:l = 5 - ((4 * winheight(0) + 25) / 51)
+let s:l = 12 - ((11 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-5
-normal! 0
+12
+normal! 013|
 wincmd w
 argglobal
-if bufexists('source/Greeter.java') | buffer source/Greeter.java | else | edit source/Greeter.java | endif
+if bufexists('source/client/Application.java') | buffer source/client/Application.java | else | edit source/client/Application.java | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -118,18 +157,95 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal fen
+setlocal nofen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 25) / 51)
+let s:l = 10 - ((9 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+10
 normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabnext 1
+tabedit source/server/CardDeck.java
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winheight=1 winminwidth=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 25 + 27) / 54)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+exe '3resize ' . ((&lines * 25 + 27) / 54)
+exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 27 - ((26 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+27
+normal! 072|
+wincmd w
+argglobal
+if bufexists('source/server/CardType.java') | buffer source/server/CardType.java | else | edit source/server/CardType.java | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 6 - ((5 * winheight(0) + 12) / 25)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+6
+normal! 0
+wincmd w
+argglobal
+if bufexists('source/server/Card.java') | buffer source/server/Card.java | else | edit source/server/Card.java | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 33 - ((24 * winheight(0) + 12) / 25)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+33
+normal! 0
+wincmd w
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 25 + 27) / 54)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+exe '3resize ' . ((&lines * 25 + 27) / 54)
+exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
+tabnext 2
 set stal=1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -148,7 +264,7 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 1wincmd w
-tabnext 1
+tabnext 2
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

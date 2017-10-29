@@ -4,6 +4,7 @@ TODO
 
 • TODO: Créer un script d’install pour ArchLinux
    ◦ TODO: Générer la locale en_US automatiquement pour la popup météo
+• TODO: Installer la config de `slim`
 
 # Core
 
@@ -11,6 +12,7 @@ TODO
 • TODO: Créer un script pour afficher le résultat de speedtests (paquet `speedtest-cli`)
 • TODO: Réécrire un script de gestion de dotfiles
    ◦ TODO: Repenser l’architecture des init scripts
+• TODO: `restart-composer` script
 
 # Conky
 
@@ -26,24 +28,32 @@ TODO
    → Ne pas installer les paquets déjà installés
 • TODO: Faire des groupements de paquets pour permettre à l’utilisateur de n’installer qu’une partie du système
 
+# Dunst
+
+• TODO: Make a nice theme, well integrated with Polybar
+
 # Polybar
 
-• TODO: Régler les problèmes avec `POLYBAR_WLO`
+• TODO: Régler les problèmes avec `POLYBAR_WLO` (trouver un meilleur moyen de choper le nom de l’interface)
 • TODO: Régler les problèmes avec l’affichage de l’IP en ethernet
 • TODO: Les écrans se mettent en place au deuxième clic droit uniquement, pourquoi ?
 
 # Vim
 
+• DONE: Virer les requêtes du plugin Wakatime pour la clé d’API
 • WIP: Ajouter mes templates custom dans `c.vim`
    ◦ TODO: Copier automatiquement les fichiers custom
    ◦ TODO: Faire également un petit script pour remplir le fichier `Templates`
-• DONE: Virer les requêtes du plugin Wakatime pour la clé d’API
+• TODO: Virer les plugins inutiles
+• TODO: Découper la config
+• TODO: Installer automatiquement une mini-config pour `root`
 
 # Popup Manager
 
+• DONE: Afficher les popups sur le bon écran
 • DONE: Faire en sorte que le `popup-manager` démarre avec le système
 • TODO: Trouver une meilleure solution que relancer le service au lancement d’i3
-• TODO: Utiliser quelque chose de mieux que `dzen2`
-• DONE: Afficher les popups sur le bon écran
 • TODO: Trouver une bonne formule d’affichage pour les listes (mpd, pacman)
+• TODO: Créer une popup pour les mails non lus
+• TODO: Utiliser quelque chose de mieux que `dzen2`
 

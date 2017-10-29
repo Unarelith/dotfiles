@@ -1,5 +1,7 @@
 #!/bin/bash
 
+bash ~/.config/polybar/kill &
+
 if type "xrandr" > /dev/null; then
 	for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
 		xrandr --output $m --auto
@@ -13,13 +15,16 @@ fi
 # Needed to setup my personal workspace
 if [ "$1" == "workspace" ]; then
 	old_output=""
-	for output in eDP1 DP2 DP1; do
+	# for output in eDP1 DP2 DP1; do
+	for output in eDP1 DP1; do
 		if [ -z $(xrandr --query | grep "$output connected") ]; then
 			continue
 		fi
 
 		if [ -n "$old_output" ]; then
 			xrandr --output $old_output --left-of $output
+		else
+			xrandr --output $output --auto
 		fi
 
 		old_output=$output

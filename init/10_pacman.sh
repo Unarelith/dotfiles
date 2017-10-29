@@ -79,6 +79,7 @@ dropbox
 i3-gaps
 i3lock-color-git
 i3lock-fancy-dualmonitors-git
+gnucash
 gws
 nautilus-dropbox
 polybar-git

@@ -147,6 +147,7 @@ Plugin 'skywind3000/asyncrun.vim'
 Plugin 'metakirby5/codi.vim'
 " Plugin 'michamos/vim-bepo'
 " Plugin 'w0rp/ale'
+Plugin 'ervandew/eclim'
 
 Plugin 'Valloric/YouCompleteMe'
 " Plugin 'jeaye/color_coded'      " <= Too slow to refresh + same thing as above + lots of bugs
@@ -160,7 +161,7 @@ Plugin 'rails.vim'
 " Plugin 'AutoClose'
 Plugin 'c.vim'
 " Plugin 'VimCalc'
-Plugin 'VimIRC.vim'
+" Plugin 'VimIRC.vim'
 Plugin 'Tab-Manager'
 Plugin 'Tab-Menu'
 Plugin 'project.tar.gz'
@@ -409,6 +410,12 @@ let g:syntastic_cpp_include_dirs = [
 let g:syntastic_asm_compiler_options = '-msyntax=intel'
 
 "------------------------------------------------------------------------------
+" syntastic Java config
+"------------------------------------------------------------------------------
+let g:syntastic_java_checkers = ['javac']
+let g:syntastic_java_javac_config_file_enabled = 1
+
+"------------------------------------------------------------------------------
 " vim-altr mappings
 "------------------------------------------------------------------------------
 nmap <S-Up>   :call altr#back()<CR>zz
@@ -437,7 +444,7 @@ let g:ctrlp_cmd = 'CtrlPCurWD'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
 
-set wildignore+=*/doxygen/*,*.so,*.swp,*.zip,*.o,*.d,*.o32,*.exe,*.oxx,*.moc.*,*/doc/html,*/doc/latex,*.png,*.mesh,*.skeleton,*.class
+set wildignore+=*/doxygen/*,*.so,*.swp,*.zip,*.o,*.d,*.o32,*.exe,*.oxx,*.moc.*,*/doc/html,*/doc/latex,*.png,*.mesh,*.skeleton,*.class,*/CMakeFiles/*,*/.gradle/*,*/build/*
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
