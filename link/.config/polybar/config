@@ -130,9 +130,11 @@ bar-empty-font = 3
 bar-empty-foreground = #44
 
 [module/bank-account]
-type = custom/text
+type = custom/script
 
-content = 
+format = <label>
+exec = python ~/.config/polybar/scripts/bank_account_get status
+interval = 300
 
 click-left = python ~/.config/polybar/dbus/client.py "bank-account"
 
@@ -530,7 +532,7 @@ type = custom/script
 format =     <label>
 format-foreground = #f00
 exec = failed=`systemctl --user status | head -4 | tail -1 | awk '{print $2+0}'`; [ "$failed" -ne 0 ] && echo $failed
-interval = 300
+interval = 30
 
 click-left = python ~/.config/polybar/dbus/client.py "systemd_units"
 

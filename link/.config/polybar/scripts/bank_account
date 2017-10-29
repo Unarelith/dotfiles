@@ -11,7 +11,7 @@ money=$(exec ~/.config/polybar/scripts/bank_account_get)
 # monitors=$(xrandr --listactivemonitors | head -1 | awk '{print $2}')
 # if [ $monitors == '1' ]
 # then
-	x=1605
+	x=1595
 	y=880
 # else
 # 	x=3545

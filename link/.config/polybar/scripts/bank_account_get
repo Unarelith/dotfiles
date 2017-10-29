@@ -7,6 +7,10 @@ from os.path import expanduser
 from piecash import open_book
 import sys
 
+printStatus = False
+if len(sys.argv) > 1 and sys.argv[1] == "status":
+    printStatus = True
+
 with open_book(expanduser("~") + "/Dropbox/Comptes/Comptes.gnucash", open_if_lock=True) as book:
     for acc in book.accounts:
         if acc.name == "Compte chèques":
@@ -15,13 +19,19 @@ with open_book(expanduser("~") + "/Dropbox/Comptes/Comptes.gnucash", open_if_loc
                     sum([sp.value for sp in acc.splits]) * acc.sign]                                                           # Future
             state_names = ['Pointé', 'Présent', 'Futur']
 
-            for state in range(0, 3):
-                print(state_names[state], ":", sep='', end='')
-
-                if sums[state] < 0:
-                    print("^fg(#ff0000)", sums[state], " €^fg()\n", sep=' ')
+            if printStatus:
+                if sums[1] < 0:
+                    print("%{F#f00}   ", round(sums[1] / 100), "%{F-}", sep='')
                 else:
-                    print(sums[state], "€\n")
+                    print("  ", round(sums[1] / 100))
+            else:
+                for state in range(0, 3):
+                    print(state_names[state], ":", sep='', end='')
+
+                    if sums[state] < 0:
+                        print("^fg(#ff0000)", sums[state], " €^fg()\n", sep=' ')
+                    else:
+                        print(sums[state], "€\n")
 
 # os.system("pkill -RTMIN+2 i3blocks")
 
