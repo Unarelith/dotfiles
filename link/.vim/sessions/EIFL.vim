@@ -1,6 +1,6 @@
 " ~/.dotfiles/link/.vim/sessions/EIFL.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 28 octobre 2017 at 20:36:07.
+" Created by session.vim 2.13.1 on 02 novembre 2017 at 17:38:02.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -41,13 +41,13 @@ badd +23 include/ScheduleWidget.hpp
 badd +21 source/ScheduleWidget.cpp
 badd +26 include/ProjectsWidget.hpp
 badd +29 include/IntraData.hpp
-badd +43 include/IntraProject.hpp
+badd +31 include/IntraProject.hpp
 badd +58 source/IntraData.cpp
-badd +33 source/IntraProject.cpp
+badd +22 source/IntraProject.cpp
 badd +14 include/ProjectInfoWidget.hpp
-badd +20 source/ProjectInfoWidget.cpp
-badd +1 include/ProjectListWidget.hpp
-badd +20 source/ProjectListWidget.cpp
+badd +48 source/ProjectInfoWidget.cpp
+badd +22 include/ProjectListWidget.hpp
+badd +14 source/ProjectListWidget.cpp
 badd +82 CMakeLists.txt
 badd +1 ~/rendu/Autres/minemgr/CMakeCache.txt
 badd +48 ~/rendu/Autres/minemgr/CMakeLists.txt
@@ -58,29 +58,33 @@ badd +1 .giti
 badd +24 include/ProjectScheduleWidget.hpp
 badd +67 source/ProjectScheduleWidget.cpp
 badd +42 include/IntraEvent.hpp
-badd +38 source/IntraEvent.cpp
-badd +30 source/EventInfoWidget.cpp
+badd +35 source/IntraEvent.cpp
+badd +40 source/EventInfoWidget.cpp
 badd +26 include/EventInfoWidget.hpp
 badd +14 old/README.md
-badd +46 TODO
+badd +48 TODO
 badd +25 include/CalendarWidget.hpp
-badd +25 source/CalendarWidget.cpp
+badd +62 source/CalendarWidget.cpp
 badd +34 include/EventListWidget.hpp
-badd +60 source/EventListWidget.cpp
+badd +22 source/EventListWidget.cpp
 badd +41 include/CalendarSettingsWidget.hpp
 badd +69 source/CalendarSettingsWidget.cpp
 badd +9 res/config/icons.qrc
 badd +1 res/icons.qrc
-badd +23 include/UserInfoWidget.hpp
-badd +40 source/UserInfoWidget.cpp
+badd +17 include/UserInfoWidget.hpp
+badd +29 source/UserInfoWidget.cpp
 badd +33 include/IntraUser.hpp
 badd +33 source/IntraUser.cpp
 badd +40 include/IntraModule.hpp
-badd +1 source/IntraModule.cpp
-badd +35 include/ModuleListWidget.hpp
-badd +1 source/ModuleListWidget.cpp
+badd +26 source/IntraModule.cpp
+badd +32 include/ModuleListWidget.hpp
+badd +49 source/ModuleListWidget.cpp
 badd +17 include/ModuleInfoWidget.hpp
-badd +1 source/ModuleInfoWidget.cpp
+badd +33 source/ModuleInfoWidget.cpp
+badd +27 include/IntraNotification.hpp
+badd +21 source/IntraNotification.cpp
+badd +28 include/NotificationListWidget.hpp
+badd +22 source/NotificationListWidget.cpp
 argglobal
 silent! argdel *
 $argadd projects.py
@@ -113,12 +117,12 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 48 - ((47 * winheight(0) + 25) / 51)
+let s:l = 83 - ((31 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-48
-normal! 0
+83
+normal! 027|
 wincmd w
 argglobal
 if bufexists('CMakeLists.txt') | buffer CMakeLists.txt | else | edit CMakeLists.txt | endif
@@ -131,11 +135,11 @@ setlocal fml=1
 setlocal fdn=20
 setlocal nofen
 silent! normal! zE
-let s:l = 20 - ((6 * winheight(0) + 12) / 25)
+let s:l = 76 - ((13 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-20
+76
 normal! 0
 wincmd w
 argglobal
@@ -183,12 +187,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 25) / 51)
+let s:l = 33 - ((10 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+33
+normal! 09|
 wincmd w
 argglobal
 if bufexists('source/main.cpp') | buffer source/main.cpp | else | edit source/main.cpp | endif
@@ -201,12 +205,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 16 - ((15 * winheight(0) + 25) / 51)
+let s:l = 26 - ((25 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-16
-normal! 02|
+26
+normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
@@ -232,12 +236,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 43 - ((24 * winheight(0) + 25) / 51)
+let s:l = 63 - ((47 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-43
-normal! 047|
+63
+normal! 056|
 wincmd w
 argglobal
 if bufexists('source/MainWindow.cpp') | buffer source/MainWindow.cpp | else | edit source/MainWindow.cpp | endif
@@ -250,11 +254,11 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 111 - ((38 * winheight(0) + 25) / 51)
+let s:l = 65 - ((19 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-111
+65
 normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
@@ -269,8 +273,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 1resize ' . ((&columns * 100 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 106 + 103) / 207)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -281,12 +285,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 29 - ((22 * winheight(0) + 25) / 51)
+let s:l = 40 - ((18 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-29
-normal! 09|
+40
+normal! 042|
 wincmd w
 argglobal
 if bufexists('source/IntraData.cpp') | buffer source/IntraData.cpp | else | edit source/IntraData.cpp | endif
@@ -299,64 +303,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 72 - ((39 * winheight(0) + 25) / 51)
+let s:l = 71 - ((44 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-72
-normal! 063|
+71
+normal! 071|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabedit include/IntraProject.hpp
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 31 - ((27 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-31
-normal! 09|
-wincmd w
-argglobal
-if bufexists('source/IntraProject.cpp') | buffer source/IntraProject.cpp | else | edit source/IntraProject.cpp | endif
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 26 - ((18 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-26
-normal! 060|
-wincmd w
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 100 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 106 + 103) / 207)
 tabedit include/IntraModule.hpp
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -379,12 +335,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal nofen
 silent! normal! zE
-let s:l = 40 - ((39 * winheight(0) + 25) / 51)
+let s:l = 33 - ((29 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-40
-normal! 046|
+33
+normal! 0
 wincmd w
 argglobal
 if bufexists('source/IntraModule.cpp') | buffer source/IntraModule.cpp | else | edit source/IntraModule.cpp | endif
@@ -397,310 +353,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal nofen
 silent! normal! zE
-let s:l = 26 - ((25 * winheight(0) + 25) / 51)
+let s:l = 18 - ((17 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-26
+18
 normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabedit include/ProjectListWidget.hpp
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-wincmd w
-argglobal
-if bufexists('source/ProjectListWidget.cpp') | buffer source/ProjectListWidget.cpp | else | edit source/ProjectListWidget.cpp | endif
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 27 - ((20 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-27
-normal! 038|
-wincmd w
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabedit include/ModuleListWidget.hpp
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 32 - ((31 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-32
-normal! 0
-wincmd w
-argglobal
-if bufexists('source/ModuleListWidget.cpp') | buffer source/ModuleListWidget.cpp | else | edit source/ModuleListWidget.cpp | endif
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 49 - ((40 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-49
-normal! 013|
-wincmd w
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabedit include/ModuleInfoWidget.hpp
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 17 - ((16 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-17
-normal! 0
-wincmd w
-argglobal
-if bufexists('source/ModuleInfoWidget.cpp') | buffer source/ModuleInfoWidget.cpp | else | edit source/ModuleInfoWidget.cpp | endif
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 33 - ((32 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-33
-normal! 031|
-wincmd w
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabedit include/UserInfoWidget.hpp
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 17 - ((16 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-17
-normal! 017|
-wincmd w
-argglobal
-if bufexists('source/UserInfoWidget.cpp') | buffer source/UserInfoWidget.cpp | else | edit source/UserInfoWidget.cpp | endif
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 29 - ((18 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-29
-normal! 0
-wincmd w
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabedit include/ProjectInfoWidget.hpp
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 14 - ((13 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-14
-normal! 0
-wincmd w
-argglobal
-if bufexists('source/ProjectInfoWidget.cpp') | buffer source/ProjectInfoWidget.cpp | else | edit source/ProjectInfoWidget.cpp | endif
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 48 - ((38 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-48
-normal! 05|
-wincmd w
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabedit include/CalendarWidget.hpp
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 25 - ((24 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-25
-normal! 0
-wincmd w
-argglobal
-if bufexists('source/CalendarWidget.cpp') | buffer source/CalendarWidget.cpp | else | edit source/CalendarWidget.cpp | endif
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 62 - ((49 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-62
-normal! 05|
-wincmd w
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabnext 1
+tabnext 4
 set stal=1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -718,8 +380,8 @@ let &so = s:so_save | let &siso = s:siso_save
 " Everything down here is generated by vim-session (not supported
 " by :mksession out of the box).
 
-1wincmd w
-tabnext 1
+2wincmd w
+tabnext 4
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

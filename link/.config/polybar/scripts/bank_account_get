@@ -1,11 +1,12 @@
 #!/bin/env python3
 # encoding: utf-8
 
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 import os
 from os.path import expanduser
 from piecash import open_book
 import sys
+import math
 
 printStatus = False
 if len(sys.argv) > 1 and sys.argv[1] == "status":
@@ -14,22 +15,23 @@ if len(sys.argv) > 1 and sys.argv[1] == "status":
 with open_book(expanduser("~") + "/Dropbox/Comptes/Comptes.gnucash", open_if_lock=True) as book:
     for acc in book.accounts:
         if acc.name == "Compte chèques":
+            now = datetime.now(timezone.utc) + timedelta(hours=11, minutes=59)
             sums = [sum([sp.value for sp in acc.splits if sp.reconcile_state != 'n']) * acc.sign,                              # Reconciled
-                    sum([sp.value for sp in acc.splits if sp.transaction.post_date < datetime.now(timezone.utc)]) * acc.sign,  # Present
+                    sum([sp.value for sp in acc.splits if sp.transaction.post_date <= now]) * acc.sign,                        # Present
                     sum([sp.value for sp in acc.splits]) * acc.sign]                                                           # Future
             state_names = ['Pointé', 'Présent', 'Futur']
 
             if printStatus:
-                if sums[1] < 0:
-                    print("%{F#f00}   ", round(sums[1] / 100), "%{F-}", sep='')
+                if sums[0] < 0 or sums[1] < 0 or sums[2] < 0:
+                    print("%{F#f00}    ", math.floor(sums[1] / 100), "%{F-}", sep='')
                 else:
-                    print("  ", round(sums[1] / 100))
+                    print("   ", math.floor(sums[1] / 100))
             else:
                 for state in range(0, 3):
-                    print(state_names[state], ":", sep='', end='')
+                    print("^fg(#777777)", state_names[state], ":^fg() ", sep='', end='')
 
                     if sums[state] < 0:
-                        print("^fg(#ff0000)", sums[state], " €^fg()\n", sep=' ')
+                        print("^fg(#ff0000)", sums[state], " €^fg()\n", sep='')
                     else:
                         print(sums[state], "€\n")
 

@@ -18,6 +18,12 @@ TODO
 
 • TODO: Faire un vrai conky: https://github.com/davidrlunu/dots-and-dashes
    ◦ TODO: Ajouter un scrapper pour récupérer les deadlines des projets sur l’intra
+   ◦ TODO: Ajouter les dépendances
+      ◦ TODO: Pour `.gifbg`
+         ▸ gifsicle
+         ▸ shantz-xwinwrap-bzr (AUR)
+      ◦ TODO: Pour `conky-cpus`
+         ▸ conky-cairo (AUR) (Remplace `conky`)
 
 # Dotfiles init scripts
 

@@ -34,5 +34,5 @@ for icon, str_list in weather_icons.items():
     if weather_str in str_list:
         sys.stdout.write(icon)
 
-sys.stdout.write("  " + str(temp) + "°C - " + city)
+sys.stdout.write("   " + str(temp) + "°C - " + city)
 
