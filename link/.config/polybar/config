@@ -369,6 +369,7 @@ bar-used-empty-foreground = #55
 type = custom/script
 
 format =     <label>
+exec-if = test -f ~/.config/polybar/gmail/launch.py
 exec = ~/.config/polybar/gmail/launch.py --prefix ''
 tail = true
 
