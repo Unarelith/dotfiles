@@ -79,9 +79,7 @@ arch-chroot /mnt
 ```sh
 echo quentin-key > /etc/hostname
 echo '127.0.1.1 quentin-key.localdomain quentin-key' >> /etc/hosts
-ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
-rm /etc/localtime
-ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
+ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 vi /etc/locale.gen
 locale-gen
 echo LANG="fr_FR.UTF-8" > /etc/locale.conf
@@ -94,8 +92,11 @@ passwd bazin_q
 vim /etc/sudoers
 ```
 
-• Installer le bootloader
-
+• Installer le bootloader (MBR/GPT, ici MBR):
+```sh
+grub-install --target=i386-pc --no-floppy --recheck /dev/sdb
+grub-mkconfig -o /boot/grub/grub.cfg
+```
 • Installer X:
 ```sh
 pacman -S xorg-server xorg-xinit
