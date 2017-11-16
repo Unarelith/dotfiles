@@ -84,6 +84,9 @@ set shell=/bin/bash
 au BufRead,BufNewFile *.md set wrap linebreak nofoldenable
 au BufRead,BufNewFile *.note,Notes,TODO,FIXME set filetype=notes nofoldenable
 
+au BufRead,BufNewFile *.qrc set filetype=xml
+au BufRead,BufNewFile *.qrc let b:syntastic_skip_checks = 1
+
 "------------------------------------------------------------------------------
 " Setup the default colorsheme
 "------------------------------------------------------------------------------
@@ -147,7 +150,10 @@ Plugin 'skywind3000/asyncrun.vim'
 Plugin 'metakirby5/codi.vim'
 " Plugin 'michamos/vim-bepo'
 " Plugin 'w0rp/ale'
-Plugin 'ervandew/eclim'
+" Plugin 'ervandew/eclim'
+Plugin 'OmniSharp/omnisharp-vim'
+Plugin 'OrangeT/vim-csharp'
+" let g:OmniSharp_server_type = 'roslyn'
 
 Plugin 'Valloric/YouCompleteMe'
 " Plugin 'jeaye/color_coded'      " <= Too slow to refresh + same thing as above + lots of bugs
@@ -444,7 +450,7 @@ let g:ctrlp_cmd = 'CtrlPCurWD'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
 
-set wildignore+=*/doxygen/*,*.so,*.swp,*.zip,*.o,*.d,*.o32,*.exe,*.oxx,*.moc.*,*/doc/html,*/doc/latex,*.png,*.mesh,*.skeleton,*.class,*/CMakeFiles/*,*/.gradle/*,*/build/*
+set wildignore+=*/doxygen/*,*.so,*.swp,*.zip,*.o,*.d,*.o32,*.exe,*.oxx,*.moc.*,*/doc/html,*/doc/latex,*.png,*.mesh,*.skeleton,*.class,*/CMakeFiles/*,*/.gradle/*,*/build/*,*.dll,*/obj/*,*.exe,*.mdb,*/packages/*
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 

@@ -63,3 +63,65 @@ TODO
 • TODO: Créer une popup pour les mails non lus
 • TODO: Utiliser quelque chose de mieux que `dzen2`
 
+                                     * * *
+
+## Installation système
+
+• Faire un chroot:
+```sh
+mount /dev/sdb1 /mnt
+mount /dev/sdb2 /mnt/home
+pacstrap /mnt base base-devel wireless_tools wpa_supplicant dialog gvim fish
+genfstab -U -p /mnt >> /mnt/etc/fstab
+arch-chroot /mnt
+```
+• Puis, sur le chroot:
+```sh
+echo quentin-key > /etc/hostname
+echo '127.0.1.1 quentin-key.localdomain quentin-key' >> /etc/hosts
+ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
+rm /etc/localtime
+ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
+vi /etc/locale.gen
+locale-gen
+echo LANG="fr_FR.UTF-8" > /etc/locale.conf
+export LANG=fr_FR.UTF-8
+echo KEYMAP=fr > /etc/vconsole.conf
+mkinitcpio -p linux
+passwd
+useradd -g users -m -s /bin/bash bazin_q
+passwd bazin_q
+vim /etc/sudoers
+```
+
+• Installer le bootloader
+
+• Installer X:
+```sh
+pacman -S xorg-server xorg-xinit
+pacman -S xf86-video-intel
+# fichiers de config clavier / carte graphique
+pacman -S xorg-fonts-type1 ttf-dejavu artwiz-fonts font-bh-ttf \
+          font-bitstream-speedo gsfonts sdl_ttf ttf-bitstream-vera \
+          ttf-cheapskate ttf-liberation \
+          ttf-freefont ttf-arphic-uming ttf-baekmuk # Polices pour sites multilingue
+```
+• Fichier de config pour le clavier et la carte intel:
+```xf86conf 10-keyboard.conf:
+   Section "InputClass"
+   	Identifier      "system-keyboard"
+   	MatchIsKeyboard "on"
+   	Option          "XkbLayout" "fr"
+   	Option          "XkbVariant" "oss"
+   EndSection
+```20-intel.conf:```xf86conf
+   Section "Device"
+   	Identifier  "Intel Graphics"
+   	Driver      "intel"
+   	Option      "DRI" "2" # DRI3 is now default
+   	#Option      "AccelMethod" "sna" # default
+   	#Option      "AccelMethod" "uxa" # fallback
+   	Option      "TearFree" "true"
+   EndSection
+```
+• Installer mes dotfiles
