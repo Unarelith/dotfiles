@@ -124,4 +124,13 @@ pacman -S xorg-fonts-type1 ttf-dejavu artwiz-fonts font-bh-ttf \
    	Option      "TearFree" "true"
    EndSection
 ```
-• Installer mes dotfiles
+• Installer mes dotfiles (problème avec le start de slim et NetworkManager)
+
+```sh
+sudo pkgfile --update
+sudo pacman -S git openssh
+git clone git://github.com/Quent42340/dotfiles.git
+mv dotfiles .dotfiles
+bash ~/.dotfiles/bin/dotfiles
+# configurer fish
+```
