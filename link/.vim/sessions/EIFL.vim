@@ -1,6 +1,6 @@
 " ~/.dotfiles/link/.vim/sessions/EIFL.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 14 novembre 2017 at 22:24:06.
+" Created by session.vim 2.13.1 on 16 novembre 2017 at 19:26:54.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -24,12 +24,12 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +38 include/IntraActivity.hpp
+badd +39 include/IntraActivity.hpp
 badd +1 source/ProjectsWidget.cpp
 badd +57 projects.py
 badd +27 README.md
 badd +1 Makefile
-badd +40 .ycm_extra_conf.py
+badd +61 .ycm_extra_conf.py
 badd +15 source/main.cpp
 badd +1 include/MainWindow.hp
 badd +44 include/MainWindow.hpp
@@ -41,7 +41,7 @@ badd +46 source/Keyring.cpp
 badd +23 include/ScheduleWidget.hpp
 badd +21 source/ScheduleWidget.cpp
 badd +26 include/ProjectsWidget.hpp
-badd +91 include/IntraData.hpp
+badd +33 include/IntraData.hpp
 badd +28 include/IntraProject.hpp
 badd +58 source/IntraData.cpp
 badd +15 source/IntraProject.cpp
@@ -63,7 +63,7 @@ badd +35 source/IntraEvent.cpp
 badd +37 source/EventInfoWidget.cpp
 badd +35 include/EventInfoWidget.hpp
 badd +14 old/README.md
-badd +82 TODO
+badd +96 TODO
 badd +34 include/CalendarWidget.hpp
 badd +61 source/CalendarWidget.cpp
 badd +38 include/EventListWidget.hpp
@@ -91,17 +91,18 @@ badd +99 source/Database.cpp
 badd +38 include/Database.impl.hpp
 badd +14 source/IntraActiviy.cpp
 badd +1 source/IntraActivity.cpp
-badd +51 include/IntraDatabase.hpp
+badd +60 include/IntraDatabase.hpp
 badd +38 include/IntraDatabase.impl.hpp
 badd +1 source/IntraDatabase.cpp
 badd +1 eifl_autogen/6YEA5652QU/moc_CalendarSettingsWidget.cpp
 badd +20 include/Application.hpp
 badd +17 source/Application.cpp
 badd +21 include/IntraTemplate.hpp
-badd +24 include/IntraItem.hpp
+badd +37 include/IntraItem.hpp
 badd +1 ~/rendu/Perso/ZeldaOOL/include/resource/ResourceHandler.hppn
 badd +43 ~/rendu/Perso/ZeldaOOL/include/resource/ResourceHandler.hpp
 badd +1 source/IntraItem.cpp
+badd +0 include/IntraDatabaseThread.hpp
 argglobal
 silent! argdel *
 $argadd projects.py
@@ -134,12 +135,12 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 96 - ((35 * winheight(0) + 25) / 51)
+let s:l = 95 - ((34 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-96
-normal! 099|
+95
+normal! 062|
 wincmd w
 argglobal
 if bufexists('CMakeLists.txt') | buffer CMakeLists.txt | else | edit CMakeLists.txt | endif
@@ -378,12 +379,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 33 - ((3 * winheight(0) + 25) / 51)
+let s:l = 19 - ((1 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-33
-normal! 034|
+19
+normal! 0
 wincmd w
 argglobal
 if bufexists('source/IntraData.cpp') | buffer source/IntraData.cpp | else | edit source/IntraData.cpp | endif
@@ -396,28 +397,34 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 40 - ((28 * winheight(0) + 25) / 51)
+let s:l = 48 - ((12 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-40
-normal! 0
+48
+normal! 05|
 wincmd w
-2wincmd w
 exe 'vert 1resize ' . ((&columns * 100 + 103) / 207)
 exe 'vert 2resize ' . ((&columns * 106 + 103) / 207)
-tabedit include/IntraDatabase.hpp
+tabedit include/IntraDatabaseThread.hpp
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
 1wincmd h
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
 wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
+exe '1resize ' . ((&lines * 25 + 27) / 54)
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 25 + 27) / 54)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -428,11 +435,29 @@ setlocal fml=1
 setlocal fdn=20
 setlocal nofen
 silent! normal! zE
-let s:l = 26 - ((1 * winheight(0) + 25) / 51)
+let s:l = 27 - ((14 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-26
+27
+normal! 030|
+wincmd w
+argglobal
+if bufexists('include/IntraDatabase.hpp') | buffer include/IntraDatabase.hpp | else | edit include/IntraDatabase.hpp | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 42 - ((21 * winheight(0) + 12) / 25)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+42
 normal! 0
 wincmd w
 argglobal
@@ -446,15 +471,18 @@ setlocal fml=1
 setlocal fdn=20
 setlocal nofen
 silent! normal! zE
-let s:l = 66 - ((50 * winheight(0) + 25) / 51)
+let s:l = 48 - ((38 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-66
-normal! 09|
+48
+normal! 0
 wincmd w
+exe '1resize ' . ((&lines * 25 + 27) / 54)
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 25 + 27) / 54)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
 tabedit include/IntraItem.hpp
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -673,11 +701,11 @@ setlocal fml=1
 setlocal fdn=20
 setlocal nofen
 silent! normal! zE
-let s:l = 39 - ((24 * winheight(0) + 25) / 51)
+let s:l = 23 - ((8 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-39
+23
 normal! 0
 wincmd w
 argglobal
@@ -749,7 +777,56 @@ normal! 022|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabnext 5
+tabedit include/IntraProject.hpp
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winheight=1 winminwidth=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 21 - ((20 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+21
+normal! 029|
+wincmd w
+argglobal
+if bufexists('source/IntraProject.cpp') | buffer source/IntraProject.cpp | else | edit source/IntraProject.cpp | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 28 - ((27 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+28
+normal! 0
+wincmd w
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+tabnext 1
 set stal=1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -767,8 +844,8 @@ let &so = s:so_save | let &siso = s:siso_save
 " Everything down here is generated by vim-session (not supported
 " by :mksession out of the box).
 
-2wincmd w
-tabnext 5
+1wincmd w
+tabnext 1
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

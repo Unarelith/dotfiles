@@ -4,6 +4,7 @@ TODO
 
 • TODO: Créer un script d’install pour ArchLinux
    ◦ TODO: Générer la locale en_US automatiquement pour la popup météo
+   ◦ TODO: Créer un script qui utilise `dialog` pour l’installation
 • TODO: Installer la config de `slim`
 
 # Core
@@ -67,11 +68,19 @@ TODO
 
 ## Installation système
 
+*Note:* Pour installer un système 32 bits il faut :
+   ◦ Un système ArchLinux 32 bits
+   ou
+   ◦ Un système ArchLinux 64 bits avec :
+      ◦ Un pacman.conf tweaké avec i686 en architecture et sans le dépôt multilib
+      ◦ Une mirrorlist custom
+      ◦ Le paquet `archlinux32-keyring-transition` installé
+
 • Faire un chroot:
 ```sh
 mount /dev/sdb1 /mnt
 mount /dev/sdb2 /mnt/home
-pacstrap /mnt base base-devel wireless_tools wpa_supplicant dialog gvim fish
+pacstrap /mnt base base-devel wireless_tools wpa_supplicant dialog gvim git openssh
 genfstab -U -p /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 ```
@@ -89,11 +98,20 @@ mkinitcpio -p linux
 passwd
 useradd -g users -m -s /bin/bash bazin_q
 passwd bazin_q
-vim /etc/sudoers
+vi /etc/sudoers
+sudo pkgfile --update
+chown root:root /
+chmod 755 /
 ```
 
-• Installer le bootloader (MBR/GPT, ici MBR):
+• Dans le cas d’un système 32 bits :
+
+# modifier Architecture=i686 dans pacman.conf
+pacman -S archlinux32-keyring-transition
+
+• Installer le bootloader (MBR):
 ```sh
+pacman -S grub os-prober
 grub-install --target=i386-pc --no-floppy --recheck /dev/sdb
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
@@ -125,13 +143,14 @@ pacman -S xorg-fonts-type1 ttf-dejavu artwiz-fonts font-bh-ttf \
    	Option      "TearFree" "true"
    EndSection
 ```
-• Installer mes dotfiles (problème avec le start de slim et NetworkManager)
-
+• Installer mes dotfiles (problème avec le start de slim et NetworkManager si fait après le reboot)
 ```sh
-sudo pkgfile --update
-sudo pacman -S git openssh
+# Si fait avant le reboot, modifier le fichier /etc/sudoers en rajoutant NOPASSWD: temporairement
+
 git clone git://github.com/Quent42340/dotfiles.git
 mv dotfiles .dotfiles
 bash ~/.dotfiles/bin/dotfiles
 # configurer fish
 ```
+• Redémarrer, puis relancer `~/.dotfiles/init/11_systemd.sh`
+

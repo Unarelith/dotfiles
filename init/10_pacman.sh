@@ -2,6 +2,7 @@ default_packages='
 acpi
 arch-wiki-docs
 arch-wiki-lite
+arch-install-scripts
 baobab
 calc
 chromium
@@ -125,4 +126,7 @@ then
 		yaourt -S $package
 	done
 fi
+
+sudo pkgfile --update
+sudo updatedb
 
