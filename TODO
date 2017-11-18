@@ -82,6 +82,7 @@ mount /dev/sdb1 /mnt
 mount /dev/sdb2 /mnt/home
 pacstrap /mnt base base-devel wireless_tools wpa_supplicant dialog gvim git openssh
 genfstab -U -p /mnt >> /mnt/etc/fstab
+# Vérifier la fstab
 arch-chroot /mnt
 ```
 • Puis, sur le chroot:
@@ -99,7 +100,6 @@ passwd
 useradd -g users -m -s /bin/bash bazin_q
 passwd bazin_q
 vi /etc/sudoers
-sudo pkgfile --update
 chown root:root /
 chmod 755 /
 ```
