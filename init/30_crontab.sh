@@ -1,3 +1,5 @@
+#!/bin/bash
+
 crontab='DISPLAY=:0.0
 XAUTHORITY=/home/$USER/.Xauthority
 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
@@ -18,9 +20,7 @@ if [ "$answer" == "y" ] || [ "$anwser" == "Y" ]
 then
 	echo -e "Go${crontab}\e:w" > .40_crontab.tmp
 
-	EDITOR='vim -s .40_crontab.tmp'
-
-	crontab -e
+	EDITOR='vim -s .40_crontab.tmp' crontab -e
 
 	rm -f .40_crontab.tmp
 fi
