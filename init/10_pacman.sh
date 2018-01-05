@@ -88,6 +88,7 @@ ttf-font-awesome
 ttf-material-icons
 ttf-weather-icons
 volnoti
+xorg-xrandr
 zeal'
 
 echo -ne "$BOLD:: Do you want to install yaourt? [y/N]" $WHITE

@@ -165,6 +165,7 @@ new_window                          normal 1
 new_float                           normal 1
 
 for_window [class="URxvt"]          border none
+for_window [class="Firefox"]        border none
 # for_window [name="dzen slave"]      border pixel 4
 
 assign [class="Chromium"] $workspace1
@@ -343,6 +344,7 @@ bindsym $mod+$move_ws_key           move workspace to output left
 for_window [window_role="pop-up"]   floating enable
 for_window [title="Anodyne"]        floating enable
 for_window [title="Indie Studio: Gauntlet"] floating enable
+for_window [class="eifl"]        floating enable
 
 # Resize window (you can also use the mouse for that)
 mode "resize" {

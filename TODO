@@ -30,6 +30,8 @@ TODO
 
 • DONE: Ne pas démarrer `NetworkManager`
    → DONE: Peut-être même créer un script spécial pour `systemd`
+• TODO: Potentiellement ajouter le paquet `adwaita-icon-theme` pour avoir l’icône dans `synapse`
+• TODO: Proposer d’update la database de `mlocate` (actuellement elle est update à chaque fois)
 • TODO: Utiliser `yay` au lieu de `yaourt` pour l’installation des paquets AUR
    → Séparer les paquets en `core` et `optional`, installer `core` et laisser choisir les paquets `optional`
    → Ne pas installer les paquets déjà installés
@@ -112,7 +114,8 @@ pacman -S archlinux32-keyring-transition
 • Installer le bootloader (MBR):
 ```sh
 pacman -S grub os-prober
-grub-install --target=i386-pc --no-floppy --recheck /dev/sdb
+`MBR`: grub-install --target=i386-pc --no-floppy --recheck /dev/sda
+`EFI`: grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=archlinux --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 • Installer X:
@@ -125,7 +128,7 @@ pacman -S xorg-fonts-type1 ttf-dejavu artwiz-fonts font-bh-ttf \
           ttf-cheapskate ttf-liberation \
           ttf-freefont ttf-arphic-uming ttf-baekmuk # Polices pour sites multilingue
 ```
-• Fichier de config pour le clavier et la carte intel:
+• Fichier de config pour le clavier et la carte intel dans /etc/X11/xorg.conf.d/:
 ```xf86conf 10-keyboard.conf:
    Section "InputClass"
    	Identifier      "system-keyboard"

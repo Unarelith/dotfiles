@@ -1,6 +1,6 @@
 " ~/.dotfiles/link/.vim/sessions/minemgr.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 23 septembre 2017 at 14:53:47.
+" Created by session.vim 2.13.1 on 24 décembre 2017 at 15:32:17.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -24,43 +24,80 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +24 include/Client.hpp
-badd +20 source/main.cpp
-badd +32 include/Application.hpp
-badd +14 source/Application.cpp
+badd +72 source/Utils.cpp
+badd +53 include/Client.hpp
+badd +24 source/main.cpp
+badd +21 include/Application.hpp
+badd +60 source/Application.cpp
 badd +13 include/Request.hpp
-badd +35 include/Heartbeat.hpp
-badd +1 source/Heartbeat.cpp
+badd +21 include/Heartbeat.hpp
+badd +80 source/Heartbeat.cpp
 badd +28 include/Utils.hpp
-badd +1 source/Utils.cpp
 badd +29 CMakeLists.txt
 badd +24 ~/rendu/Perso/ZeldaOOL/include/audio/SoundEffect.hpp
 badd +66 ~/rendu/Perso/ZeldaOOL/CMakeLists.txt
-badd +1 Notes
+badd +7 Notes
+badd +16 include/Miner.hpp
+badd +14 source/Miner.cpp
+badd +39 include/MinerManager.hpp
+badd +60 source/MinerManager.cpp
+badd +5 include/HttpClient.hpp
+badd +40 source/HttpClient.cpp
+badd +20 .gitignore
+badd +23 source/super_minemgr.cpp
+badd +1 include/common/Application.hpp
+badd +1 source/common/Application.cpp
+badd +1 include/common/MinerManager.hpp
+badd +1 source/common/MinerManager.cpp
+badd +1 include/common/Heartbeat.hpp
+badd +1 source/common/Heartbeat.cpp
+badd +1 include/common/H
+badd +1 include/common/HttpClient.hpp
+badd +1 source/common/HttpClient.cpp
+badd +1 include/common/Utils.hpp
+badd +1 source/common/Utils.cpp
 argglobal
 silent! argdel *
 $argadd source/main.cpp
 set stal=2
-edit Notes
+edit source/super_minemgr.cpp
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
 1wincmd h
-wincmd w
 wincmd _ | wincmd |
 split
 1wincmd k
+wincmd w
 wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
+exe '1resize ' . ((&lines * 25 + 27) / 54)
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
 exe '2resize ' . ((&lines * 25 + 27) / 54)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-exe '3resize ' . ((&lines * 25 + 27) / 54)
 exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
 argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 20 - ((16 * winheight(0) + 12) / 25)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+20
+normal! 014|
+wincmd w
+argglobal
+if bufexists('Notes') | buffer Notes | else | edit Notes | endif
 setlocal fdm=expr
 setlocal fde=xolox#notes#foldexpr()
 setlocal fmr={{{,}}}
@@ -69,15 +106,117 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 5 - ((4 * winheight(0) + 25) / 51)
+let s:l = 6 - ((5 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-5
+6
+normal! 034|
+wincmd w
+argglobal
+if bufexists('CMakeLists.txt') | buffer CMakeLists.txt | else | edit CMakeLists.txt | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 51 - ((50 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+51
+normal! 023|
+wincmd w
+2wincmd w
+exe '1resize ' . ((&lines * 25 + 27) / 54)
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 25 + 27) / 54)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
+tabedit include/common/Application.hpp
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winheight=1 winminwidth=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 31 - ((30 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+31
+normal! 029|
+wincmd w
+argglobal
+if bufexists('source/common/Application.cpp') | buffer source/common/Application.cpp | else | edit source/common/Application.cpp | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 89 - ((50 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+89
+normal! 060|
+wincmd w
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+tabedit include/common/MinerManager.hpp
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winheight=1 winminwidth=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
 normal! 0
 wincmd w
 argglobal
-edit source/main.cpp
+if bufexists('source/common/MinerManager.cpp') | buffer source/common/MinerManager.cpp | else | edit source/common/MinerManager.cpp | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -85,17 +224,30 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal fen
+setlocal nofen
 silent! normal! zE
-let s:l = 22 - ((10 * winheight(0) + 12) / 25)
+let s:l = 93 - ((29 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-22
+93
 normal! 05|
 wincmd w
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+tabedit include/common/Heartbeat.hpp
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winheight=1 winminwidth=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
 argglobal
-edit CMakeLists.txt
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -103,9 +255,76 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal fen
+setlocal nofen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 12) / 25)
+let s:l = 36 - ((32 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+36
+normal! 047|
+wincmd w
+argglobal
+if bufexists('source/common/Heartbeat.cpp') | buffer source/common/Heartbeat.cpp | else | edit source/common/Heartbeat.cpp | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 63 - ((50 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+63
+normal! 059|
+wincmd w
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+tabedit include/common/HttpClient.hpp
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winheight=1 winminwidth=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+wincmd w
+argglobal
+if bufexists('source/common/HttpClient.cpp') | buffer source/common/HttpClient.cpp | else | edit source/common/HttpClient.cpp | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -113,132 +332,8 @@ normal! zt
 normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe '2resize ' . ((&lines * 25 + 27) / 54)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-exe '3resize ' . ((&lines * 25 + 27) / 54)
-exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
-tabedit include/Application.hpp
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 30 - ((29 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-30
-normal! 054|
-wincmd w
-argglobal
-edit source/Application.cpp
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 142 - ((35 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-142
-normal! 0
-wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabedit include/Heartbeat.hpp
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 39 - ((38 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-39
-normal! 024|
-wincmd w
-argglobal
-edit source/Heartbeat.cpp
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 86 - ((15 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-86
-normal! 0
-wincmd w
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabedit include/Client.hpp
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 59 - ((38 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-59
-normal! 063|
-tabedit include/Utils.hpp
+tabedit include/common/Utils.hpp
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -258,17 +353,17 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal fen
+setlocal nofen
 silent! normal! zE
-let s:l = 31 - ((30 * winheight(0) + 25) / 51)
+let s:l = 1 - ((0 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-31
-normal! 047|
+1
+normal! 0
 wincmd w
 argglobal
-edit source/Utils.cpp
+if bufexists('source/common/Utils.cpp') | buffer source/common/Utils.cpp | else | edit source/common/Utils.cpp | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -276,18 +371,18 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal fen
+setlocal nofen
 silent! normal! zE
-let s:l = 70 - ((9 * winheight(0) + 25) / 51)
+let s:l = 1 - ((0 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-70
+1
 normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 100 + 103) / 207)
 exe 'vert 2resize ' . ((&columns * 106 + 103) / 207)
-tabnext 2
+tabnext 1
 set stal=1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -306,7 +401,7 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 2wincmd w
-tabnext 2
+tabnext 1
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

@@ -44,7 +44,7 @@ URxvt*keysym.S-M-Right:         \033[1;4C
 URxvt*keysym.S-M-Left:          \033[1;4D
 
 ! Open a new instance of urxvt with Ctrl+Shift+N
-URxvt.keysym.Control-Shift-N:   urxvt -e fish &\n
+URxvt.keysym.Control-Shift-N:   bash -c 'urxvt -e fish &'\n
 
 ! Disable scrollback buffer for secondary screen
 URxvt*secondaryScreen: 1

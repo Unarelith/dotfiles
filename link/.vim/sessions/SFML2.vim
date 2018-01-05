@@ -1,6 +1,6 @@
 " ~/.dotfiles/link/.vim/sessions/SFML2.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 03 août 2017 at 12:52:51.
+" Created by session.vim 2.13.1 on 30 novembre 2017 at 00:35:48.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -13,7 +13,7 @@ if &background != 'dark'
 	set background=dark
 endif
 if !exists('g:colors_name') || g:colors_name != 'default' | colorscheme default | endif
-call setqflist([])
+call setqflist([{'lnum': 39, 'col': 10, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': 'F', 'pattern': '', 'filename': 'include/Renderer.hpp', 'text': ''}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
@@ -24,9 +24,15 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
+badd +43 include/Image.hpp
 badd +1 CMakeLists.txt
-badd +18 include/Image.hpp
 badd +1 source/Image.cpp
+badd +30 include/Window.hpp
+badd +1 source/Window.cpp
+badd +28 include/Renderer.hpp
+badd +1 source/Renderer.cpp
+badd +23 include/Drawable.hpp
+badd +0 include/RectangleShape.hpp
 argglobal
 silent! argdel *
 $argadd CMakeLists.txt
@@ -47,12 +53,110 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 7 - ((6 * winheight(0) + 25) / 51)
+let s:l = 33 - ((32 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-7
-normal! 020|
+33
+normal! 035|
+tabedit include/Renderer.hpp
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winheight=1 winminwidth=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 34 - ((33 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+34
+normal! 0
+wincmd w
+argglobal
+if bufexists('source/Renderer.cpp') | buffer source/Renderer.cpp | else | edit source/Renderer.cpp | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 27 - ((26 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+27
+normal! 09|
+wincmd w
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+tabedit include/Window.hpp
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winheight=1 winminwidth=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 02|
+wincmd w
+argglobal
+if bufexists('source/Window.cpp') | buffer source/Window.cpp | else | edit source/Window.cpp | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 17 - ((16 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+17
+normal! 0
+wincmd w
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
 tabedit include/Image.hpp
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -75,15 +179,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 33 - ((32 * winheight(0) + 25) / 51)
+let s:l = 47 - ((34 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-33
+47
 normal! 0
 wincmd w
 argglobal
-edit source/Image.cpp
+if bufexists('source/Image.cpp') | buffer source/Image.cpp | else | edit source/Image.cpp | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -93,17 +197,38 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 21 - ((20 * winheight(0) + 25) / 51)
+let s:l = 48 - ((0 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-21
+48
 normal! 0
 wincmd w
-2wincmd w
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabnext 2
+tabedit include/RectangleShape.hpp
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winheight=1 winminwidth=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 18 - ((17 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+18
+normal! 0
+tabnext 5
 set stal=1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -121,8 +246,8 @@ let &so = s:so_save | let &siso = s:siso_save
 " Everything down here is generated by vim-session (not supported
 " by :mksession out of the box).
 
-2wincmd w
-tabnext 2
+1wincmd w
+tabnext 5
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

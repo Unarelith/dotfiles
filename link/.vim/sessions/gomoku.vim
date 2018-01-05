@@ -1,6 +1,6 @@
-" ~/.dotfiles/link/.vim/sessions/default.vim:
+" ~/.dotfiles/link/.vim/sessions/gomoku.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 01 décembre 2017 at 20:19:33.
+" Created by session.vim 2.13.1 on 10 décembre 2017 at 16:13:27.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -25,8 +25,20 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +14 CMakeLists.txt
-badd +0 README
-badd +0 source/main.cpp
+badd +16 README
+badd +18 source/main.cpp
+badd +28 source/Protocol/pisqpipe.h
+badd +116 source/Protocol/pisqpipe.cpp
+badd +1 source/Protocol/Protocol.cpp
+badd +14 source/brain.c
+badd +1 source/brain.cpp
+badd +15 source/Brain.cpp
+badd +1 source/pisqpipe.cpp
+badd +1 source/pisqpipe.h
+badd +1 source/Protocol.cpp
+badd +1 include/pisqpipe.hi
+badd +1 include/pisqpipe.h
+badd +18 include/Brain.hpp
 argglobal
 silent! argdel *
 $argadd CMakeLists.txt
@@ -56,11 +68,11 @@ setlocal fen
 silent! normal! zo
 5
 silent! normal! zo
-let s:l = 1 - ((0 * winheight(0) + 26) / 52)
+let s:l = 16 - ((15 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+16
 normal! 0
 wincmd w
 argglobal
@@ -74,16 +86,65 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 14 - ((13 * winheight(0) + 26) / 52)
+let s:l = 17 - ((16 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-14
+17
+normal! 056|
+wincmd w
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+tabedit include/pisqpipe.h
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winheight=1 winminwidth=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 19 - ((18 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+19
+normal! 0
+wincmd w
+argglobal
+if bufexists('source/pisqpipe.cpp') | buffer source/pisqpipe.cpp | else | edit source/pisqpipe.cpp | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 11 - ((10 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+11
 normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabedit source/main.cpp
+tabedit source/Protocol.cpp
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -99,13 +160,13 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 15 - ((14 * winheight(0) + 25) / 51)
+let s:l = 79 - ((50 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-15
-normal! 022|
-tabnext 2
+79
+normal! 0
+tabnext 3
 set stal=1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -124,7 +185,7 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 1wincmd w
-tabnext 2
+tabnext 3
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

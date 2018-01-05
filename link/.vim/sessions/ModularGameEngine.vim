@@ -1,6 +1,6 @@
-" ~/.dotfiles/link/.vim/sessions/default.vim:
+" ~/.dotfiles/link/.vim/sessions/ModularGameEngine.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 01 décembre 2017 at 20:19:33.
+" Created by session.vim 2.13.1 on 29 novembre 2017 at 21:35:34.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -19,94 +19,37 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/rendu/IA/gomoku
+cd ~/rendu/Perso/ModularGameEngine
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +14 CMakeLists.txt
-badd +0 README
-badd +0 source/main.cpp
+badd +0 README.md
 argglobal
 silent! argdel *
-$argadd CMakeLists.txt
-set stal=2
-edit README
+$argadd README.md
+edit README.md
 set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
 argglobal
 setlocal fdm=expr
-setlocal fde=xolox#notes#foldexpr()
+setlocal fde=Foldexpr_markdown(v:lnum)
 setlocal fmr={{{,}}}
 setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal fen
-1
-silent! normal! zo
-5
-silent! normal! zo
-let s:l = 1 - ((0 * winheight(0) + 26) / 52)
+setlocal nofen
+let s:l = 34 - ((33 * winheight(0) + 26) / 52)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+34
 normal! 0
-wincmd w
-argglobal
-if bufexists('CMakeLists.txt') | buffer CMakeLists.txt | else | edit CMakeLists.txt | endif
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 14 - ((13 * winheight(0) + 26) / 52)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-14
-normal! 0
-wincmd w
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabedit source/main.cpp
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 15 - ((14 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-15
-normal! 022|
-tabnext 2
-set stal=1
+tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -124,7 +67,7 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 1wincmd w
-tabnext 2
+tabnext 1
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')
