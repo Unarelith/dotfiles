@@ -4,6 +4,7 @@
 ! Disable scroll bar
 URxvt*scrollBar:                false
 URxvt*saveLines:                10000
+! URxvt*letterSpace:              -1
 
 ! Do not scroll with output
 URxvt*scrollTtyOutput:          false
@@ -15,7 +16,7 @@ URxvt*scrollWithBuffer:         true
 URxvt*scrollTtyKeypress:        true
 
 ! Setup font
-URxvt*font:                     xft:monospace:pixelsize=15
+URxvt*font:                     xft:dejavu sans mono:pixelsize=15
 
 ! Change transparency
 URxvt.keysym.Control-o:         command:\033]11;[70]#000\007

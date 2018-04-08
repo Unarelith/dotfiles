@@ -25,6 +25,11 @@ au BufRead,BufNewFile *.Xresources.d/* set filetype=xdefaults
 set nocompatible
 
 "------------------------------------------------------------------------------
+" Set bash as default shell
+"------------------------------------------------------------------------------
+set shell=bash
+
+"------------------------------------------------------------------------------
 " Add a little menu
 "------------------------------------------------------------------------------
 set wildmenu
@@ -78,8 +83,6 @@ set laststatus=2        " Status line visible with only one buffer
 set list
 set listchars=tab:··
 "set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-
-set shell=/bin/bash
 
 au BufRead,BufNewFile *.md set wrap linebreak nofoldenable
 au BufRead,BufNewFile *.note,Notes,TODO,FIXME set filetype=notes nofoldenable
@@ -154,6 +157,7 @@ Plugin 'metakirby5/codi.vim'
 Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'OrangeT/vim-csharp'
 " let g:OmniSharp_server_type = 'roslyn'
+Plugin 'pangloss/vim-javascript'
 
 Plugin 'Valloric/YouCompleteMe'
 " Plugin 'jeaye/color_coded'      " <= Too slow to refresh + same thing as above + lots of bugs
@@ -595,6 +599,8 @@ nmap ,ms :e source/%:t:r.cpp<CR>
 
 nmap <C-M> :noh<CR>
 
+map ,mj :%!python -m json.tool<CR>
+
 function! MakeClass(headerExt, path, className)
 	silent !clear
 	execute "!make_class " . a:headerExt . " " . a:path . " " . a:className
@@ -666,6 +672,12 @@ map ,gh :!git checkout
 map ,gi :!git init<cr>
 map ,gt :!tig<cr>
 map ,gl :!git log<cr>
+
+"------------------------------------------------------------------------------
+" Common typo autofix
+"------------------------------------------------------------------------------
+" iabbrev pbulic public
+" iabbrev publci public
 
 "------------------------------------------------------------------------------
 " Don't use Ex mode, use Q for formatting

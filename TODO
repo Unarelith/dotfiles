@@ -157,6 +157,7 @@ git clone git://github.com/Quent42340/dotfiles.git
 mv dotfiles .dotfiles
 bash ~/.dotfiles/bin/dotfiles
 # configurer fish
+timedatectl set-ntp true
 ```
 • Redémarrer, puis relancer `~/.dotfiles/init/11_systemd.sh`
 

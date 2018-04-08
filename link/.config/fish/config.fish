@@ -32,6 +32,14 @@ set -x GOGS_USER gnidmoo
 # TO_CHANGE: Epitech email
 set -x EPIMAIL quentin.bazin@epitech.eu
 
+# Android paths
+# set ANDROID_AVD_HOME /home/bazin_q/.android/avd/
+# set ANDROID_HOME     /home/bazin_q/Android/Sdk/
+# set ANDROID_SDK_HOME /home/bazin_q/Android/Sdk/
+# set ANDROID_SDK_ROOT /home/bazin_q/Android/Sdk/
+#
+# set -x PATH $PATH /home/bazin_q/Android/Sdk/tools/
+
 # Colored man pages
 set -x LESS -r
 set -x LESS_TERMCAP_mb (printf "\e[01;31m")       # begin blinking
