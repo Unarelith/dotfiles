@@ -131,7 +131,7 @@ Plugin 'beyondmarc/opengl.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'basepi/vim-conque'
-Plugin 'LeBarbu/vim-epitech'
+" Plugin 'LeBarbu/vim-epitech'
 Plugin 'vim-utils/vim-man'
 Plugin 'dag/vim-fish'
 " Plugin 'wakatime/vim-wakatime'
@@ -290,6 +290,8 @@ let g:ycm_confirm_extra_conf = 1
 
 nmap <C-P> :YcmCompleter FixIt<CR>
 
+map ,sr :!rm .ycm_extra_conf.py<CR>:YcmGenerateConfig<CR>:YcmRestartServer<CR>
+
 "------------------------------------------------------------------------------
 " vim-gitgutter config
 "------------------------------------------------------------------------------
@@ -310,7 +312,7 @@ let g:ale_c_clang_options = '-Wall -Wextra -DPROGRAM_NAME="\"nm\"" -std=gnu99 '
 	\ . system("find lib -name include -type d | sed 's/^/-I/'")
 	\ . system("find ../lib -name include -type d | sed 's/^/-I/'")
 	\ . system("find common/lib -name include -type d | sed 's/^/-I/'")
-let g:ale_cpp_clang_options = '-Wall -Wextra -std=c++14 -DLINUX -U__linux__ -fPIC '
+let g:ale_cpp_clang_options = '-Wall -Wextra -std=c++17 -DLINUX -U__linux__ -fPIC '
 	\ . system("find include -type d | sed 's/^/-I/'")
 	\ . system("find external/{include,external} -type d | sed 's/^/-I/'")
 	\ . system("find /usr/include/OGRE -type d | sed 's/^/-isystem/'")
@@ -397,7 +399,7 @@ let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_no_include_search = 1
 let g:syntastic_cpp_no_default_include_dirs = 1
 let g:syntastic_cpp_auto_refresh_includes = 1
-let g:syntastic_cpp_compiler_options = '-Wall -Wextra -std=c++14 `find include/* -type d | sed "s/^/-I/"` `find external/*/{include,external} -type d | sed "s/^/-I/"` -DLINUX -U__linux__ -fPIC `find /usr/include/qt/ -type d | sed "s/^/-I/"`'
+let g:syntastic_cpp_compiler_options = '-Wall -Wextra -std=c++17 `find include/* -type d | sed "s/^/-I/"` `find external/*/{include,external} -type d | sed "s/^/-I/"` -DLINUX -U__linux__ -fPIC `find /usr/include/qt/ -type d | sed "s/^/-I/"`'
 let g:syntastic_cpp_include_dirs = [
 	\ '.',
 	\ 'include',

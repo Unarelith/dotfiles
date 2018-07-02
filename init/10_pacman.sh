@@ -15,6 +15,7 @@ dzen2
 feh
 file-roller
 fish
+gdb
 gnome-calculator
 gnome-control-center
 gnome-keyring
@@ -28,13 +29,13 @@ jshon
 jq
 kolourpaint
 libcanberra
+libgnome-keyring
 lm_sensors
 lxappearance
 mlocate
 mpc
 mpd
 nautilus
-nautilus-open-terminal
 ncmpcpp
 net-tools
 network-manager-applet
@@ -42,6 +43,7 @@ networkmanager
 ntfs-3g
 openssh
 os-prober
+pacman-contrib
 patch
 pavucontrol
 pkgfile
@@ -52,6 +54,7 @@ pulseaudio-equalizer
 python-gobject
 python-pexpect
 python-pip
+python-xdg
 python2
 python3
 qt5-styleplugins
@@ -70,6 +73,7 @@ ttf-inconsolata
 ttf-ionicons
 ttf-liberation
 ttf-ubuntu-font-family
+valgrind
 vinagre
 xorg-xbacklight
 xcompmgr
@@ -86,6 +90,7 @@ nautilus-dropbox
 polybar-git
 ttf-font-awesome
 ttf-material-icons
+ttf-unifont
 ttf-weather-icons
 volnoti
 xorg-xrandr
