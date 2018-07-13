@@ -108,7 +108,7 @@ function viewcam
 end
 
 function viewserver
-	vinagre --vnc-scale --fullscreen 192.168.0.20:5900
+	vinagre --vnc-scale 192.168.1.20:5900
 end
 
 function weather

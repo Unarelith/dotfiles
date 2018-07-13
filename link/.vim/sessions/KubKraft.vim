@@ -1,6 +1,6 @@
 " ~/.dotfiles/link/.vim/sessions/KubKraft.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 01 juillet 2018 at 04:26:36.
+" Created by session.vim 2.13.1 on 02 juillet 2018 at 05:34:37.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -24,7 +24,7 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +79 source/core/Registry.cpp
+badd +134 source/core/Registry.cpp
 badd +103 source/hud/BlockCursor.cpp
 badd +63 source/states/GameState.cpp
 badd +45 source/core/Application.cpp
@@ -38,7 +38,7 @@ badd +73 source/gl/Camera.cpp
 badd +68 include/gl/Camera.hpp
 badd +21 source/world/Block.cpp
 badd +29 include/core/Application.hpp
-badd +61 include/states/GameState.hpp
+badd +60 include/states/GameState.hpp
 badd +1 include/system/Types.hpp
 badd +19 include/gl/Renderer.hpp
 badd +15 source/gl/Renderer.cpp
@@ -72,7 +72,7 @@ badd +16 include/world/generators/TerrainGenerator.hpp
 badd +15 include/world/generation/TerrainGenerator.hpp
 badd +28 include/world/gen/TerrainGenerator.hpp
 badd +69 source/world/gen/TerrainGenerator.cpp
-badd +31 include/world/Block.hpp
+badd +45 include/world/Block.hpp
 badd +27 TODO
 badd +31 include/core/Config.hpp
 badd +12 Makefile
@@ -85,8 +85,8 @@ badd +91 source/core/CoreApplication.cpp
 badd +42 include/system/GameClock.hpp
 badd +15 shaders/light.f.glsl
 badd +8 shaders/fog.f.glsl
-badd +27 include/hud/Crosshair.hpp
-badd +27 source/hud/Crosshair.cpp
+badd +29 include/hud/Crosshair.hpp
+badd +40 source/hud/Crosshair.cpp
 badd +30 include/gl/RenderStates.hpp
 badd +29 include/display/Skybox.hpp
 badd +1 include/gl/IDrawable
@@ -97,7 +97,7 @@ badd +42 include/hud/BlockCursor.hpp
 badd +31 include/gl/Model.hpp
 badd +23 source/gl/Model.cpp
 badd +19 include/world/ChunkBuilder.hpp
-badd +64 source/world/ChunkBuilder.cpp
+badd +90 source/world/ChunkBuilder.cpp
 badd +25 include/gl/Vertex.hpp
 badd +55 source/display/Skybox.cpp
 badd +25 include/gl/Texture.hpp
@@ -147,7 +147,7 @@ badd +42 resources/config/blocks.xml
 badd +33 resources/config/items.xml
 badd +1 resources/config/recipes.xml
 badd +23 source/inventory/CraftingRecipe.cpp
-badd +33 include/inventory/BlockType.hpp
+badd +35 include/inventory/BlockType.hpp
 badd +36 include/inventory/ItemType.hpp
 badd +26 include/inventory/CraftingRecipe.hpp
 badd +25 include/inventory/Recipe.hpp
@@ -159,7 +159,7 @@ badd +19 include/gui/CraftingWidget.hpp
 badd +49 source/gui/CraftingWidget.cpp
 badd +48 source/gui/FurnaceWidget.cpp
 badd +48 include/gui/Text.hpp
-badd +51 source/gui/Text.cpp
+badd +100 source/gui/Text.cpp
 badd +43 source/states/SettingsMenuState.cpp
 badd +24 include/gui/MenuWidget.hpp
 badd +26 source/gui/MenuWidget.cpp
@@ -169,7 +169,7 @@ badd +26 source/states/PauseMenuState.cpp
 badd +9 resources/shaders/basic.f.glsl
 badd +19 resources/shaders/basic.v.glsl
 badd +26 include/gui/RectangleShape.hpp
-badd +0 source/gui/RectangleShape.cpp
+badd +22 source/gui/RectangleShape.cpp
 argglobal
 silent! argdel *
 set stal=2
@@ -311,7 +311,7 @@ if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 30
-normal! 052|
+normal! 0
 lcd ~/rendu/Perso/KubKraft
 wincmd w
 argglobal
@@ -483,259 +483,10 @@ normal! zt
 normal! 0
 lcd ~/rendu/Perso/KubKraft
 wincmd w
+2wincmd w
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabedit ~/rendu/Perso/KubKraft/include/hud/Crosshair.hpp
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 29 - ((28 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-29
-normal! 024|
-lcd ~/rendu/Perso/KubKraft
-wincmd w
-argglobal
-if bufexists('~/rendu/Perso/KubKraft/source/hud/Crosshair.cpp') | buffer ~/rendu/Perso/KubKraft/source/hud/Crosshair.cpp | else | edit ~/rendu/Perso/KubKraft/source/hud/Crosshair.cpp | endif
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 40 - ((27 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-40
-normal! 0
-lcd ~/rendu/Perso/KubKraft
-wincmd w
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabedit ~/rendu/Perso/KubKraft/include/gui/RectangleShape.hpp
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 26 - ((24 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-26
-normal! 041|
-lcd ~/rendu/Perso/KubKraft
-wincmd w
-argglobal
-if bufexists('~/rendu/Perso/KubKraft/source/gui/RectangleShape.cpp') | buffer ~/rendu/Perso/KubKraft/source/gui/RectangleShape.cpp | else | edit ~/rendu/Perso/KubKraft/source/gui/RectangleShape.cpp | endif
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 22 - ((11 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-22
-normal! 049|
-lcd ~/rendu/Perso/KubKraft
-wincmd w
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabedit ~/rendu/Perso/KubKraft/include/core/Registry.hpp
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 30 - ((7 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-30
-normal! 0
-lcd ~/rendu/Perso/KubKraft
-wincmd w
-argglobal
-if bufexists('~/rendu/Perso/KubKraft/source/core/Registry.cpp') | buffer ~/rendu/Perso/KubKraft/source/core/Registry.cpp | else | edit ~/rendu/Perso/KubKraft/source/core/Registry.cpp | endif
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 134 - ((25 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-134
-normal! 047|
-lcd ~/rendu/Perso/KubKraft
-wincmd w
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabedit ~/rendu/Perso/KubKraft/include/world/ChunkBuilder.hpp
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 19 - ((18 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-19
-normal! 0
-lcd ~/rendu/Perso/KubKraft
-wincmd w
-argglobal
-if bufexists('~/rendu/Perso/KubKraft/source/world/ChunkBuilder.cpp') | buffer ~/rendu/Perso/KubKraft/source/world/ChunkBuilder.cpp | else | edit ~/rendu/Perso/KubKraft/source/world/ChunkBuilder.cpp | endif
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 90 - ((39 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-90
-normal! 09|
-lcd ~/rendu/Perso/KubKraft
-wincmd w
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabedit ~/rendu/Perso/KubKraft/include/world/Block.hpp
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 45 - ((36 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-45
-normal! 0101|
-lcd ~/rendu/Perso/KubKraft
-tabedit ~/rendu/Perso/KubKraft/source/gui/Text.cpp
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 100 - ((35 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-100
-normal! 030|
-lcd ~/rendu/Perso/KubKraft
-tabnext 11
+tabnext 5
 set stal=1
 if exists('s:wipebuf') && s:wipebuf != bufnr('%')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -753,8 +504,8 @@ let &so = s:so_save | let &siso = s:siso_save
 " Everything down here is generated by vim-session (not supported
 " by :mksession out of the box).
 
-1wincmd w
-tabnext 11
+2wincmd w
+tabnext 5
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')
