@@ -88,7 +88,7 @@ gnucash
 gws
 nautilus-dropbox
 polybar-git
-ttf-font-awesome
+ttf-font-awesome-4
 ttf-material-icons
 ttf-unifont
 ttf-weather-icons

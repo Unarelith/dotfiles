@@ -10,6 +10,6 @@ fi
 [ -f /etc/xprofile ] && source /etc/xprofile
 [ -f ~/.xprofile ] && source ~/.xprofile
 
-# exec $1
-exec i3
+exec $1
+# exec i3
 # exec xfwm4

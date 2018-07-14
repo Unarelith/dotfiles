@@ -1,6 +1,6 @@
 " ~/.dotfiles/link/.vim/sessions/minemgr_web.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 13 juillet 2018 at 14:11:13.
+" Created by session.vim 2.13.1 on 13 juillet 2018 at 15:59:13.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -19,7 +19,7 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /mnt/bazin_q/rendu/Autres/minemgr_web
+cd ~/rendu/Autres/minemgr_web
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -28,30 +28,30 @@ badd +23 minemgr_web/urls.py
 badd +16 templates/base.html
 badd +7 minerctl/templates/minerctl/miner_list.html
 badd +1 minerctl/urls.py
-badd +7 minerctl/templates/minerctl/miner_new.html
-badd +19 minerctl/templates/minerctl/group_list.html
-badd +15 minerctl/templates/minerctl/miner.html
+badd +6 minerctl/templates/minerctl/miner_new.html
+badd +1 minerctl/templates/minerctl/group_list.html
+badd +21 minerctl/templates/minerctl/miner.html
 badd +1 minerctl/templates/minerctl/miner_remove.html
-badd +1 minerctl/templates/minerctl/miner_edit.html
+badd +5 minerctl/templates/minerctl/miner_edit.html
 badd +8 minerctl/views.py
 badd +7 minerctl/templates/minerctl/group_new.html
 badd +1 minerctl/templates/minerctl/group_remove.html
 badd +11 minerctl/templates/minerctl/group_edit.html
 badd +7 minerctl/templates/minerctl/group.html
-badd +51 minerctl/models.py
+badd +22 minerctl/models.py
 badd +1 minerctl/forms.py
 badd +1 static/css/style.css
 badd +11 minerctl/templates/minerctl/command_new.html
 badd +8 minerctl/miner_views.py
-badd +0 minerctl/group_views.py
-badd +0 minerctl/command_views.py
-badd +0 minerctl/templates/minerctl/command_list.html
-badd +4 minerctl/templates/minerctl/command_remove.html
+badd +1 minerctl/group_views.py
+badd +1 minerctl/command_views.py
+badd +1 minerctl/templates/minerctl/command_list.html
+badd +1 minerctl/templates/minerctl/command_remove.html
 badd +3 minerctl/templates/minerctl/command_edit.html
 badd +11 minerctl/templates/minerctl/command.html
-badd +0 minerctl/trame_views.py
-badd +0 minerctl/templates/minerctl/trame_list.html
-badd +0 minemgr_web/settings.py
+badd +33 minerctl/trame_views.py
+badd +1 minerctl/templates/minerctl/trame_list.html
+badd +29 minemgr_web/settings.py
 argglobal
 silent! argdel *
 set stal=2
@@ -69,11 +69,11 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe '1resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
+exe '1resize ' . ((&lines * 26 + 27) / 54)
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 24 + 27) / 54)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -84,7 +84,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 29 - ((16 * winheight(0) + 11) / 23)
+let s:l = 29 - ((18 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -102,7 +102,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 23 - ((11 * winheight(0) + 11) / 22)
+let s:l = 23 - ((10 * winheight(0) + 12) / 24)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -120,18 +120,18 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 26 - ((25 * winheight(0) + 23) / 46)
+let s:l = 26 - ((25 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 26
 normal! 073|
 wincmd w
-exe '1resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
+exe '1resize ' . ((&lines * 26 + 27) / 54)
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 24 + 27) / 54)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
 tabedit minerctl/trame_views.py
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -153,16 +153,16 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe '1resize ' . ((&lines * 15 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 15 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-exe '3resize ' . ((&lines * 14 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
-exe '4resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 4resize ' . ((&columns * 89 + 89) / 179)
-exe '5resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 5resize ' . ((&columns * 89 + 89) / 179)
+exe '1resize ' . ((&lines * 17 + 27) / 54)
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 17 + 27) / 54)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+exe '3resize ' . ((&lines * 15 + 27) / 54)
+exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
+exe '4resize ' . ((&lines * 26 + 27) / 54)
+exe 'vert 4resize ' . ((&columns * 103 + 103) / 207)
+exe '5resize ' . ((&lines * 24 + 27) / 54)
+exe 'vert 5resize ' . ((&columns * 103 + 103) / 207)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -173,7 +173,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 33 - ((11 * winheight(0) + 7) / 15)
+let s:l = 33 - ((12 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -191,7 +191,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 6 - ((3 * winheight(0) + 7) / 15)
+let s:l = 6 - ((3 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -209,7 +209,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 17 - ((9 * winheight(0) + 7) / 14)
+let s:l = 17 - ((10 * winheight(0) + 7) / 15)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -227,7 +227,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 13 - ((12 * winheight(0) + 11) / 23)
+let s:l = 13 - ((12 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -245,23 +245,23 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 12 - ((9 * winheight(0) + 11) / 22)
+let s:l = 12 - ((10 * winheight(0) + 12) / 24)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 12
 normal! 016|
 wincmd w
-exe '1resize ' . ((&lines * 15 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 15 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-exe '3resize ' . ((&lines * 14 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
-exe '4resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 4resize ' . ((&columns * 89 + 89) / 179)
-exe '5resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 5resize ' . ((&columns * 89 + 89) / 179)
+exe '1resize ' . ((&lines * 17 + 27) / 54)
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 17 + 27) / 54)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+exe '3resize ' . ((&lines * 15 + 27) / 54)
+exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
+exe '4resize ' . ((&lines * 26 + 27) / 54)
+exe 'vert 4resize ' . ((&columns * 103 + 103) / 207)
+exe '5resize ' . ((&lines * 24 + 27) / 54)
+exe 'vert 5resize ' . ((&columns * 103 + 103) / 207)
 tabedit templates/base.html
 set splitbelow splitright
 set nosplitbelow
@@ -278,7 +278,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 15 - ((14 * winheight(0) + 23) / 46)
+let s:l = 15 - ((14 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -298,11 +298,11 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-exe '3resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 26 + 27) / 54)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+exe '3resize ' . ((&lines * 24 + 27) / 54)
+exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -313,7 +313,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 21 - ((20 * winheight(0) + 23) / 46)
+let s:l = 21 - ((20 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -331,7 +331,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 6 - ((5 * winheight(0) + 11) / 23)
+let s:l = 6 - ((5 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -349,18 +349,18 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 10 - ((9 * winheight(0) + 11) / 22)
+let s:l = 10 - ((9 * winheight(0) + 12) / 24)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 10
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-exe '3resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 26 + 27) / 54)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+exe '3resize ' . ((&lines * 24 + 27) / 54)
+exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
 tabedit minerctl/templates/minerctl/miner_new.html
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -375,11 +375,11 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe '1resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
+exe '1resize ' . ((&lines * 26 + 27) / 54)
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 24 + 27) / 54)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -390,7 +390,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 6 - ((5 * winheight(0) + 11) / 23)
+let s:l = 6 - ((5 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -408,7 +408,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 6 - ((5 * winheight(0) + 11) / 22)
+let s:l = 6 - ((5 * winheight(0) + 12) / 24)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -426,18 +426,18 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 6 - ((5 * winheight(0) + 23) / 46)
+let s:l = 6 - ((5 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 6
 normal! 0
 wincmd w
-exe '1resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
+exe '1resize ' . ((&lines * 26 + 27) / 54)
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 24 + 27) / 54)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
 tabedit minerctl/templates/minerctl/miner_edit.html
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -452,11 +452,11 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe '1resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
+exe '1resize ' . ((&lines * 26 + 27) / 54)
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 24 + 27) / 54)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -467,7 +467,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 5 - ((4 * winheight(0) + 11) / 23)
+let s:l = 5 - ((4 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -485,7 +485,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 6 - ((5 * winheight(0) + 11) / 22)
+let s:l = 6 - ((5 * winheight(0) + 12) / 24)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -503,18 +503,18 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 6 - ((5 * winheight(0) + 23) / 46)
+let s:l = 6 - ((5 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 6
 normal! 036|
 wincmd w
-exe '1resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
+exe '1resize ' . ((&lines * 26 + 27) / 54)
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 24 + 27) / 54)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
 tabedit minerctl/templates/minerctl/group_list.html
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -533,14 +533,14 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe '1resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-exe '3resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
-exe '4resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 4resize ' . ((&columns * 89 + 89) / 179)
+exe '1resize ' . ((&lines * 26 + 27) / 54)
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 24 + 27) / 54)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+exe '3resize ' . ((&lines * 26 + 27) / 54)
+exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
+exe '4resize ' . ((&lines * 24 + 27) / 54)
+exe 'vert 4resize ' . ((&columns * 103 + 103) / 207)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -551,7 +551,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 28 - ((15 * winheight(0) + 11) / 23)
+let s:l = 28 - ((17 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -569,7 +569,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 30 - ((8 * winheight(0) + 11) / 22)
+let s:l = 30 - ((9 * winheight(0) + 12) / 24)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -587,7 +587,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 26 - ((8 * winheight(0) + 11) / 23)
+let s:l = 26 - ((9 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -605,21 +605,21 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 19 - ((3 * winheight(0) + 11) / 22)
+let s:l = 19 - ((3 * winheight(0) + 12) / 24)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 19
 normal! 037|
 wincmd w
-exe '1resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-exe '3resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
-exe '4resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 4resize ' . ((&columns * 89 + 89) / 179)
+exe '1resize ' . ((&lines * 26 + 27) / 54)
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 24 + 27) / 54)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+exe '3resize ' . ((&lines * 26 + 27) / 54)
+exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
+exe '4resize ' . ((&lines * 24 + 27) / 54)
+exe 'vert 4resize ' . ((&columns * 103 + 103) / 207)
 tabedit minerctl/templates/minerctl/command_remove.html
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -634,11 +634,11 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe '1resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
+exe '1resize ' . ((&lines * 26 + 27) / 54)
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 24 + 27) / 54)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -649,7 +649,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 4 - ((3 * winheight(0) + 11) / 23)
+let s:l = 4 - ((3 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -667,7 +667,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 4 - ((3 * winheight(0) + 11) / 22)
+let s:l = 4 - ((3 * winheight(0) + 12) / 24)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -685,18 +685,18 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 4 - ((3 * winheight(0) + 23) / 46)
+let s:l = 4 - ((3 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 4
 normal! 052|
 wincmd w
-exe '1resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe '2resize ' . ((&lines * 22 + 24) / 49)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-exe 'vert 3resize ' . ((&columns * 89 + 89) / 179)
+exe '1resize ' . ((&lines * 26 + 27) / 54)
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 24 + 27) / 54)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
 tabedit static/css/style.css
 set splitbelow splitright
 set nosplitbelow
@@ -713,7 +713,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 46 - ((45 * winheight(0) + 23) / 46)
+let s:l = 46 - ((45 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -729,8 +729,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -741,7 +741,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 59 - ((22 * winheight(0) + 23) / 46)
+let s:l = 59 - ((24 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -759,16 +759,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 17 - ((16 * winheight(0) + 23) / 46)
+let s:l = 17 - ((16 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 17
 normal! 027|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
-tabnext 10
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+tabnext 1
 set stal=1
 if exists('s:wipebuf') && s:wipebuf != bufnr('%')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -787,7 +787,7 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 1wincmd w
-tabnext 10
+tabnext 1
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

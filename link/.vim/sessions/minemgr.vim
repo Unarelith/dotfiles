@@ -1,6 +1,6 @@
 " ~/.dotfiles/link/.vim/sessions/minemgr.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 24 décembre 2017 at 15:32:17.
+" Created by session.vim 2.13.1 on 13 juillet 2018 at 15:59:15.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -13,13 +13,13 @@ if &background != 'dark'
 	set background=dark
 endif
 if !exists('g:colors_name') || g:colors_name != 'default' | colorscheme default | endif
-call setqflist([{'lnum': 104, 'col': 27, 'valid': 1, 'vcol': 0, 'nr': 0, 'type': 'F', 'pattern': '', 'filename': 'source/Utils.cpp', 'text': 'getw'}])
+call setqflist([{'lnum': 104, 'col': 27, 'pattern': '', 'valid': 1, 'vcol': 0, 'nr': 0, 'type': 'F', 'module': '', 'filename': 'source/Utils.cpp', 'text': 'getw'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/rendu/Autres/minemgr
+cd ~/tmp/minemgr
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -44,14 +44,13 @@ badd +60 source/MinerManager.cpp
 badd +5 include/HttpClient.hpp
 badd +40 source/HttpClient.cpp
 badd +20 .gitignore
-badd +23 source/super_minemgr.cpp
+badd +1 source/super_minemgr.cpp
 badd +1 include/common/Application.hpp
 badd +1 source/common/Application.cpp
 badd +1 include/common/MinerManager.hpp
 badd +1 source/common/MinerManager.cpp
 badd +1 include/common/Heartbeat.hpp
 badd +1 source/common/Heartbeat.cpp
-badd +1 include/common/H
 badd +1 include/common/HttpClient.hpp
 badd +1 source/common/HttpClient.cpp
 badd +1 include/common/Utils.hpp
@@ -131,7 +130,6 @@ normal! zt
 51
 normal! 023|
 wincmd w
-2wincmd w
 exe '1resize ' . ((&lines * 25 + 27) / 54)
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
 exe '2resize ' . ((&lines * 25 + 27) / 54)
@@ -182,56 +180,7 @@ if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 89
-normal! 060|
-wincmd w
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabedit include/common/MinerManager.hpp
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-wincmd w
-argglobal
-if bufexists('source/common/MinerManager.cpp') | buffer source/common/MinerManager.cpp | else | edit source/common/MinerManager.cpp | endif
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 93 - ((29 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-93
-normal! 05|
+normal! 049|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
@@ -281,6 +230,55 @@ exe s:l
 normal! zt
 63
 normal! 059|
+wincmd w
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+tabedit include/common/MinerManager.hpp
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winheight=1 winminwidth=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+wincmd w
+argglobal
+if bufexists('source/common/MinerManager.cpp') | buffer source/common/MinerManager.cpp | else | edit source/common/MinerManager.cpp | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 60 - ((38 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+60
+normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
@@ -382,9 +380,9 @@ normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 100 + 103) / 207)
 exe 'vert 2resize ' . ((&columns * 106 + 103) / 207)
-tabnext 1
+tabnext 4
 set stal=1
-if exists('s:wipebuf')
+if exists('s:wipebuf') && s:wipebuf != bufnr('%')
 "   silent exe 'bwipe ' . s:wipebuf
 endif
 " unlet! s:wipebuf
@@ -400,8 +398,8 @@ let &so = s:so_save | let &siso = s:siso_save
 " Everything down here is generated by vim-session (not supported
 " by :mksession out of the box).
 
-2wincmd w
-tabnext 1
+1wincmd w
+tabnext 4
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')
