@@ -105,6 +105,7 @@ passwd bazin_q
 vi /etc/sudoers
 chown root:root /
 chmod 755 /
+vim /etc/systemd/logind.conf # HandlePowerKey=suspend
 ```
 
 • Dans le cas d’un système 32 bits :

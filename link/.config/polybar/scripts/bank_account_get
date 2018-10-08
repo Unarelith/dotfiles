@@ -17,7 +17,7 @@ with open_book(expanduser("~") + "/Dropbox/Comptes/Comptes.gnucash", open_if_loc
         if acc.name == "Compte chèques":
             now = datetime.now(timezone.utc) + timedelta(hours=11, minutes=59)
             sums = [sum([sp.value for sp in acc.splits if sp.reconcile_state != 'n']) * acc.sign,                              # Reconciled
-                    sum([sp.value for sp in acc.splits if sp.transaction.post_date <= now]) * acc.sign,                        # Present
+                    sum([sp.value for sp in acc.splits if sp.transaction.post_date <= now.date()]) * acc.sign,                        # Present
                     sum([sp.value for sp in acc.splits]) * acc.sign]                                                           # Future
             state_names = ['Pointé', 'Présent', 'Futur']
 

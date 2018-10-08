@@ -4,7 +4,7 @@
 ! Disable scroll bar
 URxvt*scrollBar:                false
 URxvt*saveLines:                10000
-! URxvt*letterSpace:              -1
+URxvt*letterSpace:              -1
 
 ! Do not scroll with output
 URxvt*scrollTtyOutput:          false

@@ -29,6 +29,7 @@ jshon
 jq
 kolourpaint
 libcanberra
+libdbi-drivers
 libgnome-keyring
 lm_sensors
 lxappearance
@@ -52,6 +53,7 @@ pulseaudio
 pulseaudio-alsa
 pulseaudio-equalizer
 python-gobject
+python-google-api-python-client
 python-pexpect
 python-pip
 python-xdg
