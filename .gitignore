@@ -39,6 +39,7 @@ link/rendu/.cache.gws
 !link/.config/fontconfig/fonts.conf
 !link/.config/gtk-3.0/gtk.css
 !link/.config/gtk-3.0/settings.ini
+!link/.config/mpd
 !link/.config/redshift.conf
 !link/.config/synapse/config.json
 !link/.gnucash/saved-reports-2.4

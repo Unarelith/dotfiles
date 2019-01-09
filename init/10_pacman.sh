@@ -18,6 +18,7 @@ fish
 gdb
 gnome-calculator
 gnome-control-center
+gnome-font-viewer
 gnome-keyring
 gparted
 gtk-xfce-engine
@@ -82,6 +83,7 @@ xcompmgr
 xsel'
 
 default_aur_packages='
+discord
 dropbox
 i3-gaps
 i3lock-color-git
@@ -89,6 +91,7 @@ i3lock-fancy-dualmonitors-git
 gnucash
 gws
 nautilus-dropbox
+nautilus-open-terminal-git
 polybar-git
 ttf-font-awesome-4
 ttf-material-icons

@@ -4,15 +4,15 @@ FG='#dcdcdc'
 # BG='#333333'
 BG='#090909'
 
-font1="Sans:size=10"
+font1="Monospace:size=10"
 
 money=$(exec ~/.config/polybar/scripts/bank_account_get)
 
 # monitors=$(xrandr --listactivemonitors | head -1 | awk '{print $2}')
 # if [ $monitors == '1' ]
 # then
-	x=1595
-	y=880
+	x=1415
+	y=1035
 # else
 # 	x=3545
 # 	y=1018
@@ -22,9 +22,12 @@ money=$(exec ~/.config/polybar/scripts/bank_account_get)
 echo "
 ^fg(#e2abd4)^fn(Sans:bold:size=10)Bank account
 "
-echo "$money"
+echo "$money
+"
 
-) | dzen2 -p 10 -x $x -y $y -w 150 -bg $BG -fg $FG -l 8 -sa c -ta c -e 'onstart=uncollapse;button1=exit;button3=exit' -fn $font1 -xs "$(bash ~/.local/bin/get-current-output | awk '{print $2}')" &
+boobank ls -f table -s label,balance,coming
+
+) | dzen2 -p 10 -x $x -y $y -w 500 -bg $BG -fg $FG -l 16 -sa c -ta c -e 'onstart=uncollapse;button1=exit;button3=exit' -fn $font1 -xs "$(bash ~/.local/bin/get-current-output | awk '{print $2}')" &
 
 pid=$!
 echo $pid

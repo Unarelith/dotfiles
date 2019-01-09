@@ -134,7 +134,7 @@ Plugin 'basepi/vim-conque'
 " Plugin 'LeBarbu/vim-epitech'
 Plugin 'vim-utils/vim-man'
 Plugin 'dag/vim-fish'
-" Plugin 'wakatime/vim-wakatime'
+Plugin 'wakatime/vim-wakatime'
 Plugin 'Raimondi/delimitMate'
 Plugin 'gregsexton/VimCalc'
 Plugin 'terryma/vim-multiple-cursors'
@@ -269,16 +269,19 @@ source ~/.vim/lightline.config.vim
 " vim-altr config
 "------------------------------------------------------------------------------
 call altr#remove_all()
-call altr#define('include/%/%.hpp', 'source/%/%.cpp')
-call altr#define('include/%.hpp', 'source/%.cpp')
-call altr#define('include/%.h', 'source/%.cpp')
-call altr#define('include/%.h', 'source/%.c')
-call altr#define('%.v.glsl', '%.f.glsl')
-call altr#define('%.hpp', '%.cpp')
-call altr#define('%.h', '%.cpp')
-call altr#define('%/%.h', '%/%.c')
-call altr#define('%/%.hpp', '%/%.cpp')
-call altr#define('%.h', '%.c')
+call altr#define('include/%/%.hpp',    'source/%/%.cpp')
+call altr#define('include/%.hpp',      'source/%.cpp')
+call altr#define('include/%.h',        'source/%.cpp')
+call altr#define('include/%.h',        'source/%.c')
+call altr#define('include/gk/%.hpp',   'source/%.cpp')
+call altr#define('include/gk/%/%.hpp', 'source/%/%.cpp')
+call altr#define('%/%.h',              '%/%.c')
+call altr#define('%/%.hpp',            '%/%.cpp')
+call altr#define('%.h',                '%.c')
+call altr#define('%.h',                '%.cpp')
+call altr#define('%.hpp',              '%.cpp')
+call altr#define('%.v.glsl',           '%.f.glsl')
+call altr#define('%.vert',             '%.frag')
 
 "------------------------------------------------------------------------------
 " YouCompleteMe config

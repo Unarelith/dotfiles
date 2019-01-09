@@ -15,7 +15,8 @@ fi
 # Needed to setup my personal workspace
 if [ "$1" == "workspace" ]; then
 	old_output=""
-	for output in eDP-1 DP-2 DP-1; do
+	for output in eDP1 HDMI1; do
+	# for output in eDP-1 DP-2 DP-1; do
 	# for output in eDP-1 DP-1; do
 	# for output in eDP1 DP2 DP1; do
 		if [ -z $(xrandr --query | grep "$output connected") ]; then
