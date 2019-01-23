@@ -159,6 +159,7 @@ mv dotfiles .dotfiles
 bash ~/.dotfiles/bin/dotfiles
 # configurer fish
 timedatectl set-ntp true
+lxappearance
 ```
 • Redémarrer, puis relancer `~/.dotfiles/init/11_systemd.sh`
 

@@ -370,7 +370,7 @@ type = internal/github
 format =     <label>
 label = %notifications%
 token = ${file:/home/bazin_q/.config/polybar/github.token}
-empty-notifications = false
+empty-notifications = true
 interval = 30
 
 [module/gmail]
