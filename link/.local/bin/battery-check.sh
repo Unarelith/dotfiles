@@ -2,7 +2,7 @@
 
 # Battery level warning script
 
-[ -z "$(acpi -b | grep Discharging)" ] && exit 0
+# [ -z "$(acpi -b | grep Discharging)" ] && exit 0
 
 battery_level=$(acpi -b | grep -oP '[0-9]+(?=%)')
 
@@ -10,7 +10,7 @@ flags_low="-u normal -t 5000"
 flags_very_low="-u critical -t 80000"
 flags_critical="-u critical -t 100000"
 
-if [ $battery_level -eq 100 ] && [ -z "$(acpi -b | grep Discharging)" ]
+if [ $battery_level -ge 95 ] && [ -z "$(acpi -b | grep Discharging)" ]
 then
 	notify-send ${flags_low} "Battery fully charged"  "Please unplug your charger."
 elif [ $battery_level -le 30 ] && [ $battery_level -gt 20 ]
