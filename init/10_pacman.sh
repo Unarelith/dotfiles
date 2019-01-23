@@ -20,10 +20,12 @@ gnome-calculator
 gnome-control-center
 gnome-font-viewer
 gnome-keyring
+gnucash
 gparted
 gtk-xfce-engine
 gvim
 hexchat
+i3-gaps
 i3status
 imagemagick
 jshon
@@ -79,16 +81,16 @@ ttf-ubuntu-font-family
 valgrind
 vinagre
 xorg-xbacklight
+xorg-xrandr
 xcompmgr
-xsel'
+xsel
+zeal'
 
 default_aur_packages='
 discord
 dropbox
-i3-gaps
 i3lock-color-git
 i3lock-fancy-dualmonitors-git
-gnucash
 gws
 nautilus-dropbox
 nautilus-open-terminal-git
@@ -97,9 +99,7 @@ ttf-font-awesome-4
 ttf-material-icons
 ttf-unifont
 ttf-weather-icons
-volnoti
-xorg-xrandr
-zeal'
+volnoti'
 
 echo -ne "$BOLD:: Do you want to install yaourt? [y/N]" $WHITE
 

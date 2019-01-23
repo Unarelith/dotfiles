@@ -1,4 +1,4 @@
 32c32
-<         print(args.prefix, flush=True)
+<     print(output, flush=True)
 ---
->         print(args.prefix + str(count), flush=True)
+>     print(output + str(count), flush=True)

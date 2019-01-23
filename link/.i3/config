@@ -136,7 +136,7 @@ set $launcher2                      dmenu_run -l 10 -p "Run" -i
 set $composer                       xcompmgr -c -f -I0.045 -O0.045 &
 set $composer2                      compton -b --config ~/.config/compton/compton.conf
 
-set $lock_screen                    i3lock-fancy
+set $lock_screen                    i3lock-fancy-dualmonitor
 
 font                                pango:DejaVu Sans Mono 10
 
