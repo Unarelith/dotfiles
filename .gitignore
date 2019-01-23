@@ -42,6 +42,7 @@ link/rendu/.cache.gws
 !link/.config/mpd
 !link/.config/redshift.conf
 !link/.config/synapse/config.json
+!link/.config/weboob/backends
 !link/.gnucash/saved-reports-2.4
 !link/.local/share/konsole/Linux.colorscheme
 !link/.local/share/konsole/Shell.profile

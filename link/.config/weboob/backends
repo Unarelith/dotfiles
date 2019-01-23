@@ -1,0 +1,7 @@
+[bnporc]
+rotating_password = True
+_module = bnporc
+website = pp
+login = `keyring get bank account`
+password = `keyring get bank pass`
+
