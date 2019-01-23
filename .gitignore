@@ -47,6 +47,7 @@ link/rendu/.cache.gws
 !link/.local/share/konsole/Shell.profile
 !link/.local/share/konsole/Terminal.profile
 !link/.local/share/konsole/WhiteOnBlack.colorscheme
+!link/.local/share/python_keyring
 !link/.local/share/systemd/user
 !link/Images/Backgrounds
 
