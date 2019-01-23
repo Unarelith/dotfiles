@@ -66,7 +66,7 @@ font-3 = MaterialIcons:size=10;1
 
 modules-left = mpd-playlist mpd
 modules-center = memory cpu
-modules-right = gmail systemd_user temperature weather-lyon bank-account pacman-updates disk-root disk-home
+modules-right = github gmail systemd_user temperature weather-lyon bank-account pacman-updates disk-root disk-home
 
 [bar/external_bottom]
 inherit-from = bar/bottom
@@ -364,6 +364,14 @@ bar-used-empty-foreground = #55
 ;   %mountpoint%
 ; label-unmounted = %mountpoint%: not mounted
 ; label-unmounted-foreground = #55
+
+[module/github]
+type = internal/github
+format =     <label>
+label = %notifications%
+token = ${file:/home/bazin_q/.config/polybar/github.token}
+empty-notifications = false
+interval = 30
 
 [module/gmail]
 type = custom/script

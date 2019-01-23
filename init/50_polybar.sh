@@ -15,7 +15,7 @@ then
 	curl -LO https://github.com/vyachkonovalov/polybar-gmail/archive/master.tar.gz && \
 	tar zxf master.tar.gz && rm master.tar.gz && \
 	mv polybar-gmail-master gmail && \
-	patch ~/.config/polybar/gmail/launch.py -i ~/.dotfiles/patches/polybar_gmail.patch && \
+	#patch ~/.config/polybar/gmail/launch.py -i ~/.dotfiles/patches/polybar_gmail.patch && \
 	python ~/.config/polybar/gmail/auth.py
 fi
 
