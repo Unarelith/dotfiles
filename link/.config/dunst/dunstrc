@@ -135,9 +135,12 @@
 	# Maximum icon size
 	max_icon_size = 32
 
+	# Rounded corners
+	corner_radius = 3
+
 [frame]
     width = 2
-    color = "#777777"
+    color = "#999999"
 
 [shortcuts]
     close = ctrl+space
@@ -146,8 +149,10 @@
     context = ctrl+shift+semicolon
 
 [urgency_low]
-    background = "#ffffff"
-    foreground = "#000000"
+    # background = "#ffffff"
+    # foreground = "#000000"
+	background = "#444444"
+	foreground = "#ffffff"
     timeout = 30
 
 [urgency_normal]
@@ -232,5 +237,11 @@
 [test]
     summary = "*test*"
     background="#22dd22"
+
+[hamster]
+	# appname = hamster
+	summary = "Working on*"
+	timeout = 0
+	urgency = low
 
 # vim: ft=cfg
