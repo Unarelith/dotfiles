@@ -10,9 +10,9 @@ flags_low="-u normal -t 5000"
 flags_very_low="-u critical -t 80000"
 flags_critical="-u critical -t 100000"
 
-if [ $battery_level -ge 95 ] && [ -z "$(acpi -b | grep Discharging)" ]
+if [ -z "$(acpi -b | grep Discharging)" ]
 then
-	notify-send ${flags_low} "Battery fully charged"  "Please unplug your charger."
+	[ $battery_level -ge 95 ] && notify-send ${flags_low} "Battery fully charged"  "Please unplug your charger."
 elif [ $battery_level -le 30 ] && [ $battery_level -gt 20 ]
 then
 	notify-send ${flags_low} "Battery low warning"  "Battery level: ${battery_level}%"

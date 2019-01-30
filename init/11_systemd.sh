@@ -4,7 +4,6 @@ slim
 NetworkManager'
 
 systemd_user_services='
-dropbox
 popup-manager
 pulseaudio
 redshift-gtk'

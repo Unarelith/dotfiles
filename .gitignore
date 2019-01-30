@@ -52,6 +52,7 @@ link/rendu/.cache.gws
 !link/.local/share/python_keyring
 !link/.local/share/systemd/user
 !link/Images/Backgrounds
+!link/.config/xfce4
 
 # Top secret stuff!
 link/.ssh/authorized_keys

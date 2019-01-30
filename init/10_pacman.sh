@@ -80,6 +80,7 @@ ttf-liberation
 ttf-ubuntu-font-family
 valgrind
 vinagre
+xfce4-power-manager
 xorg-xbacklight
 xorg-xrandr
 xcompmgr

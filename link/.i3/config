@@ -148,12 +148,15 @@ exec --no-startup-id                /bin/bash ~/.local/bin/update-background
 exec --no-startup-id                /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id                xinput set-button-map 13 1 1 3
 exec --no-startup-id                nm-applet &
+exec --no-startup-id                hamster &
 exec --no-startup-id                dunst &
 exec --no-startup-id                conky &
 exec --no-startup-id                xrandr --setprovideroffloadsink 1 0
 exec --no-startup-id                mpd
 exec --no-startup-id                remind -z1 -m ~/.reminders &
 exec --no-startup-id                systemctl --user restart popup-manager
+exec --no-startup-id                dropbox &
+exec --no-startup-id                xfce4-power-manager &
 # exec --no-startup-id                i3-msg "workspace $workspaceU; exec /usr/bin/urxvt -e fish -c 'cd ~/rendu/Perso/ModularGameEngine/Core'"
 # exec --no-startup-id                i3-msg "workspace $workspaceI; exec /usr/bin/urxvt -e fish -c 'cd ~/rendu/Perso/ModularGameEngine/Core'"
 # exec --no-startup-id                i3-msg "workspace $workspace1"
@@ -169,6 +172,7 @@ for_window [class="Firefox"]        border none
 # for_window [name="dzen slave"]      border pixel 4
 
 assign [class="Chromium"] $workspace1
+assign [class="Hamster"] $workspace3
 assign [class="Discord"] $workspace10
 
 gaps inner 25
