@@ -1,6 +1,6 @@
 " ~/.dotfiles/link/.vim/sessions/OpenMiner.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 09 janvier 2019 at 03:09:44.
+" Created by session.vim 2.13.1 on 31 janvier 2019 at 10:16:08.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -28,7 +28,7 @@ set shortmess=aoO
 badd +292 source/world/ChunkBuilder.cpp
 badd +54 source/world/World.cpp
 badd +58 source/lua/ScriptEngine.cpp
-badd +5 TODO
+badd +49 TODO
 badd +1 README.md
 badd +26 source/core/Application.cpp
 badd +33 include/core/Application.hpp
@@ -175,8 +175,8 @@ badd +1 source/gui/PlayerInventoryWidget.cpp
 badd +147 source/world/ChunkLightmap.cpp
 badd +22 include/world/ChunkLightmap.hpp
 badd +18 resources/shaders/light.f.glsl
-badd +57 resources/shaders/game.f.glsl
-badd +62 resources/shaders/game.v.glsl
+badd +25 resources/shaders/game.f.glsl
+badd +25 resources/shaders/game.v.glsl
 badd +4 include/core/Config.hpp
 badd +16 source/core/Config.cpp
 badd +33 include/lua/LuaMod.hpp
@@ -195,9 +195,18 @@ badd +38 include/lua/LuaCore.hpp
 badd +26 source/lua/LuaCore.cpp
 badd +73 mods/bit.lua
 badd +12 mods/furnace.lua
-badd +0 mods/workbench.lua
+badd +1 mods/workbench.lua
+badd +25 common/include/world/ChunkLightmap.hpp
+badd +0 common/source/world/ChunkLightmap.cpp
+badd +1 client/include/world/ChunkBuilder.hpp
+badd +0 client/source/world/ChunkBuilder.cpp
 argglobal
 silent! argdel *
+set stal=2
+tabnew
+tabnew
+tabnew
+tabnext -3
 edit TODO
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -221,11 +230,11 @@ set winminwidth=0
 set winwidth=1
 exe '1resize ' . ((&lines * 25 + 27) / 54)
 exe 'vert 1resize ' . ((&columns * 100 + 103) / 207)
-exe '2resize ' . ((&lines * 26 + 27) / 54)
+exe '2resize ' . ((&lines * 25 + 27) / 54)
 exe 'vert 2resize ' . ((&columns * 100 + 103) / 207)
 exe '3resize ' . ((&lines * 25 + 27) / 54)
 exe 'vert 3resize ' . ((&columns * 106 + 103) / 207)
-exe '4resize ' . ((&lines * 26 + 27) / 54)
+exe '4resize ' . ((&lines * 25 + 27) / 54)
 exe 'vert 4resize ' . ((&columns * 106 + 103) / 207)
 argglobal
 setlocal fdm=expr
@@ -241,7 +250,7 @@ if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 46
-normal! 034|
+normal! 030|
 wincmd w
 argglobal
 if bufexists('Notes') | buffer Notes | else | edit Notes | endif
@@ -253,7 +262,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 15 - ((14 * winheight(0) + 13) / 26)
+let s:l = 15 - ((13 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -288,22 +297,156 @@ setlocal fml=1
 setlocal fdn=20
 setlocal nofen
 silent! normal! zE
-let s:l = 152 - ((25 * winheight(0) + 13) / 26)
+let s:l = 112 - ((24 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-152
-normal! 035|
+112
+normal! 0
 wincmd w
 exe '1resize ' . ((&lines * 25 + 27) / 54)
 exe 'vert 1resize ' . ((&columns * 100 + 103) / 207)
-exe '2resize ' . ((&lines * 26 + 27) / 54)
+exe '2resize ' . ((&lines * 25 + 27) / 54)
 exe 'vert 2resize ' . ((&columns * 100 + 103) / 207)
 exe '3resize ' . ((&lines * 25 + 27) / 54)
 exe 'vert 3resize ' . ((&columns * 106 + 103) / 207)
-exe '4resize ' . ((&lines * 26 + 27) / 54)
+exe '4resize ' . ((&lines * 25 + 27) / 54)
 exe 'vert 4resize ' . ((&columns * 106 + 103) / 207)
-tabnext 1
+tabnext
+edit common/include/world/ChunkLightmap.hpp
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 55 - ((36 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+55
+normal! 0
+wincmd w
+argglobal
+if bufexists('common/source/world/ChunkLightmap.cpp') | buffer common/source/world/ChunkLightmap.cpp | else | edit common/source/world/ChunkLightmap.cpp | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 144 - ((29 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+144
+normal! 017|
+wincmd w
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+tabnext
+edit client/include/world/ChunkBuilder.hpp
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 19 - ((0 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+19
+normal! 0
+wincmd w
+argglobal
+if bufexists('client/source/world/ChunkBuilder.cpp') | buffer client/source/world/ChunkBuilder.cpp | else | edit client/source/world/ChunkBuilder.cpp | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 278 - ((4 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+278
+normal! 031|
+wincmd w
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+tabnext
+edit resources/shaders/game.f.glsl
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 52 - ((36 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+52
+normal! 0
+tabnext 2
+set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
 "   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -315,13 +458,14 @@ if file_readable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &so = s:so_save | let &siso = s:siso_save
+nohlsearch
 
 " Support for special windows like quick-fix and plug-in windows.
 " Everything down here is generated by vim-session (not supported
 " by :mksession out of the box).
 
-1wincmd w
-tabnext 1
+2wincmd w
+tabnext 2
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

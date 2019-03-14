@@ -10,6 +10,8 @@ fi
 [ -f /etc/xprofile ] && source /etc/xprofile
 [ -f ~/.xprofile ] && source ~/.xprofile
 
+export GDK_BACKEND=x11
+
 exec $1
 # exec i3
 # exec xfwm4

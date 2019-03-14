@@ -37,7 +37,7 @@ font-2 = FontAwesome:size=10;1
 
 modules-left = i3
 modules-center = date-script
-modules-right = volume backlight wireless-network wired-network battery screens
+modules-right = volume backlight wireless-network wired-network battery screens screenshot powerkey
 
 [bar/bottom]
 monitor = ${env:MONITOR:}
@@ -99,9 +99,11 @@ modules-right = clock
 [module/backlight]
 type = internal/xbacklight
 
+; card = intel_backlight
+
 ; XRandR output to get get values from
 ; Default: the monitor defined for the running bar
-; output = DP1
+output = eDP1
 
 ; Create scroll handlers used to set the backlight value
 ; Default: true
@@ -428,6 +430,37 @@ label-urgent-foreground = #000000
 label-urgent-background = #bd2c40
 label-urgent-padding = 2
 
+[module/keyboard]
+type = internal/keyboard
+
+; List of indicators to ignore
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+
+; Available tags:
+;   <label-layout> (default)
+;   <label-indicator> (default)
+format = <label-layout> <label-indicator>
+format-spacing = 0
+
+; Available tokens:
+;   %layout%
+;   %name%
+;   %number%
+;   %icon% (unreleased)
+; Default: %layout%
+label-layout = %name%
+label-layout-padding = 2
+label-layout-background = #bc99ed
+label-layout-foreground = #000
+
+; Available tokens:
+;   %name%
+; Default: %name%
+label-indicator = %name%
+label-indicator-padding = 2
+label-indicator-background = #8139e8
+
 [module/memory]
 type = internal/memory
 format = <label> <bar-used>
@@ -528,12 +561,36 @@ menu-2-1 = Cancel
 menu-2-1-foreground = #fba922
 menu-2-1-exec = menu-open-0
 
+[module/powerkey]
+type = custom/menu
+
+expand-right = true
+
+label-open = 
+label-close = 
+label-separator = |
+
+menu-0-0 = Suspend
+menu-0-0-exec = systemctl suspend
+
+menu-0-1 = Hibernate
+menu-0-1-exec = systemctl hibernate
+
+; click-left = systemctl suspend && i3lock-fancy-dualmonitor
+
+[module/screenshot]
+type = custom/text
+
+content = 
+
+click-left = xfce4-screenshooter
+
 [module/screens]
 type = custom/text
 
 content = 
 
-click-left = ~/.config/polybar/scripts/screens
+click-left = lxrandr
 click-right = ~/.config/polybar/scripts/screens workspace
 
 [module/systemd_user]

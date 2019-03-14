@@ -130,11 +130,11 @@ Plugin 'beyondmarc/opengl.vim'
 " Plugin 'justmao945/vim-clang'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'basepi/vim-conque'
+" Plugin 'basepi/vim-conque'
 " Plugin 'LeBarbu/vim-epitech'
 Plugin 'vim-utils/vim-man'
 Plugin 'dag/vim-fish'
-" Plugin 'wakatime/vim-wakatime'
+Plugin 'wakatime/vim-wakatime'
 Plugin 'Raimondi/delimitMate'
 Plugin 'gregsexton/VimCalc'
 Plugin 'terryma/vim-multiple-cursors'
@@ -158,6 +158,7 @@ Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'OrangeT/vim-csharp'
 " let g:OmniSharp_server_type = 'roslyn'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mustache/vim-mustache-handlebars'
 
 Plugin 'Valloric/YouCompleteMe'
 " Plugin 'jeaye/color_coded'      " <= Too slow to refresh + same thing as above + lots of bugs
@@ -459,9 +460,10 @@ let g:ctrlp_cmd = 'CtrlPCurWD'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
 
-set wildignore+=*/doxygen/*,*.so,*.swp,*.zip,*.o,*.d,*.o32,*.exe,*.oxx,*.moc.*,*/doc/html,*/doc/latex,*.png,*.mesh,*.skeleton,*.class,*/CMakeFiles/*,*/.gradle/*,*/build/*,*.dll,*/obj/*,*.exe,*.mdb,*/packages/*
+set wildignore+=*/doxygen/*,*.so,*.swp,*.zip,*.o,*.d,*.o32,*.exe,*.oxx,*.moc.*,*/doc/html,*/doc/latex,*.png,*.mesh,*.skeleton,*.class,*/CMakeFiles/*,*/.gradle/*,*/node_modules/*,*.dll,*/obj/*,*.exe,*.mdb,*/packages/*
 
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+" let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = 'node_modules\|git'
 
 map <C-H> :ClearAllCtrlPCaches<CR>
 

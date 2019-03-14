@@ -91,9 +91,8 @@ set $restart_key                    r
 set $resize_key                     r
 set $volup_key                      n
 set $voldown_key                    b
-# set $ws_to_right_key                Shift+n
-# set $ws_to_left_key                 Shift+b
-set $move_ws_key                    Shift+n
+set $move_h_ws_key                  Shift+n
+set $move_v_ws_key                  Shift+b
 
 # BEPO layout
 # set $workspace0_key                 dollar
@@ -136,7 +135,8 @@ set $launcher2                      dmenu_run -l 10 -p "Run" -i
 set $composer                       xcompmgr -c -f -I0.045 -O0.045 &
 set $composer2                      compton -b --config ~/.config/compton/compton.conf
 
-set $lock_screen                    i3lock-fancy-dualmonitor
+# set $lock_screen                    i3lock-fancy-dualmonitor
+set $lock_screen                    gnome-screensaver-command -l
 
 font                                pango:DejaVu Sans Mono 10
 
@@ -157,6 +157,7 @@ exec --no-startup-id                remind -z1 -m ~/.reminders &
 exec --no-startup-id                systemctl --user restart popup-manager
 exec --no-startup-id                dropbox &
 exec --no-startup-id                xfce4-power-manager &
+exec --no-startup-id                gnome-screensaver &
 # exec --no-startup-id                i3-msg "workspace $workspaceU; exec /usr/bin/urxvt -e fish -c 'cd ~/rendu/Perso/ModularGameEngine/Core'"
 # exec --no-startup-id                i3-msg "workspace $workspaceI; exec /usr/bin/urxvt -e fish -c 'cd ~/rendu/Perso/ModularGameEngine/Core'"
 # exec --no-startup-id                i3-msg "workspace $workspace1"
@@ -341,8 +342,8 @@ bindsym $mod+Shift+$restart_key     restart
 bindsym $mod+Shift+e                exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Move workspace through screens
-bindsym $mod+$move_ws_key           move workspace to output left
-# bindsym $mod+$ws_to_right_key       move workspace to output right
+bindsym $mod+$move_h_ws_key         move workspace to output left
+bindsym $mod+$move_v_ws_key         move workspace to output up
 
 # Rules for Hangouts
 for_window [window_role="pop-up"]   floating enable

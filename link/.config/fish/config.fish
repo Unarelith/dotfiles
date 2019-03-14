@@ -23,6 +23,7 @@ set -x EDITOR vim
 
 set -x PATH $PATH /usr/local/bin /home/$USER/.local/bin /home/$USER/.dotfiles/bin 2> /dev/null
 set -x PATH $PATH /usr/bin/core_perl 2> /dev/null
+set -x PATH $PATH /opt/atlassian/plugin-sdk/bin 2> /dev/null
 
 set -x LD_LIBRARY_PATH /usr/local/lib
 
