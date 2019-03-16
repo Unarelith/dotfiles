@@ -10,7 +10,7 @@ link/.config/polybar/github.token
 link/.config/fish/fish_history
 link/.config/fish/fishd*
 link/.config/gtk-3.0/servers
-link/.config/xfce4/xfce4-screenshooter
+link/.config/xfce4/*
 link/.gnucash/*
 link/.i3/logs
 link/.i3/i3blocks/.mail.sh.x

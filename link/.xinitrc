@@ -15,3 +15,4 @@ export GDK_BACKEND=x11
 exec $1
 # exec i3
 # exec xfwm4
+# exec openbox

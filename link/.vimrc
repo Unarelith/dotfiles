@@ -90,6 +90,8 @@ au BufRead,BufNewFile *.note,Notes,TODO,FIXME set filetype=notes nofoldenable
 au BufRead,BufNewFile *.qrc set filetype=xml
 au BufRead,BufNewFile *.qrc let b:syntastic_skip_checks = 1
 
+au FileType htmldjango setlocal tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+
 "------------------------------------------------------------------------------
 " Setup the default colorsheme
 "------------------------------------------------------------------------------

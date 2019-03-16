@@ -1,10 +1,6 @@
-" ~/.dotfiles/link/.vim/sessions/DataGalaxyConfluence.vim:
+" ~/.dotfiles/link/.vim/sessions/gakuen.vim:
 " Vim session script.
-<<<<<<< Updated upstream
-" Created by session.vim 2.13.1 on 22 février 2019 at 14:50:11.
-=======
-" Created by session.vim 2.13.1 on 15 mars 2019 at 14:05:33.
->>>>>>> Stashed changes
+" Created by session.vim 2.13.1 on 03 mars 2019 at 17:32:39.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -24,22 +20,16 @@ let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/rendu/Work/DataGalaxyConfluence
+cd ~/rendu/Perso/gakuen
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
 argglobal
 %argdel
-<<<<<<< Updated upstream
 set stal=2
 tabnew
 tabnew
-tabrewind
-edit atlassian-connect.json
-=======
-$argadd README.md
-set stal=2
 tabnew
 tabnew
 tabnew
@@ -47,12 +37,7 @@ tabnew
 tabnew
 tabrewind
 edit TODO
->>>>>>> Stashed changes
 set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
@@ -60,36 +45,14 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
 argglobal
-<<<<<<< Updated upstream
-setlocal fdm=manual
-setlocal fde=0
-=======
 setlocal fdm=expr
 setlocal fde=xolox#notes#foldexpr()
->>>>>>> Stashed changes
 setlocal fmr={{{,}}}
 setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-<<<<<<< Updated upstream
-setlocal fen
-silent! normal! zE
-let s:l = 145 - ((25 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-145
-normal! 036|
-wincmd w
-argglobal
-if bufexists("app.js") | buffer app.js | else | edit app.js | endif
-setlocal fdm=manual
-setlocal fde=0
-=======
 setlocal nofen
 let s:l = 3 - ((2 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
@@ -97,23 +60,50 @@ exe s:l
 normal! zt
 3
 normal! 0
+tabnext
+edit gakuen/settings.py
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
 wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
 argglobal
-if bufexists("README.md") | buffer README.md | else | edit README.md | endif
-setlocal fdm=expr
-setlocal fde=Foldexpr_markdown(v:lnum)
->>>>>>> Stashed changes
+setlocal fdm=manual
+setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-<<<<<<< Updated upstream
 setlocal fen
 silent! normal! zE
-=======
-setlocal nofen
->>>>>>> Stashed changes
+let s:l = 130 - ((50 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+130
+normal! 0
+wincmd w
+argglobal
+if bufexists("archiver/urls.py") | buffer archiver/urls.py | else | edit archiver/urls.py | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
 let s:l = 1 - ((0 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
@@ -124,21 +114,12 @@ wincmd w
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
 tabnext
-<<<<<<< Updated upstream
-edit routes/index.js
+edit archiver/templates/archiver/home.html
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
 1wincmd h
 wincmd w
-wincmd _ | wincmd |
-split
-1wincmd k
-wincmd w
-=======
-edit atlassian-connect.json
-set splitbelow splitright
->>>>>>> Stashed changes
 set nosplitbelow
 set nosplitright
 wincmd t
@@ -146,40 +127,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-<<<<<<< Updated upstream
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe '2resize ' . ((&lines * 25 + 27) / 54)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-exe '3resize ' . ((&lines * 25 + 27) / 54)
-exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
-=======
->>>>>>> Stashed changes
 argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-<<<<<<< Updated upstream
-setlocal fen
-silent! normal! zE
-let s:l = 44 - ((43 * winheight(0) + 25) / 51)
-=======
-setlocal nofen
-silent! normal! zE
-let s:l = 44 - ((22 * winheight(0) + 25) / 51)
->>>>>>> Stashed changes
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-44
-<<<<<<< Updated upstream
-normal! 07|
-wincmd w
-argglobal
-if bufexists("sequelize.js") | buffer sequelize.js | else | edit sequelize.js | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -189,29 +139,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 17 - ((16 * winheight(0) + 12) / 25)
+let s:l = 16 - ((15 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-17
-normal! 0
+16
+normal! 060|
 wincmd w
 argglobal
-if bufexists("models/dgtoken.js") | buffer models/dgtoken.js | else | edit models/dgtoken.js | endif
-=======
-normal! 025|
-tabnext
-edit routes/index.js
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-argglobal
->>>>>>> Stashed changes
+if bufexists("templates/base.html") | buffer templates/base.html | else | edit templates/base.html | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -219,47 +155,81 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-<<<<<<< Updated upstream
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 12) / 25)
+let s:l = 19 - ((18 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
-wincmd w
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe '2resize ' . ((&lines * 25 + 27) / 54)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-exe '3resize ' . ((&lines * 25 + 27) / 54)
-exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
-tabnext
-edit views/connect-to-dg.hbs
-=======
-setlocal nofen
-silent! normal! zE
-let s:l = 45 - ((38 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-45
+19
 normal! 017|
+wincmd w
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
 tabnext
-edit views/macro_dialog.hbs
->>>>>>> Stashed changes
+edit archiver/file_views.py
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
 1wincmd h
 wincmd w
-<<<<<<< Updated upstream
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 69 - ((50 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+69
+normal! 0
+wincmd w
+argglobal
+if bufexists("archiver/templates/archiver/file_list_view.html") | buffer archiver/templates/archiver/file_list_view.html | else | edit archiver/templates/archiver/file_list_view.html | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 2 - ((1 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+2
+normal! 0
+wincmd w
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+tabnext
+edit archiver/correction_views.py
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
 wincmd _ | wincmd |
 split
 1wincmd k
 wincmd w
-=======
->>>>>>> Stashed changes
 set nosplitbelow
 set nosplitright
 wincmd t
@@ -268,14 +238,10 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-<<<<<<< Updated upstream
 exe '2resize ' . ((&lines * 25 + 27) / 54)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
 exe '3resize ' . ((&lines * 25 + 27) / 54)
 exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
-=======
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
->>>>>>> Stashed changes
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -284,31 +250,17 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-<<<<<<< Updated upstream
 setlocal fen
 silent! normal! zE
-let s:l = 259 - ((36 * winheight(0) + 25) / 51)
+let s:l = 49 - ((33 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-259
-normal! 014|
+49
+normal! 0
 wincmd w
 argglobal
-if bufexists("views/dialog_layout.hbs") | buffer views/dialog_layout.hbs | else | edit views/dialog_layout.hbs | endif
-=======
-setlocal nofen
-silent! normal! zE
-let s:l = 32 - ((25 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-32
-normal! 015|
-wincmd w
-argglobal
-if bufexists("public/js/dialog.js") | buffer public/js/dialog.js | else | edit public/js/dialog.js | endif
->>>>>>> Stashed changes
+if bufexists("archiver/templates/archiver/correction_list_view.html") | buffer archiver/templates/archiver/correction_list_view.html | else | edit archiver/templates/archiver/correction_list_view.html | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -316,41 +268,17 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-<<<<<<< Updated upstream
 setlocal fen
 silent! normal! zE
-let s:l = 17 - ((16 * winheight(0) + 12) / 25)
+let s:l = 17 - ((15 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 17
-normal! 09|
+normal! 042|
 wincmd w
 argglobal
-if bufexists("public/css/addon.css") | buffer public/css/addon.css | else | edit public/css/addon.css | endif
-=======
-setlocal nofen
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-wincmd w
-exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
-exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabnext
-edit views/display-dg-object.hbs
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-argglobal
+if bufexists("archiver/templates/archiver/correction.html") | buffer archiver/templates/archiver/correction.html | else | edit archiver/templates/archiver/correction.html | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -358,83 +286,176 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 67 - ((35 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-67
-normal! $
-tabnext
-edit public/js/addon.js
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-argglobal
->>>>>>> Stashed changes
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-<<<<<<< Updated upstream
 setlocal fen
 silent! normal! zE
-let s:l = 25 - ((15 * winheight(0) + 12) / 25)
+let s:l = 18 - ((15 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-25
-normal! 0
+18
+normal! 060|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
 exe '2resize ' . ((&lines * 25 + 27) / 54)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
 exe '3resize ' . ((&lines * 25 + 27) / 54)
 exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
+tabnext
+edit archiver/templates/archiver/model_list.html
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 13 - ((12 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+13
+normal! 09|
+tabnext
+edit archiver/models.py
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 8 - ((7 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+8
+normal! 067|
+wincmd w
+argglobal
+if bufexists("archiver/forms.py") | buffer archiver/forms.py | else | edit archiver/forms.py | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 13 - ((12 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+13
+normal! 0
+wincmd w
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+tabnext
+edit static/css/form.css
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 62 - ((34 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+62
+normal! 018|
+wincmd w
+argglobal
+if bufexists("static/css/table.css") | buffer static/css/table.css | else | edit static/css/table.css | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 4 - ((3 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+4
+normal! 020|
+wincmd w
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
 tabnext 3
 set stal=1
-badd +52 atlassian-connect.json
-badd +0 app.js
-badd +52 routes/index.js
-badd +0 sequelize.js
-badd +0 models/dgtoken.js
-badd +38 config.json
-badd +184 views/connect-to-dg.hbs
-badd +1 views/layout.hbs
-badd +0 public/css/addon.css
-badd +0 views/dialog_layout.hbs
-badd +0 ../jira-getting-started/config.json
-=======
-setlocal nofen
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 25) / 51)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-tabnext 4
-set stal=1
-badd +1 README.md
-badd +0 TODO
-badd +0 atlassian-connect.json
-badd +0 routes/index.js
-badd +1 views/connect-to-dg.hbs
-badd +51 views/macro_dialog.hbs
-badd +1 public/js/addon.js
-badd +0 public/js/dialog.js
-badd +18 views/dialog_layout.hbs
-badd +0 views/display-dg-object.hbs
->>>>>>> Stashed changes
+badd +1 TODO
+badd +1 gakuen/settings.py
+badd +1 archiver/file_views.py
+badd +11 archiver/correction_views.py
+badd +1 archiver/models.py
+badd +1 archiver/urls.py
+badd +8 archiver/templates/archiver/file_list_view.html
+badd +16 archiver/templates/archiver/correction_list_view.html
+badd +0 archiver/templates/archiver/correction.html
+badd +1 archiver/forms.py
+badd +6 archiver/views.py
+badd +22 gakuen/urls.py
+badd +4 archiver/templates/archiver/home.html
+badd +1 templates/base.html
+badd +1 archiver/templates/archiver/model_new.html
+badd +1 archiver/templates/archiver/model_list.html
+badd +9 archiver/templates/archiver/model_edit.html
+badd +1 archiver/templates/archiver/message_box.html
+badd +67 correction_views.py
+badd +51 static/css/form.css
+badd +4 static/css/table.css
+badd +53 static/css/style.css
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
 "   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -453,11 +474,7 @@ nohlsearch
 " by :mksession out of the box).
 
 1wincmd w
-<<<<<<< Updated upstream
 tabnext 3
-=======
-tabnext 4
->>>>>>> Stashed changes
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

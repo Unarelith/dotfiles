@@ -1,6 +1,10 @@
 " ~/.dotfiles/link/.vim/sessions/GameKit.vim:
 " Vim session script.
+<<<<<<< Updated upstream
 " Created by session.vim 2.13.1 on 26 février 2019 at 18:01:00.
+=======
+" Created by session.vim 2.13.1 on 25 février 2019 at 23:10:43.
+>>>>>>> Stashed changes
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -13,7 +17,7 @@ if &background != 'dark'
 	set background=dark
 endif
 if !exists('g:colors_name') || g:colors_name != 'default' | colorscheme default | endif
-call setqflist([{'lnum': 31, 'col': 72, 'pattern': '', 'valid': 1, 'vcol': 0, 'nr': 0, 'type': 'F', 'module': '', 'filename': 'source/gl/VertexBuffer.cpp', 'text': ' noexcept'}])
+call setqflist([{'lnum': 34, 'col': 2, 'pattern': '', 'valid': 1, 'vcol': 0, 'nr': 0, 'type': 'F', 'module': '', 'filename': 'source/core/CoreApplication.cpp', 'text': 'm_argumentParser'}])
 let SessionLoad = 1
 if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
@@ -25,6 +29,7 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
+<<<<<<< Updated upstream
 argglobal
 %argdel
 $argadd CMakeLists.txt
@@ -383,6 +388,10 @@ tabnext 6
 set stal=1
 badd +1 TODO
 badd +1 source/gl/VertexBuffer.cpp
+=======
+badd +1 source/core/CoreApplication.cpp
+badd +30 source/gl/VertexBuffer.cpp
+>>>>>>> Stashed changes
 badd +1 CMakeLists.txt
 badd +2 include/gk/graphics/Text.hpp
 badd +1 include/gk/graphics/Image.hpp
@@ -392,8 +401,8 @@ badd +1 source/graphics/Text.cpp
 badd +1 source/graphics/Image.cpp
 badd +0 source/gl/Texture.cpp
 badd +1 include/core/Application.hpp
-badd +60 include/gk/core/CoreApplication.hpp
-badd +25 include/gk/core/ApplicationState.hpp
+badd +1 include/gk/core/CoreApplication.hpp
+badd +38 include/gk/core/ApplicationState.hpp
 badd +33 include/gk/core/IntTypes.hpp
 badd +1 include/gk/core/ApplicationStateStack.hpp
 badd +1 source/core/ApplicationStateStack.cpp
@@ -401,9 +410,8 @@ badd +49 include/gk/gl/RenderStates.hpp
 badd +1 include/gk/gl/Transform.hpp
 badd +26 include/gk/core/Color.hpp
 badd +17 source/core/Color.cpp
-badd +60 source/core/CoreApplication.cpp
 badd +50 source/gl/Transform.cpp
-badd +31 include/gk/gl/Transformable.hpp
+badd +1 include/gk/gl/Transformable.hpp
 badd +107 source/gl/Transformable.cpp
 badd +17 source/core/Timer.cpp
 badd +28 include/gk/core/Timer.hpp
@@ -414,19 +422,26 @@ badd +9 include/gk/system/Debug.hpp
 badd +35 include/gk/system/Exception.hpp
 badd +42 include/gk/core/Window.hpp
 badd +39 source/core/Window.cpp
-badd +23 include/gk/core/input/GamePad.hpp
-badd +1 include/gk/core/input/InputHandler.hpp
+badd +1 include/gk/core/input/GamePad.hpp
+badd +4 include/gk/core/input/InputHandler.hpp
 badd +1 source/core/input/GamePad.cpp
 badd +1 source/system/GameClock.cpp
 badd +22 source/core/Mouse.cpp
-badd +74 source/core/XMLFile.cpp
+badd +1 source/core/XMLFile.cpp
 badd +1 include/gk/gl/Camera.hpp
 badd +30 source/gl/Camera.cpp
 badd +48 include/gk/gl/Shader.hpp
 badd +165 source/gl/Shader.cpp
 badd +15 source/core/input/InputHandler.cpp
+<<<<<<< Updated upstream
 badd +1 source/gl/RenderTarget.cpp
 badd +1 include/gk/gl/VertexBuffer.hpp
+=======
+badd +34 include/gk/gl/Texture.hpp
+badd +23 source/gl/RenderTarget.cpp
+badd +21 include/gk/gl/VertexBuffer.hpp
+badd +41 source/gl/Texture.cpp
+>>>>>>> Stashed changes
 badd +29 source/resource/ResourceHandler.cpp
 badd +68 include/gk/resource/ResourceHandler.hpp
 badd +15 include/gui/Cube.hpp
@@ -448,7 +463,13 @@ badd +46 include/gk/gui/RectangleShape.hpp
 badd +31 include/gk/gl/Vertex.hpp
 badd +27 include/gk/resource/IResourceLoader.hpp
 badd +33 include/gk/core/Mouse.hpp
+<<<<<<< Updated upstream
 badd +19 include/gk/core/XMLFile.hpp
+=======
+badd +1 TODO
+badd +1 README.md
+badd +1 include/gk/core/XMLFile.hpp
+>>>>>>> Stashed changes
 badd +37 include/gk/core/input/GameKey.hpp
 badd +27 include/gk/audio/AudioPlayer.hpp
 badd +16 source/gk/AudioPlayer.cpp
@@ -475,7 +496,7 @@ badd +3 include/gk/gl/RenderTarget.hpp
 badd +174 /usr/include/SFML/Graphics/Color.hpp
 badd +1 /usr/include/SFML/Window/Clipboard.hpp
 badd +47 include/gk/gl/View.hpp
-badd +85 source/gl/View.cpp
+badd +15 source/gl/View.cpp
 badd +47 include/gk/core/Vector2.hpp
 badd +18 source/game/controller/BehaviourController.cpp
 badd +14 include/gk/game/controller/BehaviourController.hpp
@@ -497,9 +518,9 @@ badd +14 include/gk/scene/movement/Movement.hpp
 badd +60 include/gk/scene/component/MovementComponent.hpp
 badd +55 include/gk/scene/component/CollisionComponent.hpp
 badd +24 include/gk/scene/component/PositionComponent.hpp
-badd +17 include/gk/scene/controller/AbstractController.hpp
+badd +23 include/gk/scene/controller/AbstractController.hpp
 badd +68 include/gk/scene/SceneObjectList.hpp
-badd +29 include/gk/scene/view/AbstractView.hpp
+badd +24 include/gk/scene/view/AbstractView.hpp
 badd +23 include/gk/scene/component/LifetimeComponent.hpp
 badd +1 include/gk/scene/controller/MovementController.hpp
 badd +43 source/scene/controller/MovementController.cpp
@@ -517,6 +538,165 @@ badd +25 include/gk/scene/component/PlayerComponent.hpp
 badd +34 include/gk/gl/OpenGL.hpp
 badd +49 include/gk/scene/component/HealthComponent.hpp
 badd +14 include/gk/scene/component/SpriteComponent.hpp
+<<<<<<< Updated upstream
+=======
+badd +50 include/gk/core/ArgumentParser.hpp
+badd +56 source/core/ArgumentParser.cpp
+badd +34 include/gk/graphics/Tilemap.hpp
+badd +1 source/graphics/Tilemap.cpp
+badd +26 include/gk/gl/IDrawable.hpp
+badd +5 include/gk/graphics/Sprite.hpp
+badd +27 include/gk/graphics/SpriteAnimation.hpp
+badd +45 include/gk/graphics/Image.hpp
+badd +83 source/graphics/Image.cpp
+badd +45 source/graphics/Sprite.cpp
+badd +76 include/gk/graphics/Text.hpp
+badd +66 source/graphics/Text.cpp
+badd +0 include/gk/graphics/Font.hpp
+badd +0 include/gk/utils/NonCopyable.hpp
+badd +75 source/graphics/RectangleShape.cpp
+badd +1 include/gk/graphics/RectangleShape.hpp
+argglobal
+silent! argdel *
+$argadd CMakeLists.txt
+set stal=2
+tabnew
+tabnext -1
+edit TODO
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 25 + 27) / 54)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+exe '3resize ' . ((&lines * 25 + 27) / 54)
+exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
+argglobal
+setlocal fdm=expr
+setlocal fde=xolox#notes#foldexpr()
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+let s:l = 5 - ((4 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+5
+normal! 0
+wincmd w
+argglobal
+if bufexists('README.md') | buffer README.md | else | edit README.md | endif
+setlocal fdm=expr
+setlocal fde=Foldexpr_markdown(v:lnum)
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+let s:l = 4 - ((3 * winheight(0) + 12) / 25)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+4
+normal! 0100|
+wincmd w
+argglobal
+if bufexists('CMakeLists.txt') | buffer CMakeLists.txt | else | edit CMakeLists.txt | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 39 - ((12 * winheight(0) + 12) / 25)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+39
+normal! 0
+wincmd w
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe '2resize ' . ((&lines * 25 + 27) / 54)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+exe '3resize ' . ((&lines * 25 + 27) / 54)
+exe 'vert 3resize ' . ((&columns * 103 + 103) / 207)
+tabnext
+edit include/gk/core/CoreApplication.hpp
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 59 - ((50 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+59
+normal! 0
+wincmd w
+argglobal
+if bufexists('source/core/CoreApplication.cpp') | buffer source/core/CoreApplication.cpp | else | edit source/core/CoreApplication.cpp | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 37 - ((25 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+37
+normal! 040|
+wincmd w
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+tabnext 2
+set stal=1
+>>>>>>> Stashed changes
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
 "   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -535,7 +715,11 @@ nohlsearch
 " by :mksession out of the box).
 
 2wincmd w
+<<<<<<< Updated upstream
 tabnext 6
+=======
+tabnext 2
+>>>>>>> Stashed changes
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

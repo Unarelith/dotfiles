@@ -1,6 +1,6 @@
 " ~/.dotfiles/link/.vim/sessions/CubeLand.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 02 janvier 2019 at 14:54:39.
+" Created by session.vim 2.13.1 on 16 février 2019 at 15:48:29.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -43,7 +43,7 @@ badd +56 source/states/LevelState.cpp
 badd +36 include/states/LevelState.hpp
 badd +43 source/states/LevelListState.cpp
 badd +65 source/resource/LevelLoader.cpp
-badd +30 source/scene/factories/PlayerFactory.cpp
+badd +1 source/scene/factories/PlayerFactory.cpp
 badd +1 external/libegdt/source/display/Map.cpp
 badd +1 external/libegdt/source/display/MapRenderer.cpp
 badd +44 external/libegdt/source/scene/movements/GamePadMovement.cpp
@@ -110,17 +110,22 @@ badd +24 source/scene/systems/MovementSystem.cpp
 badd +1 include/scene/systems/CollisionSystem.hpp
 badd +62 source/scene/systems/CollisionSystem.cpp
 badd +1 include/scene/SceneObjectList.hpp
-badd +31 include/scene/movements/GamePadMovement.hpp
-badd +45 source/scene/movements/GamePadMovement.cpp
+badd +1 include/scene/movements/GamePadMovement.hpp
+badd +1 source/scene/movements/GamePadMovement.cpp
 badd +18 source/scene/systems/LockSystem.cpp
 badd +21 include/scene/systems/LockSystem.hpp
+badd +1 include/display/Map.hpp
+badd +0 source/display/Map.cpp
 argglobal
 silent! argdel *
 $argadd source/main.cpp
 set stal=2
 tabnew
 tabnew
-tabnext -2
+tabnew
+tabnew
+tabnew
+tabnext -5
 edit Notes
 set splitbelow splitright
 set nosplitbelow
@@ -227,10 +232,147 @@ normal! zt
 normal! 05|
 lcd ~/rendu/Perso/CubeLand
 wincmd w
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+tabnext
+edit ~/rendu/Perso/CubeLand/source/scene/factories/PlayerFactory.cpp
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 39 - ((17 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+39
+normal! 0
+lcd ~/rendu/Perso/CubeLand
+tabnext
+edit ~/rendu/Perso/CubeLand/include/display/Map.hpp
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+lcd ~/rendu/Perso/CubeLand
+wincmd w
+argglobal
+if bufexists('~/rendu/Perso/CubeLand/source/display/Map.cpp') | buffer ~/rendu/Perso/CubeLand/source/display/Map.cpp | else | edit ~/rendu/Perso/CubeLand/source/display/Map.cpp | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 55 - ((36 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+55
+normal! 0
+lcd ~/rendu/Perso/CubeLand
+wincmd w
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+tabnext
+edit ~/rendu/Perso/CubeLand/include/scene/movements/GamePadMovement.hpp
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
+exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+lcd ~/rendu/Perso/CubeLand
+wincmd w
+argglobal
+if bufexists('~/rendu/Perso/CubeLand/source/scene/movements/GamePadMovement.cpp') | buffer ~/rendu/Perso/CubeLand/source/scene/movements/GamePadMovement.cpp | else | edit ~/rendu/Perso/CubeLand/source/scene/movements/GamePadMovement.cpp | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 19 - ((18 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+19
+normal! 0
+lcd ~/rendu/Perso/CubeLand
+wincmd w
 2wincmd w
 exe 'vert 1resize ' . ((&columns * 103 + 103) / 207)
 exe 'vert 2resize ' . ((&columns * 103 + 103) / 207)
-tabnext 3
+tabnext 6
 set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
 "   silent exe 'bwipe ' . s:wipebuf
@@ -243,13 +385,14 @@ if file_readable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &so = s:so_save | let &siso = s:siso_save
+nohlsearch
 
 " Support for special windows like quick-fix and plug-in windows.
 " Everything down here is generated by vim-session (not supported
 " by :mksession out of the box).
 
 2wincmd w
-tabnext 3
+tabnext 6
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')
