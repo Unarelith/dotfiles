@@ -529,52 +529,24 @@ interval = 1800
 
 click-left = python ~/.config/polybar/dbus/client.py "pacman-updates"
 
-[module/powermenu]
-type = custom/menu
-
-format-padding = 5
-
-label-open = 
-label-close = 
-
-menu-0-0 = Terminate WM
-menu-0-0-foreground = #fba922
-menu-0-0-exec = bspc quit -1
-menu-0-1 = Reboot
-menu-0-1-foreground = #fba922
-menu-0-1-exec = menu-open-1
-menu-0-2 = Power off
-menu-0-2-foreground = #fba922
-menu-0-2-exec = menu-open-2
-
-menu-1-0 = Cancel
-menu-1-0-foreground = #fba922
-menu-1-0-exec = menu-open-0
-menu-1-1 = Reboot
-menu-1-1-foreground = #fba922
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = Power off
-menu-2-0-foreground = #fba922
-menu-2-0-exec = sudo poweroff
-menu-2-1 = Cancel
-menu-2-1-foreground = #fba922
-menu-2-1-exec = menu-open-0
-
 [module/powerkey]
-type = custom/menu
+type = custom/text
 
-expand-right = true
+content = 
 
-label-open = 
-label-close = 
-label-separator = |
+click-left = /home/bazin_q/rendu/Perso/test/test2
 
-menu-0-0 = Suspend
-menu-0-0-exec = systemctl suspend
-
-menu-0-1 = Hibernate
-menu-0-1-exec = systemctl hibernate
+; expand-right = true
+;
+; label-open = 
+; label-close = 
+; label-separator = |
+;
+; menu-0-0 = Suspend
+; menu-0-0-exec = systemctl suspend
+;
+; menu-0-1 = Hibernate
+; menu-0-1-exec = systemctl hibernate
 
 ; click-left = systemctl suspend && i3lock-fancy-dualmonitor
 

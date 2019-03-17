@@ -26,7 +26,7 @@ link/.local/bin/watchmedo
 link/.local/lib/python*
 link/.local/share/*
 link/.vim/.netrwhist
-link/.vim/sessions/*.lock
+link/.vim/sessions/*
 link/.xchat2/scrollback
 link/.xchat2/xchatlogs
 link/Images/*

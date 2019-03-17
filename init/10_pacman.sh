@@ -3,6 +3,7 @@ acpi
 arch-wiki-docs
 arch-wiki-lite
 arch-install-scripts
+autorandr
 baobab
 bat
 calc
