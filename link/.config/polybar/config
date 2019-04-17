@@ -524,29 +524,29 @@ click-left = python ~/.config/polybar/dbus/client.py "mpd-playlist"
 type = custom/script
 
 format =     <label>
-exec = checkupdates | wc -l
+exec = checkupdates | wc -l | awk '{print $1+0}'
 interval = 1800
 
 click-left = python ~/.config/polybar/dbus/client.py "pacman-updates"
 
 [module/powerkey]
-type = custom/text
+type = custom/menu
 
-content = 
+; content = 
 
-click-left = /home/bazin_q/rendu/Perso/test/test2
+; click-left = /home/bazin_q/rendu/Perso/test/test2
 
 ; expand-right = true
-;
-; label-open = 
-; label-close = 
-; label-separator = |
-;
-; menu-0-0 = Suspend
-; menu-0-0-exec = systemctl suspend
-;
-; menu-0-1 = Hibernate
-; menu-0-1-exec = systemctl hibernate
+
+label-open = 
+label-close = 
+label-separator = |
+
+menu-0-0 = Suspend
+menu-0-0-exec = systemctl suspend
+
+menu-0-1 = Hibernate
+menu-0-1-exec = systemctl hibernate
 
 ; click-left = systemctl suspend && i3lock-fancy-dualmonitor
 

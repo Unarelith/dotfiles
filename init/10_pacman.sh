@@ -105,6 +105,7 @@ zeal'
 default_aur_packages='
 discord
 dropbox
+i3-gnome-git
 i3lock-color-git
 i3lock-fancy-dualmonitors-git
 gws
