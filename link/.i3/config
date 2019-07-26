@@ -148,11 +148,10 @@ exec --no-startup-id                /bin/bash ~/.local/bin/update-background
 exec --no-startup-id                /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id                xinput set-button-map 13 1 1 3
 exec --no-startup-id                nm-applet &
-exec --no-startup-id                hamster &
 exec --no-startup-id                dunst &
 exec --no-startup-id                conky &
 exec --no-startup-id                xrandr --setprovideroffloadsink 1 0
-exec --no-startup-id                mpd
+# exec --no-startup-id                mpd
 exec --no-startup-id                remind -z1 -m ~/.reminders &
 exec --no-startup-id                systemctl --user restart popup-manager
 exec --no-startup-id                dropbox &
@@ -170,6 +169,7 @@ new_float                           normal 1
 
 for_window [class="URxvt"]          border none
 for_window [class="Firefox"]        border none
+for_window [class="kitty"]          border none
 # for_window [name="dzen slave"]      border pixel 4
 
 assign [class="Chromium"] $workspace1

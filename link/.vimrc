@@ -376,6 +376,8 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_error_symbol = "✖"
 let g:syntastic_warning_symbol = "⚠"
 
+let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
+
 "------------------------------------------------------------------------------
 " syntastic C config
 "------------------------------------------------------------------------------
@@ -435,35 +437,35 @@ let g:syntastic_asm_compiler_options = '-msyntax=intel'
 let g:syntastic_java_checkers = ['javac']
 let g:syntastic_java_javac_config_file_enabled = 1
 let g:syntastic_java_javac_classpath = ''
-	\ . ':/home/bazin_q/rendu/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/atlassian-cache-api-3.0.2.jar'
-	\ . ':/home/bazin_q/rendu/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/atlassian-cache-impl-3.0.2.jar'
-	\ . ':/home/bazin_q/rendu/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/confluence-6.12.0.jar'
-	\ . ':/home/bazin_q/rendu/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/confluence-java-api-6.12.0.jar'
-	\ . ':/home/bazin_q/rendu/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/confluence-cache-ehcache-6.12.0.jar'
-	\ . ':/home/bazin_q/rendu/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/confluence-cache-hazelcast-6.12.0.jar'
-	\ . ':/home/bazin_q/rendu/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/confluence-rest-api-6.12.0.jar'
-	\ . ':/home/bazin_q/rendu/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/confluence-compat-lib-1.0.0.jar'
-	\ . ':/home/bazin_q/rendu/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/javax.inject-1.jar'
-	\ . ':/home/bazin_q/rendu/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/common-collections4-4.1.jar'
-	\ . ':/home/bazin_q/rendu/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/common-collections-3.2.2.jar'
-	\ . ':/home/bazin_q/rendu/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/guava-18.0.jar'
-	\ . ':/home/bazin_q/rendu/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/velocity-1.6.4-atlassian-9.jar'
-	\ . ':/home/bazin_q/rendu/Work/DataGalaxyConfluenceServer/target/testlibs/provided/commons-io-2.6.jar'
-	\ . ':/home/bazin_q/rendu/Work/DataGalaxyConfluenceServer/target/testlibs/provided/commons-httpclient-3.1-atlassian-2.jar'
-	\ . ':/home/bazin_q/rendu/Work/DataGalaxyConfluenceServer/target/testlibs/provided/annotations-3.0.0.jar'
-	\ . ':/home/bazin_q/rendu/Work/DataGalaxyConfluenceServer/target/testlibs/provided/slf4j-api-1.7.25.jar'
-	" \ . ':/home/bazin_q/rendu/Work/DataGalaxyJiraServer/target/jira/webapp/WEB-INF/lib/jira-api-7.12.0.jar'
-	" \ . ':/home/bazin_q/rendu/Work/DataGalaxyJiraServer/target/jira/webapp/WEB-INF/lib/webwork-1.4-atlassian-30.jar'
-	" \ . ':/home/bazin_q/rendu/Work/DataGalaxyJiraServer/target/jira/webapp/WEB-INF/lib/atlassian-servlet-api-4.0.0.jar'
-	" \ . ':/home/bazin_q/rendu/Work/DataGalaxyJiraServer/target/jira/webapp/WEB-INF/lib/javax.inject-1.jar'
-	" \ . ':/home/bazin_q/rendu/Work/DataGalaxyJiraServer/target/jira/webapp/WEB-INF/lib/sal-api-3.1.0.jar'
-	" \ . ':/home/bazin_q/rendu/Work/DataGalaxyJiraServer/target/jira/webapp/WEB-INF/atlassian-bundled-plugins/atlassian-template-renderer-api-2.0.0.jar'
-	" \ . ':/home/bazin_q/rendu/Work/DataGalaxyJiraServer/target/testlibs/provided/jsr311-api-1.1.1.jar'
-	" \ . ':/home/bazin_q/rendu/Work/DataGalaxyJiraServer/target/testlibs/provided/javax.servlet-api-3.0.1.jar'
-	" \ . ':/home/bazin_q/rendu/Work/DataGalaxyJiraServer/target/jira/webapp/WEB-INF/gson-2.3.1.jar'
-	" \ . ':/home/bazin_q/rendu/Work/DataGalaxyJiraServer/target/jira/webapp/WEB-INF/fugue-4.5.0.jar'
-	" \ . ':/home/bazin_q/rendu/Work/DataGalaxyJiraServer/target/jira/webapp/WEB-INF/fugue-guava-4.5.0.jar'
-	" \ . ':/home/bazin_q/rendu/Work/DataGalaxyJiraServer/target/jira/webapp/WEB-INF/fugue-retry-4.5.0.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/atlassian-cache-api-3.0.2.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/atlassian-cache-impl-3.0.2.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/confluence-6.12.0.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/confluence-java-api-6.12.0.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/confluence-cache-ehcache-6.12.0.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/confluence-cache-hazelcast-6.12.0.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/confluence-rest-api-6.12.0.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/confluence-compat-lib-1.0.0.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/javax.inject-1.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/common-collections4-4.1.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/common-collections-3.2.2.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/guava-18.0.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyConfluenceServer/target/confluence/webapp/WEB-INF/lib/velocity-1.6.4-atlassian-9.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyConfluenceServer/target/testlibs/provided/commons-io-2.6.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyConfluenceServer/target/testlibs/provided/commons-httpclient-3.1-atlassian-2.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyConfluenceServer/target/testlibs/provided/annotations-3.0.0.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyConfluenceServer/target/testlibs/provided/slf4j-api-1.7.25.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyJiraServer/target/jira/webapp/WEB-INF/lib/jira-api-7.12.0.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyJiraServer/target/jira/webapp/WEB-INF/lib/webwork-1.4-atlassian-30.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyJiraServer/target/jira/webapp/WEB-INF/lib/atlassian-servlet-api-4.0.0.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyJiraServer/target/jira/webapp/WEB-INF/lib/javax.inject-1.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyJiraServer/target/jira/webapp/WEB-INF/lib/sal-api-3.1.0.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyJiraServer/target/jira/webapp/WEB-INF/atlassian-bundled-plugins/atlassian-template-renderer-api-2.0.0.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyJiraServer/target/testlibs/provided/jsr311-api-1.1.1.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyJiraServer/target/testlibs/provided/javax.servlet-api-3.0.1.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyJiraServer/target/jira/webapp/WEB-INF/gson-2.3.1.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyJiraServer/target/jira/webapp/WEB-INF/fugue-4.5.0.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyJiraServer/target/jira/webapp/WEB-INF/fugue-guava-4.5.0.jar'
+	\ . ':/home/bazin_q/Projects/Work/DataGalaxyJiraServer/target/jira/webapp/WEB-INF/fugue-retry-4.5.0.jar'
 
 "------------------------------------------------------------------------------
 " vim-altr mappings

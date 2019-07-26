@@ -115,7 +115,7 @@ pacman -S archlinux32-keyring-transition
 
 • Installer le bootloader (MBR):
 ```sh
-pacman -S grub os-prober
+pacman -S grub os-prober efibootmgr
 # Only for MBR:
 grub-install --target=i386-pc --no-floppy --recheck /dev/sda
 # Only for GPT:
@@ -131,6 +131,7 @@ pacman -S xorg-fonts-type1 ttf-dejavu artwiz-fonts font-bh-ttf \
           font-bitstream-speedo gsfonts sdl_ttf ttf-bitstream-vera \
           ttf-cheapskate ttf-liberation \
           ttf-freefont ttf-arphic-uming ttf-baekmuk # Polices pour sites multilingue
+# ttf-cheapskate et artwiz-fonts ne fonctionnent plus?
 ```
 • Fichier de config pour le clavier et la carte intel dans /etc/X11/xorg.conf.d/:
 ```xf86conf 10-keyboard.conf:

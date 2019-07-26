@@ -111,6 +111,7 @@ i3lock-fancy-dualmonitors-git
 gws
 nautilus-dropbox
 nautilus-open-terminal-git
+pakku
 polybar-git
 ttf-font-awesome-4
 ttf-material-icons
