@@ -35,11 +35,11 @@ set -x EPIMAIL quentin.bazin@epitech.eu
 
 # Android paths
 # set ANDROID_AVD_HOME /home/bazin_q/.android/avd/
-# set ANDROID_HOME     /home/bazin_q/Android/Sdk/
-# set ANDROID_SDK_HOME /home/bazin_q/Android/Sdk/
-# set ANDROID_SDK_ROOT /home/bazin_q/Android/Sdk/
-#
-# set -x PATH $PATH /home/bazin_q/Android/Sdk/tools/
+set ANDROID_HOME     /opt/android-sdk/
+set ANDROID_SDK_HOME /opt/android-sdk/
+set ANDROID_SDK_ROOT /opt/android-sdk/
+
+set -x PATH $PATH /opt/android-sdk/tools/
 
 # Colored man pages
 set -x LESS -r

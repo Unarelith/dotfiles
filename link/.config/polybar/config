@@ -531,12 +531,16 @@ click-left = python ~/.config/polybar/dbus/client.py "pacman-updates"
 
 [module/powerkey]
 type = custom/menu
+; type = custom/text
 
 ; content = 
 
 ; click-left = /home/bazin_q/rendu/Perso/test/test2
+; click-left = systemctl suspend && i3lock-fancy-dualmonitor
 
-; expand-right = true
+type = custom/menu
+
+expand-right = true
 
 label-open = 
 label-close = 
@@ -547,8 +551,6 @@ menu-0-0-exec = systemctl suspend
 
 menu-0-1 = Hibernate
 menu-0-1-exec = systemctl hibernate
-
-; click-left = systemctl suspend && i3lock-fancy-dualmonitor
 
 [module/screenshot]
 type = custom/text

@@ -159,6 +159,7 @@ mv dotfiles .dotfiles
 bash ~/.dotfiles/bin/dotfiles
 # configurer fish
 timedatectl set-ntp true
+timedatectl set-local-rtc 1 --adjust-system-clock # fix time on Windows dual-boot
 lxappearance
 ```
 • Redémarrer, puis relancer `~/.dotfiles/init/11_systemd.sh`

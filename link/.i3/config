@@ -148,7 +148,7 @@ exec --no-startup-id                /bin/bash ~/.local/bin/update-background
 exec --no-startup-id                /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id                xinput set-button-map 13 1 1 3
 exec --no-startup-id                nm-applet &
-exec --no-startup-id                hamster &
+# exec --no-startup-id                hamster &
 exec --no-startup-id                dunst &
 exec --no-startup-id                conky &
 exec --no-startup-id                xrandr --setprovideroffloadsink 1 0
