@@ -64,7 +64,7 @@ font-1 = Unifont:size=6;0
 font-2 = FontAwesome:size=10;1
 font-3 = MaterialIcons:size=10;1
 
-modules-left = mpd-playlist mpd
+#modules-left = mpd-playlist mpd
 modules-center = memory cpu
 modules-right = github gmail systemd_user temperature weather-lyon bank-account pacman-updates disk-root disk-home
 
@@ -530,7 +530,6 @@ interval = 1800
 click-left = python ~/.config/polybar/dbus/client.py "pacman-updates"
 
 [module/powerkey]
-type = custom/menu
 ; type = custom/text
 
 ; content = 

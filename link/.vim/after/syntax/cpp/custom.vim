@@ -16,6 +16,7 @@ syn keyword cppCustomStlOther        contained initializer_list
 
 " My custom types
 syn keyword cppCustomIntegerTypes    u8 s8 u16 s16 u32 s32 u64 s64
+syn keyword cppCustomIntegerTypes    u8f s8f u16f s16f u32f s32f u64f s64f
 
 syn match   cppCustomParen           "?=(" contains=cParen,cCppParen
 syn match   cppCustomFunc            "\w\+\s*(\@=" contains=cppCustomParen

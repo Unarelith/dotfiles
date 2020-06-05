@@ -1,2 +1,2 @@
 #!/bin/bash
-feh  --bg-scale "/home/${USER}/Images/Backgrounds/default.jpg" 
+feh  --bg-scale "/home/${USER}/Images/Backgrounds/default.jpg"

@@ -113,6 +113,10 @@ Plugin 'gmarik/Vundle.vim'
 "------------------------------------------------------------------------------
 " Original repos on GitHub
 "------------------------------------------------------------------------------
+Plugin 'Valloric/YouCompleteMe'
+" Plugin 'jeaye/color_coded'      " <= Too slow to refresh + lots of bugs
+Plugin 'rdnetto/YCM-Generator'  " <= Used for these plugins
+
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-projectile'
@@ -148,7 +152,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'Yggdroot/indentLine'
-Plugin 'SirVer/ultisnips'
+"Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'ramele/agrep'
 Plugin 'skywind3000/asyncrun.vim'
@@ -163,10 +167,6 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'lepture/vim-velocity'
 Plugin 'vim-scripts/vim-soy'
-
-Plugin 'Valloric/YouCompleteMe'
-" Plugin 'jeaye/color_coded'      " <= Too slow to refresh + same thing as above + lots of bugs
-Plugin 'rdnetto/YCM-Generator'  " <= Used for these plugins
 
 "------------------------------------------------------------------------------
 " vim-scripts repos
@@ -494,7 +494,7 @@ let g:ctrlp_cmd = 'CtrlPCurWD'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
 
-set wildignore+=*/doxygen/*,*.so,*.swp,*.zip,*.o,*.d,*.o32,*.exe,*.oxx,*.moc.*,*/doc/html,*/doc/latex,*.png,*.mesh,*.skeleton,*.class,*/CMakeFiles/*,*/.gradle/*,*/node_modules/*,*.dll,*/obj/*,*.exe,*.mdb,*/packages/*,*/target/*
+set wildignore+=*/doxygen/*,*.so,*.swp,*.zip,*.o,*.d,*.o32,*.exe,*.oxx,*.moc.*,*/doc/html,*/doc/latex,*.png,*.mesh,*.skeleton,*.class,*/CMakeFiles/*,*/.gradle/*,*/node_modules/*,*.dll,*/obj/*,*.exe,*.mdb,*/packages/*,*/target/*,*/*_autogen/*,*/external/lua/*,*/external/sol2/*,*/external/entt/*,*/external/gamekit/external/*/*,*/external/zlib/*,*/deploy/*
 
 " let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = 'node_modules\|git'
