@@ -32,8 +32,9 @@ module-margin-right = 3
 ;module-margin-right = 1
 
 font-0 = Sans-Regular:size=8;0
-font-1 = MaterialIcons:size=10;1
-font-2 = FontAwesome:size=10;1
+font-1 = Unifont:size=6;0
+font-2 = MaterialIcons:size=10;1
+font-3 = FontAwesome:size=10;1
 
 modules-left = i3
 modules-center = date-script
@@ -106,8 +107,8 @@ type = internal/xbacklight
 output = eDP1
 
 ; Create scroll handlers used to set the backlight value
-; Default: true
-; enable-scroll = false
+; Default: false
+enable-scroll = true
 
 ; Available tags:
 ;   <label> (default)
@@ -119,7 +120,7 @@ ramp-0 = 
 ramp-1 = 
 ramp-2 = 
 
-bar-width = 10
+bar-width = 15
 bar-format = %{A4:backlight_percentage%__p5:}%{A5:backlight_percentage%__m5:}%{+u}%{+o}%fill%%{-u}%{-o}%indicator%%{+u}%{+o}%empty%%{-u}%{-o}%{A}%{A}
 bar-indicator = |
 bar-indicator-foreground = #ff
@@ -604,12 +605,12 @@ format = <ramp> <label>
 format-warn = <ramp> <label-warn>
 
 ; Available tokens:
-;   %temperature% (default)
-label = %temperature%
+;   %temperature-c% (default)
+label = %temperature-c%
 
 ; Available tokens:
-;   %temperature% (default)
-label-warn = %temperature%
+;   %temperature-c% (default)
+label-warn = %temperature-c%
 label-warn-foreground = #f00
 
 ; Requires the <ramp> tag
@@ -636,7 +637,7 @@ interval = 300
 click-left = bash ~/.config/polybar/scripts/train_on_time --notify
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 ; speaker-mixer = Speaker
 ; headphone-mixer = Headphone
 ; headphone-id = 9

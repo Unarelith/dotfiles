@@ -494,7 +494,7 @@ let g:ctrlp_cmd = 'CtrlPCurWD'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
 
-set wildignore+=*/doxygen/*,*.so,*.swp,*.zip,*.o,*.d,*.o32,*.exe,*.oxx,*.moc.*,*/doc/html,*/doc/latex,*.png,*.mesh,*.skeleton,*.class,*/CMakeFiles/*,*/.gradle/*,*/node_modules/*,*.dll,*/obj/*,*.exe,*.mdb,*/packages/*,*/target/*,*/*_autogen/*,*/external/lua/*,*/external/sol2/*,*/external/entt/*,*/external/gamekit/external/*/*,*/external/zlib/*,*/deploy/*
+set wildignore+=*/doxygen/*,*.so,*.swp,*.zip,*.o,*.d,*.o32,*.exe,*.oxx,*.moc.*,*/doc/html,*/doc/latex,*.png,*.mesh,*.skeleton,*.class,*/CMakeFiles/*,*/.gradle/*,*/node_modules/*,*.dll,*/obj/*,*.exe,*.mdb,*/packages/*,*/target/*,*/*_autogen/*,*/external/lua/*,*/external/sol2/*,*/external/entt/*,*/external/gamekit/external/*/*,*/external/zlib/*,*/deploy/*,*/build/*,vgcore*
 
 " let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = 'node_modules\|git'
