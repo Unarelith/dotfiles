@@ -83,7 +83,8 @@ TODO
 mount /dev/sda2 /mnt
 mount /dev/sda1 /mnt/boot/efi # only for GPT
 mount /dev/sda3 /mnt/home
-pacstrap /mnt base base-devel wireless_tools wpa_supplicant dialog gvim git openssh
+pacstrap /mnt base linux linux-firmware
+pacstram /mnt base-devel wireless_tools wpa_supplicant dialog gvim git openssh
 genfstab -U -p /mnt >> /mnt/etc/fstab
 # Vérifier la fstab
 arch-chroot /mnt

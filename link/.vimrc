@@ -293,7 +293,7 @@ call altr#define('%.vert',             '%.frag')
 "------------------------------------------------------------------------------
 let g:ycm_show_diagnostics_ui = 1
 let g:ycm_enable_diagnostic_highlighting = 0
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 1
 
 nmap <C-P> :YcmCompleter FixIt<CR>
@@ -494,7 +494,7 @@ let g:ctrlp_cmd = 'CtrlPCurWD'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
 
-set wildignore+=*/doxygen/*,*.so,*.swp,*.zip,*.o,*.d,*.o32,*.exe,*.oxx,*.moc.*,*/doc/html,*/doc/latex,*.png,*.mesh,*.skeleton,*.class,*/CMakeFiles/*,*/.gradle/*,*/node_modules/*,*.dll,*/obj/*,*.exe,*.mdb,*/packages/*,*/target/*,*/*_autogen/*,*/external/lua/*,*/external/sol2/*,*/external/entt/*,*/external/gamekit/external/*/*,*/external/zlib/*,*/deploy/*,*/build/*,vgcore*
+set wildignore+=*/doxygen/*,*.so,*.swp,*.zip,*.o,*.d,*.o32,*.exe,*.oxx,*.moc.*,*/doc/html,*/doc/latex,*.png,*.mesh,*.skeleton,*.class,*/CMakeFiles/*,*/.gradle/*,*/node_modules/*,*.dll,*/obj/*,*.exe,*.mdb,*/packages/*,*/target/*,*/*_autogen/*,*/external/lua/*,*/external/sol2/*,*/external/entt/*,*/external/gamekit/external/*/*,*/external/zlib/*,*/deploy/*,*/build/*,vgcore*,*/external/SFML/*
 
 " let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = 'node_modules\|git'
