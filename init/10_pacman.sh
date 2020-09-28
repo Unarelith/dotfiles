@@ -29,7 +29,6 @@ gnome-keyring
 gnome-screensaver
 gnucash
 gparted
-gtk-xfce-engine
 gvim
 hexchat
 htop
@@ -71,7 +70,6 @@ python-pip
 python-xdg
 python2
 python3
-qt5-styleplugins
 qutebrowser
 redshift
 remind
@@ -99,8 +97,7 @@ xfce4-screenshooter
 xorg-xbacklight
 xorg-xrandr
 xcompmgr
-xsel
-zeal'
+xsel'
 
 default_aur_packages='
 discord
@@ -113,7 +110,7 @@ nautilus-dropbox
 nautilus-open-terminal-git
 polybar-git
 ttf-font-awesome-4
-ttf-material-icons
+ttf-material-icons-git
 ttf-unifont
 ttf-weather-icons
 volnoti'
@@ -140,7 +137,6 @@ fi
 echo
 
 echo -e "${BCYAN}* Default packages: $WHITE$default_packages\n"
-echo -e "${BCYAN}* Default AUR packages: $WHITE$default_aur_packages\n"
 echo -ne "${BOLD}:: Do you want to install them? [y/N]" $WHITE
 
 read answer
@@ -148,7 +144,15 @@ read answer
 if [ "$answer" == "y" ] || [ "$anwser" == "Y" ]
 then
 	sudo pacman -Sy --needed $default_packages
+fi
 
+echo -e "${BCYAN}* Default AUR packages: $WHITE$default_aur_packages\n"
+echo -ne "${BOLD}:: Do you want to install them? [y/N]" $WHITE
+
+read answer
+
+if [ "$answer" == "y" ] || [ "$anwser" == "Y" ]
+then
 	for package in $default_aur_packages
 	do
 		yaourt -S $package

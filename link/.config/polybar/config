@@ -32,9 +32,8 @@ module-margin-right = 3
 ;module-margin-right = 1
 
 font-0 = Sans-Regular:size=8;0
-font-1 = Unifont:size=6;0
+font-1 = FontAwesome:size=10;1
 font-2 = MaterialIcons:size=10;1
-font-3 = FontAwesome:size=10;1
 
 modules-left = i3
 modules-center = date-script
@@ -705,7 +704,7 @@ type = internal/network
 interface = ${env:POLYBAR_ETH:}
 interval = 3.0
 
-label-connected =    %{T3}%local_ip%%{T-}
+label-connected =    %local_ip%
 label-disconnected-foreground = #66
 
 ; vim:ft=dosini
