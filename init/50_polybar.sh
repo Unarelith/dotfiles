@@ -8,7 +8,7 @@ if [ "$answer" == "y" ] || [ "$anwser" == "Y" ]
 then
 	echo -e "=> Installing gmail plugin...\n"
 
-	sudo pacman -S python-oauth2client
+	sudo pacman -S --needed python-oauth2client python-google-auth-oauthlib
 	rm -rf ~/.config/polybar/gmail/
 	sudo pip install --upgrade google-api-python-client && \
 	cd ~/.config/polybar && \

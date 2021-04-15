@@ -2,9 +2,9 @@
 import os
 import sys
 
-currentVolume = int(os.popen("pacmd list-sinks | grep volume | tail -3 | head -1 | awk '{print $5+0}'").read())
+currentVolume = int(os.popen("pacmd list-sinks | grep -A10 RUNNING | grep volume | head -1 | awk '{print $5+0}'").read())
 
-muteString = os.popen("pacmd list-sinks | grep muted | tail -1 | awk '{print $2}' | tr -d '\n'").read()
+muteString = os.popen("pacmd list-sinks | grep -A10 RUNNING | grep muted | awk '{print $2}' | tr -d '\n'").read()
 
 isMuted = False
 if muteString == "yes":
