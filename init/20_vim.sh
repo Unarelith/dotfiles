@@ -1,6 +1,6 @@
 # Download Vim plugins.
 if [[ "$(type -P vim)" ]]; then
-	mkdir ~/.vim/bundle
+	mkdir -p ~/.vim/bundle
 	cd ~/.vim/bundle
 
 	git clone git://github.com/gmarik/Vundle.vim

@@ -20,3 +20,5 @@
 	status = auto
 [pull]
 	ff = only
+[init]
+	defaultBranch = master

@@ -350,6 +350,7 @@ for_window [window_role="pop-up"]   floating enable
 for_window [title="Anodyne"]        floating enable
 for_window [title="Indie Studio: Gauntlet"] floating enable
 for_window [class="eifl"]        floating enable
+for_window [class="genshinimpact.exe"] floating enable
 
 # Resize window (you can also use the mouse for that)
 mode "resize" {
