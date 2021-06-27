@@ -26,7 +26,6 @@ gnome-calculator
 gnome-control-center
 gnome-font-viewer
 gnome-keyring
-gnome-screensaver
 gnucash
 gparted
 gvim

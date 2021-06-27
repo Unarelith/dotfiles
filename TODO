@@ -149,6 +149,13 @@ pacman -S xorg-fonts-type1 ttf-dejavu artwiz-fonts font-bh-ttf \
    	#Option      "AccelMethod" "sna" # default
    	#Option      "AccelMethod" "uxa" # fallback
    	Option      "TearFree" "true"
+   EndSection ```
+30-intel.conf```xf86conf
+   Section "InputClass"
+   	Identifier "MyTouchpad"
+   	MatchIsTouchpad "on"
+   	Driver "libinput"
+   	Option "Tapping" "on"
    EndSection
 ```
 • Installer mes dotfiles (problème avec le start de slim et NetworkManager si fait après le reboot)
