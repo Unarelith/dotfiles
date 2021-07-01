@@ -1,6 +1,6 @@
 systemd_services='
 cronie
-slim
+gdm
 NetworkManager'
 
 systemd_user_services='

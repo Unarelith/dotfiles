@@ -9,9 +9,11 @@ bat
 calc
 chromium
 clang
+cmake
 conky
 cronie
 dfc
+discord
 dunst
 dzen2
 exa
@@ -34,6 +36,7 @@ htop
 i3-gaps
 i3status
 imagemagick
+inetutils
 jshon
 jq
 kolourpaint
@@ -76,7 +79,6 @@ ripgrep
 rsync
 rxvt-unicode
 samba
-slim
 synapse
 sysstat
 the_silver_searcher
@@ -99,7 +101,6 @@ xcompmgr
 xsel'
 
 default_aur_packages='
-discord
 dropbox
 i3-gnome-git
 i3lock-color-git
