@@ -10,6 +10,9 @@ if [[ "$(type -P vim)" ]]; then
 	# Install YouCompleteMe
 	cd ~/.vim/bundle/YouCompleteMe
 	./install.py --clang-completer --system-libclang
+
+	# Install templates for c.vim
+	cp ~/.vim/c-support/templates/* ~/.vim/bundle/c.vim/c-support/templates/
 fi
 
 # Download NeoVim plugins.

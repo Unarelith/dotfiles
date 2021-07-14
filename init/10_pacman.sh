@@ -1,3 +1,6 @@
+echo -e "$BOLD:: Installing hicolor theme to avoid problems with icons..." $WHITE
+pacman -S --needed hicolor-icon-theme
+
 default_packages='
 acpi
 arch-wiki-docs
@@ -103,12 +106,11 @@ xsel'
 default_aur_packages='
 dropbox
 i3-gnome-git
-i3lock-color-git
-i3lock-fancy-dualmonitors-git
+gnome-screensaver
 gws
 nautilus-dropbox
 nautilus-open-terminal-git
-polybar-git
+polybar
 ttf-font-awesome-4
 ttf-material-icons-git
 ttf-unifont
