@@ -15,6 +15,7 @@ URxvt*foreground:         #eff0eb
 ! Black
 URxvt*color0:  #1e1e1e
 ! URxvt*color0:  #2e3436
+! URxvt*color0:  #1e2426
 URxvt*color8:  #555753
 ! Red
 URxvt*color1:  #cc0000

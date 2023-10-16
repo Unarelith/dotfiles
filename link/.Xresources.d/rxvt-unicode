@@ -6,6 +6,9 @@ URxvt*scrollBar:                false
 URxvt*saveLines:                10000
 URxvt*letterSpace:              -1
 
+! Set geometry (see https://bugs.archlinux.org/task/77062)
+URxvt.geometry:                 400x400
+
 ! Do not scroll with output
 URxvt*scrollTtyOutput:          false
 
@@ -39,10 +42,10 @@ URxvt.keysym.Meta-Down:         \033[1;3B
 URxvt.keysym.Meta-Up:           \033[1;3A
 URxvt.keysym.Meta-Left:         \033[1;3D
 URxvt.keysym.Meta-Right:        \033[1;3C
-URxvt*keysym.S-M-Up:            \033[1;4A
-URxvt*keysym.S-M-Down:          \033[1;4B
-URxvt*keysym.S-M-Right:         \033[1;4C
-URxvt*keysym.S-M-Left:          \033[1;4D
+URxvt.keysym.S-M-Up:            \033[1;4A
+URxvt.keysym.S-M-Down:          \033[1;4B
+URxvt.keysym.S-M-Right:         \033[1;4C
+URxvt.keysym.S-M-Left:          \033[1;4D
 
 ! Open a new instance of urxvt with Ctrl+Shift+N
 URxvt.keysym.Control-Shift-N:   bash -c 'urxvt -e fish &'\n

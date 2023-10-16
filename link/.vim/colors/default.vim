@@ -11,7 +11,9 @@ endif
 
 let g:colors_name="default"
 
-hi Normal       guifg=White guibg=grey20
+" Less dark
+hi Normal ctermbg=0 guifg=White guibg=grey20
+hi LineNr ctermbg=0 guifg=White guibg=grey20
 
 " highlight groups
 hi Cursor       guibg=khaki guifg=slategrey
