@@ -57,6 +57,7 @@ ncmpcpp
 net-tools
 network-manager-applet
 networkmanager
+noto-fonts-emoji
 ntfs-3g
 openssh
 os-prober
