@@ -333,7 +333,7 @@ bindsym $mod+x                      exec $lock_screen
 bindsym --release Print             exec ~/.local/bin/screenshot.bash
 
 # Take an area screenshot
-bindsym $mod+Shift+s                exec ~/.local/bin/screenshot_area.bash
+bindsym --release $mod+Shift+s      exec ~/.local/bin/screenshot_area.bash
 
 # Dunst config
 bindsym $mod+Ctrl+space             exec dunstctl close
