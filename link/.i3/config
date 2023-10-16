@@ -332,6 +332,15 @@ bindsym $mod+x                      exec $lock_screen
 # Take a screenshot
 bindsym --release Print             exec ~/.local/bin/screenshot.bash
 
+# Take an area screenshot
+bindsym $mod+Shift+s                exec ~/.local/bin/screenshot_area.bash
+
+# Dunst config
+bindsym $mod+Ctrl+space             exec dunstctl close
+bindsym $mod+Ctrl+Shift+space       exec dunstctl close-all
+bindsym $mod+Ctrl+parenright        exec dunstctl history-pop
+bindsym $mod+Ctrl+Shift+semicolon   exec dunstctl context
+
 # Reload the configuration file
 bindsym $mod+Shift+c                reload
 
@@ -345,12 +354,14 @@ bindsym $mod+Shift+e                exec "i3-nagbar -t warning -m 'You pressed t
 bindsym $mod+$move_h_ws_key         move workspace to output left
 bindsym $mod+$move_v_ws_key         move workspace to output up
 
-# Rules for Hangouts
-for_window [window_role="pop-up"]   floating enable
-for_window [title="Anodyne"]        floating enable
+# Rule for Google Hangouts
+for_window [window_role="pop-up"]           floating enable
+for_window [title="Anodyne"]                floating enable
 for_window [title="Indie Studio: Gauntlet"] floating enable
-for_window [class="eifl"]        floating enable
-for_window [class="genshinimpact.exe"] floating enable
+for_window [class="eifl"]                   floating enable
+for_window [class="genshinimpact.exe"]      floating enable
+
+for_window [instance="League of Legends.exe"] move absolute position 0 px 0 px
 
 # Resize window (you can also use the mouse for that)
 mode "resize" {
@@ -370,8 +381,6 @@ mode "resize" {
 }
 
 bindsym $mod+$resize_key            mode "resize"
-
-for_window [instance="League of Legends.exe"] move absolute position 0 px 0 px
 
 # Start i3bar to display a workspace bar
 # bar {
