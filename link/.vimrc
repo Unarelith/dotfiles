@@ -90,6 +90,8 @@ au BufRead,BufNewFile *.note,Notes,TODO,FIXME set filetype=notes nofoldenable
 au BufRead,BufNewFile *.qrc set filetype=xml
 au BufRead,BufNewFile *.qrc let b:syntastic_skip_checks = 1
 
+au FileType css setlocal tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+au FileType html setlocal tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 au FileType htmldjango setlocal tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 "------------------------------------------------------------------------------
@@ -131,7 +133,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'jszakmeister/vim-togglecursor'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'kana/vim-altr'
-Plugin 'kien/ctrlp.vim'
+" Plugin 'kien/ctrlp.vim'
 Plugin 'beyondmarc/opengl.vim'
 " Plugin 'justmao945/vim-clang'
 Plugin 'tomtom/tcomment_vim'
@@ -167,6 +169,8 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'lepture/vim-velocity'
 Plugin 'vim-scripts/vim-soy'
+Plugin 'junegunn/fzf', { 'oninstall': { -> fzf#install() }, 'onupdate': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
 
 "------------------------------------------------------------------------------
 " vim-scripts repos
@@ -296,9 +300,13 @@ let g:ycm_enable_diagnostic_highlighting = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 1
 
-nmap <C-P> :YcmCompleter FixIt<CR>
+nmap ,gp :YcmCompleter FixIt<CR>
+nmap ,gf :YcmCompleter GoToDefinition<CR>
+nmap ,gc :YcmCompleter GoToDeclaration<CR>
+nmap ,gt :YcmCompleter GetType<CR>
 
-map ,sr :!rm .ycm_extra_conf.py<CR>:YcmGenerateConfig<CR>:YcmRestartServer<CR>
+" map ,sr :!rm .ycm_extra_conf.py<CR>:YcmGenerateConfig<CR>:YcmRestartServer<CR>
+map ,sr :YcmRestartServer<CR>
 
 "------------------------------------------------------------------------------
 " vim-gitgutter config
@@ -499,12 +507,22 @@ let g:ctrlp_cmd = 'CtrlPCurWD'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
 
-set wildignore+=*/doxygen/*,*.so,*.swp,*.zip,*.o,*.d,*.o32,*.exe,*.oxx,*.moc.*,*/doc/html,*/doc/latex,*.png,*.mesh,*.skeleton,*.class,*/CMakeFiles/*,*/.gradle/*,*/node_modules/*,*.dll,*/obj/*,*.exe,*.mdb,*/packages/*,*/target/*,*/*_autogen/*,*/external/lua/*,*/external/sol2/*,*/external/entt/*,*/external/gamekit/external/*/*,*/external/zlib/*,*/deploy/*,*/build/*,vgcore*,*/external/SFML/*
+" set wildignore+=*/doxygen/*,*.so,*.swp,*.zip,*.o,*.d,*.o32,*.exe,*.oxx,*.moc.*,*/doc/html,*/doc/latex,*.png,*.mesh,*.skeleton,*.class,*/CMakeFiles/*,*/.gradle/*,*/node_modules/*,*.dll,*/obj/*,*.exe,*.mdb,*/packages/*,*/target/*,*/*_autogen/*,*/external/*,*/deploy/*,*/build/*,*/build_*/*,vgcore*
+set wildignore+=*/doxygen/*,*.so,*.swp,*.zip,*.o,*.d,*.o32,*.exe,*.oxx,*.moc.*,*/doc/html,*/doc/latex,*.png,*.mesh,*.skeleton,*.class,*/CMakeFiles/*,*/.gradle/*,*/node_modules/*,*.dll,*/obj/*,*.exe,*.mdb,*/packages/*,*/target/*,*/*_autogen/*,*/deploy/*,*/build/*,*/build_*/*,vgcore*,*.bin
 
 " let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = 'node_modules\|git'
 
 map <C-H> :ClearAllCtrlPCaches<CR>
+
+"------------------------------------------------------------------------------
+" fzf.vim config
+"------------------------------------------------------------------------------
+nmap <C-P> :FZF<CR>
+imap <C-P> <Esc>:FZF<CR>
+
+nmap <C-F> :Rg<CR>
+imap <C-F> <Esc>:Rg<CR>
 
 "------------------------------------------------------------------------------
 " vim-epitech config
@@ -638,8 +656,8 @@ nnoremap <Down> gj
 inoremap <Up> <C-O>gk
 inoremap <Down> <C-O>gj
 
-nmap ,u <C-I>
-nmap ,i <C-O>
+nmap ,i <C-I>
+nmap ,o <C-O>
 
 nmap ,ms :e source/%:t:r.cpp<CR>
 
@@ -704,20 +722,20 @@ map O Ox<BS>
 "------------------------------------------------------------------------------
 " Git commands
 "------------------------------------------------------------------------------
-map ,ga :!git add . --all<cr>
-map ,gs :!git status<cr>
-map ,gc :!git commit -am ""<left>
-map ,gC :!git add . --all<cr>:!git commit -am ""<left>
-map ,gd :!git diff<cr>
-map ,gD :!git diff —cached<cr>
-map ,gp :!git push<cr>
-map ,gP :!git pull<cr>
-map ,gb :!git branch<cr>
-map ,gB :!git branch
-map ,gh :!git checkout
-map ,gi :!git init<cr>
-map ,gt :!tig<cr>
-map ,gl :!git log<cr>
+" map ,ga :!git add . --all<cr>
+" map ,gs :!git status<cr>
+" map ,gc :!git commit -am ""<left>
+" map ,gC :!git add . --all<cr>:!git commit -am ""<left>
+" map ,gd :!git diff<cr>
+" map ,gD :!git diff —cached<cr>
+" map ,gp :!git push<cr>
+" map ,gP :!git pull<cr>
+" map ,gb :!git branch<cr>
+" map ,gB :!git branch
+" map ,gh :!git checkout
+" map ,gi :!git init<cr>
+" map ,gt :!tig<cr>
+" map ,gl :!git log<cr>
 
 "------------------------------------------------------------------------------
 " Common typo autofix
