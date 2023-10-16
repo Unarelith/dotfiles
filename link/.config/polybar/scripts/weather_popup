@@ -13,9 +13,9 @@ BG='#090909'
 # BG='#333333'
 fg_title="#abd4e2"
 
-fn1="Inconsolata:size=11"
-fnT="Inconsolata:bold:size=11"
-fn_14="Inconsolata:bold:size=14"
+fn1="Monospace:size=10"
+fnT="Monospace:bold:size=10"
+fn_14="Monospace:bold:size=13"
 wic_13="Weather Icons:size=13"
 wic_16="Weather Icons:size=16"
 wic_45="Weather Icons:size=45"

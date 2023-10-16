@@ -4,7 +4,7 @@ FG='#dcdcdc'
 # BG='#333333'
 BG='#090909'
 
-font1="Inconsolata:size=11"
+font1="Monospace:size=10"
 
 # monitors=$(xrandr --listactivemonitors | head -1 | awk '{print $2}')
 # if [ $monitors == '1' ]
@@ -41,7 +41,7 @@ sleep 1
 
 (
 echo "
-^fg(#e2abd4)^fn(Inconsolata:bold:size=11)Time & Date
+^fg(#e2abd4)^fn(Monospace:bold:size=10)Time & Date
 "
 echo "$cal_p_m
 "
@@ -54,7 +54,7 @@ echo "Current day of the year: $day_year"
 echo "Current week of the year: $week_year"
 echo ""
 
-) | dzen2 -p 10 -x $x -y $y -w 235 -bg $BG -fg $FG -l 32 -sa c -ta c -e 'onstart=uncollapse;button1=exit;button3=exit' -fn $font1 -xs "$(bash ~/.local/bin/get-current-output | awk '{print $2}')" &
+) | dzen2 -p 10 -x $x -y $y -w 240 -bg $BG -fg $FG -l 32 -sa c -ta c -e 'onstart=uncollapse;button1=exit;button3=exit' -fn $font1 -xs "$(bash ~/.local/bin/get-current-output | awk '{print $2}')" &
 
 pid=$!
 echo $pid
