@@ -1,4 +1,2 @@
 CompileFlags:
   Add: [-w]
-Diagnostics:
-  Suppress: "*"
