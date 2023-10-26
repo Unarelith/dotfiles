@@ -299,6 +299,8 @@ let g:ycm_show_diagnostics_ui = 1
 let g:ycm_enable_diagnostic_highlighting = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 1
+let g:ycm_clangd_uses_ycmd_caching = 0
+let g:ycm_clangd_binary_path = exepath("clangd")
 
 nmap ,gp :YcmCompleter FixIt<CR>
 nmap ,gf :YcmCompleter GoToDefinition<CR>
@@ -518,11 +520,11 @@ map <C-H> :ClearAllCtrlPCaches<CR>
 "------------------------------------------------------------------------------
 " fzf.vim config
 "------------------------------------------------------------------------------
-nmap <C-P> :FZF<CR>
-imap <C-P> <Esc>:FZF<CR>
+nmap <C-F> :FZF<CR>
+imap <C-F> <Esc>:FZF<CR>
 
-nmap <C-F> :Rg<CR>
-imap <C-F> <Esc>:Rg<CR>
+nmap <C-P> :Rg<CR>
+imap <C-P> <Esc>:Rg<CR>
 
 "------------------------------------------------------------------------------
 " vim-epitech config

@@ -19,7 +19,7 @@ URxvt*scrollWithBuffer:         true
 URxvt*scrollTtyKeypress:        true
 
 ! Setup font
-URxvt*font:                     xft:dejavu sans mono:pixelsize=15
+URxvt*font:                     xft:dejavu sans mono:pixelsize=13
 
 ! Change transparency
 URxvt.keysym.Control-o:         command:\033]11;[70]#000\007

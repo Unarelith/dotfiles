@@ -355,11 +355,12 @@ bindsym $mod+$move_h_ws_key         move workspace to output left
 bindsym $mod+$move_v_ws_key         move workspace to output up
 
 # Rule for Google Hangouts
-for_window [window_role="pop-up"]           floating enable
+# for_window [window_role="pop-up"]           floating enable
 for_window [title="Anodyne"]                floating enable
 for_window [title="Indie Studio: Gauntlet"] floating enable
 for_window [class="eifl"]                   floating enable
 for_window [class="genshinimpact.exe"]      floating enable
+for_window [instance="keepassxc"]           floating enable
 
 for_window [instance="League of Legends.exe"] move absolute position 0 px 0 px
 
