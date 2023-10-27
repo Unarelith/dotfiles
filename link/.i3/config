@@ -132,8 +132,8 @@ set $launcher_alt                   synapse
 set $launcher                       i3-dmenu-desktop --dmenu="dmenu -l 10 -p 'Run' -i"
 set $launcher2                      dmenu_run -l 10 -p "Run" -i
 
-set $composer                       xcompmgr -c -f -I0.045 -O0.045 &
-set $composer2                      compton -b --config ~/.config/compton/compton.conf
+set $composer                       picom -b --config ~/.config/picom/picom.conf
+set $composer2                      xcompmgr -c -f -I0.045 -O0.045 &
 
 # set $lock_screen                    i3lock-fancy-dualmonitor
 set $lock_screen                    gnome-screensaver-command -l
@@ -158,11 +158,11 @@ exec --no-startup-id                systemctl --user restart popup-manager
 exec --no-startup-id                dropbox &
 exec --no-startup-id                xfce4-power-manager &
 exec --no-startup-id                gnome-screensaver &
+exec --no-startup-id                /bin/bash ~/.config/polybar/launch
+
 # exec --no-startup-id                i3-msg "workspace $workspaceU; exec /usr/bin/urxvt -e fish -c 'cd ~/rendu/Perso/ModularGameEngine/Core'"
 # exec --no-startup-id                i3-msg "workspace $workspaceI; exec /usr/bin/urxvt -e fish -c 'cd ~/rendu/Perso/ModularGameEngine/Core'"
 # exec --no-startup-id                i3-msg "workspace $workspace1"
-
-exec_always --no-startup-id         /bin/bash ~/.config/polybar/launch
 
 # No window borders
 new_window                          normal 1

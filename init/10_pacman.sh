@@ -64,6 +64,7 @@ os-prober
 pacman-contrib
 patch
 pavucontrol
+picom
 pkgfile
 polkit-gnome
 pulseaudio
