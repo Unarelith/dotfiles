@@ -128,8 +128,8 @@ set $move_v_ws_key                  Shift+b
 # Other variables
 set $terminal                       urxvt -e fish
 
-set $launcher                       synapse
-set $launcher_alt                   i3-dmenu-desktop --dmenu="dmenu -l 10 -p 'Run' -i"
+set $launcher_alt                   synapse
+set $launcher                       i3-dmenu-desktop --dmenu="dmenu -l 10 -p 'Run' -i"
 set $launcher2                      dmenu_run -l 10 -p "Run" -i
 
 set $composer                       xcompmgr -c -f -I0.045 -O0.045 &
@@ -191,7 +191,7 @@ bindsym $mod+Shift+A                kill
 
 # Launchers
 bindsym $mod+$launcher_key          exec --no-startup-id $launcher
-bindsym $mod+Shift+$launcher_key    exec --no-startup-id $launcher2
+bindsym $mod+Ctrl+$launcher_key     exec --no-startup-id $launcher2
 
 # Switch windows with $mod+Tab or $mod+a
 bindsym $mod+Tab                    focus right
